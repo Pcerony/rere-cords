@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-10T16:54:00Z",
+  "title": "Design System: RERE-CORDS",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Sustainable Sage", "canonical": "oklch(0.45 0.08 145)", "tonalRamp": ["oklch(0.2 0.05 145)", "oklch(0.3 0.07 145)", "oklch(0.4 0.08 145)", "oklch(0.5 0.08 145)", "oklch(0.6 0.07 145)", "oklch(0.7 0.06 145)", "oklch(0.8 0.04 145)", "oklch(0.9 0.02 145)"] },
+      "secondary": { "role": "secondary", "displayName": "Terracotta Rust", "canonical": "oklch(0.60 0.13 45)", "tonalRamp": ["oklch(0.25 0.06 45)", "oklch(0.35 0.08 45)", "oklch(0.45 0.10 45)", "oklch(0.55 0.12 45)", "oklch(0.65 0.13 45)", "oklch(0.75 0.11 45)", "oklch(0.85 0.08 45)", "oklch(0.92 0.04 45)"] },
+      "secondary-dark": { "role": "secondary", "displayName": "Baked Soil", "canonical": "oklch(0.48 0.11 45)", "tonalRamp": ["oklch(0.2 0.05 45)", "oklch(0.3 0.07 45)", "oklch(0.4 0.09 45)", "oklch(0.5 0.11 45)", "oklch(0.6 0.10 45)", "oklch(0.7 0.08 45)", "oklch(0.8 0.06 45)", "oklch(0.9 0.03 45)"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Sage-Gray Off-White", "canonical": "oklch(0.97 0.008 145)", "tonalRamp": ["oklch(0.15 0.001 145)", "oklch(0.3 0.003 145)", "oklch(0.5 0.005 145)", "oklch(0.7 0.006 145)", "oklch(0.85 0.007 145)", "oklch(0.9 0.008 145)", "oklch(0.95 0.008 145)", "oklch(0.98 0.008 145)"] },
+      "neutral-surface": { "role": "neutral", "displayName": "Ivory Paper", "canonical": "oklch(0.99 0.004 145)", "tonalRamp": ["oklch(0.15 0.001 145)", "oklch(0.3 0.002 145)", "oklch(0.5 0.003 145)", "oklch(0.7 0.003 145)", "oklch(0.85 0.004 145)", "oklch(0.9 0.004 145)", "oklch(0.97 0.004 145)", "oklch(0.99 0.004 145)"] },
+      "neutral-ink": { "role": "neutral", "displayName": "Charcoal Ink", "canonical": "oklch(0.24 0.01 145)", "tonalRamp": ["oklch(0.1 0.005 145)", "oklch(0.18 0.008 145)", "oklch(0.24 0.01 145)", "oklch(0.35 0.012 145)", "oklch(0.5 0.012 145)", "oklch(0.65 0.01 145)", "oklch(0.8 0.008 145)", "oklch(0.92 0.005 145)"] },
+      "border": { "role": "neutral", "displayName": "Pressed Border", "canonical": "oklch(0.88 0.01 145)", "tonalRamp": ["oklch(0.15 0.001 145)", "oklch(0.3 0.003 145)", "oklch(0.5 0.005 145)", "oklch(0.7 0.007 145)", "oklch(0.8 0.009 145)", "oklch(0.88 0.01 145)", "oklch(0.93 0.008 145)", "oklch(0.97 0.005 145)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero and section titles." },
+      "body": { "displayName": "Body", "purpose": "Prose and descriptions." }
+    },
+    "shadows": [
+      { "name": "paper-lift", "value": "0 4px 16px rgba(44, 49, 45, 0.04)", "purpose": "Subtle paper edge separation." }
+    ],
+    "motion": [
+      { "name": "fade-in", "value": "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Smooth page element reveal." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Used for main calls to action.",
+      "html": "<button class=\"ds-btn-primary\">GET INVOLVED</button>",
+      "css": ".ds-btn-primary { background: #425848; color: #F5F7F4; font-family: 'EB Garamond', serif; font-size: 1rem; font-weight: 500; border: none; border-radius: 2px; padding: 12px 32px; letter-spacing: 0.05em; cursor: pointer; transition: background-color 0.25s ease, transform 0.25s ease; } .ds-btn-primary:hover { background-color: #2C312D; transform: translateY(-1px); }"
+    },
+    {
+      "name": "Standard Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Used for content details and timeline elements.",
+      "html": "<div class=\"ds-card\"><h3>The Concept</h3><p>Breathing new life into 100 discarded vinyl records.</p></div>",
+      "css": ".ds-card { background: #FAFBF9; border: 1px solid #D5D8D3; border-radius: 4px; padding: 32px; font-family: 'Alegreya Sans', sans-serif; } .ds-card h3 { font-family: 'EB Garamond', serif; font-size: 1.5rem; margin-top: 0; margin-bottom: 12px; color: #2C312D; } .ds-card p { font-size: 1rem; color: #2C312D; opacity: 0.8; line-height: 1.6; margin: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Seed Paper Chronicle",
+    "overview": "A design philosophy that is organic, textured, and deeply human. Rather than presenting a clean, sterile, or corporate face, this system acts like hand-pressed recycled paper containing embedded seeds: raw, slightly imperfect, and carrying the potential for new growth. It is quiet, warm, and natural.",
+    "keyCharacteristics": [
+      "Organic Hue-Tinting: background tinted gently toward sustainable sage-green.",
+      "Classic Typography Weight: Serif display headings paired with humanist sans-serif body copy.",
+      "Textured Borders & Frames: Thin double-ruled borders and offsets instead of heavy box shadows."
+    ],
+    "rules": [
+      { "name": "The Sage-Tint Rule", "body": "The background of any page or element must be tinted toward the sage hue (145 degrees) rather than default orange-yellow warmth.", "section": "colors" },
+      { "name": "The High Contrast Rule", "body": "All readable text must maintain a contrast ratio of ≥4.5:1 against the background surface.", "section": "colors" }
+    ],
+    "dos": [
+      "Do use oklch syntax in stylesheets for color adjustments.",
+      "Do ensure line length for readable copy is constrained to 65-75ch.",
+      "Do frame the custom main visual in a vintage-style double border."
+    ],
+    "donts": [
+      "Don't use side-stripe borders.",
+      "Don't use tiny uppercase tracked eyebrows above every single section.",
+      "Don't use gradient text or neon/cyberpunk colors."
+    ]
+  }
+}
