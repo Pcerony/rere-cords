@@ -29,7 +29,6 @@
                 <a href="#concept" class="nav-link" data-i18n="nav-concept">活动理念</a>
                 <a href="#poster" class="nav-link" data-i18n="nav-poster">活动海报</a>
                 <a href="#timeline" class="nav-link" data-i18n="nav-timeline">日程安排</a>
-                <a href="#register" class="nav-link btn-secondary-nav" data-i18n="nav-register">立即报名</a>
             </nav>
 
             <div class="header-controls">
@@ -94,12 +93,9 @@
                     </p>
                     
                     <div class="hero-actions">
-                        <a href="#register" class="btn btn-primary" id="hero-cta-register">
-                            <span data-i18n="btn-hero-register">提交作品方案</span>
-                            <i data-lucide="arrow-right"></i>
-                        </a>
-                        <a href="#concept" class="btn btn-outline" id="hero-cta-concept">
+                        <a href="#concept" class="btn btn-primary" id="hero-cta-concept">
                             <span data-i18n="btn-hero-concept">了解理念</span>
+                            <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -166,6 +162,7 @@
                         <p data-i18n="details-text">
                             黑胶唱片由不易降解的氯乙烯制成。一旦失去播放功能，它们极易成为长眠于垃圾填埋场的塑料废料。
                             “RERE-CORDS”并不将再生视作冷冰冰的垃圾分类与工业回炉，而是视作一次带有情感的、人文层面的“再创作”。
+                            $\text{RERE-CORDS}$ 并不将再生视作冷冰冰的垃圾分类与工业回炉，而是视作一次带有情感的、人文层面的“再创作”。
                             我们邀请每一位创作者，在磨损的划痕上重塑质感，用诗意和美学守护地球家园。
                         </p>
                         <div class="quick-stats">
@@ -249,7 +246,7 @@
                         <div class="timeline-content-card">
                             <span class="timeline-date" data-i18n="time-step3">2026年11月20日 〜 11月25日</span>
                             <h3 data-i18n="title-step3">校区低碳成果展</h3>
-                            <p data-i18n="text-step3">在大桥校区多功能厅或图书馆展厅举办线下成果展。展出道具全部使用可回收瓦楞纸箱 and 纸架，参观者可扫码查看创作者的制作视频并参与人气投票。</p>
+                            <p data-i18n="text-step3">在大桥校区多功能厅或图书馆展厅举办线下成果展。展出道具全部使用可回收瓦楞纸箱和纸架，参观者可扫码查看创作者的制作视频并参与人气投票。</p>
                         </div>
                     </div>
 
@@ -259,92 +256,9 @@
                         <div class="timeline-content-card">
                             <span class="timeline-date" data-i18n="time-step4">2026年11月25日 15:00-17:00</span>
                             <h3 data-i18n="title-step4">交流沙龙与颁奖典礼</h3>
-                            <p data-i18n="text-step4">展览最后一日举办设计师沙龙。评审会带来可持续设计的微型分享，随后颁发人气奖和专家选择奖。在欢愉的人文气息下，加深师生与校友的网络链接。</p>
+                            <p data-i18n="text-step4">展览最后一日举办设计师沙龙。评审会带来可持续设计的微型分享，随后颁发人气奖 and 专家选择奖。在欢愉的人文气息下，加深师生与校友的网络链接。</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Registration Form Section -->
-        <section id="register">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag" data-i18n="tag-register">REGISTRATION</span>
-                    <h2 class="section-title" data-i18n="title-register">项目参与报名</h2>
-                    <p class="section-lead" data-i18n="lead-register">如果您有意向参与废旧唱片再利用的创作或提交设想方案，请在此填写报名信息。</p>
-                </div>
-
-                <div class="form-wrapper">
-                    <form id="entry-form" class="retro-form">
-                        <div class="form-grid">
-                            <!-- Name -->
-                            <div class="form-group">
-                                <label for="input-name"><span data-i18n="label-name">代表者姓名</span> <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i data-lucide="user"></i>
-                                    <input type="text" id="input-name" required placeholder="九大 太郎">
-                                </div>
-                            </div>
-
-                            <!-- Student/Staff Number -->
-                            <div class="form-group">
-                                <label for="input-id"><span data-i18n="label-id">学生学号 或 教师所属部门</span> <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i data-lucide="credit-card"></i>
-                                    <input type="text" id="input-id" required placeholder="例如: 2GE26000X / 艺术工学研究院">
-                                </div>
-                            </div>
-
-                            <!-- User Category -->
-                            <div class="form-group">
-                                <label for="select-category"><span data-i18n="label-category">身份类别</span> <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i data-lucide="tag"></i>
-                                    <select id="select-category" required>
-                                        <option value="" disabled selected data-i18n="select-placeholder">请选择您的身份</option>
-                                        <option value="student" data-i18n="opt-student">本科生・研究生</option>
-                                        <option value="alumni" data-i18n="opt-alumni">毕业生（校友）</option>
-                                        <option value="faculty" data-i18n="opt-faculty">教职工</option>
-                                        <option value="other" data-i18n="opt-other">其他（共同研究员等）</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="form-group">
-                                <label for="input-email"><span data-i18n="label-email">电子邮箱</span> <span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <i data-lucide="mail"></i>
-                                    <input type="email" id="input-email" required placeholder="example@kyushu-u.ac.jp">
-                                </div>
-                            </div>
-
-                            <!-- Idea Textarea -->
-                            <div class="form-group full-width">
-                                <label for="input-idea" data-i18n="label-idea">创意草案或设想（仅需简短描述，如后续有变动没关系）</label>
-                                <textarea id="input-idea" rows="4" data-i18n-placeholder="placeholder-idea" placeholder="例如：计划通过热风枪加热唱片将其塑造成创意台灯的灯罩，或者计划手工雕刻唱片盘面制作一幅复古艺术壁挂钟表。"></textarea>
-                            </div>
-
-                            <!-- Safety check -->
-                            <div class="form-group full-width checkbox-group">
-                                <input type="checkbox" id="check-safety" required>
-                                <label for="check-safety" data-i18n="label-safety">
-                                    我同意在热塑、裁剪等创作阶段自己做好防烫伤与工具安全使用的防范工作，安全责任自负。 <span class="required">*</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Form Feedback (Success/Error Messages) -->
-                        <div id="form-feedback" class="form-feedback hidden"></div>
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary btn-submit" id="btn-submit-entry">
-                                <span data-i18n="btn-submit">发送申请方案</span>
-                                <i data-lucide="send"></i>
-                            </button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </section>

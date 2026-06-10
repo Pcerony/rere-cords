@@ -369,67 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --------------------------------------------------------------------------
-       4. Interactive Form Submission
-       -------------------------------------------------------------------------- */
-    const entryForm = document.getElementById('entry-form');
-    const formFeedback = document.getElementById('form-feedback');
-    const btnSubmit = document.getElementById('btn-submit-entry');
 
-    if (entryForm) {
-        entryForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            formFeedback.className = 'form-feedback hidden';
-            formFeedback.textContent = '';
-
-            btnSubmit.disabled = true;
-            const originalBtnContent = btnSubmit.innerHTML;
-            
-            const loadingText = currentLang === 'zh' ? '发送中...' : '送信中...';
-            btnSubmit.innerHTML = `
-                <span>${loadingText}</span>
-                <div class="spinner"></div>
-            `;
-
-            const formData = {
-                name: document.getElementById('input-name').value,
-                id: document.getElementById('input-id').value,
-                category: document.getElementById('select-category').value,
-                email: document.getElementById('input-email').value,
-                idea: document.getElementById('input-idea').value,
-                safetyAgreed: document.getElementById('check-safety').checked
-            };
-
-            setTimeout(() => {
-                btnSubmit.disabled = false;
-                btnSubmit.innerHTML = originalBtnContent;
-
-                formFeedback.classList.remove('hidden');
-                formFeedback.classList.add('success');
-                
-                if (currentLang === 'zh') {
-                    formFeedback.innerHTML = `
-                        <strong>报名方案发送成功！</strong><br>
-                        感谢您的参与。我们已向您的邮箱（${formData.email}）发送了关于旧黑胶唱片领取、合作店面清单及后续制作要求的指南，请注意查收。
-                    `;
-                } else {
-                    formFeedback.innerHTML = `
-                        <strong>エントリーが完了しました！</strong><br>
-                        ご応募ありがとうございます。登録されたメールアドレス（${formData.email}）へ、レコードの受け渡し方法や制作ガイドに関する详细案内をお送りしました。
-                    `;
-                }
-
-                entryForm.reset();
-
-                setTimeout(() => {
-                    formFeedback.classList.add('hidden');
-                    formFeedback.classList.remove('success');
-                }, 10000);
-
-            }, 1800);
-        });
-    }
 
     // Set default language on load
     updateLanguage(currentLang);
