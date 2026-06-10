@@ -29,34 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "负责任消费和生产",
             "ja": "つくる責任 つかう責任"
         },
-        "cli-title": {
-            "zh": "rere-records --status",
-            "ja": "rere-records --status"
-        },
-        "cli-title-concept": {
-            "zh": "rere-records --concept",
-            "ja": "rere-records --concept"
-        },
-        "cli-title-poster": {
-            "zh": "rere-records --poster",
-            "ja": "rere-records --poster"
-        },
-        "cli-title-timeline": {
-            "zh": "rere-records --timeline",
-            "ja": "rere-records --timeline"
-        },
-        "cli-command": {
-            "zh": "npx rere-records --init",
-            "ja": "npx rere-records --init"
-        },
-        "cli-output": {
-            "zh": "[status] 100 analog records loaded.<br>[target] SDG12: Responsible Consumption and Production.<br>[environment] Kyushu University Ohashi Campus.",
-            "ja": "[status] 100 analog records loaded.<br>[target] SDG12: Responsible Consumption and Production.<br>[environment] Kyushu University Ohashi Campus."
-        },
-        "hero-partners-label": {
-            "zh": "联合主办 & 协办",
-            "ja": "主催・共催・協力"
-        },
         "hero-subtitle": {
             "zh": "让废旧黑胶，在温热的重构中重生",
             "ja": "役割を終えた盤面に、もう一度温度を与える"
@@ -126,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "公式ポスター"
         },
         "lead-poster": {
-            "zh": "校园中的体验型宣传——ポスター裏面に実物レコードを貼り付け，体验手工作业的循环魅力。",
+            "zh": "校园中的体验型宣传——在海报背面贴上真实的黑胶唱片，过路人可以直接撕下带走作为创作材料。",
             "ja": "ポスター裏面に実物のレコードを添付。通りがかった学生が直接剥がして持ち帰る、手触りのある広報。"
         },
         "poster-card-title": {
@@ -142,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "プロジェクトの歩み"
         },
         "lead-timeline": {
-            "zh": "从夏日分发自主制作，至深秋成果展览。",
-            "ja": "作品の募集から審査、そして大橋キャンパスでの展示・交流サロンまでのスケジュール。"
+            "zh": "从夏日分发自主制作，至深秋成果展览与沙龙交流。",
+            "ja": "作品の募集から審査、大橋キャンパスでの展示・交流サロンまでのスケジュール。"
         },
         "time-step1": {
             "zh": "2026年8月1日 〜 10月31日",
@@ -166,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "オンライン審査"
         },
         "text-step2": {
-            "zh": "由特邀校友设计师担任评审，在线上评估创意过程。",
+            "zh": "由特邀校友设计师担任评审，在线上评估创意过程与方案设计。",
             "ja": "卒業生デザイナーを招き、作品画像やコンセプトをオンライン審査。"
         },
         "time-step3": {
@@ -190,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "交流サロン・授賞式"
         },
         "text-step4": {
-            "zh": "在大桥校区举办设计师交流会，颁发评选奖项。",
+            "zh": "在大桥校区举办设计师交流会，颁发评选奖项，拉近校友与师生连接。",
             "ja": "展示最終日、学内外の参加者が集う対話と表彰のサロン。"
         },
         "footer-desc": {
@@ -198,12 +170,16 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "廃棄アナログレコードの再利用によるサステナブルデザイン展示・作品募集企画"
         },
         "footer-co": {
-            "zh": "联合协办:",
+            "zh": "联合主办 & 协办:",
             "ja": "協賛・協力:"
         },
         "partner-assoc": {
             "zh": "九州大学同窗会",
             "ja": "九州大学同窓会"
+        },
+        "hero-partners-label": {
+            "zh": "联合主办 & 协办单位",
+            "ja": "主催・共催・協力"
         }
     };
 
@@ -274,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        const navLinks = document.querySelectorAll('.nav-link, .btn-secondary-nav');
+        const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('open');
@@ -288,18 +264,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* --------------------------------------------------------------------------
-       3. Scroll Reveal Animations (Timeline)
+       3. Scroll Reveal Animations (Timeline & Cards)
        -------------------------------------------------------------------------- */
-    const timelineItems = document.querySelectorAll('.timeline-item');
+    const revealItems = document.querySelectorAll('.reveal-on-scroll, .timeline-item');
     
-    if (timelineItems.length > 0) {
+    if (revealItems.length > 0) {
         const observerOptions = {
             root: null,
-            threshold: 0.15,
-            rootMargin: '0px 0px -40px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
-        const timelineObserver = new IntersectionObserver((entries, observer) => {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -308,8 +284,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, observerOptions);
 
-        timelineItems.forEach(item => {
-            timelineObserver.observe(item);
+        revealItems.forEach(item => {
+            revealObserver.observe(item);
         });
     }
 

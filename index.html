@@ -18,15 +18,18 @@
 </head>
 <body>
 
-    <!-- Ambient retro textured background overlay (paper texture simulated via styling) -->
-    <div class="paper-texture"></div>
-
     <!-- Header / Navigation -->
     <header id="main-header">
         <div class="header-container">
-            <a href="#" class="logo">
-                <span class="logo-accent">RE</span>RE-CORDS
-            </a>
+            <div class="logo-group">
+                <a href="#" class="logo">
+                    <span class="logo-accent">RE</span>RERE-CORDS
+                </a>
+                <div class="partner-logos">
+                    <img src="./素材/logo1.png" alt="Kyushu University" class="header-partner-logo">
+                    <img src="./素材/logo2.png" alt="AiGoki" class="header-partner-logo">
+                </div>
+            </div>
             
             <nav id="nav-menu">
                 <a href="#concept" class="nav-link" data-i18n="nav-concept">活动理念</a>
@@ -50,34 +53,35 @@
     </header>
 
     <main>
-        <!-- Hero Section (Two-Column Editorial Layout) -->
+        <!-- Hero Section (Full Opening Visual Cover) -->
         <section id="hero">
+            <div class="hero-overlay"></div>
             <div class="hero-container">
-                <div class="hero-content">
+                <div class="hero-brand-card reveal-on-scroll">
                     <div class="sdg-badge">
                         <span class="badge-icon">SDG12</span>
                         <span class="badge-text" data-i18n="sdg-badge-text">负责任消费和生产</span>
                     </div>
                     <h1 class="hero-title">RERE-CORDS</h1>
-                    <p class="hero-subtitle" data-i18n="hero-subtitle">废旧黑胶唱片的再利用<br><span class="highlight-text">可持续设计展览与作品征集</span></p>
+                    <p class="hero-subtitle" data-i18n="hero-subtitle">让废旧黑胶，在温热的重构中重生</p>
                     
                     <p class="hero-description" data-i18n="hero-description">
-                        100张失去播放价值的旧唱片。通过物理裁剪、热塑和重构，赋予它们第二生命。
-                        这是九州大学大桥校区开展的一场跨越学生、校友与教职工的社区循环艺术探索。
+                        100张无法再播放的唱片。在大桥校区，我们邀请学生、校友与教职工一起物理剪裁、热塑重组，探讨资源循环的可能。
                     </p>
                     
                     <div class="hero-actions">
                         <a href="#concept" class="btn btn-primary" id="hero-cta-concept">
-                            <span data-i18n="btn-hero-concept">了解理念</span>
-                            <i data-lucide="arrow-right"></i>
+                            <span data-i18n="btn-hero-concept">阅读理念</span>
+                            <i data-lucide="arrow-down"></i>
                         </a>
                     </div>
-                </div>
 
-                <!-- Exquisite Retro Framed Hero Main Visual Image -->
-                <div class="hero-visual">
-                    <div class="hero-image-frame">
-                        <img src="./素材/主视觉.png" alt="RERE-CORDS 主视觉" class="hero-main-img">
+                    <div class="hero-partners">
+                        <span class="partners-label" data-i18n="hero-partners-label">联合主办 & 协办单位</span>
+                        <div class="partners-list">
+                            <img src="./素材/logo1.png" alt="Kyushu University" class="hero-partner-logo">
+                            <img src="./素材/logo2.png" alt="AiGoki" class="hero-partner-logo">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,53 +90,51 @@
         <!-- Concept Section -->
         <section id="concept">
             <div class="section-container">
-                <div class="section-header">
+                <div class="section-header reveal-on-scroll">
                     <h2 class="section-title" data-i18n="title-concept">企划理念</h2>
-                    <p class="section-lead" data-i18n="lead-concept">用设计的力量，在废旧黑胶的黑色纹路中，写下关于“共生”的新曲。</p>
+                    <p class="section-lead" data-i18n="lead-concept">在黑胶的圈线里，重写关于循环的叙事。</p>
                 </div>
 
                 <div class="concept-list">
                     <!-- Item 1 -->
-                    <div class="concept-item">
+                    <div class="concept-item reveal-on-scroll">
                         <div class="concept-meta">
                             <span class="concept-num">I</span>
-                            <h3 data-i18n="card1-title">废弃唱片循环再生</h3>
+                            <h3 data-i18n="card1-title">旧物重构</h3>
                         </div>
                         <div class="concept-body">
-                            <p data-i18n="card1-text">我们从福冈本地唱片店收集了100张无法再播放的废弃黑胶唱片，并向参与者无偿发放。通过剪裁、热定型、彩绘或物理拆解等自由手段，设计成全新的艺术装置、时装配件或日用品。</p>
+                            <p data-i18n="card1-text">分发100张废弃黑胶。通过热塑、切割与重组，让音乐塑料成为全新的器物或艺术装置。</p>
                         </div>
                     </div>
 
                     <!-- Item 2 -->
-                    <div class="concept-item">
+                    <div class="concept-item reveal-on-scroll">
                         <div class="concept-meta">
                             <span class="concept-num">II</span>
-                            <h3 data-i18n="card2-title">跨越代际的共创网络</h3>
+                            <h3 data-i18n="card2-title">跨代连结</h3>
                         </div>
                         <div class="concept-body">
-                            <p data-i18n="card2-text">不仅仅面向在校生，该企划特别邀请了毕业生成员（艺术工学设计先辈）以及学校教职工共同组队和评审。以旧唱片为纽带，搭建一个温馨有温度的设计师交流沙龙。</p>
+                            <p data-i18n="card2-text">不仅面向学生，更联合校友设计师与教职员工，在共同创作中建立有温度的代际网络。</p>
                         </div>
                     </div>
 
                     <!-- Item 3 -->
-                    <div class="concept-item">
+                    <div class="concept-item reveal-on-scroll">
                         <div class="concept-meta">
                             <span class="concept-num">III</span>
-                            <h3 data-i18n="card3-title">地域温情与社区延伸</h3>
+                            <h3 data-i18n="card3-title">社区延伸</h3>
                         </div>
                         <div class="concept-body">
-                            <p data-i18n="card3-text">活动后期，我们将与本地中古店联合，将优秀作品在商圈展出，并开展面向市民的创意手作工坊。将艺术工学的学术研究成果，转化为能够点亮街区和市民生活的可持续温度。</p>
+                            <p data-i18n="card3-text">与福冈中古店及街区合作展出优秀作品，把艺术工学的循环理念转化为点亮社区的温度。</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="about-details-box">
+                <div class="about-details-box reveal-on-scroll">
                     <div class="about-text-content">
-                        <h3 data-i18n="details-title">用温度解构“负责任消费与生产”</h3>
+                        <h3 data-i18n="details-title">情感层面的“再创作”</h3>
                         <p data-i18n="details-text">
-                            黑胶唱片由不易降解的氯乙烯制成。一旦失去播放功能，它们极易成为长眠于垃圾填埋场的塑料废料。
-                            “RERE-CORDS”并不将再生视作冷冰冰的垃圾分类与工业回炉，而是视作一次带有情感的、人文层面的“再创作”。
-                            We invite every creator to shape textured details over worn grooves, protecting our shared home with poetry and aesthetics.
+                            黑胶唱片是难以自然降解的氯乙烯。我们将再生视作一次带有情感温度的再创作，在旧痕里，塑造可以触摸的未来。
                         </p>
                         <div class="quick-stats">
                             <div class="stat-item">
@@ -145,7 +147,7 @@
                             </div>
                             <div class="stat-item">
                                 <span class="stat-num">Selected</span>
-                                <span class="stat-label" data-i18n="stat-exhibit">优秀方案评选展出</span>
+                                <span class="stat-label" data-i18n="stat-exhibit">优秀作品展示</span>
                             </div>
                         </div>
                     </div>
@@ -156,18 +158,18 @@
         <!-- Official Poster Section -->
         <section id="poster">
             <div class="section-container">
-                <div class="section-header">
+                <div class="section-header reveal-on-scroll">
                     <h2 class="section-title" data-i18n="title-poster">宣传海报</h2>
-                    <p class="section-lead" data-i18n="lead-poster">这是粘贴在校园内的体验型海报——ポスター裏面に実物レコードを貼り付け、路上の学生が直接剥がして持ち帰れる体験型広報。</p>
+                    <p class="section-lead" data-i18n="lead-poster">校园中的体验型宣传——在海报背面贴上真实的黑胶唱片，过路人可以直接撕下带走作为创作材料。</p>
                 </div>
 
-                <div class="poster-display-container">
+                <div class="poster-display-container reveal-on-scroll">
                     <div class="poster-frame">
                         <img src="./海报.jpg" alt="RERE-CORDS 宣传海报" class="poster-img" id="poster-image-element">
                         <div class="poster-overlay">
                             <div class="poster-overlay-content">
-                                <h3 data-i18n="poster-card-title">体验型海报设计</h3>
-                                <p data-i18n="poster-card-text">海报背面贴有真实的旧唱片，校园里的过路者可以直接将其撕下带走。带走的唱片既是本次创意的入场券，也是你的创作素材本身。</p>
+                                <h3 data-i18n="poster-card-title">触觉式的入场券</h3>
+                                <p data-i18n="poster-card-text">海报背后的黑胶不仅是活动的邀请函，更是属于你的创作画布。</p>
                             </div>
                         </div>
                     </div>
@@ -178,62 +180,52 @@
         <!-- Timeline Section -->
         <section id="timeline">
             <div class="section-container">
-                <div class="terminal-panel">
-                    <div class="terminal-header">
-                        <span class="dot dot-red"></span>
-                        <span class="dot dot-yellow"></span>
-                        <span class="dot dot-green"></span>
-                        <span class="terminal-title" data-i18n="cli-title-timeline">rere-records --timeline</span>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="section-header">
-                            <h2 class="section-title" data-i18n="title-timeline">日程进程</h2>
-                            <p class="section-lead" data-i18n="lead-timeline">从夏日的征集、自主制作，到深秋大桥校区的生态展览及授奖沙龙。</p>
+                <div class="section-header reveal-on-scroll">
+                    <h2 class="section-title" data-i18n="title-timeline">日程进程</h2>
+                    <p class="section-lead" data-i18n="lead-timeline">从夏日分发自主制作，至深秋成果展览与沙龙交流。</p>
+                </div>
+
+                <div class="timeline-wrapper">
+                    <!-- Line -->
+                    <div class="timeline-line"></div>
+
+                    <!-- Step 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content-card">
+                            <span class="timeline-date" data-i18n="time-step1">2026年8月1日 〜 10月31日</span>
+                            <h3 data-i18n="title-step1">分发与创作</h3>
+                            <p data-i18n="text-step1">领取唱片，在3个月内进行个性化设计与制作。</p>
                         </div>
+                    </div>
 
-                        <div class="timeline-wrapper">
-                            <!-- Line -->
-                            <div class="timeline-line"></div>
+                    <!-- Step 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content-card">
+                            <span class="timeline-date" data-i18n="time-step2">2026年11月1日 〜 11月10日</span>
+                            <h3 data-i18n="title-step2">线上作品评审</h3>
+                            <p data-i18n="text-step2">由特邀校友设计师担任评审，在线上评估创意过程与方案设计。</p>
+                        </div>
+                    </div>
 
-                            <!-- Step 1 -->
-                            <div class="timeline-item" id="timeline-step-1">
-                                <div class="timeline-marker">1</div>
-                                <div class="timeline-content-card">
-                                    <span class="timeline-date" data-i18n="time-step1">2026年8月1日 〜 10月31日</span>
-                                    <h3 data-i18n="title-step1">唱片分发与自主制作</h3>
-                                    <p data-i18n="text-step1">领取废旧唱片后，个人或团队（学生、校友、老师混编）在3个月内进行设计与制作。制作花絮推荐分享到社交网络并添加 #RERECORDS 标签进行共鸣。</p>
-                                </div>
-                            </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content-card">
+                            <span class="timeline-date" data-i18n="time-step3">2026年11月20日 〜 11月25日</span>
+                            <h3 data-i18n="title-step3">大桥校区成果展</h3>
+                            <p data-i18n="text-step3">在大桥校区多功能厅展出作品，采用全瓦楞纸低碳展具。</p>
+                        </div>
+                    </div>
 
-                            <!-- Step 2 -->
-                            <div class="timeline-item" id="timeline-step-2">
-                                <div class="timeline-marker">2</div>
-                                <div class="timeline-content-card">
-                                    <span class="timeline-date" data-i18n="time-step2">2026年11月1日 〜 11月10日</span>
-                                    <h3 data-i18n="title-step2">作品线上评审</h3>
-                                    <p data-i18n="text-step2">特邀专业毕业校友设计师担任特聘评审，依据提交的方案图片、说明文档以及一段30秒的“手作制作过程短视频”进行线上综合评优。</p>
-                                </div>
-                            </div>
-
-                            <!-- Step 3 -->
-                            <div class="timeline-item" id="timeline-step-3">
-                                <div class="timeline-marker">3</div>
-                                <div class="timeline-content-card">
-                                    <span class="timeline-date" data-i18n="time-step3">2026年11月20日 〜 11月25日</span>
-                                    <h3 data-i18n="title-step3">校区低碳成果展</h3>
-                                    <p data-i18n="text-step3">在大桥校区多功能厅或图书馆展厅举办线下成果展。展出道具全部使用可回收瓦楞纸箱和纸架，参观者可扫码查看创作者的制作视频并参与人气投票。</p>
-                                </div>
-                            </div>
-
-                            <!-- Step 4 -->
-                            <div class="timeline-item" id="timeline-step-4">
-                                <div class="timeline-marker">4</div>
-                                <div class="timeline-content-card">
-                                    <span class="timeline-date" data-i18n="time-step4">2026年11月25日 15:00-17:00</span>
-                                    <h3 data-i18n="title-step4">交流沙龙与颁奖典礼</h3>
-                                    <p data-i18n="text-step4">展览最后一日举办设计师沙龙。评审会带来可持续设计的微型分享，随后颁发人气奖 and 专家选择奖。在欢愉的人文气息下，加深师生与校友的网络链接。</p>
-                                </div>
-                            </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content-card">
+                            <span class="timeline-date" data-i18n="time-step4">2026年11月25日 15:00-17:00</span>
+                            <h3 data-i18n="title-step4">交流沙龙与表彰</h3>
+                            <p data-i18n="text-step4">在大桥校区举办设计师交流会，颁发评选奖项，拉近校友与师生连接。</p>
                         </div>
                     </div>
                 </div>
@@ -248,7 +240,7 @@
                 <h3>RERE-CORDS</h3>
                 <p data-i18n="footer-desc">废旧黑胶唱片再利用的可持续设计展览与作品征集策划</p>
                 <div class="coorganizers">
-                    <span data-i18n="footer-co">联合协办:</span>
+                    <span data-i18n="footer-co">联合主办 & 协办:</span>
                     <span class="partner-tag" data-i18n="partner-assoc">九州大学同窗会</span>
                     <span class="partner-tag">AiGoki</span>
                     <span class="partner-tag">SoDesLab</span>

@@ -1,135 +1,73 @@
----
-name: RERE-CORDS
-description: Claude Code Style Design System for RERE-CORDS Sustainable Exhibition
-colors:
-  primary: "#788c5d"
-  secondary: "#d97757"
-  neutral-bg: "#141413"
-  neutral-surface: "#1e1e1d"
-  neutral-ink: "#faf9f5"
-  border: "#3a3935"
-  dark-gray: "#8e8d85"
-typography:
-  display:
-    fontFamily: "EB Garamond, Noto Serif SC, Noto Serif JP, serif"
-    fontSize: "clamp(2rem, 5vw, 4rem)"
-    fontWeight: 600
-    lineHeight: 1.15
-    letterSpacing: "-0.01em"
-  body:
-    fontFamily: "Work Sans, Noto Sans SC, Noto Sans JP, sans-serif"
-    fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)"
-    fontWeight: 400
-    lineHeight: 1.7
-    letterSpacing: "normal"
-  mono:
-    fontFamily: "JetBrains Mono, monospace"
-    fontSize: "0.85rem"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "normal"
-rounded:
-  sm: "3px"
-  md: "6px"
-spacing:
-  sm: "8px"
-  md: "16px"
-  lg: "32px"
-components:
-  button-primary:
-    backgroundColor: "{colors.secondary}"
-    textColor: "{colors.neutral-bg}"
-    rounded: "{rounded.sm}"
-    padding: "10px 24px"
-  button-primary-hover:
-    backgroundColor: "{colors.neutral-ink}"
-  card:
-    backgroundColor: "{colors.neutral-surface}"
-    rounded: "{rounded.md}"
-    padding: "32px"
----
-
-# Design System: RERE-CORDS (Claude Code Style)
+# Design System: RERE-CORDS (Retro-Humanist Edition)
 
 ## 1. Overview
 
-**Creative North Star: "The Terminal Canvas"**
+**Creative North Star: "The Gallery Archive"**
 
-"The Terminal Canvas" blends the physical texturing of our RERE-CORDS main visual with the clean, structured, and developer-forward console layout of Claude Code. It treats the website as a developer utility interface, featuring command prompts, monospaced details, high-contrast typography, and partner logos.
+"The Gallery Archive" frames the RERE-CORDS exhibition as a premium, quiet, and minimalist art event. It avoids all developer terminal window styling, code blocks, or CLI prompt mockups. Instead, it utilizes clean grids, large classic serif typography, generous white space, and letterpress-inspired borders.
 
-Rather than plain or glowing neon colors, it utilizes Anthropic's muted, earthy color palette: deep dark charcoal backgrounds, warm off-white lettering, and muted sage/terracotta highlights. The visual background consists of the main visual (`素材/主视觉.png`) covered with a dark, high-contrast overlay, creating a textured backdrop.
+The page uses a rich, earthy color palette: deep dark charcoal/obsidian background, warm paper-white lettering, and muted sage/terracotta highlights. The cover image (`素材/主视觉.png`) is utilized exclusively as a dramatic visual background for the Hero/opening section, smoothly dissolving into the solid obsidian color as the user scrolls.
 
 **Key Characteristics:**
-- **Panoramic Texture**: A fixed full-screen background image covered by a dark protective overlay.
-- **Terminal Consoles**: Structured CLI frames showing commands, code, and structured timeline files.
-- **Typographic Hierarchy**: JetBrains Mono for code logs and tags, Work Sans for prose, and EB Garamond for display titles.
-- **Partner Branding**: Logos integrated directly into the header and footer, matching the developer-focused theme.
+- **Hero Visual Dissolve**: A full-bleed visual header with a smooth bottom gradient fade transitioning the main visual cover into the solid page color.
+- **Asymmetric Typographic Layout**: Clean minimalist cards with large Roman numerals (I, II, III) showing principles, and letterpress debossed statistic boxes.
+- **Sponsor & Partner Logos**: Elegant logos displayed in the header, Hero section, and footer with grayscale-to-color hover transitions.
+
+---
 
 ## 2. Colors
 
-Earthy, neutral, and high-contrast dark palette, adhering to Anthropic's design language.
+Earthy, premium, and organic dark palette to invoke texture and humanism.
 
-### Primary
-- **Sustainable Sage** (`#788c5d` / `oklch(0.58 0.08 115)`): Used for success states, active shell parameters, and minor badge highlights.
+### Primary Accent
+- **Sustainable Sage** (`#7a8c6c`): Muted green used for checkmarks, badges, dates, and progress.
 
-### Secondary
-- **Terracotta Orange** (`#d97757` / `oklch(0.62 0.15 45)`): Used for primary action buttons, terminal cursor highlights, and key links.
+### Secondary Accent
+- **Terracotta Orange** (`#d97757`): Warm orange/clay tone used for main call-to-action buttons, key titles, and numeric labels.
 
-### Neutral
-- **Console Dark** (`#141413` / `oklch(0.18 0.002 90)`): The dark base color for terminal windows.
-- **Workspace Surface** (`#1e1e1d` / `oklch(0.22 0.002 90)`): The container background.
-- **Warm White** (`#faf9f5` / `oklch(0.98 0.002 90)`): Primary text color.
-- **Charcoal Border** (`#3a3935` / `oklch(0.32 0.003 90)`): Border color.
-- **Muted Stone** (`#8e8d85` / `oklch(0.63 0.005 90)`): Muted subtext and secondary indicators.
+### Neutral Colors
+- **Obsidian Dark** (`#141413`): Solid background base.
+- **Charcoal Surface** (`#1c1c1b`): Container/card backgrounds.
+- **Warm Ivory** (`#f5f4f0`): Primary text color.
+- **Muted Stone** (`#94928b`): Descriptive secondary subtext.
+- **Warm Charcoal Border** (`#2e2d2a`): Muted separator lines and borders.
 
-### Named Rules
-**The Panoramic Overlay Rule.** The full-bleed background image must be covered by a dark linear gradient overlay (`rgba(20, 20, 19, 0.82)`) to ensure all text retains a contrast ratio of ≥4.5:1.
-**The High-Contrast Console Rule.** Inside terminal windows, text must be bright Warm White or highlighted in orange/green to maintain high readability.
+---
 
 ## 3. Typography
 
-**Display Font:** EB Garamond, Noto Serif SC, Noto Serif JP (Serif)
-**Body Font:** Work Sans, Noto Sans SC, Noto Sans JP (Sans-serif)
-**Monospace Font:** JetBrains Mono, monospace
+Pairing classic editorial serif display fonts with clean humanist sans-serif body copy for CJK and Western text.
 
-### Hierarchy
-- **Display** (SemiBold (600), `clamp(2rem, 5vw, 4rem)`, `1.15`): Hero titles.
-- **Headline** (SemiBold (600), `clamp(1.4rem, 3vw, 2.2rem)`, `1.25`): Section headers.
-- **Body** (Regular (400), `clamp(0.9rem, 1.2vw, 1.05rem)`, `1.65`): Descriptive copy.
-- **Mono Label** (Regular (400), `0.85rem`, `1.5`): Commands, dates, tags, and navigation items.
+### Font Families
+- **Display Headings**: `EB Garamond`, `Noto Serif SC`, `Noto Serif JP`, serif
+- **Body Prose**: `Alegreya Sans`, `Noto Sans SC`, `Noto Sans JP`, sans-serif
+- **Monospace details**: `JetBrains Mono`, monospace
 
-### Named Rules
-**The Mono Tagging Rule.** All metadata, dates, buttons, and short kickers must use JetBrains Mono, styled in lowercase or uppercase with spacing, mimicking terminal parameters.
+### Scale
+- **Hero Title**: `clamp(3.5rem, 8vw, 5.5rem)` (font-weight: 700)
+- **Section Heading**: `2.5rem` (font-weight: 600)
+- **Body Text**: `1rem` (font-weight: 400, line-height: 1.65)
+- **Mono Label**: `0.75rem-0.80rem` (font-weight: 400, letter-spacing: 0.02em-0.05em)
 
-## 4. Elevation
+---
 
-The design is flat and structured like a command-line interface. Depth is established through container overlays and thin borders (`1px solid var(--color-border)`), not shadows.
+## 4. Components
 
-### Shadow Vocabulary
-- **None**: Flat borders only.
+### Cards (`.concept-item`)
+- **Style**: Soft charcoal background (`#1c1c1b`), thin warm border (`#2e2d2a`), padded at `2.5rem`.
+- **Details**: Large Roman numerals (I, II, III) in terracotta orange, left-aligned titles, and stone-colored paragraphs.
+- **Transition**: Soft translateY and border color highlight on hover.
 
-## 5. Components
+### Gallery Frame (`.poster-frame`)
+- **Style**: Styled like a matted artwork in a physical gallery. Features a thick off-white mat board border and a sliding caption overlay appearing on hover.
 
-### Terminal Windows
-- **Style:** Background Console Dark (`#141413`), border 1px solid (`#3a3935`), rounded corner (6px).
-- **Header:** Features three dots (red `#ff5f56`, yellow `#ffbd2e`, green `#27c93f`) on the top-left, and a centered filename in monospace.
-- **Content:** Monospaced prompts (`$`), blinking cursors, and structured code listings.
+### Progress Timeline (`.timeline-wrapper`)
+- **Style**: A single vertical line with circles enclosing steps (1, 2, 3, 4) in monospace. Cards offset to the right with step details.
 
-### Buttons
-- **Primary:** Background Terracotta Orange (`#d97757`), text Console Dark (`#141413`), font-family JetBrains Mono, padding `10px 24px`.
-- **Hover:** Background Warm White (`#faf9f5`), text Console Dark (`#141413`).
+---
 
-### Partner Logos
-- **Style:** Scaled elegantly (height `24-28px` in header, `20px` in footer), styled with a white/cream filter to match the dark theme canvas.
+## 5. Partner Logos
 
-## 6. Do's and Don'ts
-
-### Do:
-- **Do** write commands and prompt indicators (`$`) in JetBrains Mono.
-- **Do** use thin solid borders (`#3a3935`) to define section content.
-- **Do** display partner logos in both the navigation bar and the footer.
-
-### Don't:
-- **Don't** use standard shadows or card gradients.
-- **Don't** use large rounded corners (keep radii between 3px and 6px).
-- **Don't** overlay bright text directly on the visual background without the dark overlay screen.
+To ensure the logos blend natively into the visual design:
+- **Default state**: Styled with a CSS filter: `filter: grayscale(1) brightness(1.2) contrast(0.8); opacity: 0.6;`. This converts the logos into neutral, elegant white-gray elements that blend with the dark editorial background.
+- **Hover state**: Transitioned smoothly to `filter: none; opacity: 1;` using `transition: all 0.2s;`, revealing their authentic corporate colors on cursor hover.
