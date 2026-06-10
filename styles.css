@@ -337,45 +337,7 @@ a {
     gap: 1.25rem;
 }
 
-/* Hero Partners Banner */
-.hero-partners {
-    margin-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    border-top: 1px dashed var(--color-border);
-    padding-top: 2rem;
-    width: 100%;
-    max-width: 480px;
-}
 
-.partners-label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-    text-transform: lowercase;
-}
-
-.partners-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.hero-partner-logo {
-    height: 30px;
-    width: auto;
-    filter: grayscale(1) brightness(1.2) contrast(0.8);
-    opacity: 0.6;
-    transition: var(--transition-fast);
-}
-
-.hero-partner-logo:hover {
-    filter: none;
-    opacity: 1;
-}
 
 /* --------------------------------------------------------------------------
    5. Sections Layout Common
