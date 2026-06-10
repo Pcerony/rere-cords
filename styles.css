@@ -8,7 +8,7 @@
    -------------------------------------------------------------------------- */
 :root {
     /* Font stacks */
-    --font-header: 'EB Garamond', 'Noto Serif SC', 'Noto Serif JP', Georgia, serif;
+    --font-header: 'Playfair Display', 'Cinzel', 'Noto Serif SC', 'Noto Serif JP', Georgia, serif;
     --font-body: 'Alegreya Sans', 'Noto Sans SC', 'Noto Sans JP', -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
@@ -86,6 +86,12 @@ a {
     background-color: rgba(20, 20, 19, 0.82);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease;
+    transform: translateY(0);
+}
+
+#main-header.header-hidden {
+    transform: translateY(-100%);
 }
 
 .header-container {
@@ -504,18 +510,84 @@ section {
 .poster-frame {
     position: relative;
     max-width: 480px;
+    width: 100%;
     border: 8px solid #1c1c1b;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
     transition: var(--transition-smooth);
     cursor: pointer;
     background-color: #0c0c0b;
+    overflow: visible; /* Allow vinyl to slide out */
 }
 
 .poster-img {
     width: 100%;
     height: auto;
     display: block;
+    position: relative;
+    z-index: 2;
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.poster-vinyl {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, #2a2a28 20%, #151514 80%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vinyl-grooves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 2px, transparent 4px),
+                linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+    pointer-events: none;
+}
+
+.vinyl-label {
+    width: 32%;
+    height: 32%;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-bg-base);
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.vinyl-label::before {
+    content: '';
+    width: 16%;
+    height: 16%;
+    border-radius: 50%;
+    background-color: var(--color-bg-base);
+    margin-bottom: 4px;
 }
 
 .poster-overlay {
@@ -529,6 +601,7 @@ section {
     opacity: 0;
     transform: translateY(15px);
     transition: var(--transition-smooth);
+    pointer-events: none;
 }
 
 .poster-overlay-content h3 {
@@ -552,7 +625,12 @@ section {
 }
 
 .poster-frame:hover .poster-img {
-    transform: scale(1.03);
+    transform: translateX(-28%) rotate(-4deg);
+}
+
+.poster-frame:hover .poster-vinyl {
+    transform: translateX(35%) rotate(180deg);
+    opacity: 1;
 }
 
 .poster-frame:hover .poster-overlay {

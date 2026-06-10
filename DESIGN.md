@@ -12,6 +12,7 @@ The page uses a rich, earthy color palette: deep dark charcoal/obsidian backgrou
 - **Hero Visual Dissolve**: A full-bleed visual header with a smooth bottom gradient fade transitioning the main visual cover into the solid page color.
 - **Asymmetric Typographic Layout**: Clean minimalist cards with large Roman numerals (I, II, III) showing principles, and letterpress debossed statistic boxes.
 - **Sponsor & Partner Logos**: Elegant logos displayed in the header, Hero section, and footer with grayscale-to-color hover transitions.
+- **Header Scroll Behavior**: The navigation bar automatically slides out of view on scroll down and slides back in on scroll up to maximize visual focus on content.
 
 ---
 
@@ -39,7 +40,7 @@ Earthy, premium, and organic dark palette to invoke texture and humanism.
 Pairing classic editorial serif display fonts with clean humanist sans-serif body copy for CJK and Western text.
 
 ### Font Families
-- **Display Headings**: `EB Garamond`, `Noto Serif SC`, `Noto Serif JP`, serif
+- **Display Headings**: `Playfair Display`, `Cinzel`, `Noto Serif SC`, `Noto Serif JP`, serif
 - **Body Prose**: `Alegreya Sans`, `Noto Sans SC`, `Noto Sans JP`, sans-serif
 - **Monospace details**: `JetBrains Mono`, monospace
 
@@ -71,3 +72,13 @@ Pairing classic editorial serif display fonts with clean humanist sans-serif bod
 To ensure the logos blend natively into the visual design:
 - **Default state**: Styled with a CSS filter: `filter: grayscale(1) brightness(1.2) contrast(0.8); opacity: 0.6;`. This converts the logos into neutral, elegant white-gray elements that blend with the dark editorial background.
 - **Hover state**: Transitioned smoothly to `filter: none; opacity: 1;` using `transition: all 0.2s;`, revealing their authentic corporate colors on cursor hover.
+
+---
+
+## 6. Copywriting & Communication Tone
+
+To maintain a premium, quiet, and serious gallery-like experience:
+- **Tone**: Pragmatic, minimalist, and elegant (务实、极简、娟秀).
+- **Prohibited Patterns**: Avoid any overly poetic, dramatic, or tech CLI-related jargon (e.g., "温热的重构", "在旧痕里，塑造可以触摸的未来", "音乐塑料").
+- **Core Principles**: Deliver direct, factual information about PVC plastics, resource reuse under SDGs Goal 12, and clean event details.
+
