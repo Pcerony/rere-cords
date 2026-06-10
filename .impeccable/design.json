@@ -1,26 +1,24 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-06-10T16:54:00Z",
-  "title": "Design System: RERE-CORDS",
+  "generatedAt": "2026-06-11T02:20:00Z",
+  "title": "Design System: RERE-CORDS (Claude Code Style)",
   "extensions": {
     "colorMeta": {
-      "primary": { "role": "primary", "displayName": "Sustainable Sage", "canonical": "oklch(0.45 0.08 145)", "tonalRamp": ["oklch(0.2 0.05 145)", "oklch(0.3 0.07 145)", "oklch(0.4 0.08 145)", "oklch(0.5 0.08 145)", "oklch(0.6 0.07 145)", "oklch(0.7 0.06 145)", "oklch(0.8 0.04 145)", "oklch(0.9 0.02 145)"] },
-      "secondary": { "role": "secondary", "displayName": "Terracotta Rust", "canonical": "oklch(0.60 0.13 45)", "tonalRamp": ["oklch(0.25 0.06 45)", "oklch(0.35 0.08 45)", "oklch(0.45 0.10 45)", "oklch(0.55 0.12 45)", "oklch(0.65 0.13 45)", "oklch(0.75 0.11 45)", "oklch(0.85 0.08 45)", "oklch(0.92 0.04 45)"] },
-      "secondary-dark": { "role": "secondary", "displayName": "Baked Soil", "canonical": "oklch(0.48 0.11 45)", "tonalRamp": ["oklch(0.2 0.05 45)", "oklch(0.3 0.07 45)", "oklch(0.4 0.09 45)", "oklch(0.5 0.11 45)", "oklch(0.6 0.10 45)", "oklch(0.7 0.08 45)", "oklch(0.8 0.06 45)", "oklch(0.9 0.03 45)"] },
-      "neutral-bg": { "role": "neutral", "displayName": "Sage-Gray Off-White", "canonical": "oklch(0.97 0.008 145)", "tonalRamp": ["oklch(0.15 0.001 145)", "oklch(0.3 0.003 145)", "oklch(0.5 0.005 145)", "oklch(0.7 0.006 145)", "oklch(0.85 0.007 145)", "oklch(0.9 0.008 145)", "oklch(0.95 0.008 145)", "oklch(0.98 0.008 145)"] },
-      "neutral-surface": { "role": "neutral", "displayName": "Ivory Paper", "canonical": "oklch(0.99 0.004 145)", "tonalRamp": ["oklch(0.15 0.001 145)", "oklch(0.3 0.002 145)", "oklch(0.5 0.003 145)", "oklch(0.7 0.003 145)", "oklch(0.85 0.004 145)", "oklch(0.9 0.004 145)", "oklch(0.97 0.004 145)", "oklch(0.99 0.004 145)"] },
-      "neutral-ink": { "role": "neutral", "displayName": "Charcoal Ink", "canonical": "oklch(0.24 0.01 145)", "tonalRamp": ["oklch(0.1 0.005 145)", "oklch(0.18 0.008 145)", "oklch(0.24 0.01 145)", "oklch(0.35 0.012 145)", "oklch(0.5 0.012 145)", "oklch(0.65 0.01 145)", "oklch(0.8 0.008 145)", "oklch(0.92 0.005 145)"] },
-      "border": { "role": "neutral", "displayName": "Pressed Border", "canonical": "oklch(0.88 0.01 145)", "tonalRamp": ["oklch(0.15 0.001 145)", "oklch(0.3 0.003 145)", "oklch(0.5 0.005 145)", "oklch(0.7 0.007 145)", "oklch(0.8 0.009 145)", "oklch(0.88 0.01 145)", "oklch(0.93 0.008 145)", "oklch(0.97 0.005 145)"] }
+      "primary": { "role": "primary", "displayName": "Sustainable Sage", "canonical": "oklch(0.58 0.08 115)", "tonalRamp": ["oklch(0.25 0.04 115)", "oklch(0.35 0.05 115)", "oklch(0.45 0.06 115)", "oklch(0.58 0.08 115)", "oklch(0.68 0.07 115)", "oklch(0.78 0.05 115)", "oklch(0.88 0.03 115)", "oklch(0.95 0.01 115)"] },
+      "secondary": { "role": "secondary", "displayName": "Terracotta Orange", "canonical": "oklch(0.62 0.15 45)", "tonalRamp": ["oklch(0.25 0.07 45)", "oklch(0.35 0.10 45)", "oklch(0.48 0.13 45)", "oklch(0.62 0.15 45)", "oklch(0.72 0.12 45)", "oklch(0.82 0.09 45)", "oklch(0.90 0.06 45)", "oklch(0.96 0.03 45)"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Console Dark", "canonical": "oklch(0.18 0.002 90)", "tonalRamp": ["oklch(0.10 0.001 90)", "oklch(0.14 0.002 90)", "oklch(0.18 0.002 90)", "oklch(0.24 0.002 90)", "oklch(0.35 0.003 90)", "oklch(0.55 0.003 90)", "oklch(0.75 0.002 90)", "oklch(0.95 0.001 90)"] },
+      "neutral-surface": { "role": "neutral", "displayName": "Workspace Surface", "canonical": "oklch(0.22 0.002 90)", "tonalRamp": ["oklch(0.12 0.001 90)", "oklch(0.16 0.002 90)", "oklch(0.22 0.002 90)", "oklch(0.28 0.002 90)", "oklch(0.40 0.003 90)", "oklch(0.60 0.003 90)", "oklch(0.80 0.002 90)", "oklch(0.97 0.001 90)"] },
+      "neutral-ink": { "role": "neutral", "displayName": "Warm White", "canonical": "oklch(0.98 0.002 90)", "tonalRamp": ["oklch(0.15 0.001 90)", "oklch(0.30 0.002 90)", "oklch(0.50 0.002 90)", "oklch(0.70 0.002 90)", "oklch(0.85 0.002 90)", "oklch(0.92 0.002 90)", "oklch(0.95 0.002 90)", "oklch(0.98 0.002 90)"] },
+      "border": { "role": "neutral", "displayName": "Charcoal Border", "canonical": "oklch(0.32 0.003 90)", "tonalRamp": ["oklch(0.15 0.001 90)", "oklch(0.20 0.002 90)", "oklch(0.26 0.002 90)", "oklch(0.32 0.003 90)", "oklch(0.45 0.003 90)", "oklch(0.65 0.002 90)", "oklch(0.85 0.001 90)", "oklch(0.95 0.001 90)"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Hero and section titles." },
-      "body": { "displayName": "Body", "purpose": "Prose and descriptions." }
+      "display": { "displayName": "Display", "purpose": "Serif exhibition headings." },
+      "body": { "displayName": "Body", "purpose": "Standard reading text." },
+      "mono": { "displayName": "Monospace", "purpose": "CLI inputs, commands, dates, and parameters." }
     },
-    "shadows": [
-      { "name": "paper-lift", "value": "0 4px 16px rgba(44, 49, 45, 0.04)", "purpose": "Subtle paper edge separation." }
-    ],
+    "shadows": [],
     "motion": [
-      { "name": "fade-in", "value": "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Smooth page element reveal." }
+      { "name": "blink", "value": "blink 1s step-end infinite", "purpose": "Console cursor blinking animation." }
     ],
     "breakpoints": [
       { "name": "sm", "value": "640px" },
@@ -30,43 +28,43 @@
   },
   "components": [
     {
+      "name": "Terminal Window",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Used to showcase CLI commands and structured timeline/concept listings.",
+      "html": "<div class=\"ds-terminal\"><div class=\"ds-terminal-header\"><span class=\"dot dot-red\"></span><span class=\"dot dot-yellow\"></span><span class=\"dot dot-green\"></span><span class=\"title\">rere-records --init</span></div><div class=\"ds-terminal-body\"><p class=\"prompt\">$ npx rere-records --start</p><p class=\"output\">Initializing sustainable design environment...</p></div></div>",
+      "css": ".ds-terminal { background: #141413; border: 1px solid #3a3935; border-radius: 6px; overflow: hidden; font-family: 'JetBrains Mono', monospace; } .ds-terminal-header { background: #1e1e1d; border-bottom: 1px solid #3a3935; padding: 10px 16px; display: flex; align-items: center; gap: 8px; } .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; } .dot-red { background: #ff5f56; } .dot-yellow { background: #ffbd2e; } .dot-green { background: #27c93f; } .title { color: #faf9f5; font-size: 0.8rem; margin: 0 auto 0 8px; opacity: 0.8; } .ds-terminal-body { padding: 20px; color: #faf9f5; font-size: 0.85rem; line-height: 1.5; } .prompt { color: #d97757; margin: 0 0 8px 0; } .output { color: #788c5d; margin: 0; }"
+    },
+    {
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Used for main calls to action.",
-      "html": "<button class=\"ds-btn-primary\">GET INVOLVED</button>",
-      "css": ".ds-btn-primary { background: #425848; color: #F5F7F4; font-family: 'EB Garamond', serif; font-size: 1rem; font-weight: 500; border: none; border-radius: 2px; padding: 12px 32px; letter-spacing: 0.05em; cursor: pointer; transition: background-color 0.25s ease, transform 0.25s ease; } .ds-btn-primary:hover { background-color: #2C312D; transform: translateY(-1px); }"
-    },
-    {
-      "name": "Standard Card",
-      "kind": "card",
-      "refersTo": "card",
-      "description": "Used for content details and timeline elements.",
-      "html": "<div class=\"ds-card\"><h3>The Concept</h3><p>Breathing new life into 100 discarded vinyl records.</p></div>",
-      "css": ".ds-card { background: #FAFBF9; border: 1px solid #D5D8D3; border-radius: 4px; padding: 32px; font-family: 'Alegreya Sans', sans-serif; } .ds-card h3 { font-family: 'EB Garamond', serif; font-size: 1.5rem; margin-top: 0; margin-bottom: 12px; color: #2C312D; } .ds-card p { font-size: 1rem; color: #2C312D; opacity: 0.8; line-height: 1.6; margin: 0; }"
+      "description": "Terminal styled CTA button.",
+      "html": "<button class=\"ds-btn-primary\">rere-records --join</button>",
+      "css": ".ds-btn-primary { background: #d97757; color: #141413; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; font-weight: 500; border: none; border-radius: 3px; padding: 10px 24px; cursor: pointer; transition: background-color 0.2s, color 0.2s; } .ds-btn-primary:hover { background-color: #faf9f5; color: #141413; }"
     }
   ],
   "narrative": {
-    "northStar": "The Seed Paper Chronicle",
-    "overview": "A design philosophy that is organic, textured, and deeply human. Rather than presenting a clean, sterile, or corporate face, this system acts like hand-pressed recycled paper containing embedded seeds: raw, slightly imperfect, and carrying the potential for new growth. It is quiet, warm, and natural.",
+    "northStar": "The Terminal Canvas",
+    "overview": "Blends the physical texturing of our RERE-CORDS main visual with the clean, structured, and developer-forward console layout of Claude Code. It treats the website as a developer utility interface, featuring command prompts, monospaced details, high-contrast typography, and partner logos.",
     "keyCharacteristics": [
-      "Organic Hue-Tinting: background tinted gently toward sustainable sage-green.",
-      "Classic Typography Weight: Serif display headings paired with humanist sans-serif body copy.",
-      "Textured Borders & Frames: Thin double-ruled borders and offsets instead of heavy box shadows."
+      "Panoramic Texture: background image fixed with dark gradient overlay.",
+      "Terminal Consoles: structured CLI frames for layout and details.",
+      "Typographic Hierarchy: JetBrains Mono, Work Sans, and EB Garamond."
     ],
     "rules": [
-      { "name": "The Sage-Tint Rule", "body": "The background of any page or element must be tinted toward the sage hue (145 degrees) rather than default orange-yellow warmth.", "section": "colors" },
-      { "name": "The High Contrast Rule", "body": "All readable text must maintain a contrast ratio of ≥4.5:1 against the background surface.", "section": "colors" }
+      { "name": "The Panoramic Overlay Rule", "body": "The full-bleed background image must be covered by a dark linear gradient overlay to ensure all text retains a contrast ratio of ≥4.5:1.", "section": "colors" },
+      { "name": "The Mono Tagging Rule", "body": "All metadata, dates, buttons, and short kickers must use JetBrains Mono, styled in lowercase or uppercase with spacing.", "section": "typography" }
     ],
     "dos": [
-      "Do use oklch syntax in stylesheets for color adjustments.",
-      "Do ensure line length for readable copy is constrained to 65-75ch.",
-      "Do frame the custom main visual in a vintage-style double border."
+      "Do write commands and prompt indicators ($) in JetBrains Mono.",
+      "Do use thin solid borders to define section content.",
+      "Do display partner logos in both the navigation bar and the footer."
     ],
     "donts": [
-      "Don't use side-stripe borders.",
-      "Don't use tiny uppercase tracked eyebrows above every single section.",
-      "Don't use gradient text or neon/cyberpunk colors."
+      "Don't use standard shadows or card gradients.",
+      "Don't use large rounded corners.",
+      "Don't overlay bright text directly on the visual background without the dark overlay screen."
     ]
   }
 }

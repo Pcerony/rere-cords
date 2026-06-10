@@ -1,6 +1,6 @@
 /* ==========================================================================
    RERE-CORDS CSS Stylesheet
-   Theme: Humanistic Retro (Parchment Cream, Sage Green, Terracotta Rust)
+   Theme: Claude Code / Anthropic Developer Console (Dark Terminal Style)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -10,25 +10,25 @@
     /* Fonts */
     --font-header: 'EB Garamond', 'Noto Serif SC', 'Noto Serif JP', Georgia, serif;
     --font-body: 'Alegreya Sans', 'Noto Sans SC', 'Noto Sans JP', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 
-    /* Color Palette */
-    --color-bg-base: #F5F7F4;          /* Sage-Gray Off-White (oklch(0.97 0.008 145)) */
-    --color-bg-card: #FAFBF9;          /* Ivory Paper (oklch(0.99 0.004 145)) */
-    --color-border: #D5D8D3;           /* Pressed Border (oklch(0.88 0.01 145)) */
-    --color-border-hover: #BCC0B8;     /* Darker pressed border */
+    /* Color Palette (Anthropic Inspired Muted Earthy Tones) */
+    --color-bg-base: #141413;          /* Console Dark Background */
+    --color-bg-card: #1e1e1d;          /* Workspace Surface */
+    --color-border: #3a3935;           /* Charcoal Border */
+    --color-border-hover: #52504b;     /* Light Border Hover */
     
-    --color-primary: #425848;          /* Sustainable Sage Green (oklch(0.45 0.08 145)) */
-    --color-primary-light: #E9ECE7;    /* Light Sage tint */
-    --color-secondary: #BE745B;        /* Terracotta Rust (oklch(0.60 0.13 45)) */
-    --color-secondary-dark: #9C523B;   /* Baked Soil (oklch(0.48 0.11 45)) */
-    --color-secondary-light: #FAF2EF;  /* Light Terracotta tint */
+    --color-primary: #788c5d;          /* Sustainable Sage Green */
+    --color-primary-light: rgba(120, 140, 93, 0.12);
+    --color-secondary: #d97757;        /* Terracotta Orange */
+    --color-secondary-light: rgba(217, 119, 87, 0.1);
     
-    --color-text-main: #2C312D;        /* Charcoal Ink (oklch(0.24 0.01 145)) */
-    --color-text-muted: #59615B;       /* Muted Charcoal */
+    --color-text-main: #faf9f5;        /* Warm White Ink */
+    --color-text-muted: #8e8d85;       /* Muted Stone */
     
     /* Transitions */
-    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-fast: all 0.2s ease;
+    --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.15s ease;
 }
 
 * {
@@ -49,34 +49,32 @@ html {
 body {
     overflow-x: hidden;
     position: relative;
-    line-height: 1.7;
+    line-height: 1.65;
+    background: url('./素材/主视觉.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #0c0c0b;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* --------------------------------------------------------------------------
-   2. Retro Paper Texture Simulation
-   -------------------------------------------------------------------------- */
-.paper-texture {
+body::before {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 9999;
+    background-color: rgba(12, 12, 11, 0.55);
+    z-index: -1;
     pointer-events: none;
-    opacity: 0.04;
-    background-image: radial-gradient(var(--color-text-main) 0.5px, transparent 0.5px),
-                      radial-gradient(var(--color-text-main) 0.5px, var(--color-bg-base) 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-fast);
 }
 
 /* --------------------------------------------------------------------------
-   3. Header & Navigation (Warm Vintage Glass)
+   2. Header & Navigation (Developer Style transparent header)
    -------------------------------------------------------------------------- */
 #main-header {
     position: fixed;
@@ -84,80 +82,89 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--color-border);
-    background-color: rgba(250, 247, 240, 0.85);
+    background-color: rgba(20, 20, 19, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     transition: var(--transition-fast);
 }
 
 .header-container {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 1.25rem 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Logo Group containing partner logos */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
 .logo {
     font-family: var(--font-header);
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     letter-spacing: -0.01em;
+    color: var(--color-text-main);
 }
 
 .logo-accent {
     color: var(--color-secondary);
-    margin-right: 2px;
+    margin-right: 1px;
+}
+
+/* Partner logos inside header */
+.partner-logos {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-left: 1px solid var(--color-border);
+    padding-left: 1.25rem;
+}
+
+.header-partner-logo {
+    height: 26px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(0.9);
+    opacity: 0.65;
+    transition: var(--transition-fast);
+}
+
+.header-partner-logo:hover {
+    filter: none;
+    opacity: 1;
 }
 
 #nav-menu {
     display: flex;
     align-items: center;
-    gap: 2.25rem;
+    gap: 2rem;
 }
 
 .nav-link {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 400;
     color: var(--color-text-muted);
     transition: var(--transition-fast);
-    position: relative;
     padding: 0.25rem 0;
+    text-transform: lowercase;
+}
+
+.nav-link::before {
+    content: '.';
+    color: var(--color-secondary);
+    margin-right: 2px;
 }
 
 .nav-link:hover {
     color: var(--color-text-main);
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--color-primary);
-    transition: var(--transition-fast);
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.btn-secondary-nav {
-    border: 1px solid var(--color-border);
-    padding: 0.45rem 1.25rem;
-    border-radius: 4px;
-    transition: var(--transition-fast);
-    background-color: transparent;
-}
-
-.btn-secondary-nav:hover {
-    background-color: var(--color-primary);
-    color: var(--color-bg-base);
-    border-color: var(--color-primary);
 }
 
 .header-controls {
@@ -166,26 +173,25 @@ a {
     gap: 1.5rem;
 }
 
-/* Bilingual Language Toggler */
+/* Bilingual Language Toggler (Console style) */
 .lang-switch-container {
     display: inline-flex;
     align-items: center;
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     color: var(--color-text-muted);
     border: 1px solid var(--color-border);
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
-    background-color: rgba(255,255,255,0.4);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--rounded-sm, 3px);
+    background-color: rgba(255,255,255,0.03);
 }
 
 .lang-btn {
     background: none;
     border: none;
     cursor: pointer;
-    font-weight: 600;
     color: inherit;
-    padding: 0 0.4rem;
+    padding: 0 0.25rem;
     transition: var(--transition-fast);
 }
 
@@ -195,6 +201,7 @@ a {
 
 .lang-btn.active {
     color: var(--color-secondary);
+    font-weight: 700;
 }
 
 .lang-divider {
@@ -209,347 +216,412 @@ a {
     border: none;
     color: var(--color-text-main);
     cursor: pointer;
-    font-size: 1.4rem;
 }
 
 /* --------------------------------------------------------------------------
-   4. Buttons & UI Elements
+   3. Buttons & Badges (Terminal Style)
    -------------------------------------------------------------------------- */
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.8rem 2.25rem;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    font-weight: 600;
+    gap: 0.5rem;
+    padding: 0.7rem 1.75rem;
+    border-radius: var(--rounded-sm, 3px);
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
     cursor: pointer;
     transition: var(--transition-smooth);
-    font-family: var(--font-header);
     border: 1px solid transparent;
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     color: var(--color-bg-base);
+    font-weight: 500;
 }
 
 .btn-primary:hover {
     background-color: var(--color-text-main);
-    transform: translateY(-2px);
+    color: var(--color-bg-base);
+    transform: translateY(-1px);
 }
 
-.btn-outline {
-    background-color: transparent;
-    color: var(--color-text-main);
-    border: 1px solid var(--color-border);
-}
-
-.btn-outline:hover {
-    background-color: rgba(0,0,0,0.03);
-    border-color: var(--color-text-main);
-    transform: translateY(-2px);
-}
-
-/* Badges */
 .sdg-badge {
     display: inline-flex;
     align-items: center;
     background-color: var(--color-primary-light);
     border: 1px solid var(--color-border);
-    padding: 0.4rem 1rem;
-    border-radius: 4px;
-    margin-bottom: 2rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--rounded-sm, 3px);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
 }
 
 .badge-icon {
-    background-color: var(--color-primary);
-    color: var(--color-bg-base);
+    color: var(--color-primary);
     font-weight: 700;
     font-size: 0.75rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 2px;
-    margin-right: 0.6rem;
-    font-family: var(--font-body);
+    margin-right: 0.5rem;
 }
 
 .badge-text {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-primary);
+    font-size: 0.75rem;
+    color: var(--color-text-main);
+    opacity: 0.8;
 }
 
 /* --------------------------------------------------------------------------
-   5. Hero Section
+   4. Hero Section (Centered Terminal Layout)
    -------------------------------------------------------------------------- */
 #hero {
     min-height: 100vh;
-    padding-top: 130px;
+    padding-top: 140px;
+    padding-bottom: 60px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.hero-container {
-    max-width: 1140px;
+.hero-container-centered {
+    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 4.5rem;
-    align-items: center;
-}
-
-.hero-content {
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+}
+
+/* Terminal Console Box */
+.terminal-window {
+    background-color: var(--color-bg-base);
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md, 6px);
     width: 100%;
+    max-width: 620px;
+    margin-bottom: 3.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+
+.terminal-header {
+    background-color: var(--color-bg-card);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.65rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.terminal-title {
+    font-family: var(--font-mono);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    margin-left: 10px;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.cli-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.prompt {
+    color: var(--color-secondary);
+    user-select: none;
+}
+
+.command {
+    color: var(--color-text-main);
+}
+
+.cli-output {
+    color: var(--color-primary);
+    opacity: 0.95;
+    padding-left: 1rem;
+    border-left: 1px solid var(--color-border);
+}
+
+/* Terminal Panel Containers for Sections */
+.terminal-panel {
+    background-color: rgba(26, 26, 25, 0.88); /* Muted Console Dark with transparency */
+    border: 1px solid var(--color-border);
+    border-radius: var(--rounded-md, 6px);
+    width: 100%;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.terminal-panel .terminal-header {
+    background-color: rgba(18, 18, 17, 0.95);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terminal-panel .terminal-body {
+    padding: 3.5rem 3rem;
+}
+
+.terminal-panel .section-header {
+    text-align: left;
+    margin-bottom: 3rem;
+    border-bottom: 1px dashed var(--color-border);
+    padding-bottom: 2rem;
+}
+
+.terminal-panel .section-lead {
+    margin: 0;
+}
+
+/* Hero Partners Banner */
+.hero-partners {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: 1px dashed var(--color-border);
+    padding-top: 1.75rem;
+    width: 100%;
+    max-width: 450px;
+}
+
+.partners-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: lowercase;
+}
+
+.partners-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hero-partner-logo {
+    height: 32px;
+    width: auto;
+    filter: grayscale(1) brightness(1.2) contrast(0.8);
+    opacity: 0.65;
+    transition: var(--transition-fast);
+}
+
+.hero-partner-logo:hover {
+    filter: none;
+    opacity: 1;
+}
+
+/* Brand Overlays */
+.hero-brand-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-title {
     font-family: var(--font-header);
-    font-size: 4.5rem;
-    font-weight: 900;
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 700;
     line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.75rem;
     color: var(--color-text-main);
 }
 
 .hero-subtitle {
     font-family: var(--font-header);
-    font-size: 1.75rem;
-    font-weight: 600;
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+    font-weight: 400;
     line-height: 1.4;
     margin-bottom: 1.5rem;
     color: var(--color-text-muted);
-}
-
-.highlight-text {
-    color: var(--color-secondary);
-    border-bottom: 2px solid var(--color-secondary);
-    padding-bottom: 2px;
+    font-style: italic;
 }
 
 .hero-description {
     color: var(--color-text-muted);
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 2.5rem;
-    max-width: 520px;
-    line-height: 1.8;
+    max-width: 580px;
+    line-height: 1.75;
 }
 
 .hero-actions {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
-
-.hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-image-frame {
-    position: relative;
-    width: 100%;
-    max-width: 380px;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    padding: 8px;
-    background-color: var(--color-bg-card);
-    box-shadow: 0 0 0 4px var(--color-bg-base), 
-                0 0 0 5px var(--color-border), 
-                0 15px 35px rgba(45, 45, 42, 0.07);
-    transition: var(--transition-smooth);
-    cursor: pointer;
-}
-
-.hero-image-frame::before {
-    content: '';
-    position: absolute;
-    top: 13px;
-    left: 13px;
-    right: 13px;
-    bottom: 13px;
-    border: 1px dashed rgba(45, 45, 42, 0.08);
-    pointer-events: none;
-    z-index: 2;
-}
-
-.hero-main-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 2px;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-image-frame:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 0 4px var(--color-bg-base), 
-                0 0 0 5px var(--color-primary), 
-                0 20px 40px rgba(74, 93, 78, 0.12);
-    border-color: var(--color-primary);
-}
-
-.hero-image-frame:hover .hero-main-img {
-    transform: scale(1.02);
-}
-
-
 
 /* --------------------------------------------------------------------------
-   7. Sections Layout Common
+   5. Sections Layout Common
    -------------------------------------------------------------------------- */
 section {
-    padding: 90px 0;
+    padding: 100px 0;
     position: relative;
 }
 
 .section-container {
-    max-width: 1140px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .section-header {
     text-align: center;
-    max-width: 650px;
-    margin: 0 auto 4.5rem auto;
-}
-
-.section-tag {
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: var(--color-primary);
-    display: inline-block;
-    margin-bottom: 0.75rem;
+    margin-bottom: 4rem;
 }
 
 .section-title {
     font-family: var(--font-header);
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.25;
-    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
     color: var(--color-text-main);
 }
 
 .section-lead {
     color: var(--color-text-muted);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* --------------------------------------------------------------------------
-   8. Concept / About Section
+   6. Concept Section (Asymmetric Typographic Console List)
    -------------------------------------------------------------------------- */
 .concept-list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 5rem;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
 }
 
 .concept-item {
-    background-color: var(--color-bg-card);
+    background-color: rgba(30, 30, 29, 0.68);
     border: 1px solid var(--color-border);
-    border-radius: 4px;
-    padding: 2.5rem 3rem;
+    border-radius: var(--rounded-md, 6px);
+    padding: 2.25rem;
     display: grid;
-    grid-template-columns: 0.7fr 1.3fr;
-    gap: 3rem;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
     align-items: center;
     transition: var(--transition-smooth);
     position: relative;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .concept-item::before {
     content: '';
     position: absolute;
-    top: 6px;
-    left: 6px;
-    right: 6px;
-    bottom: 6px;
-    border: 1px dashed var(--color-border);
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed rgba(255,255,255,0.03);
     pointer-events: none;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .concept-item:hover {
-    transform: translateY(-2px);
     border-color: var(--color-primary);
 }
 
 .concept-meta {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    font-family: var(--font-mono);
 }
 
 .concept-num {
-    font-family: var(--font-header);
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: var(--oklch-secondary, var(--color-secondary));
-    opacity: 0.8;
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
 .concept-item h3 {
     font-family: var(--font-header);
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--color-text-main);
-    line-height: 1.3;
 }
 
 .concept-body p {
     color: var(--color-text-muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.7;
-    margin: 0;
 }
 
 .about-details-box {
-    background-color: var(--color-bg-card);
+    background-color: rgba(30, 30, 29, 0.68);
     border: 1px solid var(--color-border);
-    border-radius: 4px;
-    padding: 3.5rem;
+    border-radius: var(--rounded-md, 6px);
+    padding: 3rem;
     position: relative;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .about-details-box::before {
     content: '';
     position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    border: 1px dashed var(--color-border);
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 1px dashed rgba(255,255,255,0.03);
     pointer-events: none;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .about-text-content h3 {
     font-family: var(--font-header);
-    font-size: 1.7rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .about-text-content p {
     color: var(--color-text-muted);
-    margin-bottom: 2.5rem;
-    font-size: 0.95rem;
-    line-height: 1.8;
+    margin-bottom: 2.25rem;
+    font-size: 0.9rem;
+    line-height: 1.75;
 }
 
 .quick-stats {
     display: flex;
-    gap: 4rem;
+    gap: 3.5rem;
     border-top: 1px dashed var(--color-border);
     padding-top: 2rem;
 }
@@ -560,21 +632,20 @@ section {
 }
 
 .stat-num {
-    font-family: var(--font-header);
-    font-size: 2rem;
+    font-family: var(--font-mono);
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--color-secondary);
-    line-height: 1.2;
 }
 
 .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--color-text-muted);
     margin-top: 0.25rem;
 }
 
 /* --------------------------------------------------------------------------
-   9. Official Poster Section (Wood/Parchment Frame)
+   7. Official Poster Section
    -------------------------------------------------------------------------- */
 .poster-display-container {
     display: flex;
@@ -584,32 +655,20 @@ section {
 
 .poster-frame {
     position: relative;
-    max-width: 550px;
-    border-radius: 4px;
+    max-width: 480px;
+    border-radius: var(--rounded-md, 6px);
     overflow: hidden;
-    border: 12px solid #E3DCD0; /* Elegant light-wood style framing */
-    box-shadow: 0 10px 30px rgba(45, 45, 42, 0.08);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
     transition: var(--transition-smooth);
     cursor: pointer;
-}
-
-.poster-frame::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 1px solid rgba(45, 45, 42, 0.1);
-    z-index: 4;
-    pointer-events: none;
 }
 
 .poster-img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .poster-overlay {
@@ -617,38 +676,36 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(250, 247, 240, 0.95) 0%, rgba(250, 247, 240, 0.85) 60%, transparent 100%);
-    padding: 2.5rem 2rem 1.5rem 2rem;
+    background: linear-gradient(to top, rgba(20, 20, 19, 0.95) 0%, rgba(20, 20, 19, 0.85) 60%, transparent 100%);
+    padding: 2rem 1.5rem 1.25rem 1.5rem;
     z-index: 3;
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(10px);
     transition: var(--transition-smooth);
-    border-top: 1px solid rgba(45,45,42,0.05);
+    border-top: 1px solid rgba(255,255,255,0.03);
 }
 
 .poster-overlay-content h3 {
     font-family: var(--font-header);
-    font-size: 1.35rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--color-secondary);
 }
 
 .poster-overlay-content p {
     color: var(--color-text-main);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
 }
 
 /* Hover States */
 .poster-frame:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(45, 45, 42, 0.12);
-    border-color: #D2C7B7;
+    border-color: var(--color-primary);
 }
 
 .poster-frame:hover .poster-img {
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
 .poster-frame:hover .poster-overlay {
@@ -657,18 +714,18 @@ section {
 }
 
 /* --------------------------------------------------------------------------
-   10. Timeline Section (Classic Minimalist Print)
+   8. Timeline Section (Git Branch Console Style)
    -------------------------------------------------------------------------- */
 .timeline-wrapper {
     position: relative;
-    max-width: 780px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .timeline-line {
     position: absolute;
-    left: 20px;
+    left: 18px;
     top: 0;
     bottom: 0;
     width: 1px;
@@ -677,11 +734,11 @@ section {
 
 .timeline-item {
     position: relative;
-    padding-left: 60px;
-    margin-bottom: 3.5rem;
+    padding-left: 50px;
+    margin-bottom: 3rem;
     opacity: 0.35;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(15px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .timeline-item.visible {
@@ -696,9 +753,9 @@ section {
 .timeline-marker {
     position: absolute;
     left: 7px;
-    top: 5px;
-    width: 27px;
-    height: 27px;
+    top: 6px;
+    width: 23px;
+    height: 23px;
     border-radius: 50%;
     background-color: var(--color-bg-base);
     border: 1px solid var(--color-border);
@@ -706,9 +763,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: var(--font-header);
-    font-weight: 700;
-    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
     z-index: 5;
     transition: var(--transition-smooth);
 }
@@ -719,17 +775,19 @@ section {
     color: var(--color-bg-base);
 }
 
-/* Step specific colors */
+/* Commit marker highlights */
 #timeline-step-2.visible .timeline-marker { background-color: var(--color-secondary); border-color: var(--color-secondary); }
-#timeline-step-3.visible .timeline-marker { background-color: #6C5B7B; border-color: #6C5B7B; }
+#timeline-step-3.visible .timeline-marker { background-color: #6a9bcc; border-color: #6a9bcc; }
 #timeline-step-4.visible .timeline-marker { background-color: var(--color-text-main); border-color: var(--color-text-main); }
 
 .timeline-content-card {
-    background-color: var(--color-bg-card);
+    background-color: rgba(30, 30, 29, 0.68);
     border: 1px solid var(--color-border);
-    border-radius: 4px;
-    padding: 2rem;
+    border-radius: var(--rounded-md, 6px);
+    padding: 1.75rem;
     transition: var(--transition-smooth);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .timeline-content-card:hover {
@@ -738,44 +796,40 @@ section {
 
 .timeline-date {
     display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     color: var(--color-primary);
     margin-bottom: 0.5rem;
-    text-transform: uppercase;
 }
 
 #timeline-step-2 .timeline-date { color: var(--color-secondary); }
-#timeline-step-3 .timeline-date { color: #6C5B7B; }
+#timeline-step-3 .timeline-date { color: #6a9bcc; }
 #timeline-step-4 .timeline-date { color: var(--color-text-main); }
 
 .timeline-content-card h3 {
     font-family: var(--font-header);
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .timeline-content-card p {
     color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.65;
 }
 
-
-
 /* --------------------------------------------------------------------------
-   12. Footer
+   9. Footer
    -------------------------------------------------------------------------- */
 #main-footer {
     border-top: 1px solid var(--color-border);
-    background-color: var(--color-bg-card);
-    padding: 4.5rem 0 2rem 0;
+    background-color: rgba(20, 20, 19, 0.95);
+    padding: 4rem 0 2rem 0;
 }
 
 .footer-container {
-    max-width: 1140px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -785,12 +839,12 @@ section {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .footer-info h3 {
     font-family: var(--font-header);
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--color-text-main);
@@ -798,7 +852,7 @@ section {
 
 .footer-info p {
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     max-width: 500px;
     margin-bottom: 1.5rem;
 }
@@ -809,20 +863,42 @@ section {
     justify-content: center;
     gap: 0.75rem;
     flex-wrap: wrap;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .coorganizers span:first-child {
     color: var(--color-text-muted);
-    font-weight: 600;
 }
 
 .partner-tag {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--color-border);
-    padding: 0.2rem 0.65rem;
-    border-radius: 4px;
-    font-weight: 500;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--rounded-sm, 3px);
+    color: var(--color-text-muted);
+}
+
+/* Footer partner logos */
+.footer-partner-logos {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    border-left: 1px solid var(--color-border);
+    padding-left: 1rem;
+}
+
+.footer-partner-logo {
+    height: 20px;
+    width: auto;
+    filter: brightness(0) invert(0.8);
+    opacity: 0.5;
+    transition: var(--transition-fast);
+}
+
+.footer-partner-logo:hover {
+    filter: none;
+    opacity: 0.8;
 }
 
 .footer-bottom {
@@ -832,23 +908,17 @@ section {
 }
 
 .footer-bottom p {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--color-text-muted);
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 /* --------------------------------------------------------------------------
-   13. Responsive Styles (Media Queries)
+   10. Responsive Styles (Media Queries)
    -------------------------------------------------------------------------- */
-
 @media (max-width: 1024px) {
     .hero-title {
         font-size: 3.5rem;
-    }
-
-    .quick-stats {
-        justify-content: center;
-        gap: 2.5rem;
     }
 }
 
@@ -878,33 +948,51 @@ section {
         display: flex;
     }
 
+    .partner-logos {
+        padding-left: 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .header-partner-logo {
+        height: 22px;
+    }
+
     .section-title {
-        font-size: 2.1rem;
+        font-size: 1.8rem;
     }
 
     .concept-item {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 2rem;
+        gap: 1rem;
+        padding: 1.75rem;
     }
 
     .concept-meta {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
+        gap: 0.25rem;
     }
 
     .timeline-line {
-        left: 14px;
+        left: 11px;
     }
 
     .timeline-item {
-        padding-left: 40px;
-        margin-bottom: 2.5rem;
+        padding-left: 35px;
+        margin-bottom: 2rem;
     }
 
     .timeline-marker {
         left: 0px;
+    }
+
+    .footer-partner-logos {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        margin-top: 0.5rem;
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -916,7 +1004,7 @@ section {
     .hero-actions {
         flex-direction: column;
         width: 100%;
-        gap: 1rem;
+        gap: 0.75rem;
     }
 
     .hero-actions .btn {
@@ -927,6 +1015,6 @@ section {
     .quick-stats {
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 }

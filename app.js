@@ -29,6 +29,34 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "负责任消费和生产",
             "ja": "つくる責任 つかう責任"
         },
+        "cli-title": {
+            "zh": "rere-records --status",
+            "ja": "rere-records --status"
+        },
+        "cli-title-concept": {
+            "zh": "rere-records --concept",
+            "ja": "rere-records --concept"
+        },
+        "cli-title-poster": {
+            "zh": "rere-records --poster",
+            "ja": "rere-records --poster"
+        },
+        "cli-title-timeline": {
+            "zh": "rere-records --timeline",
+            "ja": "rere-records --timeline"
+        },
+        "cli-command": {
+            "zh": "npx rere-records --init",
+            "ja": "npx rere-records --init"
+        },
+        "cli-output": {
+            "zh": "[status] 100 analog records loaded.<br>[target] SDG12: Responsible Consumption and Production.<br>[environment] Kyushu University Ohashi Campus.",
+            "ja": "[status] 100 analog records loaded.<br>[target] SDG12: Responsible Consumption and Production.<br>[environment] Kyushu University Ohashi Campus."
+        },
+        "hero-partners-label": {
+            "zh": "联合主办 & 协办",
+            "ja": "主催・共催・協力"
+        },
         "hero-subtitle": {
             "zh": "让废旧黑胶，在温热的重构中重生",
             "ja": "役割を終えた盤面に、もう一度温度を与える"
@@ -111,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "title-timeline": {
             "zh": "日程进程",
-            "ja": "プロジェクト of 歩み"
+            "ja": "プロジェクトの歩み"
         },
         "lead-timeline": {
             "zh": "从夏日分发自主制作，至深秋成果展览。",
