@@ -1,6 +1,6 @@
 /* ==========================================================================
    RERE-CORDS CSS Stylesheet
-   Theme: Retro-Humanist Editorial Art Exhibition
+   Theme: Extreme Minimalist Art Exhibition
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -12,24 +12,24 @@
     --font-body: 'Alegreya Sans', 'Noto Sans SC', 'Noto Sans JP', -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    /* Light High-Contrast Editorial Color Palette */
+    /* Minimalist Editorial Color Palette */
     --color-bg-base: #f5f4f0;          /* Warm Paper White */
     --color-bg-card: #ffffff;          /* Crisp White Card Surface */
-    --color-border: #141413;           /* Solid Dark Border */
-    --color-border-hover: #c15535;     /* Terracotta hover highlight */
+    --color-border: rgba(20, 20, 19, 0.15); /* Thin Light Border */
+    --color-border-dark: #141413;      /* Solid Dark Ink Border */
     
-    --color-primary: #526647;          /* Sustainable Sage Green (Darker for readability) */
+    --color-primary: #526647;          /* Sage Green */
     --color-primary-light: rgba(82, 102, 71, 0.06);
-    --color-secondary: #c15535;        /* Terracotta Clay Orange (Darker for readability) */
+    --color-secondary: #c15535;        /* Terracotta Clay Orange */
     --color-secondary-light: rgba(193, 85, 53, 0.06);
     
     --color-text-main: #141413;        /* Charcoal Black Ink */
-    --color-text-muted: #5c5a54;       /* Muted Charcoal secondary text */
+    --color-text-muted: #6e6c64;       /* Muted Charcoal secondary text */
     
     /* Spacing & Transitions */
-    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    --rounded-sm: 0px;                 /* Pure flat color block style */
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --rounded-sm: 0px;
     --rounded-md: 0px;
 }
 
@@ -51,7 +51,7 @@ html {
 body {
     overflow-x: hidden;
     position: relative;
-    line-height: 1.65;
+    line-height: 1.7;
     background-color: var(--color-bg-base);
 }
 
@@ -64,7 +64,7 @@ a {
 /* Scroll reveal initial states */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
     transition: var(--transition-smooth);
 }
 
@@ -82,8 +82,8 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 2px solid var(--color-border);
-    background-color: rgba(245, 244, 240, 0.95);
+    border-bottom: 1px solid var(--color-border);
+    background-color: rgba(245, 244, 240, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease;
@@ -97,23 +97,22 @@ a {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.25rem 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Logo Group containing partner logos */
 .logo-group {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .logo {
     font-family: var(--font-header);
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     letter-spacing: -0.01em;
     color: var(--color-text-main);
 }
@@ -123,17 +122,16 @@ a {
     margin-right: 1px;
 }
 
-/* Partner logos inside header */
 .partner-logos {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     border-left: 1px solid var(--color-border);
-    padding-left: 1.5rem;
+    padding-left: 1.25rem;
 }
 
 .header-partner-logo {
-    height: 24px;
+    height: 20px;
     width: auto;
     display: block;
     filter: grayscale(1) brightness(0.2) contrast(1.2);
@@ -149,12 +147,12 @@ a {
 #nav-menu {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2.25rem;
 }
 
 .nav-link {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 400;
     color: var(--color-text-muted);
     letter-spacing: 0.05em;
@@ -168,19 +166,18 @@ a {
 .header-controls {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
-/* Bilingual Language Toggler (Minimalist style) */
 .lang-switch-container {
     display: inline-flex;
     align-items: center;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--color-text-muted);
     border: 1px solid var(--color-border);
-    padding: 0.25rem 0.6rem;
-    background-color: rgba(255,255,255,0.02);
+    padding: 0.2rem 0.5rem;
+    background-color: transparent;
 }
 
 .lang-btn {
@@ -188,7 +185,7 @@ a {
     border: none;
     cursor: pointer;
     color: inherit;
-    padding: 0 0.25rem;
+    padding: 0 0.2rem;
     transition: var(--transition-fast);
 }
 
@@ -203,7 +200,7 @@ a {
 
 .lang-divider {
     color: var(--color-border);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     pointer-events: none;
     margin: 0 0.1rem;
 }
@@ -217,80 +214,91 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   3. Buttons & Badges (Minimalist Humanist)
+   3. Buttons & Badges (Minimalist & Clean)
    -------------------------------------------------------------------------- */
 .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 2rem;
-    font-size: 0.85rem;
+    padding: 0.65rem 1.5rem;
+    font-size: 0.8rem;
     font-family: var(--font-mono);
     cursor: pointer;
-    transition: var(--transition-smooth);
-    border: 2px solid var(--color-border);
+    transition: var(--transition-fast);
+    border: 1px solid var(--color-border-dark);
+    background-color: transparent;
+    color: var(--color-text-main);
+}
+
+.btn:hover {
+    background-color: var(--color-border-dark);
+    color: #ffffff;
 }
 
 .btn-primary {
-    background-color: var(--color-secondary);
+    background-color: var(--color-border-dark);
     color: #ffffff;
-    font-weight: 500;
 }
 
 .btn-primary:hover {
-    background-color: var(--color-bg-base);
+    background-color: transparent;
     color: var(--color-text-main);
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0px var(--color-border);
 }
 
 .sdg-badge {
     display: inline-flex;
     align-items: center;
     background-color: var(--color-primary-light);
-    border: 2px solid var(--color-border);
-    padding: 0.35rem 0.8rem;
-    margin-bottom: 2rem;
+    border: 1px solid rgba(82, 102, 71, 0.2);
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 1.5rem;
     font-family: var(--font-mono);
 }
 
 .badge-icon {
     color: var(--color-primary);
     font-weight: 700;
-    font-size: 0.75rem;
-    margin-right: 0.5rem;
+    font-size: 0.7rem;
+    margin-right: 0.4rem;
 }
 
 .badge-text {
-    font-size: 0.75rem;
-    color: var(--color-text-main);
-    opacity: 0.8;
-    letter-spacing: 0.02em;
+    font-size: 0.7rem;
+    color: var(--color-primary);
+    letter-spacing: 0.01em;
 }
 
 /* --------------------------------------------------------------------------
-   4. Hero Section (Visual Header Banner)
+   4. Hero Section (Full Cover Layout)
    -------------------------------------------------------------------------- */
 #hero {
-    min-height: 80vh;
+    min-height: 90vh;
     position: relative;
-    background-color: var(--color-bg-base);
+    background: url('./素材/主视觉.png') no-repeat center center;
+    background-size: cover;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-top: 140px;
-    padding-bottom: 80px;
-    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 100px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+#hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 19, 0.48); /* Flat overlay for legibility */
+    z-index: 1;
 }
 
 #hero .hero-container {
-    max-width: 1200px;
+    max-width: 800px;
     width: 100%;
     margin: 0 auto;
     padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 4rem;
-    align-items: center;
     position: relative;
     z-index: 2;
 }
@@ -298,66 +306,58 @@ a {
 .hero-brand-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
+}
+
+#hero .sdg-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#hero .badge-icon,
+#hero .badge-text {
+    color: #ffffff;
 }
 
 .hero-title {
     font-family: var(--font-header);
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    font-weight: 800;
+    font-size: clamp(2.75rem, 7vw, 4.25rem);
+    font-weight: 700;
     line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.25rem;
-    color: var(--color-text-main);
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    color: #ffffff;
 }
 
 .hero-subtitle {
     font-family: var(--font-header);
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    font-weight: 500;
-    line-height: 1.4;
+    font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.35;
     margin-bottom: 2rem;
-    color: var(--color-secondary);
-    font-style: normal;
+    color: #f5f4f0;
 }
 
 .hero-description {
-    color: var(--color-text-muted);
-    font-size: 1rem;
+    color: #e5e4e0;
+    font-size: 0.95rem;
     margin-bottom: 0;
-    max-width: 620px;
-    line-height: 1.75;
-}
-
-.hero-image-block {
-    width: 100%;
-    border: 2px solid var(--color-border);
-    box-shadow: 10px 10px 0px var(--color-border);
-    background-color: var(--color-bg-card);
-    overflow: hidden;
-    aspect-ratio: 1.2 / 1;
-}
-
-.hero-img-element {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    max-width: 650px;
+    line-height: 1.8;
+    opacity: 0.9;
 }
 
 /* --------------------------------------------------------------------------
    5. Sections Layout Common
    -------------------------------------------------------------------------- */
 section {
-    padding: 100px 0;
+    padding: 90px 0;
     position: relative;
     background-color: var(--color-bg-base);
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 }
 
-/* Alternating background colors to create clear color blocks */
-#hero { background-color: var(--color-bg-base); }
 #concept { background-color: #ffffff; }
 #poster { background-color: var(--color-bg-base); }
 #timeline { background-color: #ffffff; }
@@ -370,74 +370,76 @@ section {
 
 .section-header {
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4.5rem;
 }
 
 .section-title {
     font-family: var(--font-header);
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 600;
     line-height: 1.25;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: var(--color-text-main);
 }
 
 .section-lead {
     color: var(--color-text-muted);
-    font-size: 1rem;
-    max-width: 600px;
+    font-size: 0.95rem;
+    max-width: 580px;
     margin: 0 auto;
+    line-height: 1.65;
 }
 
 /* --------------------------------------------------------------------------
-   6. Concept Section (Typographic Humanist Cards)
+   6. Concept Section (Extreme Minimalist Layout)
    -------------------------------------------------------------------------- */
 .concept-list {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
-    margin-bottom: 5rem;
+    gap: 1.5rem;
+    margin-bottom: 4.5rem;
 }
 
 .concept-item {
-    background-color: var(--color-bg-card);
-    border: 2px solid var(--color-border);
-    box-shadow: 6px 6px 0px var(--color-border);
-    padding: 2.5rem;
+    background-color: transparent;
+    border: none;
+    padding: 0;
     display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 2rem;
-    align-items: center;
-    transition: var(--transition-smooth);
-    position: relative;
-}
-
-.concept-item:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0px var(--color-border);
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+    align-items: flex-start;
 }
 
 .concept-meta {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem;
 }
 
 .concept-num {
     font-family: var(--font-header);
     color: var(--color-secondary);
     font-weight: 700;
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     line-height: 1;
 }
 
 .concept-item h3 {
+    display: none;
+}
+
+.concept-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.concept-body h3 {
+    display: block;
     font-family: var(--font-header);
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-text-main);
-    margin-top: 0.25rem;
 }
 
 .concept-body p {
@@ -446,67 +448,55 @@ section {
     line-height: 1.7;
 }
 
-/* Stats / Details Panel */
+/* Stats / Details Panel (Completely Flat & Minimalist) */
 .about-details-box {
-    background-color: var(--color-bg-card);
-    border: 2px solid var(--color-border);
-    box-shadow: 8px 8px 0px var(--color-border);
-    padding: 3.5rem 3rem;
-    position: relative;
-}
-
-.about-details-box::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    border: 1px dashed var(--color-border);
-    pointer-events: none;
-    opacity: 0.3;
+    background-color: transparent;
+    border: none;
+    padding: 0;
 }
 
 .about-text-content h3 {
     font-family: var(--font-header);
-    font-size: 1.65rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     color: var(--color-text-main);
 }
 
 .about-text-content p {
     color: var(--color-text-muted);
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     font-size: 0.95rem;
     line-height: 1.75;
 }
 
 .quick-stats {
     display: flex;
-    gap: 4rem;
-    border-top: 1px dashed var(--color-border);
-    padding-top: 2.5rem;
+    gap: 3.5rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 2rem;
 }
 
 .stat-item {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .stat-num {
-    font-family: var(--font-mono);
-    font-size: 1.3rem;
+    font-family: var(--font-header);
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--color-secondary);
+    line-height: 1.1;
 }
 
 .stat-label {
     font-size: 0.75rem;
     color: var(--color-text-muted);
-    margin-top: 0.35rem;
+    margin-top: 0.4rem;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
 }
 
 /* --------------------------------------------------------------------------
@@ -514,13 +504,13 @@ section {
    -------------------------------------------------------------------------- */
 .poster-display-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
 .poster-interactive-wrapper {
     position: relative;
-    max-width: 480px;
+    max-width: 420px;
     width: 100%;
     overflow: visible;
 }
@@ -528,11 +518,10 @@ section {
 .poster-frame {
     position: relative;
     width: 100%;
-    border: 8px solid #1c1c1b;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(20, 20, 19, 0.12);
     transition: var(--transition-smooth);
     cursor: pointer;
-    background-color: #0c0c0b;
+    background-color: #ffffff;
     z-index: 2; /* Render in front of vinyl */
 }
 
@@ -547,13 +536,13 @@ section {
 
 .poster-vinyl {
     position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 80%;
+    top: 8%;
+    left: 8%;
+    width: 84%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background: radial-gradient(circle, #2a2a28 20%, #151514 80%);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     z-index: 1; /* Render behind poster frame */
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
     opacity: 0;
@@ -571,8 +560,8 @@ section {
     height: 100%;
     border-radius: 50%;
     background: repeating-radial-gradient(circle, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 2px, transparent 4px),
-                linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%),
-                linear-gradient(-45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+                linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.04) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(255, 255, 255, 0.04) 50%, transparent 60%);
     pointer-events: none;
 }
 
@@ -587,7 +576,7 @@ section {
     justify-content: center;
     color: var(--color-bg-base);
     font-family: var(--font-mono);
-    font-size: 0.5rem;
+    font-size: 0.45rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -604,65 +593,47 @@ section {
     height: 16%;
     border-radius: 50%;
     background-color: var(--color-bg-base);
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
-.poster-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(20, 20, 19, 0.98) 0%, rgba(20, 20, 19, 0.85) 60%, transparent 100%);
-    padding: 2.5rem 2rem 2rem 2rem;
-    z-index: 3;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: var(--transition-smooth);
-    pointer-events: none;
+.poster-caption {
+    margin-top: 2.5rem;
+    text-align: center;
+    max-width: 480px;
 }
 
-.poster-overlay-content h3 {
+.poster-caption h3 {
     font-family: var(--font-header);
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--color-secondary);
+    color: var(--color-text-main);
 }
 
-.poster-overlay-content p {
-    color: var(--color-text-main);
-    font-size: 0.85rem;
+.poster-caption p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
-/* Hover States */
-.poster-interactive-wrapper:hover .poster-frame {
-    box-shadow: 16px 16px 0px var(--color-border);
-    transform: translate(-4px, -4px);
-}
-
+/* Hover States (Sleek and Elegant) */
 .poster-interactive-wrapper:hover .poster-img {
-    transform: translateX(-28%) rotate(-4deg);
+    transform: translateX(-15%);
 }
 
 .poster-interactive-wrapper:hover .poster-vinyl {
-    transform: translateX(35%) rotate(180deg);
+    transform: translateX(25%) rotate(90deg);
     opacity: 1;
-}
-
-.poster-interactive-wrapper:hover .poster-overlay {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* --------------------------------------------------------------------------
-   8. Timeline Section (Humanist Progress Line)
+   8. Timeline Section (Minimalist Line & Text)
    -------------------------------------------------------------------------- */
 .timeline-wrapper {
     position: relative;
     max-width: 700px;
     margin: 0 auto;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
 }
 
 .timeline-line {
@@ -677,10 +648,10 @@ section {
 .timeline-item {
     position: relative;
     padding-left: 55px;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
     opacity: 0.35;
-    transform: translateY(15px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(10px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .timeline-item.visible {
@@ -694,40 +665,34 @@ section {
 
 .timeline-marker {
     position: absolute;
-    left: 9px;
-    top: 4px;
-    width: 23px;
-    height: 23px;
+    left: 10px;
+    top: 5px;
+    width: 21px;
+    height: 21px;
     border-radius: 50%;
     background-color: var(--color-bg-base);
-    border: 2px solid var(--color-border);
+    border: 1px solid rgba(20, 20, 19, 0.2);
     color: var(--color-text-muted);
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     z-index: 5;
     transition: var(--transition-smooth);
 }
 
 .timeline-item.visible .timeline-marker {
     background-color: var(--color-primary);
-    border-color: var(--color-border);
+    border-color: var(--color-primary);
     color: #ffffff;
 }
 
 .timeline-content-card {
-    background-color: var(--color-bg-card);
-    border: 2px solid var(--color-border);
-    box-shadow: 6px 6px 0px var(--color-border);
-    padding: 2.25rem;
-    transition: var(--transition-smooth);
-}
-
-.timeline-content-card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0px var(--color-border);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    transition: none;
 }
 
 .timeline-date {
@@ -735,15 +700,15 @@ section {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--color-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     letter-spacing: 0.02em;
 }
 
 .timeline-content-card h3 {
     font-family: var(--font-header);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     color: var(--color-text-main);
 }
 
@@ -757,10 +722,10 @@ section {
    9. Footer
    -------------------------------------------------------------------------- */
 #main-footer {
-    border-top: 2px solid var(--color-border);
-    background-color: #141413;
-    color: #f5f4f0;
-    padding: 5rem 0 3rem 0;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    padding: 4.5rem 0 3rem 0;
 }
  
 .footer-container {
@@ -774,60 +739,39 @@ section {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
 }
  
 .footer-info h3 {
     font-family: var(--font-header);
-    font-size: 1.45rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: #f5f4f0;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-main);
 }
  
 .footer-info p {
-    color: #a5a4a0;
-    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
     max-width: 500px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     line-height: 1.6;
 }
- 
-.coorganizers {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    font-size: 0.75rem;
-}
- 
-.coorganizers span:first-child {
-    color: #a5a4a0;
-}
- 
-.partner-tag {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0.2rem 0.6rem;
-    color: #a5a4a0;
-}
- 
-/* Footer partner logos */
+
 .footer-partner-logos {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     margin-left: 1rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-left: 1px solid var(--color-border);
     padding-left: 1rem;
 }
  
 .footer-partner-logo {
-    height: 20px;
+    height: 18px;
     width: auto;
-    filter: grayscale(1) brightness(1.2) contrast(0.8);
-    opacity: 0.5;
+    filter: grayscale(1) brightness(0.2) contrast(1.2);
+    opacity: 0.6;
     transition: var(--transition-fast);
 }
  
@@ -837,15 +781,15 @@ section {
 }
  
 .footer-bottom {
-    border-top: 1px dashed rgba(255, 255, 255, 0.15);
-    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.75rem;
     text-align: center;
 }
  
 .footer-bottom p {
-    font-size: 0.75rem;
-    color: #a5a4a0;
-    opacity: 0.6;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    opacity: 0.7;
 }
 
 /* --------------------------------------------------------------------------
@@ -853,7 +797,7 @@ section {
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
     .hero-title {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 }
 
@@ -872,7 +816,7 @@ section {
         left: 0;
         width: 100%;
         background-color: var(--color-bg-base);
-        border-bottom: 2px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
         flex-direction: column;
         padding: 2.5rem;
         gap: 2rem;
@@ -884,14 +828,7 @@ section {
     }
 
     .hero-container {
-        grid-template-columns: 1fr !important;
-        gap: 2.5rem !important;
-        text-align: center;
-    }
-
-    .hero-brand-card {
-        align-items: center !important;
-        text-align: center !important;
+        padding: 0 1.5rem;
     }
 
     .partner-logos {
@@ -900,17 +837,16 @@ section {
     }
 
     .header-partner-logo {
-        height: 20px;
+        height: 18px;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.85rem;
     }
 
     .concept-item {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
-        padding: 2rem;
+        gap: 1rem;
     }
 
     .concept-meta {
@@ -920,12 +856,12 @@ section {
     }
 
     .timeline-line {
-        left: 12px;
+        left: 10px;
     }
 
     .timeline-item {
         padding-left: 40px;
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
     }
 
     .timeline-marker {
@@ -944,23 +880,12 @@ section {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 3rem;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.75rem;
-    }
-
-    .hero-actions .btn {
-        width: 100%;
-        justify-content: center;
+        font-size: 2.5rem;
     }
 
     .quick-stats {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 1.5rem;
     }
 }
