@@ -361,8 +361,8 @@ section {
 
 #concept { background-color: #ffffff; }
 #poster { background-color: var(--color-bg-base); }
-#apply { background-color: #ffffff; }
-#timeline { background-color: var(--color-bg-base); }
+#timeline { background-color: #ffffff; }
+#apply { background-color: var(--color-bg-base); }
 
 .section-container {
     max-width: 800px;
