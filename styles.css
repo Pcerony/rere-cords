@@ -766,15 +766,8 @@ section {
 }
  
 .footer-partner-logo {
-    height: 18px;
+    height: 22px;
     width: auto;
-    filter: grayscale(1) brightness(0.2) contrast(1.2);
-    opacity: 0.6;
-    transition: var(--transition-fast);
-}
- 
-.footer-partner-logo:hover {
-    filter: none;
     opacity: 1;
 }
  
