@@ -394,6 +394,14 @@ section {
 /* --------------------------------------------------------------------------
    6. Concept Section (Extreme Minimalist Layout)
    -------------------------------------------------------------------------- */
+#concept .section-header {
+    text-align: left;
+}
+
+#concept .section-lead {
+    margin-left: 0;
+    margin-right: auto;
+}
 .concept-list {
     display: flex;
     flex-direction: column;
