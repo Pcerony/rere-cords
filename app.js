@@ -267,17 +267,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainHeader = document.getElementById('main-header');
     
     if (mainHeader) {
-        window.addEventListener('scroll', () => {
+        const heroSection = document.getElementById('hero');
+        const getHeroHeight = () => heroSection ? heroSection.offsetHeight : window.innerHeight;
+
+        const handleScroll = () => {
             const currentScrollY = window.scrollY;
+            const heroHeight = getHeroHeight();
             
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - hide header
+            if (currentScrollY < 80) {
+                // At the very top - hide header to keep hero screen clean
+                mainHeader.classList.add('header-hidden');
+            } else if (currentScrollY > lastScrollY && currentScrollY > heroHeight - 100) {
+                // Scrolling down in content - hide header to maximize reading space
                 mainHeader.classList.add('header-hidden');
             } else {
-                // Scrolling up - show header
+                // Scrolling up in content, or inside hero but not at top - show header
                 mainHeader.classList.remove('header-hidden');
             }
             lastScrollY = currentScrollY;
-        }, { passive: true });
+        };
+
+        // Run on load to set initial state
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
     }
 });
