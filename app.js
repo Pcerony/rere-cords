@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "素材循環とサステナブルデザイン"
         },
         "details-text": {
-            "zh": "黑胶唱片的主要成分为聚氯乙烯（PVC），属于难降解塑料。本项目通过设计介入，将废弃材料转化为具实用或审美价值的新产品，以此探讨并实践联合国可持续发展目标（负责任的消费和生产）。",
-            "ja": "アナログレコードの主原料であるポリ塩化ビニル（PVC）は、自然分解が極めて困難なプラスチックです。本プロジェクトは、デザインによる再利用アプローチを通じ、国連の持続可能な開発目標（つくる責任 つかう責任）を実践的に検証します。"
+            "zh": "黑胶唱片的主要成分为聚氯乙烯（PVC），属于难降解塑料。本项目通过设计介入，将100张废置唱片切割、热塑并重构为生活器具、饰品或艺术装置，以此探讨并实践联合国可持续发展目标（负责任的消费和生产）。",
+            "ja": "アナログレコードの主原料であるポリ塩化ビニル（PVC）は、自然分解が極めて困難なプラスチックです。本プロジェクトは、提供された100枚の廃棄レコードを切断や熱加工などによって器物、アクセサリー、アート作品へ再構築し、国連の持続可能な開発目標（つくる責任 つかう責任）を実践的に検証します。"
         },
         "stat-records": {
             "zh": "提供唱片数量",
@@ -198,38 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* --------------------------------------------------------------------------
-       2. Mobile Navigation Menu
-       -------------------------------------------------------------------------- */
-    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-    const navMenu = document.querySelector('#nav-menu');
 
-    if (mobileNavToggle && navMenu) {
-        mobileNavToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-            const icon = mobileNavToggle.querySelector('i');
-            if (icon) {
-                if (navMenu.classList.contains('open')) {
-                    icon.setAttribute('data-lucide', 'x');
-                } else {
-                    icon.setAttribute('data-lucide', 'menu');
-                }
-                lucide.createIcons();
-            }
-        });
-
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('open');
-                const icon = mobileNavToggle.querySelector('i');
-                if (icon) {
-                    icon.setAttribute('data-lucide', 'menu');
-                    lucide.createIcons();
-                }
-            });
-        });
-    }
 
     /* --------------------------------------------------------------------------
        3. Scroll Reveal Animations (Timeline & Cards)
