@@ -507,16 +507,22 @@ section {
     align-items: center;
 }
 
-.poster-frame {
+.poster-interactive-wrapper {
     position: relative;
     max-width: 480px;
+    width: 100%;
+    overflow: visible;
+}
+
+.poster-frame {
+    position: relative;
     width: 100%;
     border: 8px solid #1c1c1b;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
     transition: var(--transition-smooth);
     cursor: pointer;
     background-color: #0c0c0b;
-    overflow: visible; /* Allow vinyl to slide out */
+    z-index: 2; /* Render in front of vinyl */
 }
 
 .poster-img {
@@ -537,7 +543,7 @@ section {
     border-radius: 50%;
     background: radial-gradient(circle, #2a2a28 20%, #151514 80%);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    z-index: 1;
+    z-index: 1; /* Render behind poster frame */
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
     opacity: 0;
     transform: translate(0, 0) rotate(0deg);
@@ -619,21 +625,21 @@ section {
 }
 
 /* Hover States */
-.poster-frame:hover {
+.poster-interactive-wrapper:hover .poster-frame {
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
     transform: translateY(-4px);
 }
 
-.poster-frame:hover .poster-img {
+.poster-interactive-wrapper:hover .poster-img {
     transform: translateX(-28%) rotate(-4deg);
 }
 
-.poster-frame:hover .poster-vinyl {
+.poster-interactive-wrapper:hover .poster-vinyl {
     transform: translateX(35%) rotate(180deg);
     opacity: 1;
 }
 
-.poster-frame:hover .poster-overlay {
+.poster-interactive-wrapper:hover .poster-overlay {
     opacity: 1;
     transform: translateY(0);
 }
