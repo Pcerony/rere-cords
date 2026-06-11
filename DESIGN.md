@@ -6,32 +6,31 @@
 
 "The Gallery Archive" frames the RERE-CORDS exhibition as a premium, quiet, and minimalist art event. It avoids all developer terminal window styling, code blocks, or CLI prompt mockups. Instead, it utilizes clean grids, large classic serif typography, generous white space, and letterpress-inspired borders.
 
-The page uses a rich, earthy color palette: deep dark charcoal/obsidian background, warm paper-white lettering, and muted sage/terracotta highlights. The cover image (`素材/主视觉.png`) is utilized exclusively as a dramatic visual background for the Hero/opening section, smoothly dissolving into the solid obsidian color as the user scrolls.
+The page uses a high-contrast, clean light editorial color palette: warm paper-white base, solid white card blocks, and charcoal black text. The main visual image (`素材/主视觉.png`) is framed as a structured rectangular block inside the Hero section, creating a clear visual anchor without using gradient masks or overlays.
 
 **Key Characteristics:**
-- **Hero Visual Dissolve**: A full-bleed visual header with a smooth bottom gradient fade transitioning the main visual cover into the solid page color.
-- **Asymmetric Typographic Layout**: Clean minimalist cards with large Roman numerals (I, II, III) showing principles, and letterpress debossed statistic boxes.
-- **Sponsor & Partner Logos**: Elegant logos displayed in the header, Hero section, and footer with grayscale-to-color hover transitions.
+- **Hero Split Layout**: A 2-column asymmetric layout pairing structured typography with the framed visual banner image.
+- **Flat Color Block Panels**: Alternating light-gray and pure-white section blocks separated by solid 2px borders, with flat offset solid drop shadows (`box-shadow: 6px 6px 0px var(--color-border)`).
+- **Sponsor & Partner Logos**: Elegant logos displayed in the header and footer with grayscale-to-color hover transitions (adapted for high contrast on light backgrounds).
 - **Header Scroll Behavior**: The navigation bar automatically slides out of view on scroll down and slides back in on scroll up to maximize visual focus on content.
 
 ---
 
 ## 2. Colors
 
-Earthy, premium, and organic dark palette to invoke texture and humanism.
+High-contrast, clean, and warm light color palette to mimic high-end printed art catalogs.
 
 ### Primary Accent
-- **Sustainable Sage** (`#7a8c6c`): Muted green used for checkmarks, badges, dates, and progress.
+- **Sustainable Sage** (`#526647`): Darker green used for checkmarks, badges, dates, and progress.
 
 ### Secondary Accent
-- **Terracotta Orange** (`#d97757`): Warm orange/clay tone used for main call-to-action buttons, key titles, and numeric labels.
+- **Terracotta Orange** (`#c15535`): Deep terracotta clay tone used for main CTA buttons, labels, and numeric tags.
 
 ### Neutral Colors
-- **Obsidian Dark** (`#141413`): Solid background base.
-- **Charcoal Surface** (`#1c1c1b`): Container/card backgrounds.
-- **Warm Ivory** (`#f5f4f0`): Primary text color.
-- **Muted Stone** (`#94928b`): Descriptive secondary subtext.
-- **Warm Charcoal Border** (`#2e2d2a`): Muted separator lines and borders.
+- **Warm Paper White** (`#f5f4f0`): Solid page base background.
+- **Pure White** (`#ffffff`): Container and card block surfaces.
+- **Charcoal Ink** (`#141413`): High-contrast text and solid borders.
+- **Muted Stone** (`#5c5a54`): Descriptive secondary subtext.
 
 ---
 
@@ -55,9 +54,9 @@ Pairing classic editorial serif display fonts with clean humanist sans-serif bod
 ## 4. Components
 
 ### Cards (`.concept-item`)
-- **Style**: Soft charcoal background (`#1c1c1b`), thin warm border (`#2e2d2a`), padded at `2.5rem`.
+- **Style**: Pure white background (`#ffffff`), 2px solid border (`#141413`), and solid flat offset box shadow (`box-shadow: 6px 6px 0px #141413`), padded at `2.5rem`.
 - **Details**: Large Roman numerals (I, II, III) in terracotta orange, left-aligned titles, and stone-colored paragraphs.
-- **Transition**: Soft translateY and border color highlight on hover.
+- **Transition**: Flat offset shift (`translate(-2px, -2px)`) and shadow lift on hover.
 
 ### Gallery Frame (`.poster-frame`)
 - **Style**: Styled like a matted artwork in a physical gallery. Features a thick off-white mat board border and a sliding caption overlay appearing on hover.
@@ -70,7 +69,7 @@ Pairing classic editorial serif display fonts with clean humanist sans-serif bod
 ## 5. Partner Logos
 
 To ensure the logos blend natively into the visual design:
-- **Default state**: Styled with a CSS filter: `filter: grayscale(1) brightness(1.2) contrast(0.8); opacity: 0.6;`. This converts the logos into neutral, elegant white-gray elements that blend with the dark editorial background.
+- **Default state**: Styled with a CSS filter: `filter: grayscale(1) brightness(0.2) contrast(1.2); opacity: 0.7;`. This converts the logos into dark, elegant high-contrast elements that blend with the light editorial background.
 - **Hover state**: Transitioned smoothly to `filter: none; opacity: 1;` using `transition: all 0.2s;`, revealing their authentic corporate colors on cursor hover.
 
 ---

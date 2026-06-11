@@ -12,25 +12,25 @@
     --font-body: 'Alegreya Sans', 'Noto Sans SC', 'Noto Sans JP', -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    /* Organic Earthy Color Palette (Obsidian & Clay) */
-    --color-bg-base: #141413;          /* Obsidian Deep Dark */
-    --color-bg-card: #1c1c1b;          /* Soft Charcoal Surface */
-    --color-border: #2e2d2a;           /* Earthy Charcoal Border */
-    --color-border-hover: #474540;     /* Muted Stone Highlight */
+    /* Light High-Contrast Editorial Color Palette */
+    --color-bg-base: #f5f4f0;          /* Warm Paper White */
+    --color-bg-card: #ffffff;          /* Crisp White Card Surface */
+    --color-border: #141413;           /* Solid Dark Border */
+    --color-border-hover: #c15535;     /* Terracotta hover highlight */
     
-    --color-primary: #7a8c6c;          /* Sustainable Sage Green */
-    --color-primary-light: rgba(122, 140, 108, 0.08);
-    --color-secondary: #d97757;        /* Terracotta Clay Orange */
-    --color-secondary-light: rgba(217, 119, 87, 0.08);
+    --color-primary: #526647;          /* Sustainable Sage Green (Darker for readability) */
+    --color-primary-light: rgba(82, 102, 71, 0.06);
+    --color-secondary: #c15535;        /* Terracotta Clay Orange (Darker for readability) */
+    --color-secondary-light: rgba(193, 85, 53, 0.06);
     
-    --color-text-main: #f5f4f0;        /* Warm Ivory Paper Ink */
-    --color-text-muted: #94928b;       /* Muted Pebble Gray */
+    --color-text-main: #141413;        /* Charcoal Black Ink */
+    --color-text-muted: #5c5a54;       /* Muted Charcoal secondary text */
     
     /* Spacing & Transitions */
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    --rounded-sm: 2px;
-    --rounded-md: 4px;
+    --rounded-sm: 0px;                 /* Pure flat color block style */
+    --rounded-md: 0px;
 }
 
 * {
@@ -82,8 +82,8 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid var(--color-border);
-    background-color: rgba(20, 20, 19, 0.82);
+    border-bottom: 2px solid var(--color-border);
+    background-color: rgba(245, 244, 240, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease;
@@ -136,8 +136,8 @@ a {
     height: 24px;
     width: auto;
     display: block;
-    filter: grayscale(1) brightness(1.2) contrast(0.8);
-    opacity: 0.6;
+    filter: grayscale(1) brightness(0.2) contrast(1.2);
+    opacity: 0.7;
     transition: var(--transition-fast);
 }
 
@@ -228,26 +228,27 @@ a {
     font-family: var(--font-mono);
     cursor: pointer;
     transition: var(--transition-smooth);
-    border: 1px solid transparent;
+    border: 2px solid var(--color-border);
 }
 
 .btn-primary {
     background-color: var(--color-secondary);
-    color: var(--color-bg-base);
+    color: #ffffff;
     font-weight: 500;
 }
 
 .btn-primary:hover {
-    background-color: var(--color-text-main);
-    color: var(--color-bg-base);
-    transform: translateY(-2px);
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--color-border);
 }
 
 .sdg-badge {
     display: inline-flex;
     align-items: center;
     background-color: var(--color-primary-light);
-    border: 1px solid rgba(122, 140, 108, 0.15);
+    border: 2px solid var(--color-border);
     padding: 0.35rem 0.8rem;
     margin-bottom: 2rem;
     font-family: var(--font-mono);
@@ -271,34 +272,25 @@ a {
    4. Hero Section (Visual Header Banner)
    -------------------------------------------------------------------------- */
 #hero {
-    min-height: 95vh;
+    min-height: 80vh;
     position: relative;
-    /* Hero background set to main visual, centered and fixed */
-    background: url('./素材/主视觉.png') no-repeat center center;
-    background-size: cover;
+    background-color: var(--color-bg-base);
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-top: 100px;
+    padding-top: 140px;
     padding-bottom: 80px;
-}
-
-/* Blend gradient overlay fading hero background into black background */
-#hero .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(20, 20, 19, 0.3) 0%, rgba(20, 20, 19, 0.65) 60%, var(--color-bg-base) 100%);
-    z-index: 1;
+    border-bottom: 2px solid var(--color-border);
 }
 
 #hero .hero-container {
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4rem;
+    align-items: center;
     position: relative;
     z-index: 2;
 }
@@ -306,53 +298,69 @@ a {
 .hero-brand-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .hero-title {
     font-family: var(--font-header);
-    font-size: clamp(3.5rem, 8vw, 5.5rem);
-    font-weight: 700;
-    line-height: 1.05;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
     letter-spacing: -0.02em;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     color: var(--color-text-main);
 }
 
 .hero-subtitle {
     font-family: var(--font-header);
-    font-size: clamp(1.25rem, 3vw, 1.8rem);
-    font-weight: 400;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 500;
     line-height: 1.4;
     margin-bottom: 2rem;
-    color: var(--color-text-muted);
-    font-style: italic;
+    color: var(--color-secondary);
+    font-style: normal;
 }
 
 .hero-description {
     color: var(--color-text-muted);
     font-size: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0;
     max-width: 620px;
     line-height: 1.75;
 }
 
-.hero-actions {
-    display: flex;
-    gap: 1.25rem;
+.hero-image-block {
+    width: 100%;
+    border: 2px solid var(--color-border);
+    box-shadow: 10px 10px 0px var(--color-border);
+    background-color: var(--color-bg-card);
+    overflow: hidden;
+    aspect-ratio: 1.2 / 1;
 }
 
-
+.hero-img-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 /* --------------------------------------------------------------------------
    5. Sections Layout Common
    -------------------------------------------------------------------------- */
 section {
-    padding: 120px 0;
+    padding: 100px 0;
     position: relative;
     background-color: var(--color-bg-base);
+    border-bottom: 2px solid var(--color-border);
 }
+
+/* Alternating background colors to create clear color blocks */
+#hero { background-color: var(--color-bg-base); }
+#concept { background-color: #ffffff; }
+#poster { background-color: var(--color-bg-base); }
+#timeline { background-color: #ffffff; }
 
 .section-container {
     max-width: 800px;
@@ -393,7 +401,8 @@ section {
 
 .concept-item {
     background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
+    box-shadow: 6px 6px 0px var(--color-border);
     padding: 2.5rem;
     display: grid;
     grid-template-columns: 100px 1fr;
@@ -404,8 +413,8 @@ section {
 }
 
 .concept-item:hover {
-    border-color: var(--color-border-hover);
-    transform: translateY(-2px);
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--color-border);
 }
 
 .concept-meta {
@@ -440,7 +449,8 @@ section {
 /* Stats / Details Panel */
 .about-details-box {
     background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
+    box-shadow: 8px 8px 0px var(--color-border);
     padding: 3.5rem 3rem;
     position: relative;
 }
@@ -448,12 +458,13 @@ section {
 .about-details-box::before {
     content: '';
     position: absolute;
-    top: 6px;
-    left: 6px;
-    right: 6px;
-    bottom: 6px;
-    border: 1px dashed rgba(255, 255, 255, 0.02);
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px dashed var(--color-border);
     pointer-events: none;
+    opacity: 0.3;
 }
 
 .about-text-content h3 {
@@ -626,8 +637,8 @@ section {
 
 /* Hover States */
 .poster-interactive-wrapper:hover .poster-frame {
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
-    transform: translateY(-4px);
+    box-shadow: 16px 16px 0px var(--color-border);
+    transform: translate(-4px, -4px);
 }
 
 .poster-interactive-wrapper:hover .poster-img {
@@ -689,7 +700,7 @@ section {
     height: 23px;
     border-radius: 50%;
     background-color: var(--color-bg-base);
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
     color: var(--color-text-muted);
     display: flex;
     justify-content: center;
@@ -702,20 +713,21 @@ section {
 
 .timeline-item.visible .timeline-marker {
     background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-bg-base);
+    border-color: var(--color-border);
+    color: #ffffff;
 }
 
 .timeline-content-card {
     background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
+    box-shadow: 6px 6px 0px var(--color-border);
     padding: 2.25rem;
     transition: var(--transition-smooth);
 }
 
 .timeline-content-card:hover {
-    border-color: var(--color-border-hover);
-    transform: translateX(2px);
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--color-border);
 }
 
 .timeline-date {
@@ -745,17 +757,18 @@ section {
    9. Footer
    -------------------------------------------------------------------------- */
 #main-footer {
-    border-top: 1px solid var(--color-border);
-    background-color: #0c0c0b;
+    border-top: 2px solid var(--color-border);
+    background-color: #141413;
+    color: #f5f4f0;
     padding: 5rem 0 3rem 0;
 }
-
+ 
 .footer-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 2rem;
 }
-
+ 
 .footer-info {
     display: flex;
     flex-direction: column;
@@ -763,23 +776,23 @@ section {
     text-align: center;
     margin-bottom: 3.5rem;
 }
-
+ 
 .footer-info h3 {
     font-family: var(--font-header);
     font-size: 1.45rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
-    color: var(--color-text-main);
+    color: #f5f4f0;
 }
-
+ 
 .footer-info p {
-    color: var(--color-text-muted);
+    color: #a5a4a0;
     font-size: 0.9rem;
     max-width: 500px;
     margin-bottom: 2rem;
     line-height: 1.6;
 }
-
+ 
 .coorganizers {
     display: flex;
     align-items: center;
@@ -788,28 +801,28 @@ section {
     flex-wrap: wrap;
     font-size: 0.75rem;
 }
-
+ 
 .coorganizers span:first-child {
-    color: var(--color-text-muted);
+    color: #a5a4a0;
 }
-
+ 
 .partner-tag {
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--color-border);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 0.2rem 0.6rem;
-    color: var(--color-text-muted);
+    color: #a5a4a0;
 }
-
+ 
 /* Footer partner logos */
 .footer-partner-logos {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     margin-left: 1rem;
-    border-left: 1px solid var(--color-border);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
     padding-left: 1rem;
 }
-
+ 
 .footer-partner-logo {
     height: 20px;
     width: auto;
@@ -817,21 +830,21 @@ section {
     opacity: 0.5;
     transition: var(--transition-fast);
 }
-
+ 
 .footer-partner-logo:hover {
     filter: none;
     opacity: 1;
 }
-
+ 
 .footer-bottom {
-    border-top: 1px dashed var(--color-border);
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
     padding-top: 2rem;
     text-align: center;
 }
-
+ 
 .footer-bottom p {
     font-size: 0.75rem;
-    color: var(--color-text-muted);
+    color: #a5a4a0;
     opacity: 0.6;
 }
 
@@ -859,7 +872,7 @@ section {
         left: 0;
         width: 100%;
         background-color: var(--color-bg-base);
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 2px solid var(--color-border);
         flex-direction: column;
         padding: 2.5rem;
         gap: 2rem;
@@ -868,6 +881,17 @@ section {
 
     #nav-menu.open {
         display: flex;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+        text-align: center;
+    }
+
+    .hero-brand-card {
+        align-items: center !important;
+        text-align: center !important;
     }
 
     .partner-logos {
