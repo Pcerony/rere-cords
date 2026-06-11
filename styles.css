@@ -618,7 +618,7 @@ section {
 }
 
 /* Hover States (Sleek and Elegant) */
-.poster-interactive-wrapper:hover .poster-img {
+.poster-interactive-wrapper:hover .poster-frame {
     transform: translateX(-15%);
 }
 
