@@ -795,9 +795,7 @@ section {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-left: 1rem;
-    border-left: 1px solid var(--color-border);
-    padding-left: 1rem;
+    justify-content: center;
 }
  
 .footer-partner-logo {
@@ -895,12 +893,7 @@ section {
     }
 
     .footer-partner-logos {
-        margin-left: 0;
-        padding-left: 0;
-        border-left: none;
         margin-top: 0.75rem;
-        width: 100%;
-        justify-content: center;
     }
 
     .poster-interactive-wrapper:hover .poster-frame {
