@@ -254,15 +254,15 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "公共交通機関",
             "en": "Public Transit"
         },
-        "transit-subway-title": {
-            "zh": "地铁七隈线",
-            "ja": "地下鉄七隈線",
-            "en": "Subway (Nanakuma Line)"
+        "transit-jr-title": {
+            "zh": "JR鹿児島本线",
+            "ja": "JR鹿児島本線",
+            "en": "JR Kagoshima Main Line"
         },
-        "transit-subway-text": {
-            "zh": "「桜坂」站 步行约5分钟 / 「六本松」站 步行约10分钟",
-            "ja": "「桜坂」駅 徒歩約5分 / 「六本松」駅 徒歩約10分",
-            "en": "\"Sakurazaka\" Station: 5 min walk / \"Ropponmatsu\" Station: 10 min walk"
+        "transit-jr-text": {
+            "zh": "「竹下」站 步行约10分钟",
+            "ja": "「竹下」駅 徒歩約10分",
+            "en": "\"Takeshita\" Station: 10 min walk"
         },
         "transit-bus-title": {
             "zh": "西铁公交",

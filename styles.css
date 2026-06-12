@@ -858,6 +858,11 @@ section {
     color: #ffffff;
 }
 
+.transit-jr {
+    background-color: #1a3a5c;
+    color: #ffffff;
+}
+
 .transit-note {
     background-color: transparent;
     border: 1px solid var(--color-border-dark);
