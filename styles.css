@@ -363,6 +363,7 @@ section {
 #poster { background-color: var(--color-bg-base); }
 #timeline { background-color: #ffffff; }
 #apply { background-color: var(--color-bg-base); }
+#venue { background-color: #ffffff; }
 
 .section-container {
     max-width: 800px;
@@ -749,6 +750,126 @@ section {
     color: var(--color-text-muted);
     font-size: 0.9rem;
     line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   8.5 Venue Section (Map + Transit Info)
+   -------------------------------------------------------------------------- */
+.venue-wide {
+    max-width: 1000px;
+}
+
+.venue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: stretch;
+}
+
+.venue-map-wrapper {
+    height: 420px;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    position: relative;
+}
+
+.venue-map-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.venue-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.venue-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.venue-address-block p {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.venue-transit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.venue-transit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.transit-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    min-width: 38px;
+    height: 22px;
+    padding: 0 0.4rem;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+}
+
+.transit-subway {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.transit-bus {
+    background-color: var(--color-secondary);
+    color: #ffffff;
+}
+
+.transit-note {
+    background-color: transparent;
+    border: 1px solid var(--color-border-dark);
+    color: var(--color-text-muted);
+}
+
+.venue-transit-item strong {
+    display: block;
+    font-family: var(--font-header);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 0.2rem;
+}
+
+.venue-transit-item p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+    .venue-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .venue-map-wrapper {
+        height: 300px;
+    }
 }
 
 /* --------------------------------------------------------------------------

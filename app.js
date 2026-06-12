@@ -228,6 +228,61 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "废旧黑胶唱片再利用的可持续设计征集与成果展项目",
             "ja": "廃棄アナログレコードの再利用によるサステナブルデザイン公募・展示プロジェクト",
             "en": "A project for sustainable design application and exhibition using discarded vinyl records."
+        },
+        "title-venue": {
+            "zh": "成果展览展信息",
+            "ja": "成果展示会 開催情報",
+            "en": "Exhibition Venue Info"
+        },
+        "lead-venue": {
+            "zh": "展览将于2026年11月下旬在九州大学大桥校区举办，欢迎公众参观。",
+            "ja": "成果展示会は2026年11月下旬に九州大学大橋キャンパスで開催予定です。ぜひお気軽にご来場ください。",
+            "en": "The exhibition will be held in late November 2026 at Kyushu University Ohashi Campus. The public is warmly welcome."
+        },
+        "venue-address-label": {
+            "zh": "地址",
+            "ja": "会場住所",
+            "en": "Address"
+        },
+        "venue-address": {
+            "zh": "〒815-8540<br>福岡県福岡市南区塩原4丁目9-1<br>九州大学 大橋キャンパス",
+            "ja": "〒815-8540<br>福岡県福岡市南区塩原4丁目9-1<br>九州大学 大橋キャンパス",
+            "en": "4-9-1 Shiobaru, Minami-ku, Fukuoka-shi, Fukuoka 815-8540<br>Kyushu University Ohashi Campus"
+        },
+        "venue-transit-label": {
+            "zh": "公共交通",
+            "ja": "公共交通機関",
+            "en": "Public Transit"
+        },
+        "transit-subway-title": {
+            "zh": "地铁七隈线",
+            "ja": "地下鉄七隈線",
+            "en": "Subway (Nanakuma Line)"
+        },
+        "transit-subway-text": {
+            "zh": "「桜坂」站 步行约5分钟 / 「六本松」站 步行约10分钟",
+            "ja": "「桜坂」駅 徒歩約5分 / 「六本松」駅 徒歩約10分",
+            "en": "\"Sakurazaka\" Station: 5 min walk / \"Ropponmatsu\" Station: 10 min walk"
+        },
+        "transit-bus-title": {
+            "zh": "西铁公交",
+            "ja": "西鉄バス",
+            "en": "Nishitetsu Bus"
+        },
+        "transit-bus-text": {
+            "zh": "「大橋站前」下车 步行约3分钟（西鉄大牟田线 大橋站）",
+            "ja": "「大橋駅前」バス停下車 徒歩約3分（西鉄大牟田線 大橋駅）",
+            "en": "Alight at \"Ohashi-ekimae\" bus stop, 3 min walk (Nishitetsu Omuta Line, Ohashi Station)"
+        },
+        "transit-note-title": {
+            "zh": "停车说明",
+            "ja": "駐車場について",
+            "en": "Parking Notice"
+        },
+        "transit-note-text": {
+            "zh": "校园内无访客停车位，请尽量乘坐公共交通前往。",
+            "ja": "キャンパス内に来訪者用駐車場はございません。公共交通機関のご利用をお願いします。",
+            "en": "No visitor parking available on campus. Please use public transportation."
         }
     };
 
