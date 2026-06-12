@@ -159,6 +159,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "作品の <strong>デザイン画像または写真</strong> と、<strong>30秒以内</strong> の制作プロセス動画を事務局メールアドレスへお送りください。",
             "en": "Please send your <strong>design images or photos</strong>, along with a production process video of no more than <strong>30 seconds</strong>, to the project email."
         },
+        "req-notice-text": {
+            "zh": "请妥善保管制作完成的作品实物。入选展览的参与者将被要求提供作品的实体展品（平面设计等非实物作品除外）。",
+            "ja": "完成した作品の実物は大切に保管してください。展示会への入選者には、作品の現物提供をお願いする場合があります（グラフィックデザインなど実物が存在しない作品を除く）。",
+            "en": "Please take good care of your finished work. Selected participants will be asked to provide the physical piece for the exhibition (except for non-physical works such as graphic design)."
+        },
         "title-apply": {
             "zh": "报名方法",
             "ja": "応募方法",

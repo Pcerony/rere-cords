@@ -576,6 +576,37 @@ section {
     font-weight: 600;
 }
 
+/* Full-width keep-safe notice */
+.req-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid rgba(193, 85, 53, 0.35);
+    background-color: rgba(193, 85, 53, 0.04);
+}
+
+.req-notice-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--color-secondary);
+    margin-top: 1px;
+}
+
+.req-notice-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.req-notice-text {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
 @media (max-width: 600px) {
     .req-grid {
         grid-template-columns: 1fr;
