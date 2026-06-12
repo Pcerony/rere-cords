@@ -135,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Application Period"
         },
         "apply-period-text": {
-            "zh": "2026年5月1日 — 7月30日（在此期间进行参与申请及废旧唱片原材料的分发领取）",
-            "ja": "2026年5月1日 — 7月30日（本期間中に参加申請を行い、制作素材である廃棄アナログレコードを受け取ることができます）",
-            "en": "May 1 — July 30, 2026 (During this period, design applications are accepted and discarded vinyl records are distributed)"
+            "zh": "<span class='apply-date-highlight'>2026年5月1日 — 7月30日</span>（在此期间进行参与申请及废旧唱片原材料的分发领取）",
+            "ja": "<span class='apply-date-highlight'>2026年5月1日 — 7月30日</span>（本期間中に参加申請を行い、制作素材である廃棄アナログレコードを受け取ることができます）",
+            "en": "<span class='apply-date-highlight'>May 1 — July 30, 2026</span> (During this period, design applications are accepted and discarded vinyl records are distributed)"
         },
         "title-timeline": {
             "zh": "日程进程",

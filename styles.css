@@ -649,6 +649,16 @@ section {
     line-height: 1.7;
 }
 
+.apply-date-highlight {
+    display: inline;
+    font-family: var(--font-header);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
 .apply-email {
     color: var(--color-secondary);
     border-bottom: 1px solid rgba(193, 85, 53, 0.3);
