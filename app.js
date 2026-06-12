@@ -209,6 +209,21 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "学内外の関係者による対話会を行い、受賞者の表彰およびデザインに関する意見交換を実施します。",
             "en": "Hold a design exchange salon, announce and honor winners, and facilitate dialogue among guest designers, alumni, and campus community."
         },
+        "time-step5": {
+            "zh": "2026年12月1日 - 12月25日",
+            "ja": "12月1日 - 12月25日",
+            "en": "December 1 - December 25, 2026"
+        },
+        "title-step5": {
+            "zh": "地区合作与价值延伸",
+            "ja": "地域連携と価値の拡張",
+            "en": "Community Collaboration & Value Extension"
+        },
+        "text-step5": {
+            "zh": "以本次活动的记录资料和当地唱片店进行交流，商议进一步发挥本次活动中作品价值的可能性，并谋求进一步合作，以提升地区活跃度。",
+            "ja": "本企画のドキュメント資料をもとに地元のレコード店と対話し、作品価値のさらなる活用可能性を模索するとともに、地域の活性化に向けた連携を図ります。",
+            "en": "Engage with local record stores using the event materials, exploring possibilities to leverage the artwork value and seeking future cooperation to boost regional community vitality."
+        },
         "footer-desc": {
             "zh": "废旧黑胶唱片再利用的可持续设计征集与成果展项目",
             "ja": "廃棄アナログレコードの再利用によるサステナブルデザイン公募・展示プロジェクト",
