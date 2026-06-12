@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Nishitetsu Bus"
         },
         "transit-bus-text": {
-            "zh": "「大橋站前」下车 步行约3分钟（西鉄大牟田线 大橋站）",
+            "zh": "「大橋站前」公交站下车，步行约3分钟（西铁大牟田线 大橋站）",
             "ja": "「大橋駅前」バス停下車 徒歩約3分（西鉄大牟田線 大橋駅）",
             "en": "Alight at \"Ohashi-ekimae\" bus stop, 3 min walk (Nishitetsu Omuta Line, Ohashi Station)"
         },
@@ -343,6 +343,21 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "校园内无访客停车位，请尽量乘坐公共交通前往。",
             "ja": "キャンパス内に来訪者用駐車場はございません。公共交通機関のご利用をお願いします。",
             "en": "No visitor parking available on campus. Please use public transportation."
+        },
+        "transit-badge-nishitetsu": {
+            "zh": "西铁",
+            "ja": "西鉄",
+            "en": "NT"
+        },
+        "transit-badge-bus": {
+            "zh": "公交",
+            "ja": "バス",
+            "en": "Bus"
+        },
+        "transit-badge-note": {
+            "zh": "注",
+            "ja": "注",
+            "en": "Note"
         }
     };
 
