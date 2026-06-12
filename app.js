@@ -284,6 +284,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "廃棄アナログレコードの再利用によるサステナブルデザイン公募・展示プロジェクト",
             "en": "A project for sustainable design application and exhibition using discarded vinyl records."
         },
+        "footer-contact-label": {
+            "zh": "如有任何疑问，欢迎随时联络我们",
+            "ja": "ご不明な点がございましたら、いつでもお気軽にご連絡ください",
+            "en": "Have a question? Feel free to reach us anytime"
+        },
         "title-venue": {
             "zh": "成果展览展信息",
             "ja": "成果展示会 開催情報",
