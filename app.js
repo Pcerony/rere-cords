@@ -254,6 +254,16 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "公共交通機関",
             "en": "Public Transit"
         },
+        "transit-nishitetsu-title": {
+            "zh": "西铁大牟田线",
+            "ja": "西鉄大牟田線",
+            "en": "Nishitetsu Omuta Line"
+        },
+        "transit-nishitetsu-text": {
+            "zh": "「大橋」站 步行约5分钟",
+            "ja": "「大橋」駅 徒歩約5分",
+            "en": "\"Ohashi\" Station: 5 min walk"
+        },
         "transit-jr-title": {
             "zh": "JR鹿児島本线",
             "ja": "JR鹿児島本線",

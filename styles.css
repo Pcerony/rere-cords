@@ -873,6 +873,11 @@ section {
     color: #ffffff;
 }
 
+.transit-nishitetsu {
+    background-color: #8b1a2f;
+    color: #ffffff;
+}
+
 .transit-note {
     background-color: transparent;
     border: 1px solid var(--color-border-dark);
