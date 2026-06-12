@@ -210,9 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Hold a design exchange salon, announce and honor winners, and facilitate dialogue among guest designers, alumni, and campus community."
         },
         "time-step5": {
-            "zh": "2026年12月1日 - 12月25日",
-            "ja": "12月1日 - 12月25日",
-            "en": "December 1 - December 25, 2026"
+            "zh": "2027年—",
+            "ja": "2027年—",
+            "en": "2027 —"
         },
         "title-step5": {
             "zh": "地区合作与价值延伸",

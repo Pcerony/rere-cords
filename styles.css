@@ -697,6 +697,24 @@ section {
     margin-bottom: 0;
 }
 
+/* Hide the timeline line below the last item */
+.timeline-item-last::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 16px; /* just below the marker center */
+    bottom: -3.5rem; /* cover the gap to the next section */
+    width: 1px;
+    background-color: #ffffff; /* matches #timeline section background */
+    z-index: 4;
+}
+
+@media (max-width: 768px) {
+    .timeline-item-last::after {
+        left: 10px;
+    }
+}
+
 .timeline-marker {
     position: absolute;
     left: 10px;
