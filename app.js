@@ -245,9 +245,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Address"
         },
         "venue-address": {
-            "zh": "〒815-8540<br>福岡県福岡市南区塩原4丁目9-1<br>九州大学 大橋キャンパス",
-            "ja": "〒815-8540<br>福岡県福岡市南区塩原4丁目9-1<br>九州大学 大橋キャンパス",
-            "en": "4-9-1 Shiobaru, Minami-ku, Fukuoka-shi, Fukuoka 815-8540<br>Kyushu University Ohashi Campus"
+            "zh": "〒815-8540 福岡県福岡市南区塩原4丁目9-1 九州大学 大橋キャンパス",
+            "ja": "〒815-8540 福岡県福岡市南区塩原4丁目9-1 九州大学 大橋キャンパス",
+            "en": "4-9-1 Shiobaru, Minami-ku, Fukuoka 815-8540 — Kyushu University Ohashi Campus"
         },
         "venue-transit-label": {
             "zh": "公共交通",
@@ -260,19 +260,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Nishitetsu Omuta Line"
         },
         "transit-nishitetsu-text": {
-            "zh": "「大橋」站 步行约5分钟",
-            "ja": "「大橋」駅 徒歩約5分",
-            "en": "\"Ohashi\" Station: 5 min walk"
+            "zh": "「大桥」站步行约5分钟",
+            "ja": "「大橋」駅より徒歩約5分",
+            "en": "5 min walk from \"Ohashi\" Station"
         },
         "transit-jr-title": {
-            "zh": "JR鹿児島本线",
+            "zh": "JR鹿儿岛本线",
             "ja": "JR鹿児島本線",
             "en": "JR Kagoshima Main Line"
         },
         "transit-jr-text": {
-            "zh": "「竹下」站 步行约10分钟",
-            "ja": "「竹下」駅 徒歩約10分",
-            "en": "\"Takeshita\" Station: 10 min walk"
+            "zh": "「竹下」站步行约10分钟",
+            "ja": "「竹下」駅より徒歩約10分",
+            "en": "10 min walk from \"Takeshita\" Station"
         },
         "transit-bus-title": {
             "zh": "西铁公交",
