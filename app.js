@@ -109,6 +109,56 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "* 注：学内に掲示されている実物ポスターの裏面には、制作素材としてのアナログレコードが添付されています。もし裏面のレコードがすでに回収されている場合は、他所に掲示されたポスターを探すか、または事務局メールアドレスまで直接ご連絡の上、追加配布を申請してください。",
             "en": "* Note: Usually, the physical posters posted on campus are attached with a discarded vinyl record on the back. If the records on the posters have already been taken, please search for other posters on campus or contact us directly via email to request supplementary materials."
         },
+        "title-requirements": {
+            "zh": "作品要求",
+            "ja": "応募規定",
+            "en": "Work Requirements"
+        },
+        "lead-requirements": {
+            "zh": "加工方法自由，设计类别不限。以下为本次征集的基本规则与建议。",
+            "ja": "加工方法は自由、デザインカテゴリも問いません。以下が今回の公募における基本ルールと推奨事項です。",
+            "en": "Processing methods are free, and design categories are unrestricted. Below are the basic rules and recommendations for this open call."
+        },
+        "req-cat-title": {
+            "zh": "设计类别",
+            "ja": "デザインカテゴリ",
+            "en": "Design Category"
+        },
+        "req-cat-text": {
+            "zh": "类别不限。推荐方向：平面设计、产品设计、服务设计、时装，以及聚焦社会议题的设计实践。",
+            "ja": "カテゴリは問いません。推奨ジャンル：グラフィック、プロダクト、サービス、ファッション、社会問題など。",
+            "en": "No category restrictions. Recommended directions: graphic, product, service, fashion, and socially focused design."
+        },
+        "req-limit-title": {
+            "zh": "用料上限",
+            "ja": "使用枚数の上限",
+            "en": "Record Limit"
+        },
+        "req-limit-text": {
+            "zh": "每件作品最多使用 <strong>6张</strong> 废旧唱片。多余的唱片无需归还，可自由保留或另行利用。",
+            "ja": "1作品につき使用できる廃棄レコードは最大 <strong>6枚</strong> です。余ったレコードは返却不要で、自由にお使いいただけます。",
+            "en": "Each work may use a maximum of <strong>6</strong> discarded vinyl records. Extra records do not need to be returned and can be kept freely."
+        },
+        "req-proc-title": {
+            "zh": "加工方法",
+            "ja": "加工方法",
+            "en": "Processing Methods"
+        },
+        "req-proc-text": {
+            "zh": "加工方式完全自由：可裁断、加热软化、弯曲重塑、拼接组合，或与其他材料结合创作。",
+            "ja": "加工方法は一切問いません。裁断、加熱による軟化、曲げ加工、接合、他素材との組み合わせなど、自由に制作してください。",
+            "en": "All processing methods are welcome: cutting, heat-softening, bending, joining, or combining with other materials."
+        },
+        "req-sub-title": {
+            "zh": "提交内容",
+            "ja": "提出物",
+            "en": "Submission Content"
+        },
+        "req-sub-text": {
+            "zh": "请发送作品的 <strong>设计图像或照片</strong>，并附上一段不超过 <strong>30秒</strong> 的制作过程视频，发送至活动邮箱。",
+            "ja": "作品の <strong>デザイン画像または写真</strong> と、<strong>30秒以内</strong> の制作プロセス動画を事務局メールアドレスへお送りください。",
+            "en": "Please send your <strong>design images or photos</strong>, along with a production process video of no more than <strong>30 seconds</strong>, to the project email."
+        },
         "title-apply": {
             "zh": "报名方法",
             "ja": "応募方法",

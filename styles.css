@@ -361,9 +361,10 @@ section {
 
 #concept { background-color: #ffffff; }
 #poster { background-color: var(--color-bg-base); }
-#timeline { background-color: #ffffff; }
-#apply { background-color: var(--color-bg-base); }
-#venue { background-color: #ffffff; }
+#requirements { background-color: #ffffff; }
+#timeline { background-color: var(--color-bg-base); }
+#apply { background-color: #ffffff; }
+#venue { background-color: var(--color-bg-base); }
 
 .section-container {
     max-width: 800px;
@@ -508,6 +509,90 @@ section {
     margin-top: 0.4rem;
     text-transform: uppercase;
     letter-spacing: 0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   6.5 Requirements Section (Work Rules + SVG Illustrations)
+   -------------------------------------------------------------------------- */
+.req-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--color-border);
+}
+
+.req-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 2rem 2rem;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.3s ease;
+}
+
+.req-card:nth-child(2n) {
+    border-right: none;
+}
+
+.req-card:nth-child(3),
+.req-card:nth-child(4) {
+    border-bottom: none;
+}
+
+.req-card:hover {
+    background-color: var(--color-bg-base);
+}
+
+.req-illustration {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 1.75rem;
+    color: var(--color-primary);
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.req-illustration svg {
+    width: 100%;
+    height: 100%;
+}
+
+.req-title {
+    font-family: var(--font-header);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 0.6rem;
+}
+
+.req-desc {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.req-desc strong {
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .req-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .req-card {
+        border-right: none;
+    }
+
+    .req-card:nth-child(3),
+    .req-card:nth-child(4) {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .req-card:last-child {
+        border-bottom: none;
+    }
 }
 
 /* --------------------------------------------------------------------------
