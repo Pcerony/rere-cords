@@ -105,9 +105,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Take from Campus Poster"
         },
         "method1-desc": {
-            "zh": "在九州大学大桥校区内寻找张贴的 RERE-CORDS 活动海报，每张海报背面均附有一张废旧黑胶唱片，可直接取下带走，无需任何手续。若海报背面的唱片已被取走，请寻找其他位置的海报，或通过邮箱联系我们补充。",
-            "ja": "九州大学大橋キャンパス内に掲示されている RERE-CORDS のポスターを探してください。各ポスターの裏面に廃棄レコードが1枚添付されており、手続き不要でそのまま持ち帰ることができます。すでに取り外されている場合は、別の場所のポスターを探すか、メールにてご連絡ください。",
-            "en": "Look for RERE-CORDS posters posted around Kyushu University Ohashi Campus. Each poster has a discarded vinyl record attached to its back — simply take it with no paperwork needed. If the record has already been taken, check other posted locations or contact us by email for a replacement."
+            "zh": "在九州大学大桥校区内寻找张贴的 RERE-CORDS 活动海报，每张海报背面均附有一张废旧黑胶唱片，可直接取下带走，无需任何手续。",
+            "ja": "九州大学大橋キャンパス内に掲示されている RERE-CORDS のポスターを探してください。各ポスターの裏面に廃棄レコードが1枚添付されており、手続き不要でそのまま持ち帰ることができます。",
+            "en": "Look for RERE-CORDS posters posted around Kyushu University Ohashi Campus. Each poster has a discarded vinyl record attached to its back — simply take it with no paperwork needed."
+        },
+        "method1-note1": {
+            "zh": "* 若海报背面的唱片已被取走，请寻找其他位置的海报，或通过邮箱联系我们补充。",
+            "ja": "※ ポスター裏面のレコードがすでに取り外されている場合は、別の場所のポスターを探すか、メールにてご連絡ください。",
+            "en": "* If the record on the back of the poster has already been taken, please look for posters at other locations or contact us via email for a replacement."
+        },
+        "method1-note2": {
+            "zh": "* 我们会在正式张贴后公布所有海报位置，并且公布详细的补充唱片周期时间。",
+            "ja": "※ 正式な掲示開始後、すべてのポスターの設置場所およびレコードの補充スケジュールを公開いたします。",
+            "en": "* All poster locations and a detailed record replenishment schedule will be announced once the posters are officially put up."
         },
         "method2-title": {
             "zh": "自费购买",
