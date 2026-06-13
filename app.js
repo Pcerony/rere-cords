@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Selected Works Exhibition"
         },
         "title-poster": {
-            "zh": "宣传海报",
-            "ja": "公式ポスター",
-            "en": "Official Poster"
+            "zh": "如何获得唱片？",
+            "ja": "レコードを入手するには？",
+            "en": "How to Get a Record?"
         },
         "lead-poster": {
             "zh": "海报背面附有废旧黑胶唱片，师生可直接取下作为创作材料。",
