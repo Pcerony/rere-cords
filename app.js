@@ -95,9 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "How to Get a Record?"
         },
         "lead-poster": {
-            "zh": "海报背面附有废旧黑胶唱片，师生可直接取下作为创作材料。",
-            "ja": "ポスター裏面に実物のレコードを添付。希望者がその場で取り外して制作素材として持ち帰れる仕様にしています。",
-            "en": "Physical posters placed on campus are equipped with real discarded vinyl records on the back, which can be directly taken off by teachers and students as raw materials."
+            "zh": "共有两种途径可以获取本次活动所需的废旧黑胶唱片，请选择适合您的方式。",
+            "ja": "廃棄レコードを入手する方法は2通りあります。ご自身に合った方法をお選びください。",
+            "en": "There are two ways to obtain the discarded vinyl records needed for this project. Choose the one that suits you."
+        },
+        "method1-title": {
+            "zh": "从校园海报背面取下",
+            "ja": "キャンパス内のポスター裏から取り外す",
+            "en": "Take from Campus Poster"
+        },
+        "method1-desc": {
+            "zh": "在九州大学大桥校区内寻找张贴的 RERE-CORDS 活动海报，每张海报背面均附有一张废旧黑胶唱片，可直接取下带走，无需任何手续。若海报背面的唱片已被取走，请寻找其他位置的海报，或通过邮箱联系我们补充。",
+            "ja": "九州大学大橋キャンパス内に掲示されている RERE-CORDS のポスターを探してください。各ポスターの裏面に廃棄レコードが1枚添付されており、手続き不要でそのまま持ち帰ることができます。すでに取り外されている場合は、別の場所のポスターを探すか、メールにてご連絡ください。",
+            "en": "Look for RERE-CORDS posters posted around Kyushu University Ohashi Campus. Each poster has a discarded vinyl record attached to its back — simply take it with no paperwork needed. If the record has already been taken, check other posted locations or contact us by email for a replacement."
+        },
+        "method2-title": {
+            "zh": "自费购买",
+            "ja": "自己購入",
+            "en": "Purchase Yourself"
+        },
+        "method2-desc": {
+            "zh": "您也可以自行前往二手唱片店或网络平台自费购买废旧黑胶唱片作为创作材料，费用由参与者自行承担。请注意每件作品的用料上限仍为 6 张。",
+            "ja": "中古レコードショップやオンラインプラットフォームで自費にてレコードを購入することも可能です。費用は参加者ご自身の負担となります。なお、1作品あたりの使用枚数の上限（6枚）は変わりません。",
+            "en": "You may also purchase discarded vinyl records at your own expense from second-hand record shops or online platforms. Costs are the participant's responsibility. Note that the 6-record limit per work still applies."
         },
         "poster-card-title": {
             "zh": "实体海报与材料补充说明",

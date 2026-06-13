@@ -511,6 +511,62 @@ section {
     letter-spacing: 0.01em;
 }
 
+/* Record acquisition methods (two columns under poster) */
+.record-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 3rem;
+    border: 1px solid var(--color-border);
+}
+
+.record-method-card {
+    display: flex;
+    gap: 1.25rem;
+    padding: 2rem 1.75rem;
+    align-items: flex-start;
+}
+
+.record-method-card:first-child {
+    border-right: 1px solid var(--color-border);
+}
+
+.method-num {
+    font-family: var(--font-header);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.25;
+    letter-spacing: -0.03em;
+}
+
+.method-title {
+    font-family: var(--font-header);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 0.6rem;
+}
+
+.method-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+}
+
+@media (max-width: 600px) {
+    .record-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .record-method-card:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+}
+
 /* --------------------------------------------------------------------------
    6.5 Requirements Section (Work Rules + SVG Illustrations)
    -------------------------------------------------------------------------- */
