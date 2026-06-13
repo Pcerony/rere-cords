@@ -125,9 +125,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Purchase Yourself"
         },
         "method2-desc": {
-            "zh": "您也可以自行前往二手唱片店或网络平台自费购买废旧黑胶唱片作为创作材料，费用由参与者自行承担。请注意每件作品的用料上限仍为 6 张。",
-            "ja": "中古レコードショップやオンラインプラットフォームで自費にてレコードを購入することも可能です。費用は参加者ご自身の負担となります。なお、1作品あたりの使用枚数の上限（6枚）は変わりません。",
-            "en": "You may also purchase discarded vinyl records at your own expense from second-hand record shops or online platforms. Costs are the participant's responsibility. Note that the 6-record limit per work still applies."
+            "zh": "您也可以自行前往二手唱片店或网络平台自费购买废旧黑胶唱片作为创作材料，费用由参与者自行承担。",
+            "ja": "中古レコードショップやオンラインプラットフォームで自費にてレコードを購入することも可能です。費用は参加者ご自身の負担となります。",
+            "en": "You may also purchase discarded vinyl records at your own expense from second-hand record shops or online platforms. Costs are the participant's responsibility."
+        },
+        "method2-note1": {
+            "zh": "* 请注意每件作品的用料上限仍为 6 张。",
+            "ja": "※ なお、1作品あたりの使用枚数の上限（6枚）は変わりません。",
+            "en": "* Note that the 6-record limit per work still applies."
+        },
+        "method2-note2": {
+            "zh": "* 我们在海报后放置的都是 EP 尺寸的唱片，如果您选择自费购买，可以选择 LP 尺寸。",
+            "ja": "※ ポスター裏面に添付されているレコードはすべてEPサイズです。自費で購入される場合は、LPサイズもお選びいただけます。",
+            "en": "* The records attached to the posters are all EP size. If you choose to purchase your own, you may choose LP size."
         },
         "poster-card-title": {
             "zh": "实体海报与材料补充说明",
