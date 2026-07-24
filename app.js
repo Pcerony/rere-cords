@@ -620,4 +620,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initPosterScrollAnimation();
+
+    /* --------------------------------------------------------------------------
+       6. Poster Fullscreen Lightbox Modal Functionality
+       -------------------------------------------------------------------------- */
+    function initPosterLightbox() {
+        const posterFrame = document.querySelector('.poster-frame');
+        const lightbox = document.getElementById('poster-lightbox');
+        if (!posterFrame || !lightbox) return;
+
+        const backdrop = lightbox.querySelector('.lightbox-backdrop');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const lightboxImg = lightbox.querySelector('.lightbox-img');
+
+        function openLightbox(e) {
+            e.stopPropagation();
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        posterFrame.addEventListener('click', openLightbox);
+        if (backdrop) backdrop.addEventListener('click', closeLightbox);
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        if (lightboxImg) lightboxImg.addEventListener('click', closeLightbox);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    }
+
+    initPosterLightbox();
 });

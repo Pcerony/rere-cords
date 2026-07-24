@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -455,11 +455,22 @@
         </div>
     </footer>
 
+    <!-- Poster Lightbox Modal -->
+    <div id="poster-lightbox" class="lightbox-modal" aria-hidden="true">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close fullscreen view">
+                <i data-lucide="x"></i>
+            </button>
+            <img src="./素材/新海报.jpg" alt="RERE-CORDS 宣传海报 全屏" class="lightbox-img">
+        </div>
+    </div>
+
     <!-- Lucide init and custom script -->
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
     </script>
-    <script src="app.js?v=9"></script>
+    <script src="app.js?v=10"></script>
 </body>
 </html>
