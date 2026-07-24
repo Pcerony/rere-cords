@@ -584,13 +584,13 @@ document.addEventListener('DOMContentLoaded', () => {
             progress = Math.max(0, Math.min(1, progress));
 
             // Map progress: 
-            // 0 - 0.1: Holds in place at center
-            // 0.1 - 0.9: Smoothly slides open & rotates vinyl
-            // 0.9 - 1.0: Stays fully open as track unpins
+            // 0 - 0.05: Holds in place at center
+            // 0.05 - 0.95: Smoothly slides open & rotates vinyl
+            // 0.95 - 1.0: Stays fully open as track unpins
             let animProgress = 0;
-            if (progress > 0.1 && progress < 0.9) {
-                animProgress = (progress - 0.1) / 0.8;
-            } else if (progress >= 0.9) {
+            if (progress > 0.05 && progress < 0.95) {
+                animProgress = (progress - 0.05) / 0.9;
+            } else if (progress >= 0.95) {
                 animProgress = 1;
             }
 

@@ -756,12 +756,12 @@ section {
 }
 
 #poster {
-    padding: 0 0 90px 0;
+    padding: 0 0 60px 0;
 }
 
 .poster-sticky-track {
     position: relative;
-    height: 180vh;
+    height: 130vh;
 }
 
 .poster-sticky-sticky {
@@ -778,6 +778,12 @@ section {
 
 #poster .poster-sticky-sticky .section-header {
     margin-bottom: 2rem;
+}
+
+#poster .record-methods {
+    margin-top: -10vh;
+    position: relative;
+    z-index: 5;
 }
 
 .poster-display-container {
