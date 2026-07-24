@@ -370,7 +370,7 @@ a {
 
 .hero-logo-left {
     justify-content: flex-end;
-    padding-right: 2.75rem;
+    padding-right: 4.5rem;
 }
 
 .hero-logo-center {
@@ -379,7 +379,7 @@ a {
 
 .hero-logo-right {
     justify-content: flex-start;
-    padding-left: 2.75rem;
+    padding-left: 4.5rem;
 }
 
 .hero-partner-logos .footer-partner-logo {
@@ -389,17 +389,17 @@ a {
 }
 
 .hero-partner-logos .logo-kyushu {
-    height: 36px;
-    transform: translateY(-4px);
+    height: 28px;
+    transform: translateY(-3px);
 }
 
 .hero-partner-logos .logo-desis {
-    height: 36px;
+    height: 28px;
     filter: brightness(0) invert(1);
 }
 
 .hero-partner-logos .logo-aigoki {
-    height: 30px;
+    height: 24px;
     filter: none;
 }
 
