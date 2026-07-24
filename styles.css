@@ -1379,6 +1379,52 @@ section {
         transform: translateX(25%) rotate(90deg);
     }
 
+    .hero-partner-logos {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0 1rem;
+    }
+
+    .hero-logo-col {
+        justify-content: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100%;
+    }
+
+    .hero-logo-center {
+        order: 1;
+    }
+
+    .hero-logo-left {
+        order: 2;
+    }
+
+    .hero-logo-right {
+        order: 3;
+    }
+
+    .hero-partner-logos .logo-kyushu {
+        height: 16px;
+        transform: none;
+    }
+
+    .hero-partner-logos .logo-desis {
+        height: 16px;
+    }
+
+    .hero-partner-logos .logo-aigoki {
+        height: 13px;
+    }
+
     .apply-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
