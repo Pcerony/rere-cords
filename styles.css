@@ -1380,49 +1380,55 @@ section {
     }
 
     .hero-partner-logos {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        right: auto;
-        width: 100%;
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0 1rem;
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        margin-top: 1.75rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.65rem !important;
+        padding: 0 1rem !important;
+        grid-template-columns: none !important;
     }
 
     .hero-logo-col {
+        display: flex !important;
         justify-content: center !important;
+        align-items: center !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
-        width: 100%;
+        width: 100% !important;
     }
 
     .hero-logo-center {
-        order: 1;
+        order: 1 !important;
     }
 
     .hero-logo-left {
-        order: 2;
+        order: 2 !important;
     }
 
     .hero-logo-right {
-        order: 3;
+        order: 3 !important;
     }
 
     .hero-partner-logos .logo-kyushu {
-        height: 16px;
-        transform: none;
+        height: 16px !important;
+        transform: none !important;
     }
 
     .hero-partner-logos .logo-desis {
-        height: 16px;
+        height: 16px !important;
+        filter: brightness(0) invert(1) !important;
     }
 
     .hero-partner-logos .logo-aigoki {
-        height: 13px;
+        height: 13px !important;
+        filter: none !important;
     }
 
     .apply-grid {
