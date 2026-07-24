@@ -1191,14 +1191,24 @@ section {
 .footer-partner-logos {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1.5rem;
     justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
 }
  
 .footer-partner-logo {
-    height: 22px;
+    height: 38px;
+    max-height: 44px;
     width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-partner-logo:hover {
     opacity: 1;
+    transform: translateY(-2px);
 }
  
 .footer-bottom {
