@@ -259,111 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "廃棄レコードを無償で受け取り、制作期間内に作品の設計および加工を行います。",
             "en": "Receive vinyl records free of charge and complete the design and fabrication within the creation period."
         },
-        "time-step2": {
-            "zh": "2026年11月1日 - 11月10日",
-            "ja": "11月1日 - 11月10日",
-            "en": "November 1 - November 10, 2026"
-        },
-        "title-step2": {
-            "zh": "线上作品评审",
-            "ja": "オンライン審査",
-            "en": "Online Jury Evaluation"
-        },
-        "text-step2": {
-            "zh": "特邀设计师担任评审，围绕设计方案、创意与资源循环理念进行线上评审。",
-            "ja": "専門審査員を招き、デザイン性や資源循環の観点からオンライン審査を実施します。",
-            "en": "Guest professional jurors will conduct online reviews based on design quality and sustainability values."
-        },
-        "time-step3": {
-            "zh": "2026年11月20日 - 11月25日",
-            "ja": "2026.11.20 - 11.25",
-            "en": "November 20 - November 25, 2026"
-        },
-        "title-step3": {
-            "zh": "线下成果展览",
-            "ja": "成果展示会",
-            "en": "Exhibition"
-        },
-        "text-step3": {
-            "zh": "于大桥校区展出入选作品。展览道具均采用可循环的瓦楞纸板搭建。",
-            "ja": "九州大学大橋キャンパスにて入選作品を展示。展示什器にはリサイクル可能な段ボールを使用します。",
-            "en": "Selected works will be exhibited at Ohashi Campus. Display fixtures are constructed from recyclable corrugated cardboard."
-        },
-        "time-step4": {
-            "zh": "2026年11月25日 15:00-17:00",
-            "ja": "11月25日 15:00-17:00",
-            "en": "November 25, 2026, 15:00-17:00"
-        },
-        "title-step4": {
-            "zh": "交流沙龙与颁奖",
-            "ja": "交流サロン・表彰式",
-            "en": "Exchange Salon & Awards"
-        },
-        "text-step4": {
-            "zh": "举办设计交流沙龙，公布获奖名单并进行表彰，促进设计师与校友、师生间的对话。",
-            "ja": "学内外の関係者による対話型サロンを開催し、優秀作品の表彰およびデザインの意図についての意見交換を行います。",
-            "en": "Host an interactive salon, honor award winners, and engage in open discussions on design intentions with alumni, students, and guests."
-        },
-        "time-step5": {
-            "zh": "2027年—",
-            "ja": "2027年—",
-            "en": "2027 —"
-        },
-        "title-step5": {
-            "zh": "地区合作与价值延伸",
-            "ja": "地域連携と展開",
-            "en": "Community Collaboration & Beyond"
-        },
-        "text-step5": {
-            "zh": "以本次活动的记录资料和当地唱片店进行交流，商议进一步发挥本次活动中作品价值的可能性，并谋求进一步合作，以提升地区活跃度。",
-            "ja": "本企画のアーカイブ資料をもとに地元のレコード店と対話し、作品価値のさらなる活用可能性を探るとともに、地域活性化に向けた連携を深めます。",
-            "en": "Partner with local record stores using project archives, exploring future applications of the artworks and deepening collaboration for local community activation."
-        },
-        "footer-desc": {
-            "zh": "废旧黑胶唱片再利用的可持续设计征集与成果展项目",
-            "ja": "廃棄アナログレコードの再利用によるサステナブルデザイン公募・展示プロジェクト",
-            "en": "An open call & exhibition project exploring sustainable design through recycled vinyl records."
-        },
-        "footer-contact-label": {
-            "zh": "RERE-CORDS 活动运营方 · 如有任何疑问，欢迎随时联络我们",
-            "ja": "RERE-CORDS 運営事務局 · ご不明な点がございましたら、お気軽にお問い合わせください",
-            "en": "RERE-CORDS Secretariat · Feel free to contact us with any questions"
-        },
-        "title-venue": {
-            "zh": "成果展览展信息",
-            "ja": "成果展示会 開催概要",
-            "en": "Exhibition Venue Details"
-        },
-        "lead-venue": {
-            "zh": "展览将于2026年11月下旬在九州大学大桥校区举办，欢迎公众参观。",
-            "ja": "成果展示会は2026年11月下旬に九州大学大橋キャンパスで開催予定です。どなたでもお気軽にご来場ください。",
-            "en": "The exhibition will be held in late November 2026 at Kyushu University Ohashi Campus. Open to the public."
-        },
-        "venue-address-label": {
-            "zh": "地址",
-            "ja": "会場住所",
-            "en": "Address"
-        },
-        "venue-address": {
-            "zh": "〒815-8540 福岡県福岡市南区塩原4丁目9-1 九州大学 大橋キャンパス",
-            "ja": "〒815-8540 福岡県福岡市南区塩原4丁目9-1 九州大学 大橋キャンパス",
-            "en": "4-9-1 Shiobaru, Minami-ku, Fukuoka 815-8540 — Kyushu University Ohashi Campus"
-        },
-        "venue-transit-label": {
-            "zh": "公共交通",
-            "ja": "交通アクセス",
-            "en": "Access & Public Transit"
-        },
-        "transit-nishitetsu-title": {
-            "zh": "西铁天神大牟田线",
-            "ja": "西鉄天神大牟田線",
-            "en": "Nishitetsu Tenjin-Omuta Line"
-        },
-        "transit-nishitetsu-text": {
-            "zh": "「大桥」站步行约5分钟",
-            "ja": "「大橋」駅より徒歩約5分",
-            "en": "5 min walk from \"Ohashi\" Station"
-        },
         "transit-jr-title": {
             "zh": "JR鹿儿岛本线",
             "ja": "JR鹿児島本線",
@@ -408,8 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "注",
             "ja": "注",
             "en": "Note"
-        }
-    };"November 1 - November 10, 2026"
         },
         "title-step2": {
             "zh": "线上作品评审",
