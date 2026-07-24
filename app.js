@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    let currentLang = localStorage.getItem('rere_cords_lang') || 'zh';
+    let currentLang = localStorage.getItem('rere_cords_lang') || 'ja';
 
     function updateLanguage(lang) {
         currentLang = lang;
