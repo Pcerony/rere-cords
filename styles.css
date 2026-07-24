@@ -352,28 +352,26 @@ a {
 .hero-partner-logos {
     position: absolute;
     bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    width: 100%;
     display: flex;
     align-items: flex-end;
-    gap: 1.75rem;
+    gap: 2.25rem;
     justify-content: center;
     flex-wrap: wrap;
     z-index: 2;
-    background: rgba(245, 244, 240, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 0.65rem 1.75rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    max-width: 90vw;
+    padding: 0 1rem;
 }
 
 .hero-partner-logos .footer-partner-logo {
     filter: none;
     opacity: 0.95;
     transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero-partner-logos .logo-desis {
+    filter: brightness(0) invert(1);
 }
 
 .hero-partner-logos .footer-partner-logo:hover {
