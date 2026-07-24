@@ -755,9 +755,31 @@ section {
     }
 }
 
-/* --------------------------------------------------------------------------
-   7. Official Poster Section (Gallery Presentation)
-   -------------------------------------------------------------------------- */
+#poster {
+    padding: 0 0 90px 0;
+}
+
+.poster-sticky-track {
+    position: relative;
+    height: 180vh;
+}
+
+.poster-sticky-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#poster .poster-sticky-sticky .section-header {
+    margin-bottom: 2rem;
+}
+
 .poster-display-container {
     display: flex;
     flex-direction: column;

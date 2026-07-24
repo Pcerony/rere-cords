@@ -562,27 +562,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* --------------------------------------------------------------------------
-       5. Scroll-Driven Poster Vinyl Reveal Animation (For Mobile & Desktop)
+       5. Scroll-Driven Pinning Poster Vinyl Reveal Animation (For Mobile & Desktop)
        -------------------------------------------------------------------------- */
     function initPosterScrollAnimation() {
-        const posterSection = document.getElementById('poster');
+        const stickyTrack = document.querySelector('.poster-sticky-track');
         const posterFrame = document.querySelector('.poster-frame');
         const posterVinyl = document.querySelector('.poster-vinyl');
-        if (!posterSection || !posterFrame || !posterVinyl) return;
+        if (!stickyTrack || !posterFrame || !posterVinyl) return;
 
         function updatePosterAnimation() {
-            const rect = posterSection.getBoundingClientRect();
+            const rect = stickyTrack.getBoundingClientRect();
+            const trackHeight = stickyTrack.offsetHeight;
             const windowHeight = window.innerHeight;
 
-            // Start animation when top of poster section enters viewport, finish near center
-            const startY = windowHeight;
-            const endY = windowHeight * 0.25;
-            
-            let progress = (startY - rect.top) / (startY - endY);
+            const scrollableDistance = trackHeight - windowHeight;
+            if (scrollableDistance <= 0) return;
+
+            // Compute progress inside the pinned sticky track (0 to 1)
+            const currentScroll = -rect.top;
+            let progress = currentScroll / scrollableDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Smooth sine curve for natural sliding motion
-            const easeProgress = Math.sin((progress * Math.PI) / 2);
+            // Map progress: 
+            // 0 - 0.1: Holds in place at center
+            // 0.1 - 0.9: Smoothly slides open & rotates vinyl
+            // 0.9 - 1.0: Stays fully open as track unpins
+            let animProgress = 0;
+            if (progress > 0.1 && progress < 0.9) {
+                animProgress = (progress - 0.1) / 0.8;
+            } else if (progress >= 0.9) {
+                animProgress = 1;
+            }
+
+            // Smooth cubic easing for high-end feel
+            const easeProgress = animProgress < 0.5
+                ? 2 * animProgress * animProgress
+                : 1 - Math.pow(-2 * animProgress + 2, 2) / 2;
 
             const isMobile = window.innerWidth <= 768;
             const maxFrameShift = isMobile ? -18 : -22;
@@ -592,7 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const frameX = easeProgress * maxFrameShift;
             const vinylX = easeProgress * maxVinylShift;
             const rotation = easeProgress * maxRotation;
-            const opacity = Math.min(1, easeProgress * 1.6);
+            const opacity = Math.min(1, easeProgress * 2);
 
             posterFrame.style.transform = `translateX(${frameX}%)`;
             posterVinyl.style.transform = `translateX(${vinylX}%) rotate(${rotation}deg)`;

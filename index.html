@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -108,27 +108,33 @@
             </div>
         </section>
 
-        <!-- Official Poster Section -->
+        <!-- Official Poster Section (Sticky Pinning Scroll Animation) -->
         <section id="poster">
-            <div class="section-container">
-                <div class="section-header reveal-on-scroll">
-                    <h2 class="section-title" data-i18n="title-poster">如何获得唱片？</h2>
-                    <p class="section-lead" data-i18n="lead-poster">共有两种途径可以获取本次活动所需的废旧黑胶唱片，请选择适合您的方式。</p>
-                </div>
-
-                <div class="poster-display-container reveal-on-scroll">
-                    <div class="poster-interactive-wrapper">
-                        <div class="poster-vinyl">
-                            <div class="vinyl-grooves"></div>
-                            <div class="vinyl-label">RERE-CORDS</div>
+            <div class="poster-sticky-track">
+                <div class="poster-sticky-sticky">
+                    <div class="section-container">
+                        <div class="section-header reveal-on-scroll">
+                            <h2 class="section-title" data-i18n="title-poster">如何获得唱片？</h2>
+                            <p class="section-lead" data-i18n="lead-poster">共有两种途径可以获取本次活动所需的废旧黑胶唱片，请选择适合您的方式。</p>
                         </div>
-                        <div class="poster-frame">
-                            <img src="./素材/新海报.jpg" alt="RERE-CORDS 宣传海报" class="poster-img" id="poster-image-element">
+
+                        <div class="poster-display-container reveal-on-scroll">
+                            <div class="poster-interactive-wrapper">
+                                <div class="poster-vinyl">
+                                    <div class="vinyl-grooves"></div>
+                                    <div class="vinyl-label">RERE-CORDS</div>
+                                </div>
+                                <div class="poster-frame">
+                                    <img src="./素材/新海报.jpg" alt="RERE-CORDS 宣传海报" class="poster-img" id="poster-image-element">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Two methods -->
+            <!-- Two methods -->
+            <div class="section-container">
                 <div class="record-methods reveal-on-scroll">
                     <div class="record-method-card">
                         <span class="method-num">01</span>
@@ -454,6 +460,6 @@
         // Initialize Lucide Icons
         lucide.createIcons();
     </script>
-    <script src="app.js?v=7"></script>
+    <script src="app.js?v=8"></script>
 </body>
 </html>
