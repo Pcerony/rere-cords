@@ -1387,15 +1387,18 @@ section {
     }
 
     #hero {
-        height: auto !important;
+        height: 100vh !important;
         min-height: 100vh !important;
+        max-height: 100vh !important;
+        overflow: hidden !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
         align-items: center !important;
-        padding-top: 5rem !important;
-        padding-bottom: 2.5rem !important;
+        padding-top: 4.25rem !important;
+        padding-bottom: 1.5rem !important;
         box-sizing: border-box !important;
+        position: relative !important;
     }
 
     .hero-container {
@@ -1405,7 +1408,8 @@ section {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        padding: 0 1.5rem !important;
+        padding: 0 1.25rem !important;
+        box-sizing: border-box !important;
     }
 
     .hero-brand-card {
@@ -1417,20 +1421,36 @@ section {
         text-align: center !important;
     }
 
+    .hero-title {
+        font-size: clamp(2rem, 6.5vw, 2.5rem) !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(0.95rem, 2.8vw, 1.15rem) !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-description {
+        font-size: 0.88rem !important;
+        line-height: 1.6 !important;
+    }
+
     .hero-partner-logos {
         position: relative !important;
         bottom: auto !important;
         left: auto !important;
         right: auto !important;
         width: 100% !important;
-        margin-top: 2rem !important;
+        margin-top: 0.75rem !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 0.75rem !important;
+        gap: 0.5rem !important;
         padding: 0 1rem !important;
         grid-template-columns: none !important;
+        flex-shrink: 0 !important;
     }
 
     .hero-logo-col {
@@ -1455,17 +1475,17 @@ section {
     }
 
     .hero-partner-logos .logo-kyushu {
-        height: 16px !important;
+        height: 28px !important;
         transform: none !important;
     }
 
     .hero-partner-logos .logo-desis {
-        height: 16px !important;
+        height: 28px !important;
         filter: brightness(0) invert(1) !important;
     }
 
     .hero-partner-logos .logo-aigoki {
-        height: 13px !important;
+        height: 24px !important;
         filter: none !important;
     }
 
