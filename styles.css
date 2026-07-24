@@ -1378,14 +1378,6 @@ section {
         margin-top: 0.75rem;
     }
 
-    .poster-interactive-wrapper:hover .poster-frame {
-        transform: translateX(-12%);
-    }
-
-    .poster-interactive-wrapper:hover .poster-vinyl {
-        transform: translateX(25%) rotate(90deg);
-    }
-
     #hero {
         height: 100vh !important;
         height: 100dvh !important;

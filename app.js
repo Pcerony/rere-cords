@@ -560,4 +560,49 @@ document.addEventListener('DOMContentLoaded', () => {
         handleScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
     }
+
+    /* --------------------------------------------------------------------------
+       5. Scroll-Driven Poster Vinyl Reveal Animation (For Mobile & Desktop)
+       -------------------------------------------------------------------------- */
+    function initPosterScrollAnimation() {
+        const posterSection = document.getElementById('poster');
+        const posterFrame = document.querySelector('.poster-frame');
+        const posterVinyl = document.querySelector('.poster-vinyl');
+        if (!posterSection || !posterFrame || !posterVinyl) return;
+
+        function updatePosterAnimation() {
+            const rect = posterSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Start animation when top of poster section enters viewport, finish near center
+            const startY = windowHeight;
+            const endY = windowHeight * 0.25;
+            
+            let progress = (startY - rect.top) / (startY - endY);
+            progress = Math.max(0, Math.min(1, progress));
+
+            // Smooth sine curve for natural sliding motion
+            const easeProgress = Math.sin((progress * Math.PI) / 2);
+
+            const isMobile = window.innerWidth <= 768;
+            const maxFrameShift = isMobile ? -18 : -22;
+            const maxVinylShift = isMobile ? 38 : 48;
+            const maxRotation = 180;
+
+            const frameX = easeProgress * maxFrameShift;
+            const vinylX = easeProgress * maxVinylShift;
+            const rotation = easeProgress * maxRotation;
+            const opacity = Math.min(1, easeProgress * 1.6);
+
+            posterFrame.style.transform = `translateX(${frameX}%)`;
+            posterVinyl.style.transform = `translateX(${vinylX}%) rotate(${rotation}deg)`;
+            posterVinyl.style.opacity = opacity;
+        }
+
+        window.addEventListener('scroll', updatePosterAnimation, { passive: true });
+        window.addEventListener('resize', updatePosterAnimation, { passive: true });
+        updatePosterAnimation();
+    }
+
+    initPosterScrollAnimation();
 });
