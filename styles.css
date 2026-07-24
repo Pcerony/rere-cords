@@ -868,48 +868,6 @@ section {
     cursor: zoom-out;
 }
 
-.lightbox-close {
-    position: absolute;
-    top: -42px;
-    right: 0;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition-fast);
-}
-
-.lightbox-close:hover {
-    background: rgba(255, 255, 255, 0.35);
-    transform: scale(1.08);
-}
-
-.lightbox-close svg {
-    width: 18px;
-    height: 18px;
-    stroke-width: 2;
-}
-
-@media (max-width: 768px) {
-    .lightbox-close {
-        top: -38px;
-        right: 0;
-        width: 32px;
-        height: 32px;
-    }
-    
-    .lightbox-close svg {
-        width: 16px;
-        height: 16px;
-    }
-}
-
 .poster-img {
     width: 100%;
     height: auto;

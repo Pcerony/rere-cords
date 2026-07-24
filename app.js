@@ -630,7 +630,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!posterFrame || !lightbox) return;
 
         const backdrop = lightbox.querySelector('.lightbox-backdrop');
-        const closeBtn = lightbox.querySelector('.lightbox-close');
         const lightboxImg = lightbox.querySelector('.lightbox-img');
 
         function openLightbox(e) {
@@ -648,7 +647,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         posterFrame.addEventListener('click', openLightbox);
         if (backdrop) backdrop.addEventListener('click', closeLightbox);
-        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
         if (lightboxImg) lightboxImg.addEventListener('click', closeLightbox);
 
         document.addEventListener('keydown', (e) => {

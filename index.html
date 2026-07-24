@@ -4,7 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="doc-title">RERE-CORDS | 廃棄レコードのサステナブルデザイン展示</title>
-    <meta name="description" content="九州大学大橋キャンパスの学生・教職員・卒業生を対象とした、廃棄レコードの再利用デザイン企画。">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="RERE-CORDS, サステナブルデザイン, 九州大学大橋キャンパス, 廃棄レコード, アナログレコード, 再利用, オープンコール, SDG12, Sustainable Design, Vinyl Records">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#f5f4f0">
+    <link rel="canonical" href="https://pcerony.github.io/rere-cords/">
+
+    <!-- Open Graph / Social Media Preview (Facebook, LINE, WeChat) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="RERE-CORDS Project">
+    <meta property="og:title" content="RERE-CORDS | 廃棄アナログレコードのサステナブルデザイン展">
+    <meta property="og:description" content="九州大学大橋キャンパスの学生・教職員・卒業生を対象とした、廃棄レコードの再利用デザイン公募・成果展示プロジェクト。">
+    <meta property="og:url" content="https://pcerony.github.io/rere-cords/">
+    <meta property="og:image" content="https://pcerony.github.io/rere-cords/素材/主视觉.png">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RERE-CORDS | 廃棄レコードのサステナブルデザイン展示">
+    <meta name="twitter:description" content="九州大学大橋キャンパスで開催される廃棄アナログレコードのサステナブルデザイン公募・展示プロジェクト。">
+    <meta name="twitter:image" content="https://pcerony.github.io/rere-cords/素材/主视觉.png">
+
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ExhibitionEvent",
+      "name": "RERE-CORDS 廃棄アナログレコードのサステナブルデザイン展",
+      "alternateName": "RERE-CORDS Sustainable Vinyl Design Exhibition",
+      "startDate": "2026-11-20T10:00:00+09:00",
+      "endDate": "2026-11-25T17:00:00+09:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "九州大学 大橋キャンパス",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "塩原4丁目9-1",
+          "addressLocality": "福岡市南区",
+          "addressRegion": "福岡県",
+          "postalCode": "815-8540",
+          "addressCountry": "JP"
+        }
+      },
+      "image": ["https://pcerony.github.io/rere-cords/素材/主视觉.png"],
+      "description": "廃棄アナログレコードの再利用によるサステナブルデザイン公募・成果展示プロジェクト。",
+      "organizer": {
+        "@type": "Organization",
+        "name": "RERE-CORDS 運営事務局",
+        "url": "https://pcerony.github.io/rere-cords/"
+      }
+    }
+    </script>
+
     <!-- Google Fonts: EB Garamond & Alegreya Sans & Noto Serif SC/JP & Noto Sans SC/JP & Playfair Display & Cinzel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +75,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 
@@ -459,9 +519,6 @@
     <div id="poster-lightbox" class="lightbox-modal" aria-hidden="true">
         <div class="lightbox-backdrop"></div>
         <div class="lightbox-content">
-            <button class="lightbox-close" aria-label="Close fullscreen view">
-                <i data-lucide="x"></i>
-            </button>
             <img src="./素材/新海报.jpg" alt="RERE-CORDS 宣传海报 全屏" class="lightbox-img">
         </div>
     </div>
@@ -471,6 +528,6 @@
         // Initialize Lucide Icons
         lucide.createIcons();
     </script>
-    <script src="app.js?v=10"></script>
+    <script src="app.js?v=11"></script>
 </body>
 </html>
