@@ -1379,18 +1379,49 @@ section {
         transform: translateX(25%) rotate(90deg);
     }
 
+    #hero {
+        height: auto !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding-top: 5rem !important;
+        padding-bottom: 2.5rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 1.5rem !important;
+    }
+
+    .hero-brand-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
     .hero-partner-logos {
         position: relative !important;
         bottom: auto !important;
         left: auto !important;
         right: auto !important;
         width: 100% !important;
-        margin-top: 1.75rem !important;
+        margin-top: 2rem !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 0.65rem !important;
+        gap: 0.75rem !important;
         padding: 0 1rem !important;
         grid-template-columns: none !important;
     }
