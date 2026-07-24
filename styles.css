@@ -389,17 +389,17 @@ a {
 }
 
 .hero-partner-logos .logo-kyushu {
-    height: 28px;
-    transform: translateY(-3px);
+    height: 19px;
+    transform: translateY(-2px);
 }
 
 .hero-partner-logos .logo-desis {
-    height: 28px;
+    height: 19px;
     filter: brightness(0) invert(1);
 }
 
 .hero-partner-logos .logo-aigoki {
-    height: 24px;
+    height: 16px;
     filter: none;
 }
 
