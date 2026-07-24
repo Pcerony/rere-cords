@@ -273,15 +273,17 @@ a {
    -------------------------------------------------------------------------- */
 #hero {
     min-height: 100vh;
-    height: 100vh;
+    height: auto;
     position: relative;
     background: url('./素材/主视觉.png') no-repeat center center;
     background-size: cover;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 6.5rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -302,6 +304,10 @@ a {
     padding: 0 2rem;
     position: relative;
     z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-brand-card {
@@ -350,11 +356,12 @@ a {
 }
 
 .hero-partner-logos {
-    position: absolute;
-    bottom: 2rem;
+    position: relative;
+    bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
+    margin-top: 1.5rem;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: flex-end;
