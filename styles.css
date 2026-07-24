@@ -1190,20 +1190,30 @@ section {
 
 .footer-partner-logos {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    align-items: flex-end;
+    gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 1.25rem;
+    margin-top: 1.5rem;
 }
  
 .footer-partner-logo {
-    height: 38px;
-    max-height: 44px;
     width: auto;
     object-fit: contain;
     opacity: 0.9;
     transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-partner-logo.logo-kyushu {
+    height: 42px;
+}
+
+.footer-partner-logo.logo-desis {
+    height: 64px;
+}
+
+.footer-partner-logo.logo-aigoki {
+    height: 36px;
 }
 
 .footer-partner-logo:hover {
