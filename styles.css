@@ -756,12 +756,14 @@ section {
 }
 
 #poster {
-    padding: 0 0 60px 0;
+    padding: 0;
+    position: relative;
+    background-color: var(--color-bg-base);
 }
 
 .poster-sticky-track {
     position: relative;
-    height: 130vh;
+    height: 145vh;
 }
 
 .poster-sticky-sticky {
@@ -772,18 +774,27 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
     box-sizing: border-box;
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
 }
 
 #poster .poster-sticky-sticky .section-header {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.record-methods-outer {
+    position: relative;
+    z-index: 10;
+    background-color: var(--color-bg-base);
+    padding-top: 3.5rem;
+    padding-bottom: 5.5rem;
+    border-top: 1px solid var(--color-border);
 }
 
 #poster .record-methods {
-    margin-top: 3.5rem;
-    position: relative;
-    z-index: 5;
+    margin-top: 0;
 }
 
 .poster-display-container {
@@ -794,7 +805,7 @@ section {
 
 .poster-interactive-wrapper {
     position: relative;
-    max-width: 380px;
+    max-width: 360px;
     width: 100%;
     overflow: visible;
 }
@@ -1581,11 +1592,12 @@ section {
     }
 
     .poster-interactive-wrapper {
-        max-width: 290px !important;
+        max-width: 280px !important;
     }
 
-    #poster .record-methods {
-        margin-top: 2rem !important;
+    .record-methods-outer {
+        padding-top: 2.5rem !important;
+        padding-bottom: 4rem !important;
     }
 }
 
