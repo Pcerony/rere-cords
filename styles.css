@@ -777,11 +777,11 @@ section {
 }
 
 #poster .poster-sticky-sticky .section-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
 }
 
 #poster .record-methods {
-    margin-top: -10vh;
+    margin-top: 3.5rem;
     position: relative;
     z-index: 5;
 }
@@ -794,7 +794,7 @@ section {
 
 .poster-interactive-wrapper {
     position: relative;
-    max-width: 420px;
+    max-width: 380px;
     width: 100%;
     overflow: visible;
 }
@@ -1578,6 +1578,14 @@ section {
     .apply-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .poster-interactive-wrapper {
+        max-width: 290px !important;
+    }
+
+    #poster .record-methods {
+        margin-top: 2rem !important;
     }
 }
 
