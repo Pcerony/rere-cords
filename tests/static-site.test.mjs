@@ -22,6 +22,19 @@ function parseTranslations(source) {
     return dictionary;
 }
 
+function mergeExtraTranslations(dictionary) {
+    const context = { window: {} };
+    vm.runInNewContext(read('translations.js'), context);
+
+    for (const [language, translations] of Object.entries(context.window.RERE_CORDS_EXTRA_TRANSLATIONS)) {
+        for (const [key, value] of Object.entries(translations)) {
+            if (dictionary[key]) dictionary[key][language] = value;
+        }
+    }
+
+    return dictionary;
+}
+
 test('submission config is closed and empty by default', () => {
     const context = { window: {} };
     vm.runInNewContext(read('submission-config.js'), context);
@@ -41,31 +54,37 @@ test('homepage contains one disabled submission entry before the venue', () => {
     assert.ok(venueIndex > submissionIndex, '#submission must appear before #venue');
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
-    assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="app\.js\?v=15"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="translations\.js\?v=1"><\/script>\s*<script src="app\.js\?v=16"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
 });
 
-test('every translated homepage key has zh, ja, en, and fi values', () => {
+test('every translated homepage key has all supported language values', () => {
     const html = read('index.html');
-    const dictionary = parseTranslations(read('app.js'));
+    const dictionary = mergeExtraTranslations(parseTranslations(read('app.js')));
     const keys = [...html.matchAll(/data-i18n="([^"]+)"/g)].map((match) => match[1]);
+    const languages = ['en', 'ja', 'zh', 'zh-TW', 'ko', 'id', 'vi', 'th', 'bn', 'ar', 'fr', 'hi', 'fi'];
 
     for (const key of keys) {
         assert.ok(dictionary[key], `missing translation key: ${key}`);
-        for (const language of ['zh', 'ja', 'en', 'fi']) {
+        for (const language of languages) {
             assert.equal(typeof dictionary[key][language], 'string', `${key}.${language} must be a string`);
             assert.notEqual(dictionary[key][language].trim(), '', `${key}.${language} must not be empty`);
         }
     }
 });
 
-test('homepage exposes Finnish and uses the simplified participant flow', () => {
+test('homepage exposes a complete native language selector and simplified participant flow', () => {
     const html = read('index.html');
     const app = read('app.js');
+    const expectedOptions = ['en', 'ja', 'zh', 'zh-TW', 'ko', 'id', 'vi', 'th', 'bn', 'ar', 'fr', 'hi', 'fi'];
 
-    assert.match(html, /data-lang-btn="fi">FI<\/button>/);
+    assert.match(html, /<select[^>]+id="language-select"/);
+    assert.doesNotMatch(html, /data-lang-btn|class="lang-btn"/);
+    for (const language of expectedOptions) {
+        assert.match(html, new RegExp(`<option value="${language}">`));
+    }
     assert.match(app, /fi:\s*'fi'/);
     assert.equal((html.match(/class="timeline-item(?:\s|"|$)/g) || []).length, 2);
     assert.match(html, /class="timeline-optional/);
@@ -97,6 +116,11 @@ test('language, submission, and motion foundations are present', () => {
 
     assert.match(app, /'zh-CN'/);
     assert.match(app, /'en'/);
+    assert.match(app, /return SUPPORTED_LANGUAGES\.includes\(language\) \? language : 'en'/);
+    assert.match(app, /document\.documentElement\.setAttribute\('dir', currentLang === 'ar' \? 'rtl' : 'ltr'\)/);
+    assert.doesNotMatch(app, /header-hidden|lastScrollY/);
+    assert.doesNotMatch(css, /#main-header\.header-hidden/);
+    assert.match(css, /#main-header\.is-over-hero/);
     assert.match(app, /prefers-reduced-motion/);
     assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
     assert.match(css, /submission-cta/);
