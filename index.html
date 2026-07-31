@@ -25,6 +25,7 @@
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="zh_CN">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="fi_FI">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -73,7 +74,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
 
@@ -94,6 +95,8 @@
                     <button class="lang-btn active" data-lang-btn="ja">日</button>
                     <span class="lang-divider">/</span>
                     <button class="lang-btn" data-lang-btn="en">EN</button>
+                    <span class="lang-divider">/</span>
+                    <button class="lang-btn" data-lang-btn="fi">FI</button>
                 </div>
             </div>
         </div>
@@ -157,8 +160,8 @@
                                 <span class="stat-label" data-i18n="stat-target">核心实践目标</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-num">Selected</span>
-                                <span class="stat-label" data-i18n="stat-exhibit">入选作品展示</span>
+                                <span class="stat-num">Submitted</span>
+                                <span class="stat-label" data-i18n="stat-exhibit">参与作品展示</span>
                             </div>
                         </div>
                     </div>
@@ -222,7 +225,7 @@
             <div class="section-container">
                 <div class="section-header reveal-on-scroll">
                     <h2 class="section-title" data-i18n="title-requirements">作品要求</h2>
-                    <p class="section-lead" data-i18n="lead-requirements">加工方法自由，设计类别不限。以下为本次征集的基本规则与建议。</p>
+                    <p class="section-lead" data-i18n="lead-requirements">设计类别不限；加工方式须以安全、合规并适合所用工具为前提。以下为本次征集的基本规则。</p>
                 </div>
 
                 <div class="req-grid reveal-on-scroll">
@@ -292,7 +295,7 @@
                         </div>
                         <div class="req-body">
                             <h3 class="req-title" data-i18n="req-proc-title">加工方法</h3>
-                            <p class="req-desc" data-i18n="req-proc-text">加工方式完全自由：可裁断、加热软化、弯曲重塑、拼接组合，或与其他材料结合创作。</p>
+                            <p class="req-desc" data-i18n="req-proc-text">可采用裁切、弯曲、拼接或与其他材料组合等方法，但必须遵守下方安全规范。涉及加热、打磨或电动工具时，仅可在获准并具备相应安全条件的场所进行。</p>
                         </div>
                     </div>
 
@@ -311,7 +314,7 @@
                         </div>
                         <div class="req-body">
                             <h3 class="req-title" data-i18n="req-sub-title">提交内容</h3>
-                            <p class="req-desc" data-i18n="req-sub-text">请发送作品的 <strong>设计图像或照片</strong>，并附上一段不超过 <strong>30秒</strong> 的制作过程视频，发送至活动邮箱。</p>
+                            <p class="req-desc" data-i18n="req-sub-text">实物作品线下提交；数据作品通过线上入口提交。两类作品所需资料不同，请查看下方“提交作品”说明。</p>
                         </div>
                     </div>
 
@@ -326,9 +329,54 @@
                             <circle cx="12" cy="17" r="0.8" fill="currentColor"/>
                         </svg>
                     </div>
-                    <p class="req-notice-text" data-i18n="req-notice-text">请妥善保管制作完成的作品实物。入选展览的参与者将被要求提供作品的实体展品（平面设计等非实物作品除外）。</p>
+                    <p class="req-notice-text" data-i18n="req-notice-text">请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。线下交付地点与时间将在提交入口开放前公布。</p>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Safety Section -->
+        <section id="safety">
+            <div class="section-container safety-container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="safety-kicker" data-i18n="safety-kicker">制作前请阅读</span>
+                    <h2 class="section-title" data-i18n="title-safety">加工安全说明</h2>
+                    <p class="section-lead" data-i18n="lead-safety">废旧唱片通常以PVC为主要材料。裁切、加热、打磨、钻孔与粘接均可能产生伤害或有害暴露，请先评估方法、材料与场所是否安全。</p>
+                </div>
+
+                <div class="safety-hazards reveal-on-scroll">
+                    <article class="safety-hazard">
+                        <span class="safety-hazard-index">01</span>
+                        <h3 data-i18n="safety-cut-title">裁切与尖锐边缘</h3>
+                        <p data-i18n="safety-cut-text">唱片断面、刀具和飞散碎片可能造成割伤或眼部伤害。固定材料，使用适合PVC的工具，并佩戴护目镜；完成后打磨或包覆锐边。</p>
+                    </article>
+                    <article class="safety-hazard">
+                        <span class="safety-hazard-index">02</span>
+                        <h3 data-i18n="safety-heat-title">加热、烟气与烫伤</h3>
+                        <p data-i18n="safety-heat-text">PVC过热或分解时会产生刺激性烟气。不得使用明火或无控温设备，仅可在获准且具有效通风或局部排风的场所低温、短时加工，并防止接触高温表面。</p>
+                    </article>
+                    <article class="safety-hazard">
+                        <span class="safety-hazard-index">03</span>
+                        <h3 data-i18n="safety-tool-title">工具、粉尘与用电</h3>
+                        <p data-i18n="safety-tool-text">钻孔、锯切和打磨可能产生粉尘、缠卷、飞溅、噪声或触电风险。仅使用受过培训且获准操作的设备，并按工具和场所要求采取集尘、听力及呼吸防护。</p>
+                    </article>
+                    <article class="safety-hazard">
+                        <span class="safety-hazard-index">04</span>
+                        <h3 data-i18n="safety-chemical-title">胶黏剂与混合材料</h3>
+                        <p data-i18n="safety-chemical-text">胶黏剂、涂料和清洁剂可能易燃或具有刺激性。使用前阅读产品标签和安全数据，保持通风，远离热源，并确认其与PVC及其他材料相容。</p>
+                    </article>
+                </div>
+
+                <div class="safety-mandatory reveal-on-scroll">
+                    <div>
+                        <h3 data-i18n="safety-prohibited-title">禁止事项</h3>
+                        <p data-i18n="safety-prohibited-text">禁止燃烧唱片、明火加热、激光切割PVC，以及在密闭或通风不足的空间内加热。未经许可与培训，不得使用电动工具或校园工坊设备。</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="safety-stop-title">异常时立即停止</h3>
+                        <p data-i18n="safety-stop-text">如出现烟雾、强烈或刺激性气味、眼鼻喉刺激、头晕或设备异常，请立即停止操作、切断设备并离开现场，随后联系场所负责人；必要时寻求医疗帮助。</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -337,7 +385,7 @@
             <div class="section-container">
                 <div class="section-header reveal-on-scroll">
                     <h2 class="section-title" data-i18n="title-timeline">プロジェクトスケジュール</h2>
-                    <p class="section-lead" data-i18n="lead-timeline">2026年8月より素材配布と制作を開始し、審査を経て11月下旬に九州大学大橋キャンパスにて成果展示会および交流サロンを開催します。</p>
+                    <p class="section-lead" data-i18n="lead-timeline">参加の基本プロセスは、制作・提出と対面成果展示の2段階です。11月中旬の交流サロンは自由参加です。</p>
                 </div>
  
                 <div class="timeline-wrapper">
@@ -348,49 +396,56 @@
                     <div class="timeline-item">
                         <div class="timeline-marker">1</div>
                         <div class="timeline-content-card">
-                            <span class="timeline-date" data-i18n="time-step1">8月1日 - 10月31日</span>
-                            <h3 data-i18n="title-step1">素材配布・制作</h3>
-                            <p data-i18n="text-step1">廃棄レコードを無償で受け取り、制作期間内に作品の設計および加工を行います。</p>
+                            <span class="timeline-date" data-i18n="time-step1">2026年8月10日 - 11月10日</span>
+                            <h3 data-i18n="title-step1">分发、制作与随时提交</h3>
+                            <p data-i18n="text-step1">领取废旧唱片后即可开始制作，并可在此期间随时提交完成的作品；最终截止时间为11月10日。</p>
+                        </div>
+                    </div>
+
+                    <!-- Optional Salon -->
+                    <div class="timeline-optional reveal-on-scroll">
+                        <div class="timeline-optional-marker" aria-hidden="true"></div>
+                        <div class="timeline-optional-content">
+                            <span class="timeline-optional-badge" data-i18n="timeline-optional-badge">可选参加</span>
+                            <span class="timeline-date" data-i18n="time-salon">2026年11月15日前后</span>
+                            <h3 data-i18n="title-salon">交流沙龙</h3>
+                            <p data-i18n="text-salon">面向参与者开展轻松的作品交流与经验分享。活动时间和形式另行通知，不参加也不影响作品提交与展览。</p>
                         </div>
                     </div>
  
                     <!-- Step 2 -->
-                    <div class="timeline-item">
+                    <div class="timeline-item timeline-item-last">
                         <div class="timeline-marker">2</div>
-                        <div class="timeline-content-card">
-                            <span class="timeline-date" data-i18n="time-step2">11月1日 - 11月10日</span>
-                            <h3 data-i18n="title-step2">オンライン審査</h3>
-                            <p data-i18n="text-step2">専門審査員を招き、デザイン性や資源循環の観点からオンライン審査を実施します。</p>
-                        </div>
-                    </div>
- 
-                    <!-- Step 3 -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">3</div>
                         <div class="timeline-content-card">
                             <span class="timeline-date" data-i18n="time-step3">2026.11.20 - 11.25</span>
                             <h3 data-i18n="title-step3">成果展示会</h3>
-                            <p data-i18n="text-step3">九州大学大橋キャンパスにて入選作品を展示。展示什器にはリサイクル可能な段ボールを使用します。</p>
+                            <p data-i18n="text-step3">九州大学大桥校区举办线下成果展，集中呈现参与者提交的作品；展览道具优先采用可循环材料。</p>
                         </div>
                     </div>
- 
-                    <!-- Step 4 -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">4</div>
-                        <div class="timeline-content-card">
-                            <span class="timeline-date" data-i18n="time-step4">11月25日 15:00-17:00</span>
-                            <h3 data-i18n="title-step4">交流サロン・表彰式</h3>
-                            <p data-i18n="text-step4">学内外の関係者による対話型サロンを開催し、優秀作品の表彰およびデザインの意図についての意見交換を行います。</p>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Step 5 -->
-                    <div class="timeline-item timeline-item-last">
-                        <div class="timeline-marker">5</div>
-                        <div class="timeline-content-card">
-                            <span class="timeline-date" data-i18n="time-step5">2027年—</span>
-                            <h3 data-i18n="title-step5">地域連携と展開</h3>
-                            <p data-i18n="text-step5">本企画のアーカイブ資料をもとに地元のレコード店と対話し、作品価値のさらなる活用可能性を探るとともに、地域活性化に向けた連携を深めます。</p>
+        <!-- Faculty Advisors -->
+        <section id="advisors">
+            <div class="section-container advisors-container">
+                <div class="section-header reveal-on-scroll">
+                    <h2 class="section-title" data-i18n="title-advisors">指导教师</h2>
+                    <p class="section-lead" data-i18n="lead-advisors">九州大学大学院艺术工学研究院战略设计部门</p>
+                </div>
+                <div class="advisor-list reveal-on-scroll">
+                    <div class="advisor-person">
+                        <span class="advisor-index">01</span>
+                        <div>
+                            <h3 data-i18n="advisor-zhang-name">張 彦芳</h3>
+                            <p data-i18n="advisor-zhang-role">准教授 · 通用设计、社会设计</p>
+                        </div>
+                    </div>
+                    <div class="advisor-person">
+                        <span class="advisor-index">02</span>
+                        <div>
+                            <h3 data-i18n="advisor-sarantou-name">Melanie Sarantou</h3>
+                            <p data-i18n="advisor-sarantou-role">教授 · 战略设计、社会设计</p>
                         </div>
                     </div>
                 </div>
@@ -402,7 +457,7 @@
             <div class="section-container">
                 <div class="section-header reveal-on-scroll">
                     <h2 class="section-title" data-i18n="title-apply">报名方法</h2>
-                    <p class="section-lead" data-i18n="lead-apply">请通过电子邮件提交您的设计意向及作品申请，具体要求与时间如下：</p>
+                    <p class="section-lead" data-i18n="lead-apply">参与申请仍通过电子邮件受理；最终作品请按照下方“提交作品”的分类要求提交。</p>
                 </div>
                 
                 <div class="about-details-box reveal-on-scroll">
@@ -410,11 +465,11 @@
                         <div class="apply-grid">
                             <div class="apply-info-item">
                                 <h3 data-i18n="apply-method-title">递交方式</h3>
-                                <p data-i18n="apply-method-text">将您的设计方案、作品图像/照片以及一段30秒的制作过程视频发送至电子邮箱：<a href="mailto:rerecords2026@gmail.com" class="apply-email">rerecords2026@gmail.com</a></p>
+                                <p data-i18n="apply-method-text">将参与意向和简要设计构想发送至活动邮箱：<a href="mailto:rerecords2026@gmail.com" class="apply-email">rerecords2026@gmail.com</a>。最终作品材料不在报名邮件中提交。</p>
                             </div>
                             <div class="apply-info-item">
                                 <h3 data-i18n="apply-period-title">征集时间</h3>
-                                <p data-i18n="apply-period-text">2026年5月1日 — 7月30日（在此期间进行参与申请及废旧唱片原材料的分发领取）</p>
+                                <p data-i18n="apply-period-text">2026年5月1日 — 7月30日（参与申请）；材料分发、制作与作品提交阶段为8月10日 — 11月10日。</p>
                             </div>
                         </div>
                     </div>
@@ -436,14 +491,16 @@
                             <span class="submission-route-index">01</span>
                             <div>
                                 <h3 data-i18n="submission-digital-title">数字、图片或数据作品</h3>
-                                <p data-i18n="submission-digital-text">此类作品后续将通过线上入口提交必要材料，具体安排将在开放前公布。</p>
+                                <p data-i18n="submission-digital-text">通过线上入口提交作品数据与参与表。以下资料均为必需内容。</p>
+                                <p class="submission-requirements" data-i18n="submission-digital-requirements"><strong>必须包含：</strong>至少1张作品图像、1段简短说明视频，以及理解、查看或运行作品所需的补充资料。</p>
                             </div>
                         </div>
                         <div class="submission-route">
                             <span class="submission-route-index">02</span>
                             <div>
                                 <h3 data-i18n="submission-physical-title">实物作品</h3>
-                                <p data-i18n="submission-physical-text">实物作品后续以线下交付为主，参与表的线上或纸质方式将在开放前说明。</p>
+                                <p data-i18n="submission-physical-text">将作品实物交至指定线下地点；参与表可选择纸质提交或通过线上入口单独提交。</p>
+                                <p class="submission-requirements" data-i18n="submission-physical-options"><strong>可选择：</strong>只提交实物作品，或同时提交作品图像、视频及其他补充资料。</p>
                             </div>
                         </div>
                     </div>
@@ -466,8 +523,8 @@
         <section id="venue">
             <div class="section-container venue-wide">
                 <div class="section-header reveal-on-scroll">
-                    <h2 class="section-title" data-i18n="title-venue">成果展览展信息</h2>
-                    <p class="section-lead" data-i18n="lead-venue">展览将于2026年11月下旬在九州大学大桥校区举办，欢迎公众参观。</p>
+                    <h2 class="section-title" data-i18n="title-venue">成果展示会 開催情報</h2>
+                    <p class="section-lead" data-i18n="lead-venue">成果展示会は2026年11月20日から25日まで九州大学大橋キャンパスで開催予定です。一般の方もご来場いただけます。</p>
                 </div>
 
                 <div class="venue-grid reveal-on-scroll">
@@ -564,6 +621,6 @@
     </div>
 
     <script src="submission-config.js?v=1"></script>
-    <script src="app.js?v=14"></script>
+    <script src="app.js?v=15"></script>
 </body>
 </html>

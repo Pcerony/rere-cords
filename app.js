@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --------------------------------------------------------------------------
-       1. Multilingual Translation System (ZH / JA / EN)
+       1. Multilingual Translation System (ZH / JA / EN / FI)
        -------------------------------------------------------------------------- */
         const i18nDict = {
         "doc-title": {
@@ -85,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Core SDG Target"
         },
         "stat-exhibit": {
-            "zh": "入选作品展示",
-            "ja": "選抜展示",
-            "en": "Selected Works Exhibition"
+            "zh": "参与作品展示",
+            "ja": "提出作品の展示",
+            "en": "Submitted Works Exhibition"
         },
         "title-poster": {
             "zh": "如何获得唱片？",
@@ -155,9 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Requirements"
         },
         "lead-requirements": {
-            "zh": "加工方法自由，设计类别不限。以下为本次征集的基本规则与建议。",
-            "ja": "加工手法やデザインの分野は自由です。以下に本公募の基本ルールと推奨事項をご案内します。",
-            "en": "Processing techniques and design categories are completely open. Below are the basic rules and guidelines for this open call."
+            "zh": "设计类别不限；加工方式须以安全、合规并适合所用工具为前提。以下为本次征集的基本规则。",
+            "ja": "デザイン分野は問いませんが、加工は安全かつ規則に沿い、使用する工具に適した方法で行ってください。以下が本公募の基本ルールです。",
+            "en": "Design categories are open, but all processing must be safe, permitted, and appropriate for the tools used. These are the basic rules for this open call."
         },
         "req-cat-title": {
             "zh": "设计类别",
@@ -185,9 +185,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Processing Techniques"
         },
         "req-proc-text": {
-            "zh": "加工方式完全自由：可裁断、加热软化、弯曲重塑、拼接组合，或与其他材料结合创作。",
-            "ja": "加工手法は一切問いません。切断、加熱成形、曲げ加工、接合、他素材との組み合わせなど、自由に制作してください。",
-            "en": "Processing methods are completely open: cutting, heat-forming, bending, joining, or combining with other materials."
+            "zh": "可采用裁切、弯曲、拼接或与其他材料组合等方法，但必须遵守下方安全规范。涉及加热、打磨或电动工具时，仅可在获准并具备相应安全条件的场所进行。",
+            "ja": "切断、曲げ、接合、他素材との組み合わせなどが可能ですが、下記の安全規定を必ず守ってください。加熱、研磨、電動工具を伴う作業は、許可され必要な安全設備を備えた場所でのみ行えます。",
+            "en": "You may cut, bend, join, or combine records with other materials, but the safety rules below are mandatory. Heating, sanding, or power-tool work is allowed only in an authorized space with suitable safety controls."
         },
         "req-sub-title": {
             "zh": "提交内容",
@@ -195,14 +195,89 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Materials"
         },
         "req-sub-text": {
-            "zh": "请发送作品的 <strong>设计图像或照片</strong>，并附上一段不超过 <strong>30秒</strong> 的制作过程视频，发送至活动邮箱。",
-            "ja": "作品の <strong>デザイン画像または写真</strong> と、<strong>30秒以内</strong> の制作プロセス動画を事務局メールアドレスへご送付ください。",
-            "en": "Please send <strong>design images or photos</strong> of your work, along with a production process video of up to <strong>30 seconds</strong>, to the project email."
+            "zh": "实物作品线下提交；数据作品通过线上入口提交。两类作品所需资料不同，请查看下方“提交作品”说明。",
+            "ja": "実物作品は対面で、データ作品はオンライン窓口から提出します。必要資料が異なるため、下記の「作品提出」をご確認ください。",
+            "en": "Physical works are delivered offline; data-based works use the online portal. Requirements differ, so please review the Submit Your Work section below."
         },
         "req-notice-text": {
-            "zh": "请妥善保管制作完成的作品实物。入选展览的参与者将被要求提供作品的实体展品（平面设计等非实物作品除外）。",
-            "ja": "完成した作品の実物は大切に保管してください。展示会への入選者には、展示用現物のご提供をお願いする場合があります（グラフィックデザイン等の非実体作品を除く）。",
-            "en": "Please retain your physical work safely. Selected entrants will be asked to provide physical items for the exhibition (except for non-physical works such as digital graphics)."
+            "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。线下交付地点与时间将在提交入口开放前公布。",
+            "ja": "完成した実物作品は大切に保管し、運搬前に鋭利な縁や不安定な部品を安全な状態にしてください。対面提出の場所と時間は、提出窓口の公開前にお知らせします。",
+            "en": "Store finished physical works safely and secure sharp edges or unstable parts before transport. The offline delivery place and time will be announced before the portal opens."
+        },
+        "safety-kicker": {
+            "zh": "制作前请阅读",
+            "ja": "制作前に必ずお読みください",
+            "en": "Read Before Making"
+        },
+        "title-safety": {
+            "zh": "加工安全说明",
+            "ja": "加工時の安全について",
+            "en": "Processing Safety"
+        },
+        "lead-safety": {
+            "zh": "废旧唱片通常以PVC为主要材料。裁切、加热、打磨、钻孔与粘接均可能产生伤害或有害暴露，请先评估方法、材料与场所是否安全。",
+            "ja": "廃棄レコードの主材料は一般にPVCです。切断、加熱、研磨、穴あけ、接着には、けがや有害物質へのばく露のおそれがあります。方法、材料、作業場所の安全性を事前に確認してください。",
+            "en": "Discarded records are generally made primarily from PVC. Cutting, heating, sanding, drilling, and bonding can cause injury or harmful exposure, so assess the method, material, and workspace before starting."
+        },
+        "safety-cut-title": {
+            "zh": "裁切与尖锐边缘",
+            "ja": "切断と鋭利な縁",
+            "en": "Cutting and Sharp Edges"
+        },
+        "safety-cut-text": {
+            "zh": "唱片断面、刀具和飞散碎片可能造成割伤或眼部伤害。固定材料，使用适合PVC的工具，并佩戴护目镜；完成后打磨或包覆锐边。",
+            "ja": "切断面、刃物、飛散する破片は、切り傷や目のけがの原因になります。材料を固定し、PVCに適した工具と保護メガネを使用し、完成後は鋭利な縁を研磨または被覆してください。",
+            "en": "Cut edges, blades, and flying fragments can injure hands or eyes. Secure the material, use a PVC-appropriate tool and eye protection, then smooth or cover sharp edges."
+        },
+        "safety-heat-title": {
+            "zh": "加热、烟气与烫伤",
+            "ja": "加熱、ヒューム、やけど",
+            "en": "Heat, Fumes, and Burns"
+        },
+        "safety-heat-text": {
+            "zh": "PVC过热或分解时会产生刺激性烟气。不得使用明火或无控温设备，仅可在获准且具有效通风或局部排风的场所低温、短时加工，并防止接触高温表面。",
+            "ja": "PVCは過熱・分解すると刺激性のヒュームを発生します。裸火や温度制御できない器具は使用せず、許可された有効な換気・局所排気設備のある場所で、低温かつ短時間のみ加工し、高温面への接触を避けてください。",
+            "en": "Overheated or degrading PVC can release irritating fumes. Never use an open flame or uncontrolled heat; use only low, brief heat in an authorized workspace with effective ventilation or local exhaust, and avoid hot surfaces."
+        },
+        "safety-tool-title": {
+            "zh": "工具、粉尘与用电",
+            "ja": "工具、粉じん、電気",
+            "en": "Tools, Dust, and Electricity"
+        },
+        "safety-tool-text": {
+            "zh": "钻孔、锯切和打磨可能产生粉尘、缠卷、飞溅、噪声或触电风险。仅使用受过培训且获准操作的设备，并按工具和场所要求采取集尘、听力及呼吸防护。",
+            "ja": "穴あけ、切断、研磨には、粉じん、巻き込まれ、飛散、騒音、感電の危険があります。訓練を受け、使用許可のある設備のみを使い、工具と施設の規則に従って集じん、聴覚、呼吸用保護具を使用してください。",
+            "en": "Drilling, sawing, and sanding can create dust, entanglement, projectiles, noise, or electrical hazards. Use only equipment you are trained and authorized to operate, with dust extraction, hearing, and respiratory protection as required."
+        },
+        "safety-chemical-title": {
+            "zh": "胶黏剂与混合材料",
+            "ja": "接着剤と異素材",
+            "en": "Adhesives and Mixed Materials"
+        },
+        "safety-chemical-text": {
+            "zh": "胶黏剂、涂料和清洁剂可能易燃或具有刺激性。使用前阅读产品标签和安全数据，保持通风，远离热源，并确认其与PVC及其他材料相容。",
+            "ja": "接着剤、塗料、洗浄剤には、引火性や刺激性がある場合があります。使用前に表示と安全データを読み、換気し、熱源から離し、PVCや他素材との適合性を確認してください。",
+            "en": "Adhesives, coatings, and cleaners may be flammable or irritating. Read labels and safety data, provide ventilation, keep them away from heat, and confirm compatibility with PVC and other materials."
+        },
+        "safety-prohibited-title": {
+            "zh": "禁止事项",
+            "ja": "禁止事項",
+            "en": "Prohibited"
+        },
+        "safety-prohibited-text": {
+            "zh": "禁止燃烧唱片、明火加热、激光切割PVC，以及在密闭或通风不足的空间内加热。未经许可与培训，不得使用电动工具或校园工坊设备。",
+            "ja": "レコードの燃焼、裸火による加熱、PVCのレーザー加工、密閉または換気不足の空間での加熱は禁止です。許可と訓練なしに電動工具や学内工房設備を使用しないでください。",
+            "en": "Do not burn records, heat them with an open flame, laser-cut PVC, or heat it in an enclosed or poorly ventilated space. Do not use power tools or campus workshop equipment without authorization and training."
+        },
+        "safety-stop-title": {
+            "zh": "异常时立即停止",
+            "ja": "異常時は直ちに中止",
+            "en": "Stop if Anything Is Wrong"
+        },
+        "safety-stop-text": {
+            "zh": "如出现烟雾、强烈或刺激性气味、眼鼻喉刺激、头晕或设备异常，请立即停止操作、切断设备并离开现场，随后联系场所负责人；必要时寻求医疗帮助。",
+            "ja": "煙、強い刺激臭、目・鼻・喉の刺激、めまい、機器の異常が生じた場合は、直ちに作業を中止し、機器を停止してその場を離れ、施設責任者に連絡してください。必要に応じて医療機関を受診してください。",
+            "en": "If you notice smoke, a strong or irritating odor, eye, nose, or throat irritation, dizziness, or equipment trouble, stop immediately, shut down the equipment, leave the area, and contact the workspace supervisor. Seek medical help when needed."
         },
         "title-apply": {
             "zh": "报名方法",
@@ -210,9 +285,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "How to Apply"
         },
         "lead-apply": {
-            "zh": "请通过电子邮件提交您的设计意向及作品申请，具体要求与时间如下：",
-            "ja": "メールにてエントリーおよび作品データの提出を受け付けています。応募要項および受付期間は以下の通りです。",
-            "en": "Project applications and artwork submissions are accepted via email. Key details and dates are as follows:"
+            "zh": "参与申请仍通过电子邮件受理；最终作品请按照下方“提交作品”的分类要求提交。",
+            "ja": "参加申込は引き続きメールで受け付けます。最終作品は、下記の「作品提出」に記載された区分別の方法で提出してください。",
+            "en": "Participation applications are still accepted by email. Submit final works according to the category-specific rules in Submit Your Work below."
         },
         "apply-method-title": {
             "zh": "递交方式",
@@ -220,9 +295,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Method & Destination"
         },
         "apply-method-text": {
-            "zh": "将您的设计方案、作品图像/照片以及一段30秒的制作过程视频发送至电子邮箱：<a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>",
-            "ja": "デザインコンセプト、作品写真、および30秒の制作プロセス動画を、事務局メールアドレス（<a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>）宛てにお送りください。",
-            "en": "Send your design concept, artwork photos, and a 30-second production video to the secretariat email (<a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>)."
+            "zh": "将参与意向和简要设计构想发送至活动邮箱：<a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>。最终作品材料不在报名邮件中提交。",
+            "ja": "参加希望と簡単なデザイン案を、事務局メールアドレス（<a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>）へお送りください。最終作品の資料は申込メールには添付しません。",
+            "en": "Email your intention to participate and a brief design idea to <a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>. Do not submit final work materials in the application email."
         },
         "apply-period-title": {
             "zh": "征集时间",
@@ -230,9 +305,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Application & Material Period"
         },
         "apply-period-text": {
-            "zh": "<span class='apply-date-highlight'>2026年5月1日 — 7月30日</span>（在此期间进行参与申请及废旧唱片原材料的分发领取）",
-            "ja": "<span class='apply-date-highlight'>2026年5月1日 — 7月30日</span>（本期間中に応募エントリーを行い、制作素材のアナログレコードを受け取ることができます）",
-            "en": "<span class='apply-date-highlight'>May 1 — July 30, 2026</span> (Submit your application and collect vinyl records during this window)"
+            "zh": "<span class='apply-date-highlight'>2026年5月1日 — 7月30日</span>（参与申请）；材料分发、制作与作品提交阶段为8月10日 — 11月10日。",
+            "ja": "<span class='apply-date-highlight'>2026年5月1日〜7月30日</span>（参加申込）。素材配布・制作・作品提出は8月10日〜11月10日です。",
+            "en": "<span class='apply-date-highlight'>May 1 - July 30, 2026</span> for applications; distribution, making, and submission run from August 10 to November 10."
         },
         "title-submission": {
             "zh": "提交作品",
@@ -250,9 +325,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Image or Data-Based Work"
         },
         "submission-digital-text": {
-            "zh": "此类作品后续将通过线上入口提交必要材料，具体安排将在开放前公布。",
-            "ja": "この形式の作品は、今後オンライン窓口から必要な資料を提出する予定です。詳細は公開前にご案内します。",
-            "en": "This type of work will use the online portal for the required materials. Details will be announced before the portal opens."
+            "zh": "通过线上入口提交作品数据与参与表。以下资料均为必需内容。",
+            "ja": "作品データと参加票をオンライン窓口から提出します。以下の資料はすべて必須です。",
+            "en": "Submit the work data and participation form through the online portal. Every item below is required."
+        },
+        "submission-digital-requirements": {
+            "zh": "<strong>必须包含：</strong>至少1张作品图像、1段简短说明视频，以及理解、查看或运行作品所需的补充资料。",
+            "ja": "<strong>必須：</strong>作品画像1点以上、短い説明動画1本、作品の理解・閲覧・実行に必要な補足資料。",
+            "en": "<strong>Required:</strong> at least one image of the work, one short explanatory video, and any supplementary files needed to understand, view, or run it."
         },
         "submission-physical-title": {
             "zh": "实物作品",
@@ -260,9 +340,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Physical Work"
         },
         "submission-physical-text": {
-            "zh": "实物作品后续以线下交付为主，参与表的线上或纸质方式将在开放前说明。",
-            "ja": "実物作品は今後、原則として対面で提出します。参加票のオンライン提出または紙提出については、公開前にご案内します。",
-            "en": "Physical work will primarily be delivered offline. The online or paper route for the participation form will be explained before the portal opens."
+            "zh": "将作品实物交至指定线下地点；参与表可选择纸质提交或通过线上入口单独提交。",
+            "ja": "作品の実物を指定場所へ持参します。参加票は紙で提出するか、オンライン窓口から別途提出できます。",
+            "en": "Deliver the physical work to the designated offline location. Submit the participation form either on paper or separately through the online portal."
+        },
+        "submission-physical-options": {
+            "zh": "<strong>可选择：</strong>只提交实物作品，或同时提交作品图像、视频及其他补充资料。",
+            "ja": "<strong>選択可能：</strong>実物作品のみ、または作品画像・動画・その他の補足資料を併せて提出できます。",
+            "en": "<strong>Choose:</strong> submit only the physical work, or add images, video, and other supplementary material."
         },
         "submission-status-label": {
             "zh": "状态",
@@ -290,84 +375,44 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Project Schedule"
         },
         "lead-timeline": {
-            "zh": "自2026年8月启动材料分发与自主制作，经作品评审后，于11月下旬在九州大学大桥校区举办成果展与沙龙。",
-            "ja": "2026年8月より素材配布と制作を開始し、審査を経て11月下旬に九州大学大橋キャンパスにて成果展示会および交流サロンを開催します。",
-            "en": "Beginning with material distribution and fabrication in August 2026, followed by jury evaluation, the final exhibition and exchange salon will be held at Kyushu University Ohashi Campus in late November."
+            "zh": "参加活动的基础流程只有制作与提交、线下成果展览两步。11月中旬的交流沙龙可自由选择参加。",
+            "ja": "参加の基本プロセスは、制作・提出と対面成果展示の2段階です。11月中旬の交流サロンは自由参加です。",
+            "en": "The required participant path has two stages: make and submit your work, then take part in the offline exhibition. The mid-November exchange salon is optional."
         },
         "time-step1": {
-            "zh": "2026年8月1日 - 10月31日",
-            "ja": "8月1日 - 10月31日",
-            "en": "August 1 - October 31, 2026"
-        },
-        "time-step2": {
-            "zh": "2026年11月1日 - 11月10日",
-            "ja": "11月1日 - 11月10日",
-            "en": "November 1 - November 10, 2026"
+            "zh": "2026年8月10日 - 11月10日",
+            "ja": "2026年8月10日〜11月10日",
+            "en": "August 10 - November 10, 2026"
         },
         "title-step1": {
-            "zh": "分发与制作",
-            "ja": "素材配布・制作",
-            "en": "Distribution & Fabrication"
+            "zh": "分发、制作与随时提交",
+            "ja": "素材配布・制作・随時提出",
+            "en": "Distribution, Making, and Rolling Submission"
         },
         "text-step1": {
-            "zh": "无偿领取废旧唱片，于制作周期内完成作品的设计与加工。",
-            "ja": "廃棄レコードを無償で受け取り、制作期間内に作品の設計および加工を行います。",
-            "en": "Receive vinyl records free of charge and complete the design and fabrication within the creation period."
+            "zh": "领取废旧唱片后即可开始制作，并可在此期间随时提交完成的作品；最终截止时间为11月10日。",
+            "ja": "廃棄レコードを受け取り次第制作を始め、期間中は完成した作品を随時提出できます。最終締切は11月10日です。",
+            "en": "Begin making after collecting your records and submit a finished work at any time during this period. The final deadline is November 10."
         },
-        "transit-jr-title": {
-            "zh": "JR鹿儿岛本线",
-            "ja": "JR鹿児島本線",
-            "en": "JR Kagoshima Main Line"
+        "timeline-optional-badge": {
+            "zh": "可选参加",
+            "ja": "自由参加",
+            "en": "Optional"
         },
-        "transit-jr-text": {
-            "zh": "「竹下」站步行约10分钟",
-            "ja": "「竹下」駅より徒歩約10分",
-            "en": "10 min walk from \"Takeshita\" Station"
+        "time-salon": {
+            "zh": "2026年11月15日前后",
+            "ja": "2026年11月15日頃",
+            "en": "Around November 15, 2026"
         },
-        "transit-bus-title": {
-            "zh": "西铁公交",
-            "ja": "西鉄バス",
-            "en": "Nishitetsu Bus"
+        "title-salon": {
+            "zh": "交流沙龙",
+            "ja": "交流サロン",
+            "en": "Exchange Salon"
         },
-        "transit-bus-text": {
-            "zh": "「大桥站前」公交站下车，步行约3分钟（西铁大牟田线 大桥站）",
-            "ja": "「大橋駅前」バス停下車 徒歩約3分（西鉄天神大牟田線 大橋駅）",
-            "en": "Get off at \"Ohashi-ekimae\" bus stop, 3 min walk (Nishitetsu Tenjin-Omuta Line, Ohashi Station)"
-        },
-        "transit-note-title": {
-            "zh": "停车说明",
-            "ja": "駐車場について",
-            "en": "Parking Notice"
-        },
-        "transit-note-text": {
-            "zh": "校园内无访客停车位，请尽量乘坐公共交通前往。",
-            "ja": "キャンパス内に来訪者用駐車場はございません。公共交通機関のご利用をお願いいたします。",
-            "en": "No visitor parking is available on campus. Please use public transportation."
-        },
-        "transit-badge-nishitetsu": {
-            "zh": "西铁",
-            "ja": "西鉄",
-            "en": "Nishitetsu"
-        },
-        "transit-badge-bus": {
-            "zh": "公交",
-            "ja": "バス",
-            "en": "Bus"
-        },
-        "transit-badge-note": {
-            "zh": "注",
-            "ja": "注",
-            "en": "Note"
-        },
-        "title-step2": {
-            "zh": "线上作品评审",
-            "ja": "オンライン審査",
-            "en": "Online Evaluation"
-        },
-        "text-step2": {
-            "zh": "特邀设计师担任评审，围绕设计方案、创意与资源循环理念进行线上评审。",
-            "ja": "デザイナーなどの専門審査員を招き、作品設計と循環理念に基づきオンライン審査を行います。",
-            "en": "Guest designers serve as evaluators to review works online based on design proposals, creativity, and resource cycling principles."
+        "text-salon": {
+            "zh": "面向参与者开展轻松的作品交流与经验分享。活动时间和形式另行通知，不参加也不影响作品提交与展览。",
+            "ja": "参加者同士で作品や制作経験を気軽に共有します。日時と形式は別途案内し、不参加でも作品提出や展示には影響しません。",
+            "en": "An informal session for participants to discuss their work and share experiences. Details will be announced separately; attendance does not affect submission or exhibition."
         },
         "time-step3": {
             "zh": "2026年11月20日 - 11月25日",
@@ -380,39 +425,39 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Exhibition"
         },
         "text-step3": {
-            "zh": "于大桥校区展出入选作品。展览道具均采用可循环的瓦楞纸板搭建。",
-            "ja": "九州大学大橋キャンパスにて入選作品を展示。展示什器には再生可能な段ボールを使用します。",
-            "en": "Exhibit selected works at the Ohashi Campus. Exhibition displays are built entirely from recyclable corrugated cardboard."
+            "zh": "九州大学大桥校区举办线下成果展，集中呈现参与者提交的作品；展览道具优先采用可循环材料。",
+            "ja": "九州大学大橋キャンパスで対面成果展示を行い、参加者から提出された作品を紹介します。展示什器には循環可能な素材を優先して使用します。",
+            "en": "An offline exhibition at Kyushu University Ohashi Campus will present submitted works, using recyclable materials for display fixtures wherever possible."
         },
-        "time-step4": {
-            "zh": "2026年11月25日 15:00-17:00",
-            "ja": "11月25日 15:00-17:00",
-            "en": "November 25, 2026, 15:00-17:00"
+        "title-advisors": {
+            "zh": "指导教师",
+            "ja": "指導教員",
+            "en": "Faculty Advisors"
         },
-        "title-step4": {
-            "zh": "交流沙龙与颁奖",
-            "ja": "サロンおよび表彰",
-            "en": "Exchange Salon & Awards"
+        "lead-advisors": {
+            "zh": "九州大学大学院艺术工学研究院战略设计部门",
+            "ja": "九州大学大学院芸術工学研究院 ストラテジックデザイン部門",
+            "en": "Department of Strategic Design, Faculty of Design, Kyushu University"
         },
-        "text-step4": {
-            "zh": "举办设计交流沙龙，公布获奖名单并进行表彰，促进设计师与校友、师生间的对话。",
-            "ja": "学内外の関係者による対話会を行い、受賞者の表彰およびデザインに関する意見交換を実施します。",
-            "en": "Hold a design exchange salon, announce and honor winners, and facilitate dialogue among guest designers, alumni, and campus community."
+        "advisor-zhang-name": {
+            "zh": "張 彦芳",
+            "ja": "張 彦芳",
+            "en": "ZHANG Yanfang"
         },
-        "time-step5": {
-            "zh": "2027年—",
-            "ja": "2027年—",
-            "en": "2027 —"
+        "advisor-zhang-role": {
+            "zh": "准教授 · 通用设计、社会设计",
+            "ja": "准教授 · ユニバーサルデザイン、ソーシャルデザイン",
+            "en": "Associate Professor · Universal Design, Social Design"
         },
-        "title-step5": {
-            "zh": "地区合作与价值延伸",
-            "ja": "地域連携と価値の拡張",
-            "en": "Community Collaboration & Value Extension"
+        "advisor-sarantou-name": {
+            "zh": "Melanie Sarantou",
+            "ja": "SARANTOU Melanie",
+            "en": "Melanie Sarantou"
         },
-        "text-step5": {
-            "zh": "以本次活动的记录资料和当地唱片店进行交流，商议进一步发挥本次活动中作品价值的可能性，并谋求进一步合作，以提升地区活跃度。",
-            "ja": "本企画のドキュメント資料をもとに地元のレコード店と対話し、作品価値のさらなる活用可能性を模索するとともに、地域の活性化に向けた連携を図ります。",
-            "en": "Engage with local record stores using the event materials, exploring possibilities to leverage the artwork value and seeking future cooperation to boost regional community vitality."
+        "advisor-sarantou-role": {
+            "zh": "教授 · 战略设计、社会设计",
+            "ja": "教授 · ストラテジックデザイン、ソーシャルデザイン",
+            "en": "Professor · Strategic Design, Social Design"
         },
         "footer-desc": {
             "zh": "废旧黑胶唱片再利用的可持续设计征集与成果展项目",
@@ -425,14 +470,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "RERE-CORDS Organizers · Have a question? Feel free to reach us anytime"
         },
         "title-venue": {
-            "zh": "成果展览展信息",
+            "zh": "成果展览信息",
             "ja": "成果展示会 開催情報",
             "en": "Exhibition Venue Info"
         },
         "lead-venue": {
-            "zh": "展览将于2026年11月下旬在九州大学大桥校区举办，欢迎公众参观。",
-            "ja": "成果展示会は2026年11月下旬に九州大学大橋キャンパスで開催予定です。ぜひお気軽にご来場ください。",
-            "en": "The exhibition will be held in late November 2026 at Kyushu University Ohashi Campus. The public is warmly welcome."
+            "zh": "展览将于2026年11月20日至25日在九州大学大桥校区举办，欢迎公众参观。",
+            "ja": "成果展示会は2026年11月20日から25日まで九州大学大橋キャンパスで開催予定です。一般の方もご来場いただけます。",
+            "en": "The exhibition will be held from November 20 to 25, 2026, at Kyushu University Ohashi Campus and is open to the public."
         },
         "venue-address-label": {
             "zh": "地址",
@@ -506,10 +551,119 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const fiTranslations = {
+        "doc-title": "RERE-CORDS | Käytöstä poistettujen vinyylilevyjen kestävän muotoilun näyttely",
+        "sdg-badge-text": "Vastuullista kuluttamista ja tuotantoa",
+        "hero-subtitle": "Kestävän muotoilun näyttely kierrätetyistä vinyylilevyistä",
+        "hero-description": "Kutsumme Kyushun yliopiston Ohashin kampuksen opiskelijat, alumnit ja henkilökunnan kehittämään uusia käyttötapoja käytöstä poistetuille vinyylilevyille. Jaamme 100 levyä materiaaliksi ja tutkimme turvallisen työstämisen kautta muovin kiertoa ja kestävää muotoilua.",
+        "title-concept": "Projektin idea",
+        "lead-concept": "Käytämme poistettuja vinyylilevyjä uudelleen muotoilumateriaalina ja tutkimme resurssikierron sekä ympäristövastuullisen muotoilun mahdollisuuksia.",
+        "details-title": "Materiaalikierto ja kestävä muotoilu",
+        "details-text": "Vinyylilevyjen päämateriaali on polyvinyylikloridi eli PVC, joka hajoaa luonnossa huonosti. Projektissa poistettu materiaali muutetaan muotoilun avulla käyttöesineiksi, asusteiksi tai taideteoksiksi YK:n kestävän kehityksen tavoitteen 12 hengessä.",
+        "stat-records": "Jaettavien levyjen määrä",
+        "stat-target": "Keskeinen kestävän kehityksen tavoite",
+        "stat-exhibit": "Näyttelyyn toimitetut työt",
+        "title-poster": "Mistä saat levyn?",
+        "lead-poster": "Projektin käytöstä poistettuja vinyylilevyjä saa kahdella tavalla. Valitse sinulle sopivin vaihtoehto.",
+        "method1-title": "Ota levy kampuksen julisteesta",
+        "method1-desc": "Etsi RERE-CORDS-juliste Kyushun yliopiston Ohashin kampukselta. Jokaisen julisteen taakse on kiinnitetty yksi käytöstä poistettu vinyylilevy, jonka voit ottaa ilman erillistä ilmoittautumista.",
+        "method1-note1": "※ Jos levy on jo otettu, tarkista toinen juliste tai pyydä lisämateriaalia sähköpostitse.",
+        "method1-note2": "※ Julisteiden sijainnit ja levyjen täydennysaikataulu julkaistaan, kun kampanjan julisteet on asetettu esille.",
+        "method2-title": "Hanki levy itse",
+        "method2-desc": "Voit myös ostaa käytöstä poistetun vinyylilevyn omalla kustannuksellasi käytetyn musiikin liikkeestä tai verkkopalvelusta.",
+        "method2-note1": "※ Yhdessä työssä saa käyttää enintään kuutta levyä myös silloin, kun levyt on hankittu itse.",
+        "method2-note2": "※ Julisteisiin kiinnitetyt levyt ovat EP-kokoisia. Itse hankittu levy voi olla myös LP-kokoinen.",
+        "title-requirements": "Työn vaatimukset",
+        "lead-requirements": "Muotoilun ala on vapaa, mutta kaiken työstämisen on oltava turvallista, sallittua ja käytettäville työkaluille sopivaa. Alla ovat haun perussäännöt.",
+        "req-cat-title": "Muotoilun ala",
+        "req-cat-text": "Alarajoituksia ei ole. Mahdollisia aloja ovat graafinen, tuote-, palvelu- ja muotisuunnittelu sekä yhteiskunnallisiin kysymyksiin keskittyvä muotoilu.",
+        "req-limit-title": "Levyjen enimmäismäärä",
+        "req-limit-text": "Yhdessä työssä saa käyttää enintään <strong>6</strong> käytöstä poistettua levyä. Käyttämättömiä levyjä ei tarvitse palauttaa.",
+        "req-proc-title": "Työstötavat",
+        "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset.",
+        "req-sub-title": "Toimitettava aineisto",
+        "req-sub-text": "Fyysiset työt toimitetaan paikan päällä ja digitaaliset tai datapohjaiset työt verkkopalvelussa. Vaatimukset eroavat toisistaan, joten tarkista alla oleva Töiden toimittaminen -osio.",
+        "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Toimituspaikka ja -aika ilmoitetaan ennen verkkopalvelun avaamista.",
+        "safety-kicker": "Lue ennen työskentelyä",
+        "title-safety": "Työstämisen turvallisuus",
+        "lead-safety": "Käytöstä poistettujen levyjen päämateriaali on yleensä PVC. Leikkaaminen, kuumentaminen, hiominen, poraaminen ja liimaaminen voivat aiheuttaa vammoja tai haitallista altistumista. Arvioi menetelmän, materiaalin ja työtilan turvallisuus ennen aloittamista.",
+        "safety-cut-title": "Leikkaaminen ja terävät reunat",
+        "safety-cut-text": "Leikkauspinnat, terät ja lentävät sirpaleet voivat vahingoittaa käsiä tai silmiä. Kiinnitä materiaali, käytä PVC:lle sopivaa työkalua ja silmiensuojaimia sekä hio tai peitä terävät reunat.",
+        "safety-heat-title": "Kuumuus, höyryt ja palovammat",
+        "safety-heat-text": "Ylikuumentunut tai hajoava PVC voi vapauttaa ärsyttäviä höyryjä. Älä käytä avotulta tai hallitsematonta lämpöä. Kuumenna vain matalalla lämpötilalla ja lyhyesti hyväksytyssä tilassa, jossa on tehokas ilmanvaihto tai kohdepoisto.",
+        "safety-tool-title": "Työkalut, pöly ja sähkö",
+        "safety-tool-text": "Poraaminen, sahaaminen ja hiominen voivat aiheuttaa pöly-, takertumis-, sinkoutumis-, melu- ja sähkövaaroja. Käytä vain laitteita, joiden käyttöön sinut on koulutettu ja valtuutettu, sekä tilan edellyttämää pölynpoistoa, kuulon- ja hengityksensuojausta.",
+        "safety-chemical-title": "Liimat ja yhdistelmämateriaalit",
+        "safety-chemical-text": "Liimat, pinnoitteet ja puhdistusaineet voivat olla syttyviä tai ärsyttäviä. Lue merkinnät ja käyttöturvallisuustiedot, huolehdi ilmanvaihdosta, pidä aineet poissa lämmöstä ja varmista yhteensopivuus PVC:n kanssa.",
+        "safety-prohibited-title": "Kiellettyä",
+        "safety-prohibited-text": "Älä polta levyjä, kuumenna niitä avotulella, laserleikkaa PVC:tä tai kuumenna sitä suljetussa tai huonosti tuuletetussa tilassa. Älä käytä sähkötyökaluja tai kampuksen työpajalaitteita ilman lupaa ja koulutusta.",
+        "safety-stop-title": "Keskeytä poikkeustilanteessa",
+        "safety-stop-text": "Jos havaitset savua, voimakkaan tai ärsyttävän hajun, silmien, nenän tai kurkun ärsytystä, huimausta tai laitevian, lopeta heti, sammuta laite, poistu tilasta ja ota yhteys tilan vastuuhenkilöön. Hakeudu tarvittaessa hoitoon.",
+        "title-timeline": "Projektin aikataulu",
+        "lead-timeline": "Osallistumisen pakollinen polku koostuu kahdesta vaiheesta: työn valmistaminen ja toimittaminen sekä fyysinen näyttely. Marraskuun puolivälin keskustelutilaisuus on vapaaehtoinen.",
+        "time-step1": "10.8.-10.11.2026",
+        "title-step1": "Materiaalien jako, työskentely ja jatkuva toimitus",
+        "text-step1": "Aloita työskentely heti levyn saatuasi ja toimita valmis työ milloin tahansa tämän ajanjakson aikana. Viimeinen määräpäivä on 10. marraskuuta.",
+        "timeline-optional-badge": "Vapaaehtoinen",
+        "time-salon": "Noin 15.11.2026",
+        "title-salon": "Keskustelutilaisuus",
+        "text-salon": "Rento tilaisuus, jossa osallistujat voivat keskustella töistään ja jakaa kokemuksiaan. Tarkemmat tiedot ilmoitetaan myöhemmin, eikä osallistuminen vaikuta työn toimittamiseen tai näyttelyyn.",
+        "time-step3": "20.-25.11.2026",
+        "title-step3": "Fyysinen tulosnäyttely",
+        "text-step3": "Kyushun yliopiston Ohashin kampuksella järjestettävä näyttely esittelee toimitetut työt. Näyttelyrakenteissa suositaan kierrätettäviä materiaaleja.",
+        "title-advisors": "Ohjaavat opettajat",
+        "lead-advisors": "Strategisen muotoilun osasto, Faculty of Design, Kyushun yliopisto",
+        "advisor-zhang-name": "ZHANG Yanfang",
+        "advisor-zhang-role": "Apulaisprofessori · universaali muotoilu, sosiaalinen muotoilu",
+        "advisor-sarantou-name": "Melanie Sarantou",
+        "advisor-sarantou-role": "Professori · strateginen muotoilu, sosiaalinen muotoilu",
+        "title-apply": "Osallistumishaku",
+        "lead-apply": "Osallistumishakemukset vastaanotetaan edelleen sähköpostitse. Toimita valmis työ alla olevan Töiden toimittaminen -osion lajikohtaisten ohjeiden mukaan.",
+        "apply-method-title": "Hakutapa ja osoite",
+        "apply-method-text": "Lähetä osallistumisaikeesi ja lyhyt muotoiluideasi osoitteeseen <a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>. Älä liitä lopullisen työn aineistoa hakusähköpostiin.",
+        "apply-period-title": "Haku- ja työskentelyaika",
+        "apply-period-text": "<span class='apply-date-highlight'>1.5.-30.7.2026</span> osallistumishakemuksille. Materiaalien jako, työskentely ja töiden toimittaminen ovat avoinna 10.8.-10.11.",
+        "title-submission": "Töiden toimittaminen",
+        "lead-submission": "Lopullisten töiden verkkopalvelua valmistellaan. Hakuvaiheessa käytä edelleen nykyistä osallistumishakua.",
+        "submission-digital-title": "Kuva-, data- tai digitaalinen työ",
+        "submission-digital-text": "Toimita työn data ja osallistumislomake verkkopalvelussa. Kaikki alla mainitut aineistot ovat pakollisia.",
+        "submission-digital-requirements": "<strong>Pakolliset:</strong> vähintään yksi kuva työstä, yksi lyhyt esittelyvideo sekä kaikki työn ymmärtämiseen, katseluun tai suorittamiseen tarvittavat lisätiedostot.",
+        "submission-physical-title": "Fyysinen työ",
+        "submission-physical-text": "Toimita fyysinen työ ilmoitettuun paikkaan. Osallistumislomakkeen voi antaa paperilla tai lähettää erikseen verkkopalvelussa.",
+        "submission-physical-options": "<strong>Valitse:</strong> toimita vain fyysinen työ tai liitä mukaan kuvia, video ja muuta täydentävää aineistoa.",
+        "submission-status-label": "Tila",
+        "submission-status": "Toimituspalvelua valmistellaan",
+        "submission-cta": "Toimituspalvelu ei ole vielä avoinna",
+        "submission-fallback": "Lataa varalomake",
+        "title-venue": "Näyttelypaikan tiedot",
+        "lead-venue": "Näyttely järjestetään 20.-25. marraskuuta 2026 Kyushun yliopiston Ohashin kampuksella. Näyttely on avoin yleisölle.",
+        "venue-address-label": "Osoite",
+        "venue-address": "Kyushu University Ohashi Campus, 4-9-1 Shiobaru, Minami-ku, Fukuoka 815-8540, Japani",
+        "venue-transit-label": "Julkinen liikenne",
+        "transit-badge-nishitetsu": "Nishitetsu",
+        "transit-nishitetsu-title": "Nishitetsu Omuta -linja",
+        "transit-nishitetsu-text": "Noin 5 minuutin kävely Ohashin asemalta",
+        "transit-jr-title": "JR Kagoshima -päälinja",
+        "transit-jr-text": "Noin 10 minuutin kävely Takeshitan asemalta",
+        "transit-badge-bus": "Bussi",
+        "transit-bus-title": "Nishitetsu-bussi",
+        "transit-bus-text": "Jää pois pysäkillä Ohashi-ekimae; noin 3 minuutin kävely",
+        "transit-badge-note": "Huom.",
+        "transit-note-title": "Pysäköinti",
+        "transit-note-text": "Kampuksella ei ole vieraspysäköintiä. Saavu julkisilla liikennevälineillä.",
+        "footer-desc": "Käytöstä poistettuja vinyylilevyjä hyödyntävä kestävän muotoilun haku- ja näyttelyprojekti",
+        "footer-contact-label": "RERE-CORDS-järjestäjät · Kysyttävää? Ota meihin yhteyttä"
+    };
+
+    Object.entries(fiTranslations).forEach(([key, value]) => {
+        if (i18nDict[key]) i18nDict[key].fi = value;
+    });
+
     const LANGUAGE_CODES = {
         zh: 'zh-CN',
         ja: 'ja',
-        en: 'en'
+        en: 'en',
+        fi: 'fi'
     };
     const SUPPORTED_LANGUAGES = Object.keys(LANGUAGE_CODES);
 

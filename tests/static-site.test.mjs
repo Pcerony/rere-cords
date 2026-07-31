@@ -11,7 +11,15 @@ const read = (file) => readFileSync(resolve(root, file), 'utf8');
 function parseTranslations(source) {
     const match = source.match(/const i18nDict = (\{[\s\S]*?\n    \});/);
     assert.ok(match, 'app.js should expose a JSON-compatible i18n dictionary block');
-    return JSON.parse(match[1]);
+    const dictionary = JSON.parse(match[1]);
+    const finnishMatch = source.match(/const fiTranslations = (\{[\s\S]*?\n    \});/);
+    assert.ok(finnishMatch, 'app.js should expose Finnish translations');
+
+    for (const [key, value] of Object.entries(JSON.parse(finnishMatch[1]))) {
+        if (dictionary[key]) dictionary[key].fi = value;
+    }
+
+    return dictionary;
 }
 
 test('submission config is closed and empty by default', () => {
@@ -33,7 +41,7 @@ test('homepage contains one disabled submission entry before the venue', () => {
     assert.ok(venueIndex > submissionIndex, '#submission must appear before #venue');
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
-    assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="app\.js\?v=14"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="app\.js\?v=15"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -64,6 +72,7 @@ test('homepage exposes Finnish and uses the simplified participant flow', () => 
     assert.match(html, /data-i18n="timeline-optional-badge"/);
     assert.doesNotMatch(html, /data-i18n="(?:time|title|text)-step[245]"/);
     assert.doesNotMatch(html, /data-i18n="title-step2"/);
+    assert.doesNotMatch(html, /入选|评审|颁奖|審査|表彰|Awards?/i);
 });
 
 test('homepage contains safety, advisor, and precise submission guidance', () => {
@@ -91,4 +100,5 @@ test('language, submission, and motion foundations are present', () => {
     assert.match(app, /prefers-reduced-motion/);
     assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
     assert.match(css, /submission-cta/);
+    assert.match(css, /#poster\s*\{[^}]*overflow-x:\s*clip;/s);
 });
