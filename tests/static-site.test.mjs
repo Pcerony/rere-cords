@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
@@ -75,16 +75,26 @@ test('every translated homepage key has all supported language values', () => {
     }
 });
 
-test('homepage exposes a complete native language selector and simplified participant flow', () => {
+test('homepage exposes a complete custom language menu and simplified participant flow', () => {
     const html = read('index.html');
     const app = read('app.js');
-    const expectedOptions = ['en', 'ja', 'zh', 'zh-TW', 'ko', 'id', 'vi', 'th', 'bn', 'ar', 'fr', 'hi', 'fi'];
+    const expectedOptions = {
+        en: '🇬🇧', ja: '🇯🇵', zh: '🇨🇳', 'zh-TW': '🇹🇼', ko: '🇰🇷', id: '🇮🇩',
+        vi: '🇻🇳', th: '🇹🇭', bn: '🇧🇩', ar: '🇪🇬', fr: '🇫🇷', hi: '🇮🇳', fi: '🇫🇮'
+    };
 
-    assert.match(html, /<select[^>]+id="language-select"/);
-    assert.doesNotMatch(html, /data-lang-btn|class="lang-btn"/);
-    for (const language of expectedOptions) {
+    assert.match(html, /id="language-menu-trigger"[^>]+aria-haspopup="listbox"[^>]+aria-expanded="false"/);
+    assert.match(html, /id="language-menu-list"[^>]+role="listbox"/);
+    assert.match(html, /<select[^>]+id="language-select"[^>]+hidden/);
+    for (const [language, flag] of Object.entries(expectedOptions)) {
         assert.match(html, new RegExp(`<option value="${language}">`));
+        assert.match(html, new RegExp(`data-language-option="${language}"[\\s\\S]*?${flag}`));
     }
+    assert.match(app, /case 'ArrowDown':/);
+    assert.match(app, /case 'ArrowUp':/);
+    assert.match(app, /case 'Home':/);
+    assert.match(app, /case 'End':/);
+    assert.match(app, /case 'Escape':/);
     assert.match(app, /fi:\s*'fi'/);
     assert.equal((html.match(/class="timeline-item(?:\s|"|$)/g) || []).length, 2);
     assert.match(html, /class="timeline-optional/);
@@ -106,6 +116,15 @@ test('homepage contains safety, advisor, and precise submission guidance', () =>
     assert.ok(advisorStart >= 0, 'homepage must contain #advisors');
     assert.ok(zhangIndex > advisorStart, 'ZHANG Yanfang must appear in #advisors');
     assert.ok(sarantouIndex > zhangIndex, 'Melanie Sarantou must appear after ZHANG Yanfang');
+    assert.match(html, /src="\.\/素材\/faculty-zhang-yanfang\.jpg"/);
+    assert.match(html, /src="\.\/素材\/faculty-melanie-sarantou\.jpg"/);
+    assert.match(html, /data-i18n="advisor-zhang-bio"/);
+    assert.match(html, /data-i18n="advisor-sarantou-bio"/);
+    assert.match(html, /data-i18n="advisor-profile-link"/);
+    assert.match(html, /href="https:\/\/www\.sd\.design\.kyushu-u\.ac\.jp\/faculty\/zhang-yanfang\/"/);
+    assert.match(html, /href="https:\/\/www\.sd\.design\.kyushu-u\.ac\.jp\/en\/faculty\/sarantou-melanie\/"/);
+    assert.ok(statSync(resolve(root, '素材/faculty-zhang-yanfang.jpg')).size > 0);
+    assert.ok(statSync(resolve(root, '素材/faculty-melanie-sarantou.jpg')).size > 0);
     assert.match(html, /data-i18n="submission-digital-requirements"/);
     assert.match(html, /data-i18n="submission-physical-options"/);
 });
