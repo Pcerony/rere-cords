@@ -1,0 +1,66 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import vm from 'node:vm';
+
+const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
+const read = (file) => readFileSync(resolve(root, file), 'utf8');
+
+function parseTranslations(source) {
+    const match = source.match(/const i18nDict = (\{[\s\S]*?\n    \});/);
+    assert.ok(match, 'app.js should expose a JSON-compatible i18n dictionary block');
+    return JSON.parse(match[1]);
+}
+
+test('submission config is closed and empty by default', () => {
+    const context = { window: {} };
+    vm.runInNewContext(read('submission-config.js'), context);
+
+    assert.deepEqual(context.window.RERE_CORDS_SUBMISSION_CONFIG, {
+        enabled: false,
+        formUrl: '',
+        fallbackDocumentUrl: ''
+    });
+});
+
+test('homepage contains one disabled submission entry before the venue', () => {
+    const html = read('index.html');
+    const submissionIndex = html.indexOf('id="submission"');
+    const venueIndex = html.indexOf('id="venue"');
+
+    assert.ok(submissionIndex >= 0, 'homepage must contain #submission');
+    assert.ok(venueIndex > submissionIndex, '#submission must appear before #venue');
+    assert.match(html, /id="submission-cta"/);
+    assert.match(html, /id="submission-fallback"/);
+    assert.match(html, /submission-config\.js[^"]*<\/script>[\s\S]*app\.js\?v=14/);
+    assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
+    assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
+    assert.match(html, /logo1\.png" alt="SoDesLab"/);
+});
+
+test('every translated homepage key has zh, ja, and en values', () => {
+    const html = read('index.html');
+    const dictionary = parseTranslations(read('app.js'));
+    const keys = [...html.matchAll(/data-i18n="([^"]+)"/g)].map((match) => match[1]);
+
+    for (const key of keys) {
+        assert.ok(dictionary[key], `missing translation key: ${key}`);
+        for (const language of ['zh', 'ja', 'en']) {
+            assert.equal(typeof dictionary[key][language], 'string', `${key}.${language} must be a string`);
+        }
+    }
+});
+
+test('language, timeline, and motion fixes are present', () => {
+    const app = read('app.js');
+    const css = read('styles.css');
+
+    assert.match(app, /"time-step2"\s*:\s*\{/);
+    assert.match(app, /'zh-CN'/);
+    assert.match(app, /'en'/);
+    assert.match(app, /prefers-reduced-motion/);
+    assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
+    assert.match(css, /submission-cta/);
+});
