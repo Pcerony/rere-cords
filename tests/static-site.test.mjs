@@ -54,7 +54,7 @@ test('homepage contains one disabled submission entry before the venue', () => {
     assert.ok(venueIndex > submissionIndex, '#submission must appear before #venue');
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
-    assert.match(html, /styles\.css\?v=18/);
+    assert.match(html, /styles\.css\?v=\d+/);
     assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="translations\.js\?v=2"><\/script>\s*<script src="app\.js\?v=17"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
@@ -158,4 +158,18 @@ test('new language and advisor surfaces reuse the editorial visual system', () =
     assert.match(css, /\.advisors-container\s*\{[^}]*max-width:\s*900px;/s);
     assert.match(css, /\.advisor-bio\s*\{[^}]*color:\s*var\(--color-text-muted\);[^}]*font-size:\s*0\.9rem;/s);
     assert.doesNotMatch(html, /class="advisor-link"[^>]*>[\s\S]*?<span aria-hidden="true">↗<\/span>/);
+});
+
+test('new information sections use spacing and internal separators instead of decorative frames', () => {
+    const css = read('styles.css');
+
+    assert.match(css, /\.safety-container\s*\{[^}]*max-width:\s*800px;/s);
+    assert.doesNotMatch(css, /\.advisor-list\s*\{[^}]*(?:border-top|border-bottom):/s);
+    assert.match(css, /\.advisor-profile \+ \.advisor-profile\s*\{[^}]*border-top:/s);
+    assert.doesNotMatch(css, /\.submission-panel\s*\{[^}]*(?:border-top|border-bottom|border-left|border-right):/s);
+    assert.match(css, /\.submission-route \+ \.submission-route\s*\{[^}]*border-left:/s);
+    assert.match(css, /\.submission-actions\s*\{[^}]*border-top:/s);
+    assert.doesNotMatch(css, /\.safety-mandatory > div\s*\{[^}]*(?:border-left|border-right):/s);
+    assert.doesNotMatch(css, /\.submission-route \.submission-requirements\s*\{[^}]*(?:border-left|border-right):/s);
+    assert.doesNotMatch(css, /\.timeline-optional-content\s*\{[^}]*(?:border-left|border-right):/s);
 });

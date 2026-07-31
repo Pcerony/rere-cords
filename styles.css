@@ -237,7 +237,6 @@ a {
     align-items: center;
     background: transparent;
     border: 0;
-    border-left: 2px solid transparent;
     border-radius: 0;
     color: var(--color-text-main);
     cursor: pointer;
@@ -258,8 +257,7 @@ a {
 
 .language-menu-option[aria-selected='true'] {
     background: transparent;
-    border-left-color: var(--color-primary);
-    color: var(--color-text-main);
+    color: var(--color-primary);
     font-weight: 600;
 }
 
@@ -289,19 +287,6 @@ html[dir='rtl'] #safety .section-lead,
 html[dir='rtl'] #advisors .section-lead {
     margin-left: auto;
     margin-right: 0;
-}
-
-html[dir='rtl'] .safety-mandatory > div,
-html[dir='rtl'] .submission-route .submission-requirements {
-    border-left: 0;
-    border-right: 2px solid var(--color-secondary);
-    padding-left: 0;
-    padding-right: 1.25rem;
-}
-
-html[dir='rtl'] .submission-route .submission-requirements {
-    border-right-color: var(--color-primary);
-    padding-right: 0.9rem;
 }
 
 .sdg-badge {
@@ -651,7 +636,7 @@ section {
    6.75 Safety Guidance
    -------------------------------------------------------------------------- */
 .safety-container {
-    max-width: 1000px;
+    max-width: 800px;
 }
 
 #safety .section-header {
@@ -726,11 +711,6 @@ section {
     gap: 2.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: 2.5rem;
-}
-
-.safety-mandatory > div {
-    border-left: 2px solid var(--color-secondary);
-    padding-left: 1.25rem;
 }
 
 .safety-mandatory h3 {
@@ -1140,11 +1120,6 @@ section {
 /* --------------------------------------------------------------------------
    7.6 Final Submission Entry
    -------------------------------------------------------------------------- */
-.submission-panel {
-    border-top: 1px solid var(--color-border-dark);
-    border-bottom: 1px solid var(--color-border);
-}
-
 .submission-routes {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1184,10 +1159,8 @@ section {
 }
 
 .submission-route .submission-requirements {
-    border-left: 2px solid var(--color-primary);
     color: var(--color-text-main);
     margin-top: 0.9rem;
-    padding-left: 0.9rem;
 }
 
 .submission-requirements strong {
@@ -1350,11 +1323,6 @@ section {
     z-index: 5;
 }
 
-.timeline-optional-content {
-    border-left: 2px solid var(--color-primary);
-    padding-left: 1.25rem;
-}
-
 .timeline-optional-badge {
     border: 1px solid rgba(82, 102, 71, 0.45);
     color: var(--color-primary);
@@ -1469,11 +1437,6 @@ section {
 
 #advisors .section-lead {
     margin-left: 0;
-}
-
-.advisor-list {
-    border-bottom: 1px solid var(--color-border-dark);
-    border-top: 1px solid var(--color-border-dark);
 }
 
 .advisor-profile {
