@@ -195,14 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Materials"
         },
         "req-sub-text": {
-            "zh": "实物作品线下提交；数据作品通过线上入口提交。两类作品所需资料不同，请查看下方“提交作品”说明。",
-            "ja": "実物作品は対面で、データ作品はオンライン窓口から提出します。必要資料が異なるため、下記の「作品提出」をご確認ください。",
-            "en": "Physical works are delivered offline; data-based works use the online portal. Requirements differ, so please review the Submit Your Work section below."
+            "zh": "实物作品投入校内回收箱；数字作品以PDF和相关资料通过邮件提交。两类作品所需资料不同，请查看下方“提交作品”说明。",
+            "ja": "実物作品は学内の回収ボックスへ、デジタル作品はPDFと関連資料をメールで提出します。必要資料が異なるため、下記の「作品提出」をご確認ください。",
+            "en": "Place physical works in the campus collection box; submit digital works by email as a PDF with supporting files. Review Submit Your Work below for each route."
         },
         "req-notice-text": {
-            "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。线下交付地点与时间将在提交入口开放前公布。",
-            "ja": "完成した実物作品は大切に保管し、運搬前に鋭利な縁や不安定な部品を安全な状態にしてください。対面提出の場所と時間は、提出窓口の公開前にお知らせします。",
-            "en": "Store finished physical works safely and secure sharp edges or unstable parts before transport. The offline delivery place and time will be announced before the portal opens."
+            "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。请于11月10日前投入7号馆2层 MEDIA STUDIO 房间前的回收箱。",
+            "ja": "完成した実物作品は大切に保管し、運搬前に鋭利な縁や不安定な部品を安全な状態にしてください。11月10日までに7号館2階MEDIA STUDIO部屋前の回収ボックスへ提出してください。",
+            "en": "Store finished physical works safely and secure sharp edges or unstable parts before transport. Place them in the collection box in front of MEDIA STUDIO on 2F of Building 7 by November 10."
         },
         "safety-kicker": {
             "zh": "制作前请阅读",
@@ -300,14 +300,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Email your intention to participate and a brief design idea to <a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>. Do not submit final work materials in the application email."
         },
         "apply-period-title": {
-            "zh": "征集时间",
-            "ja": "応募・素材受取期間",
-            "en": "Application & Material Period"
+            "zh": "报名、制作与提交时间",
+            "ja": "応募・制作・提出期間",
+            "en": "Application, Making & Submission Period"
         },
         "apply-period-text": {
-            "zh": "<span class='apply-date-highlight'>2026年5月1日 — 7月30日</span>（参与申请）；材料分发、制作与作品提交阶段为8月10日 — 11月10日。",
-            "ja": "<span class='apply-date-highlight'>2026年5月1日〜7月30日</span>（参加申込）。素材配布・制作・作品提出は8月10日〜11月10日です。",
-            "en": "<span class='apply-date-highlight'>May 1 - July 30, 2026</span> for applications; distribution, making, and submission run from August 10 to November 10."
+            "zh": "<span class='apply-date-highlight'>2026年8月20日（星期四）至11月10日（星期二）</span>。期间可报名、领取材料、制作并随时提交作品。",
+            "ja": "<span class='apply-date-highlight'>2026年8月20日（木）〜2026年11月10日（火）</span>。期間中は応募、素材受取、制作、作品提出を随時受け付けます。",
+            "en": "<span class='apply-date-highlight'>August 20 (Thu) - November 10 (Tue), 2026</span>. Applications, material collection, making, and work submission are accepted throughout this period."
         },
         "title-submission": {
             "zh": "提交作品",
@@ -315,9 +315,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submit Your Work"
         },
         "lead-submission": {
-            "zh": "最终作品提交入口正在准备中；当前报名阶段仍请按照现有报名方法操作。",
-            "ja": "最終作品の提出窓口を準備中です。応募段階では、これまでの応募方法をご利用ください。",
-            "en": "The final submission portal is being prepared. For the application stage, please continue using the current application process."
+            "zh": "实物作品请投入校内回收箱；仅包含数字信息的作品，请将作品信息整理为PDF并发送至活动邮箱。",
+            "ja": "実物作品は学内の回収ボックスへ提出してください。デジタル情報のみの場合は、作品情報をPDFにまとめて事務局メールアドレスへ送信してください。",
+            "en": "Place physical works in the campus collection box. For digital-only works, compile the work information as a PDF and email it to the project office."
         },
         "submission-digital-title": {
             "zh": "数字、图片或数据作品",
@@ -325,9 +325,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Image or Data-Based Work"
         },
         "submission-digital-text": {
-            "zh": "通过线上入口提交作品数据与参与表。以下资料均为必需内容。",
-            "ja": "作品データと参加票をオンライン窓口から提出します。以下の資料はすべて必須です。",
-            "en": "Submit the work data and participation form through the online portal. Every item below is required."
+            "zh": "将作品信息和参与表整理为PDF，并与下列必需资料一并发送至活动邮箱。",
+            "ja": "作品情報と参加票をPDFにまとめ、以下の必須資料とともに事務局メールアドレスへ送信してください。",
+            "en": "Compile the work information and participation form as a PDF, then email it to the project office with the required files below."
         },
         "submission-digital-requirements": {
             "zh": "<strong>必须包含：</strong>至少1张作品图像、1段简短说明视频，以及理解、查看或运行作品所需的补充资料。",
@@ -340,9 +340,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Physical Work"
         },
         "submission-physical-text": {
-            "zh": "将作品实物交至指定线下地点；参与表可选择纸质提交或通过线上入口单独提交。",
-            "ja": "作品の実物を指定場所へ持参します。参加票は紙で提出するか、オンライン窓口から別途提出できます。",
-            "en": "Deliver the physical work to the designated offline location. Submit the participation form either on paper or separately through the online portal."
+            "zh": "请将实物作品投入7号馆2层 MEDIA STUDIO 房间前的回收箱。参与表可随实物纸质提交，也可单独以PDF发送至活动邮箱。",
+            "ja": "実物作品は7号館2階MEDIA STUDIO部屋前の回収ボックスへ入れてください。参加票は紙で同封するか、PDFで事務局メールアドレスへ別途送信できます。",
+            "en": "Place physical works in the collection box in front of the MEDIA STUDIO room on 2F of Building 7. Include a paper participation form or email it separately as a PDF."
         },
         "submission-physical-options": {
             "zh": "<strong>可选择：</strong>只提交实物作品，或同时提交作品图像、视频及其他补充资料。",
@@ -350,19 +350,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "<strong>Choose:</strong> submit only the physical work, or add images, video, and other supplementary material."
         },
         "submission-status-label": {
-            "zh": "状态",
-            "ja": "ステータス",
-            "en": "Status"
+            "zh": "数字作品提交",
+            "ja": "デジタル作品の提出",
+            "en": "Digital Submission"
         },
         "submission-status": {
-            "zh": "提交通道即将开放",
-            "ja": "提出窓口は準備中です",
-            "en": "Submission portal coming soon"
+            "zh": "通过活动邮箱接收PDF及相关资料",
+            "ja": "事務局メールでPDFと関連資料を受付中",
+            "en": "PDF and supporting files accepted by email"
         },
         "submission-cta": {
-            "zh": "提交入口尚未开放",
-            "ja": "提出入口はまだ開いていません",
-            "en": "Submission portal is not open yet"
+            "zh": "通过邮件提交数字作品",
+            "ja": "メールでデジタル作品を提出",
+            "en": "Submit Digital Work by Email"
         },
         "submission-fallback": {
             "zh": "下载备用参与表",
@@ -380,9 +380,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "The required participant path has two stages: make and submit your work, then take part in the offline exhibition. The mid-November exchange salon is optional."
         },
         "time-step1": {
-            "zh": "2026年8月10日 - 11月10日",
-            "ja": "2026年8月10日〜11月10日",
-            "en": "August 10 - November 10, 2026"
+            "zh": "2026年8月20日 - 11月10日",
+            "ja": "2026年8月20日（木）〜11月10日（火）",
+            "en": "August 20 - November 10, 2026"
         },
         "title-step1": {
             "zh": "分发、制作与随时提交",
@@ -425,9 +425,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Exhibition"
         },
         "text-step3": {
-            "zh": "九州大学大桥校区举办线下成果展，集中呈现参与者提交的作品；展览道具优先采用可循环材料。",
-            "ja": "九州大学大橋キャンパスで対面成果展示を行い、参加者から提出された作品を紹介します。展示什器には循環可能な素材を優先して使用します。",
-            "en": "An offline exhibition at Kyushu University Ohashi Campus will present submitted works, using recyclable materials for display fixtures wherever possible."
+            "zh": "在九州大学大桥校区多次元楼2层 Studio 201 举办线下成果展；展览道具优先采用可循环材料。",
+            "ja": "九州大学大橋キャンパス 多次元棟 2階 スタジオ201で成果展示を行います。展示什器には循環可能な素材を優先して使用します。",
+            "en": "The exhibition will be held in Studio 201, 2F, Multidimensional Building, Kyushu University Ohashi Campus, using recyclable display materials wherever possible."
         },
         "title-advisors": {
             "zh": "指导教师",
@@ -490,9 +490,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Exhibition Venue Info"
         },
         "lead-venue": {
-            "zh": "展览将于2026年11月20日至25日在九州大学大桥校区举办，欢迎公众参观。",
-            "ja": "成果展示会は2026年11月20日から25日まで九州大学大橋キャンパスで開催予定です。一般の方もご来場いただけます。",
-            "en": "The exhibition will be held from November 20 to 25, 2026, at Kyushu University Ohashi Campus and is open to the public."
+            "zh": "展览将于2026年11月20日至25日在九州大学大桥校区多次元楼2层 Studio 201 举办，欢迎公众参观。",
+            "ja": "成果展示会は2026年11月20日から25日まで、九州大学大橋キャンパス 多次元棟 2階 スタジオ201で開催予定です。一般の方もご来場いただけます。",
+            "en": "The exhibition will be held from November 20 to 25, 2026, in Studio 201, 2F, Multidimensional Building, Kyushu University Ohashi Campus, and is open to the public."
         },
         "venue-address-label": {
             "zh": "地址",
@@ -500,9 +500,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Address"
         },
         "venue-address": {
-            "zh": "〒815-8540 福岡県福岡市南区塩原4丁目9-1 九州大学 大橋キャンパス",
-            "ja": "〒815-8540 福岡県福岡市南区塩原4丁目9-1 九州大学 大橋キャンパス",
-            "en": "4-9-1 Shiobaru, Minami-ku, Fukuoka 815-8540 — Kyushu University Ohashi Campus"
+            "zh": "九州大学大桥校区 多次元楼 2层 Studio 201｜〒815-8540 福冈县福冈市南区盐原4丁目9-1",
+            "ja": "九州大学大橋キャンパス 多次元棟 2階 スタジオ201｜〒815-8540 福岡県福岡市南区塩原4丁目9-1",
+            "en": "Studio 201, 2F, Multidimensional Building, Kyushu University Ohashi Campus | 4-9-1 Shiobaru, Minami-ku, Fukuoka 815-8540"
         },
         "venue-transit-label": {
             "zh": "公共交通",
@@ -597,8 +597,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "req-proc-title": "Työstötavat",
         "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset.",
         "req-sub-title": "Toimitettava aineisto",
-        "req-sub-text": "Fyysiset työt toimitetaan paikan päällä ja digitaaliset tai datapohjaiset työt verkkopalvelussa. Vaatimukset eroavat toisistaan, joten tarkista alla oleva Töiden toimittaminen -osio.",
-        "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Toimituspaikka ja -aika ilmoitetaan ennen verkkopalvelun avaamista.",
+        "req-sub-text": "Jätä fyysiset työt kampuksen keräyslaatikkoon. Lähetä digitaaliset työt sähköpostitse PDF-tiedostona ja liitä mukaan tarvittavat lisäaineistot. Tarkista eri toimitustavat alla olevasta osiosta.",
+        "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Jätä työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon 10. marraskuuta mennessä.",
         "safety-kicker": "Lue ennen työskentelyä",
         "title-safety": "Työstämisen turvallisuus",
         "lead-safety": "Käytöstä poistettujen levyjen päämateriaali on yleensä PVC. Leikkaaminen, kuumentaminen, hiominen, poraaminen ja liimaaminen voivat aiheuttaa vammoja tai haitallista altistumista. Arvioi menetelmän, materiaalin ja työtilan turvallisuus ennen aloittamista.",
@@ -616,7 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "safety-stop-text": "Jos havaitset savua, voimakkaan tai ärsyttävän hajun, silmien, nenän tai kurkun ärsytystä, huimausta tai laitevian, lopeta heti, sammuta laite, poistu tilasta ja ota yhteys tilan vastuuhenkilöön. Hakeudu tarvittaessa hoitoon.",
         "title-timeline": "Projektin aikataulu",
         "lead-timeline": "Osallistumisen pakollinen polku koostuu kahdesta vaiheesta: työn valmistaminen ja toimittaminen sekä fyysinen näyttely. Marraskuun puolivälin keskustelutilaisuus on vapaaehtoinen.",
-        "time-step1": "10.8.-10.11.2026",
+        "time-step1": "20.8.-10.11.2026",
         "title-step1": "Materiaalien jako, työskentely ja jatkuva toimitus",
         "text-step1": "Aloita työskentely heti levyn saatuasi ja toimita valmis työ milloin tahansa tämän ajanjakson aikana. Viimeinen määräpäivä on 10. marraskuuta.",
         "timeline-optional-badge": "Vapaaehtoinen",
@@ -625,7 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "text-salon": "Rento tilaisuus, jossa osallistujat voivat keskustella töistään ja jakaa kokemuksiaan. Tarkemmat tiedot ilmoitetaan myöhemmin, eikä osallistuminen vaikuta työn toimittamiseen tai näyttelyyn.",
         "time-step3": "20.-25.11.2026",
         "title-step3": "Fyysinen tulosnäyttely",
-        "text-step3": "Kyushun yliopiston Ohashin kampuksella järjestettävä näyttely esittelee toimitetut työt. Näyttelyrakenteissa suositaan kierrätettäviä materiaaleja.",
+        "text-step3": "Näyttely järjestetään Studio 201:ssä, Moniulotteisen rakennuksen 2. kerroksessa, Kyushun yliopiston Ohashin kampuksella. Näyttelyrakenteissa suositaan kierrätettäviä materiaaleja.",
         "title-advisors": "Ohjaavat opettajat",
         "lead-advisors": "Strategisen muotoilun osasto, Faculty of Design, Kyushun yliopisto",
         "advisor-zhang-name": "ZHANG Yanfang",
@@ -639,24 +639,24 @@ document.addEventListener('DOMContentLoaded', () => {
         "lead-apply": "Osallistumishakemukset vastaanotetaan edelleen sähköpostitse. Toimita valmis työ alla olevan Töiden toimittaminen -osion lajikohtaisten ohjeiden mukaan.",
         "apply-method-title": "Hakutapa ja osoite",
         "apply-method-text": "Lähetä osallistumisaikeesi ja lyhyt muotoiluideasi osoitteeseen <a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>. Älä liitä lopullisen työn aineistoa hakusähköpostiin.",
-        "apply-period-title": "Haku- ja työskentelyaika",
-        "apply-period-text": "<span class='apply-date-highlight'>1.5.-30.7.2026</span> osallistumishakemuksille. Materiaalien jako, työskentely ja töiden toimittaminen ovat avoinna 10.8.-10.11.",
+        "apply-period-title": "Haku-, työskentely- ja toimitusaika",
+        "apply-period-text": "<span class='apply-date-highlight'>20.8.-10.11.2026</span>. Hakemuksia, materiaalien noutoa, työskentelyä ja töiden toimittamista vastaanotetaan koko tämän ajan.",
         "title-submission": "Töiden toimittaminen",
-        "lead-submission": "Lopullisten töiden verkkopalvelua valmistellaan. Hakuvaiheessa käytä edelleen nykyistä osallistumishakua.",
+        "lead-submission": "Toimita fyysiset työt kampuksen keräyslaatikkoon. Jos työ sisältää vain digitaalista aineistoa, kokoa työn tiedot PDF-tiedostoksi ja lähetä se projektin sähköpostiin.",
         "submission-digital-title": "Kuva-, data- tai digitaalinen työ",
-        "submission-digital-text": "Toimita työn data ja osallistumislomake verkkopalvelussa. Kaikki alla mainitut aineistot ovat pakollisia.",
+        "submission-digital-text": "Kokoa työn tiedot ja osallistumislomake PDF-tiedostoksi ja lähetä se projektin sähköpostiin alla mainittujen pakollisten aineistojen kanssa.",
         "submission-digital-requirements": "<strong>Pakolliset:</strong> vähintään yksi kuva työstä, yksi lyhyt esittelyvideo sekä kaikki työn ymmärtämiseen, katseluun tai suorittamiseen tarvittavat lisätiedostot.",
         "submission-physical-title": "Fyysinen työ",
-        "submission-physical-text": "Toimita fyysinen työ ilmoitettuun paikkaan. Osallistumislomakkeen voi antaa paperilla tai lähettää erikseen verkkopalvelussa.",
+        "submission-physical-text": "Jätä fyysinen työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon. Liitä mukaan paperinen osallistumislomake tai lähetä se erikseen PDF-tiedostona.",
         "submission-physical-options": "<strong>Valitse:</strong> toimita vain fyysinen työ tai liitä mukaan kuvia, video ja muuta täydentävää aineistoa.",
-        "submission-status-label": "Tila",
-        "submission-status": "Toimituspalvelua valmistellaan",
-        "submission-cta": "Toimituspalvelu ei ole vielä avoinna",
+        "submission-status-label": "Digitaalinen toimitus",
+        "submission-status": "PDF-tiedostot ja lisäaineistot vastaanotetaan sähköpostitse",
+        "submission-cta": "Lähetä digitaalinen työ sähköpostilla",
         "submission-fallback": "Lataa varalomake",
         "title-venue": "Näyttelypaikan tiedot",
-        "lead-venue": "Näyttely järjestetään 20.-25. marraskuuta 2026 Kyushun yliopiston Ohashin kampuksella. Näyttely on avoin yleisölle.",
+        "lead-venue": "Näyttely järjestetään 20.-25. marraskuuta 2026 Studio 201:ssä, Moniulotteisen rakennuksen 2. kerroksessa, Kyushun yliopiston Ohashin kampuksella. Näyttely on avoin yleisölle.",
         "venue-address-label": "Osoite",
-        "venue-address": "Kyushu University Ohashi Campus, 4-9-1 Shiobaru, Minami-ku, Fukuoka 815-8540, Japani",
+        "venue-address": "Studio 201, Moniulotteisen rakennuksen 2. kerros, Kyushu University Ohashi Campus | 4-9-1 Shiobaru, Minami-ku, Fukuoka 815-8540, Japani",
         "venue-transit-label": "Julkinen liikenne",
         "transit-badge-nishitetsu": "Nishitetsu",
         "transit-nishitetsu-title": "Nishitetsu Omuta -linja",
@@ -835,13 +835,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function isValidSubmissionUrl(value) {
+        if (typeof value !== 'string' || value.trim() === '') return false;
+
+        try {
+            const url = new URL(value.trim());
+            return url.protocol === 'http:' || url.protocol === 'https:' || url.protocol === 'mailto:';
+        } catch {
+            return false;
+        }
+    }
+
     function initSubmissionEntry() {
         const cta = document.getElementById('submission-cta');
         const fallback = document.getElementById('submission-fallback');
         if (!cta) return;
 
         const config = window.RERE_CORDS_SUBMISSION_CONFIG || {};
-        const formUrl = isValidExternalUrl(config.formUrl) ? config.formUrl.trim() : '';
+        const formUrl = isValidSubmissionUrl(config.formUrl) ? config.formUrl.trim() : '';
         const fallbackUrl = isValidExternalUrl(config.fallbackDocumentUrl)
             ? config.fallbackDocumentUrl.trim()
             : '';
@@ -852,8 +863,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (enabled) {
             cta.href = formUrl;
-            cta.target = '_blank';
-            cta.rel = 'noopener';
+            if (formUrl.startsWith('mailto:')) {
+                cta.removeAttribute('target');
+                cta.removeAttribute('rel');
+            } else {
+                cta.target = '_blank';
+                cta.rel = 'noopener';
+            }
             cta.removeAttribute('tabindex');
         } else {
             cta.removeAttribute('href');

@@ -35,17 +35,17 @@ function mergeExtraTranslations(dictionary) {
     return dictionary;
 }
 
-test('submission config is closed and empty by default', () => {
+test('submission config opens the official email submission route', () => {
     const context = { window: {} };
     vm.runInNewContext(read('submission-config.js'), context);
 
     const config = context.window.RERE_CORDS_SUBMISSION_CONFIG;
-    assert.equal(config.enabled, false);
-    assert.equal(config.formUrl, '');
+    assert.equal(config.enabled, true);
+    assert.match(config.formUrl, /^mailto:rerecords2026@gmail\.com(?:\?|$)/);
     assert.equal(config.fallbackDocumentUrl, '');
 });
 
-test('homepage contains one disabled submission entry before the venue', () => {
+test('homepage contains one active submission entry before the venue', () => {
     const html = read('index.html');
     const submissionIndex = html.indexOf('id="submission"');
     const venueIndex = html.indexOf('id="venue"');
@@ -55,10 +55,25 @@ test('homepage contains one disabled submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="translations\.js\?v=2"><\/script>\s*<script src="app\.js\?v=17"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=3"><\/script>\s*<script src="app\.js\?v=18"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
+});
+
+test('homepage uses the confirmed 2026 collection period, handoff point, and exhibition room', () => {
+    const html = read('index.html');
+    const app = read('app.js');
+    const config = read('submission-config.js');
+
+    assert.match(app, /2026年8月20日（木）〜2026年11月10日（火）/);
+    assert.match(app, /7号館2階MEDIA STUDIO部屋前/);
+    assert.match(app, /回収ボックス/);
+    assert.match(app, /作品情報をPDF/);
+    assert.match(app, /多次元棟\s*2階\s*スタジオ201/);
+    assert.match(config, /mailto:rerecords2026@gmail\.com/);
+    assert.doesNotMatch(app, /2026年5月1日|7月30日|2026年8月10日/);
+    assert.doesNotMatch(html, /2026年5月1日|7月30日|2026年8月10日/);
 });
 
 test('every translated homepage key has all supported language values', () => {

@@ -30,6 +30,8 @@ const targets = {
     hi: { source: 'en', valueKey: 'en' }
 };
 
+const refreshKeys = new Set(process.argv.slice(2));
+
 const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
 async function translate(text, source, target, attempt = 1) {
@@ -117,7 +119,9 @@ const manualOverrides = {
 for (const [language, config] of Object.entries(targets)) {
     const values = await mapWithConcurrency(activeKeys, 5, async (key) => {
         const existingValue = existingTranslations[language]?.[key];
-        if (typeof existingValue === 'string' && existingValue.trim() !== '') return existingValue;
+        if (!refreshKeys.has(key) && typeof existingValue === 'string' && existingValue.trim() !== '') {
+            return existingValue;
+        }
 
         const sourceText = dictionary[key]?.[config.valueKey];
         if (!sourceText) throw new Error(`Missing ${config.valueKey} source for ${key}`);
