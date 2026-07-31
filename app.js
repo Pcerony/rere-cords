@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --------------------------------------------------------------------------
-       1. Multilingual Translation System (ZH / JA / EN / FI)
+       1. Multilingual Translation System (13 languages)
        -------------------------------------------------------------------------- */
         const i18nDict = {
         "doc-title": {
@@ -659,16 +659,32 @@ document.addEventListener('DOMContentLoaded', () => {
         if (i18nDict[key]) i18nDict[key].fi = value;
     });
 
+    const extraTranslations = window.RERE_CORDS_EXTRA_TRANSLATIONS || {};
+    Object.entries(extraTranslations).forEach(([language, translations]) => {
+        Object.entries(translations).forEach(([key, value]) => {
+            if (i18nDict[key]) i18nDict[key][language] = value;
+        });
+    });
+
     const LANGUAGE_CODES = {
-        zh: 'zh-CN',
-        ja: 'ja',
         en: 'en',
+        ja: 'ja',
+        zh: 'zh-CN',
+        'zh-TW': 'zh-TW',
+        ko: 'ko',
+        id: 'id',
+        vi: 'vi',
+        th: 'th',
+        bn: 'bn',
+        ar: 'ar',
+        fr: 'fr',
+        hi: 'hi',
         fi: 'fi'
     };
     const SUPPORTED_LANGUAGES = Object.keys(LANGUAGE_CODES);
 
     function normalizeLanguage(language) {
-        return SUPPORTED_LANGUAGES.includes(language) ? language : 'ja';
+        return SUPPORTED_LANGUAGES.includes(language) ? language : 'en';
     }
 
     let currentLang = normalizeLanguage(localStorage.getItem('rere_cords_lang'));
@@ -677,6 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLang = normalizeLanguage(language);
         localStorage.setItem('rere_cords_lang', currentLang);
         document.documentElement.setAttribute('lang', LANGUAGE_CODES[currentLang]);
+        document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
 
         // Translate general text nodes
         const elements = document.querySelectorAll('[data-i18n]');
@@ -700,14 +717,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Update active class on header buttons
-        document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-            if (btn.getAttribute('data-lang-btn') === currentLang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) languageSelect.value = currentLang;
     }
 
     function isValidExternalUrl(value) {
@@ -766,13 +777,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Bind language switcher buttons
-    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetLang = btn.getAttribute('data-lang-btn');
-            updateLanguage(targetLang);
-        });
-    });
+    const languageSelect = document.getElementById('language-select');
+    languageSelect?.addEventListener('change', (event) => updateLanguage(event.target.value));
 
 
 
@@ -826,36 +832,22 @@ document.addEventListener('DOMContentLoaded', () => {
     initSubmissionEntry();
 
     /* --------------------------------------------------------------------------
-       4. Header Scroll Behavior (Hide on Scroll Down, Show on Scroll Up)
+       4. Persistent Header Visual State
        -------------------------------------------------------------------------- */
-    let lastScrollY = window.scrollY;
     const mainHeader = document.getElementById('main-header');
-    
-    if (mainHeader) {
-        const heroSection = document.getElementById('hero');
-        const getHeroHeight = () => heroSection ? heroSection.offsetHeight : window.innerHeight;
+    const heroSection = document.getElementById('hero');
 
+    if (mainHeader && heroSection) {
         const updateHeader = () => {
-            const currentScrollY = window.scrollY;
-            const heroHeight = getHeroHeight();
-            
-            if (currentScrollY < 80) {
-                // At the very top - hide header to keep hero screen clean
-                mainHeader.classList.add('header-hidden');
-            } else if (currentScrollY > lastScrollY && currentScrollY > heroHeight - 100) {
-                // Scrolling down in content - hide header to maximize reading space
-                mainHeader.classList.add('header-hidden');
-            } else {
-                // Scrolling up in content, or inside hero but not at top - show header
-                mainHeader.classList.remove('header-hidden');
-            }
-            lastScrollY = currentScrollY;
+            const headerHeight = mainHeader.offsetHeight;
+            const overHero = window.scrollY < heroSection.offsetHeight - headerHeight;
+            mainHeader.classList.toggle('is-over-hero', overHero);
         };
         const scheduleHeaderUpdate = createFrameScheduler(updateHeader);
 
-        // Run on load to set initial state
         updateHeader();
         window.addEventListener('scroll', scheduleHeaderUpdate, { passive: true });
+        window.addEventListener('resize', scheduleHeaderUpdate, { passive: true });
     }
 
     /* --------------------------------------------------------------------------
