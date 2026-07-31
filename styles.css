@@ -122,47 +122,6 @@ a {
     margin-right: 1px;
 }
 
-.partner-logos {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    border-left: 1px solid var(--color-border);
-    padding-left: 1.25rem;
-}
-
-.header-partner-logo {
-    height: 20px;
-    width: auto;
-    display: block;
-    filter: grayscale(1) brightness(0.2) contrast(1.2);
-    opacity: 0.7;
-    transition: var(--transition-fast);
-}
-
-.header-partner-logo:hover {
-    filter: none;
-    opacity: 1;
-}
-
-#nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 2.25rem;
-}
-
-.nav-link {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: var(--color-text-muted);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.nav-link:hover {
-    color: var(--color-text-main);
-}
-
 .header-controls {
     display: flex;
     align-items: center;
@@ -203,46 +162,6 @@ a {
     font-size: 0.7rem;
     pointer-events: none;
     margin: 0 0.1rem;
-}
-
-.mobile-nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--color-text-main);
-    cursor: pointer;
-}
-
-/* --------------------------------------------------------------------------
-   3. Buttons & Badges (Minimalist & Clean)
-   -------------------------------------------------------------------------- */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.65rem 1.5rem;
-    font-size: 0.8rem;
-    font-family: var(--font-mono);
-    cursor: pointer;
-    transition: var(--transition-fast);
-    border: 1px solid var(--color-border-dark);
-    background-color: transparent;
-    color: var(--color-text-main);
-}
-
-.btn:hover {
-    background-color: var(--color-border-dark);
-    color: #ffffff;
-}
-
-.btn-primary {
-    background-color: var(--color-border-dark);
-    color: #ffffff;
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--color-text-main);
 }
 
 .sdg-badge {
@@ -395,7 +314,7 @@ a {
     transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
-.hero-partner-logos .logo-kyushu {
+.hero-partner-logos .logo-sodeslab {
     height: 19px;
     transform: translateY(-2px);
 }
@@ -429,6 +348,7 @@ section {
 #requirements { background-color: #ffffff; }
 #timeline { background-color: var(--color-bg-base); }
 #apply { background-color: #ffffff; }
+#submission { background-color: #ffffff; }
 #venue { background-color: var(--color-bg-base); }
 
 .section-container {
@@ -470,61 +390,6 @@ section {
     margin-left: 0;
     margin-right: auto;
 }
-.concept-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 4.5rem;
-}
-
-.concept-item {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 1.5rem;
-    align-items: flex-start;
-}
-
-.concept-meta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.concept-num {
-    font-family: var(--font-header);
-    color: var(--color-secondary);
-    font-weight: 700;
-    font-size: 1.6rem;
-    line-height: 1;
-}
-
-.concept-item h3 {
-    display: none;
-}
-
-.concept-body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.concept-body h3 {
-    display: block;
-    font-family: var(--font-header);
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-text-main);
-}
-
-.concept-body p {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
 /* Stats / Details Panel (Completely Flat & Minimalist) */
 .about-details-box {
     background-color: transparent;
@@ -1014,6 +879,144 @@ section {
 }
 
 /* --------------------------------------------------------------------------
+   7.6 Final Submission Entry
+   -------------------------------------------------------------------------- */
+.submission-panel {
+    border-top: 1px solid var(--color-border-dark);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.submission-routes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.submission-route {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 2rem 2.25rem;
+}
+
+.submission-route + .submission-route {
+    border-left: 1px solid var(--color-border);
+}
+
+.submission-route-index {
+    color: var(--color-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    padding-top: 0.25rem;
+}
+
+.submission-route h3 {
+    color: var(--color-text-main);
+    font-family: var(--font-header);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.65rem;
+}
+
+.submission-route p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.submission-actions {
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    padding: 1.25rem 2.25rem;
+}
+
+.submission-status {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.submission-status-label {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.submission-status-value {
+    color: var(--color-secondary);
+    font-family: var(--font-header);
+    font-size: 1.05rem;
+}
+
+.submission-links {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.submission-cta,
+.submission-fallback {
+    border-bottom: 1px solid currentColor;
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    padding-bottom: 0.15rem;
+    text-decoration: none;
+}
+
+.submission-cta.is-disabled {
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.submission-cta:not(.is-disabled):hover,
+.submission-fallback:hover {
+    color: var(--color-text-main);
+}
+
+.submission-cta:focus-visible,
+.submission-fallback:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+    .submission-routes {
+        grid-template-columns: 1fr;
+    }
+
+    .submission-route {
+        padding: 1.5rem;
+    }
+
+    .submission-route + .submission-route {
+        border-left: 0;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .submission-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .submission-links {
+        justify-content: flex-start;
+    }
+}
+
+/* --------------------------------------------------------------------------
    8. Timeline Section (Minimalist Line & Text)
    -------------------------------------------------------------------------- */
 .timeline-wrapper {
@@ -1367,7 +1370,7 @@ section {
     transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
-.footer-partner-logo.logo-kyushu {
+.footer-partner-logo.logo-sodeslab {
     height: 46px;
 }
 
@@ -1410,53 +1413,12 @@ section {
         font-size: 15px;
     }
 
-    .mobile-nav-toggle {
-        display: block;
-    }
-
-    #nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-bg-base);
-        border-bottom: 1px solid var(--color-border);
-        flex-direction: column;
-        padding: 2.5rem;
-        gap: 2rem;
-        display: none;
-    }
-
-    #nav-menu.open {
-        display: flex;
-    }
-
     .hero-container {
         padding: 0 1.5rem;
     }
 
-    .partner-logos {
-        padding-left: 1rem;
-        gap: 0.5rem;
-    }
-
-    .header-partner-logo {
-        height: 18px;
-    }
-
     .section-title {
         font-size: 1.85rem;
-    }
-
-    .concept-item {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .concept-meta {
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
     }
 
     .timeline-line {
@@ -1571,7 +1533,7 @@ section {
         order: 3 !important;
     }
 
-    .hero-partner-logos .logo-kyushu {
+    .hero-partner-logos .logo-sodeslab {
         height: 24px !important;
         transform: none !important;
     }
@@ -1610,5 +1572,38 @@ section {
         flex-direction: column;
         align-items: flex-start;
         gap: 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal-on-scroll,
+    .reveal-on-scroll.visible,
+    .timeline-item,
+    .timeline-item.visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .poster-frame,
+    .poster-img,
+    .poster-vinyl,
+    .lightbox-modal,
+    .lightbox-content {
+        transition: none;
+    }
+
+    .poster-vinyl {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    .poster-interactive-wrapper:hover .poster-frame,
+    .poster-interactive-wrapper:hover .poster-vinyl {
+        transform: none;
     }
 }

@@ -1,12 +1,12 @@
 /* ==========================================================================
-   RERE-CORDS Javascript Logic
-   Bilingual Translation & Navigation
+   RERE-CORDS JavaScript Logic
+   Multilingual Translation & Interaction
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --------------------------------------------------------------------------
-       1. Bilingual Translation System (ZH / JA)
+       1. Multilingual Translation System (ZH / JA / EN)
        -------------------------------------------------------------------------- */
         const i18nDict = {
         "doc-title": {
@@ -234,6 +234,56 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "<span class='apply-date-highlight'>2026年5月1日 — 7月30日</span>（本期間中に応募エントリーを行い、制作素材のアナログレコードを受け取ることができます）",
             "en": "<span class='apply-date-highlight'>May 1 — July 30, 2026</span> (Submit your application and collect vinyl records during this window)"
         },
+        "title-submission": {
+            "zh": "提交作品",
+            "ja": "作品提出",
+            "en": "Submit Your Work"
+        },
+        "lead-submission": {
+            "zh": "最终作品提交入口正在准备中；当前报名阶段仍请按照现有报名方法操作。",
+            "ja": "最終作品の提出窓口を準備中です。応募段階では、これまでの応募方法をご利用ください。",
+            "en": "The final submission portal is being prepared. For the application stage, please continue using the current application process."
+        },
+        "submission-digital-title": {
+            "zh": "数字、图片或数据作品",
+            "ja": "画像・データ作品",
+            "en": "Image or Data-Based Work"
+        },
+        "submission-digital-text": {
+            "zh": "此类作品后续将通过线上入口提交必要材料，具体安排将在开放前公布。",
+            "ja": "この形式の作品は、今後オンライン窓口から必要な資料を提出する予定です。詳細は公開前にご案内します。",
+            "en": "This type of work will use the online portal for the required materials. Details will be announced before the portal opens."
+        },
+        "submission-physical-title": {
+            "zh": "实物作品",
+            "ja": "実物作品",
+            "en": "Physical Work"
+        },
+        "submission-physical-text": {
+            "zh": "实物作品后续以线下交付为主，参与表的线上或纸质方式将在开放前说明。",
+            "ja": "実物作品は今後、原則として対面で提出します。参加票のオンライン提出または紙提出については、公開前にご案内します。",
+            "en": "Physical work will primarily be delivered offline. The online or paper route for the participation form will be explained before the portal opens."
+        },
+        "submission-status-label": {
+            "zh": "状态",
+            "ja": "ステータス",
+            "en": "Status"
+        },
+        "submission-status": {
+            "zh": "提交通道即将开放",
+            "ja": "提出窓口は準備中です",
+            "en": "Submission portal coming soon"
+        },
+        "submission-cta": {
+            "zh": "提交入口尚未开放",
+            "ja": "提出入口はまだ開いていません",
+            "en": "Submission portal is not open yet"
+        },
+        "submission-fallback": {
+            "zh": "下载备用参与表",
+            "ja": "予備の参加票をダウンロード",
+            "en": "Download fallback form"
+        },
         "title-timeline": {
             "zh": "日程进程",
             "ja": "プロジェクトスケジュール",
@@ -248,6 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "2026年8月1日 - 10月31日",
             "ja": "8月1日 - 10月31日",
             "en": "August 1 - October 31, 2026"
+        },
+        "time-step2": {
+            "zh": "2026年11月1日 - 11月10日",
+            "ja": "11月1日 - 11月10日",
+            "en": "November 1 - November 10, 2026"
         },
         "title-step1": {
             "zh": "分发与制作",
@@ -451,22 +506,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    let currentLang = localStorage.getItem('rere_cords_lang') || 'ja';
+    const LANGUAGE_CODES = {
+        zh: 'zh-CN',
+        ja: 'ja',
+        en: 'en'
+    };
+    const SUPPORTED_LANGUAGES = Object.keys(LANGUAGE_CODES);
 
-    function updateLanguage(lang) {
-        currentLang = lang;
-        localStorage.setItem('rere_cords_lang', lang);
-        document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-CN' : 'ja');
+    function normalizeLanguage(language) {
+        return SUPPORTED_LANGUAGES.includes(language) ? language : 'ja';
+    }
+
+    let currentLang = normalizeLanguage(localStorage.getItem('rere_cords_lang'));
+
+    function updateLanguage(language) {
+        currentLang = normalizeLanguage(language);
+        localStorage.setItem('rere_cords_lang', currentLang);
+        document.documentElement.setAttribute('lang', LANGUAGE_CODES[currentLang]);
 
         // Translate general text nodes
         const elements = document.querySelectorAll('[data-i18n]');
         elements.forEach(el => {
             const key = el.getAttribute('data-i18n');
-            if (i18nDict[key] && i18nDict[key][lang]) {
+            if (i18nDict[key] && i18nDict[key][currentLang]) {
                 if (el.tagName === 'TITLE') {
-                    document.title = i18nDict[key][lang];
+                    document.title = i18nDict[key][currentLang];
                 } else {
-                    el.innerHTML = i18nDict[key][lang];
+                    el.innerHTML = i18nDict[key][currentLang];
                 }
             }
         });
@@ -475,18 +541,74 @@ document.addEventListener('DOMContentLoaded', () => {
         const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
         placeholderElements.forEach(el => {
             const key = el.getAttribute('data-i18n-placeholder');
-            if (i18nDict[key] && i18nDict[key][lang]) {
-                el.setAttribute('placeholder', i18nDict[key][lang]);
+            if (i18nDict[key] && i18nDict[key][currentLang]) {
+                el.setAttribute('placeholder', i18nDict[key][currentLang]);
             }
         });
 
         // Update active class on header buttons
         document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-            if (btn.getAttribute('data-lang-btn') === lang) {
+            if (btn.getAttribute('data-lang-btn') === currentLang) {
                 btn.classList.add('active');
             } else {
                 btn.classList.remove('active');
             }
+        });
+    }
+
+    function isValidExternalUrl(value) {
+        if (typeof value !== 'string' || value.trim() === '') return false;
+
+        try {
+            const url = new URL(value.trim());
+            return url.protocol === 'http:' || url.protocol === 'https:';
+        } catch {
+            return false;
+        }
+    }
+
+    function initSubmissionEntry() {
+        const cta = document.getElementById('submission-cta');
+        const fallback = document.getElementById('submission-fallback');
+        if (!cta) return;
+
+        const config = window.RERE_CORDS_SUBMISSION_CONFIG || {};
+        const formUrl = isValidExternalUrl(config.formUrl) ? config.formUrl.trim() : '';
+        const fallbackUrl = isValidExternalUrl(config.fallbackDocumentUrl)
+            ? config.fallbackDocumentUrl.trim()
+            : '';
+        const enabled = config.enabled === true && formUrl !== '';
+
+        cta.classList.toggle('is-disabled', !enabled);
+        cta.setAttribute('aria-disabled', String(!enabled));
+
+        if (enabled) {
+            cta.href = formUrl;
+            cta.target = '_blank';
+            cta.rel = 'noopener';
+            cta.removeAttribute('tabindex');
+        } else {
+            cta.removeAttribute('href');
+            cta.removeAttribute('target');
+            cta.removeAttribute('rel');
+            cta.setAttribute('tabindex', '-1');
+        }
+
+        if (fallback) {
+            fallback.hidden = fallbackUrl === '';
+            if (fallbackUrl !== '') {
+                fallback.href = fallbackUrl;
+                fallback.target = '_blank';
+                fallback.rel = 'noopener';
+            } else {
+                fallback.removeAttribute('href');
+                fallback.removeAttribute('target');
+                fallback.removeAttribute('rel');
+            }
+        }
+
+        cta.addEventListener('click', (event) => {
+            if (cta.getAttribute('aria-disabled') === 'true') event.preventDefault();
         });
     }
 
@@ -500,34 +622,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    function createFrameScheduler(callback) {
+        let framePending = false;
+
+        return () => {
+            if (framePending) return;
+            framePending = true;
+            window.requestAnimationFrame(() => {
+                framePending = false;
+                callback();
+            });
+        };
+    }
+
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
     /* --------------------------------------------------------------------------
        3. Scroll Reveal Animations (Timeline & Cards)
        -------------------------------------------------------------------------- */
     const revealItems = document.querySelectorAll('.reveal-on-scroll, .timeline-item');
-    
+
     if (revealItems.length > 0) {
-        const observerOptions = {
-            root: null,
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        if (reducedMotionQuery.matches || !('IntersectionObserver' in window)) {
+            revealItems.forEach(item => item.classList.add('visible'));
+        } else {
+            const observerOptions = {
+                root: null,
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealItems.forEach(item => {
+                revealObserver.observe(item);
             });
-        }, observerOptions);
-
-        revealItems.forEach(item => {
-            revealObserver.observe(item);
-        });
+        }
     }
 
     // Set default language on load
     updateLanguage(currentLang);
+    initSubmissionEntry();
 
     /* --------------------------------------------------------------------------
        4. Header Scroll Behavior (Hide on Scroll Down, Show on Scroll Up)
@@ -539,7 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroSection = document.getElementById('hero');
         const getHeroHeight = () => heroSection ? heroSection.offsetHeight : window.innerHeight;
 
-        const handleScroll = () => {
+        const updateHeader = () => {
             const currentScrollY = window.scrollY;
             const heroHeight = getHeroHeight();
             
@@ -555,10 +697,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             lastScrollY = currentScrollY;
         };
+        const scheduleHeaderUpdate = createFrameScheduler(updateHeader);
 
         // Run on load to set initial state
-        handleScroll();
-        window.addEventListener('scroll', handleScroll, { passive: true });
+        updateHeader();
+        window.addEventListener('scroll', scheduleHeaderUpdate, { passive: true });
     }
 
     /* --------------------------------------------------------------------------
@@ -569,6 +712,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const posterFrame = document.querySelector('.poster-frame');
         const posterVinyl = document.querySelector('.poster-vinyl');
         if (!stickyTrack || !posterFrame || !posterVinyl) return;
+        if (reducedMotionQuery.matches) return;
 
         function updatePosterAnimation() {
             const rect = stickyTrack.getBoundingClientRect();
@@ -614,8 +758,9 @@ document.addEventListener('DOMContentLoaded', () => {
             posterVinyl.style.opacity = opacity;
         }
 
-        window.addEventListener('scroll', updatePosterAnimation, { passive: true });
-        window.addEventListener('resize', updatePosterAnimation, { passive: true });
+        const schedulePosterUpdate = createFrameScheduler(updatePosterAnimation);
+        window.addEventListener('scroll', schedulePosterUpdate, { passive: true });
+        window.addEventListener('resize', schedulePosterUpdate, { passive: true });
         updatePosterAnimation();
     }
 

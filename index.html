@@ -73,9 +73,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles.css?v=13">
+    <link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
 
@@ -126,7 +124,7 @@
                     <img src="./素材/logo3.png" alt="DESIS-Q Societal Design Lab" class="footer-partner-logo logo-desis">
                 </div>
                 <div class="hero-logo-col hero-logo-center">
-                    <img src="./素材/logo-dark.png" alt="Kyushu University" class="footer-partner-logo logo-kyushu">
+                    <img src="./素材/logo-dark.png" alt="SoDesLab" class="footer-partner-logo logo-sodeslab">
                 </div>
                 <div class="hero-logo-col hero-logo-right">
                     <img src="./素材/logo2.png" alt="AiGoki" class="footer-partner-logo logo-aigoki">
@@ -423,6 +421,47 @@
                 </div>
             </div>
         </section>
+
+        <!-- Final Submission Section -->
+        <section id="submission">
+            <div class="section-container">
+                <div class="section-header reveal-on-scroll">
+                    <h2 class="section-title" data-i18n="title-submission">提交作品</h2>
+                    <p class="section-lead" data-i18n="lead-submission">最终作品提交入口正在准备中；当前报名阶段仍请按照现有报名方法操作。</p>
+                </div>
+
+                <div class="submission-panel reveal-on-scroll">
+                    <div class="submission-routes">
+                        <div class="submission-route">
+                            <span class="submission-route-index">01</span>
+                            <div>
+                                <h3 data-i18n="submission-digital-title">数字、图片或数据作品</h3>
+                                <p data-i18n="submission-digital-text">此类作品后续将通过线上入口提交必要材料，具体安排将在开放前公布。</p>
+                            </div>
+                        </div>
+                        <div class="submission-route">
+                            <span class="submission-route-index">02</span>
+                            <div>
+                                <h3 data-i18n="submission-physical-title">实物作品</h3>
+                                <p data-i18n="submission-physical-text">实物作品后续以线下交付为主，参与表的线上或纸质方式将在开放前说明。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="submission-actions">
+                        <div class="submission-status">
+                            <span class="submission-status-label" data-i18n="submission-status-label">状态</span>
+                            <span class="submission-status-value" data-i18n="submission-status">提交通道即将开放</span>
+                        </div>
+                        <div class="submission-links">
+                            <a id="submission-cta" class="submission-cta is-disabled" data-i18n="submission-cta" aria-disabled="true" tabindex="-1">提交入口尚未开放</a>
+                            <a id="submission-fallback" class="submission-fallback" data-i18n="submission-fallback" hidden>下载备用参与表</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Venue Section -->
         <section id="venue">
             <div class="section-container venue-wide">
@@ -505,7 +544,7 @@
                     <a href="mailto:rerecords2026@gmail.com" class="footer-contact-email">rerecords2026@gmail.com</a>
                 </div>
                 <div class="footer-partner-logos">
-                    <img src="./素材/logo1.png" alt="Kyushu University" class="footer-partner-logo logo-kyushu">
+                    <img src="./素材/logo1.png" alt="SoDesLab" class="footer-partner-logo logo-sodeslab">
                     <img src="./素材/logo3.png" alt="DESIS-Q Societal Design Lab" class="footer-partner-logo logo-desis">
                     <img src="./素材/logo2.png" alt="AiGoki" class="footer-partner-logo logo-aigoki">
                 </div>
@@ -524,11 +563,7 @@
         </div>
     </div>
 
-    <!-- Lucide init and custom script -->
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-    </script>
-    <script src="app.js?v=13"></script>
+    <script src="submission-config.js?v=1"></script>
+    <script src="app.js?v=14"></script>
 </body>
 </html>
