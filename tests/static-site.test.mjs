@@ -54,7 +54,7 @@ test('homepage contains one disabled submission entry before the venue', () => {
     assert.ok(venueIndex > submissionIndex, '#submission must appear before #venue');
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
-    assert.match(html, /styles\.css\?v=17/);
+    assert.match(html, /styles\.css\?v=18/);
     assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="translations\.js\?v=2"><\/script>\s*<script src="app\.js\?v=17"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
@@ -146,4 +146,16 @@ test('language, submission, and motion foundations are present', () => {
     assert.match(css, /submission-cta/);
     assert.match(css, /#poster\s*\{[^}]*overflow-x:\s*clip;/s);
     assert.match(css, /@media\s*\(max-width:\s*480px\)[\s\S]*?\.venue-transit-combined\s*\{[^}]*grid-template-columns:\s*1fr;/);
+});
+
+test('new language and advisor surfaces reuse the editorial visual system', () => {
+    const html = read('index.html');
+    const css = read('styles.css');
+
+    assert.match(css, /\.language-menu-trigger\s*\{[^}]*border-radius:\s*0;/s);
+    assert.match(css, /\.language-menu-popover\s*\{[^}]*border-radius:\s*0;[^}]*box-shadow:\s*none;/s);
+    assert.doesNotMatch(css, /\.language-menu-option\[aria-selected='true'\]::after/);
+    assert.match(css, /\.advisors-container\s*\{[^}]*max-width:\s*900px;/s);
+    assert.match(css, /\.advisor-bio\s*\{[^}]*color:\s*var\(--color-text-muted\);[^}]*font-size:\s*0\.9rem;/s);
+    assert.doesNotMatch(html, /class="advisor-link"[^>]*>[\s\S]*?<span aria-hidden="true">↗<\/span>/);
 });
