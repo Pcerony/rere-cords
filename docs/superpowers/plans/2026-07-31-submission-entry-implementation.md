@@ -47,11 +47,10 @@ test('submission config is closed and empty by default', () => {
     const context = { window: {} };
     vm.runInNewContext(read('submission-config.js'), context);
 
-    assert.deepEqual(context.window.RERE_CORDS_SUBMISSION_CONFIG, {
-        enabled: false,
-        formUrl: '',
-        fallbackDocumentUrl: ''
-    });
+    const config = context.window.RERE_CORDS_SUBMISSION_CONFIG;
+    assert.equal(config.enabled, false);
+    assert.equal(config.formUrl, '');
+    assert.equal(config.fallbackDocumentUrl, '');
 });
 
 test('homepage contains one disabled submission entry before the venue', () => {
@@ -63,7 +62,7 @@ test('homepage contains one disabled submission entry before the venue', () => {
     assert.ok(venueIndex > submissionIndex, '#submission must appear before #venue');
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
-    assert.match(html, /submission-config\.js[^"]*<\/script>[\s\S]*app\.js\?v=14/);
+    assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="app\.js\?v=14"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
