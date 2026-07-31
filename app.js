@@ -279,35 +279,15 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "煙、強い刺激臭、目・鼻・喉の刺激、めまい、機器の異常が生じた場合は、直ちに作業を中止し、機器を停止してその場を離れ、施設責任者に連絡してください。必要に応じて医療機関を受診してください。",
             "en": "If you notice smoke, a strong or irritating odor, eye, nose, or throat irritation, dizziness, or equipment trouble, stop immediately, shut down the equipment, leave the area, and contact the workspace supervisor. Seek medical help when needed."
         },
-        "title-apply": {
-            "zh": "报名方法",
-            "ja": "応募方法",
-            "en": "How to Apply"
-        },
-        "lead-apply": {
-            "zh": "参与申请仍通过电子邮件受理；最终作品请按照下方“提交作品”的分类要求提交。",
-            "ja": "参加申込は引き続きメールで受け付けます。最終作品は、下記の「作品提出」に記載された区分別の方法で提出してください。",
-            "en": "Participation applications are still accepted by email. Submit final works according to the category-specific rules in Submit Your Work below."
-        },
-        "apply-method-title": {
-            "zh": "递交方式",
-            "ja": "提出方法・宛先",
-            "en": "Submission Method & Destination"
-        },
-        "apply-method-text": {
-            "zh": "将参与意向和简要设计构想发送至活动邮箱：<a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>。最终作品材料不在报名邮件中提交。",
-            "ja": "参加希望と簡単なデザイン案を、事務局メールアドレス（<a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>）へお送りください。最終作品の資料は申込メールには添付しません。",
-            "en": "Email your intention to participate and a brief design idea to <a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>. Do not submit final work materials in the application email."
-        },
         "apply-period-title": {
-            "zh": "报名、制作与提交时间",
-            "ja": "応募・制作・提出期間",
-            "en": "Application, Making & Submission Period"
+            "zh": "参与与提交时间",
+            "ja": "参加・作品提出期間",
+            "en": "Participation & Submission Period"
         },
         "apply-period-text": {
-            "zh": "<span class='apply-date-highlight'>2026年8月20日（星期四）至11月10日（星期二）</span>。期间可报名、领取材料、制作并随时提交作品。",
-            "ja": "<span class='apply-date-highlight'>2026年8月20日（木）〜2026年11月10日（火）</span>。期間中は応募、素材受取、制作、作品提出を随時受け付けます。",
-            "en": "<span class='apply-date-highlight'>August 20 (Thu) - November 10 (Tue), 2026</span>. Applications, material collection, making, and work submission are accepted throughout this period."
+            "zh": "<span class='apply-date-highlight'>2026年8月20日（星期四）至11月10日（星期二）</span>。期间可随时制作并提交作品；无需另行报名。",
+            "ja": "<span class='apply-date-highlight'>2026年8月20日（木）〜2026年11月10日（火）</span>。期間中は随時制作・提出でき、事前の参加申込は不要です。",
+            "en": "<span class='apply-date-highlight'>August 20 (Thu) - November 10 (Tue), 2026</span>. Make and submit your work at any time during this period; no separate application is needed."
         },
         "title-submission": {
             "zh": "提交作品",
@@ -315,9 +295,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submit Your Work"
         },
         "lead-submission": {
-            "zh": "实物作品请投入校内回收箱；仅包含数字信息的作品，请将作品信息整理为PDF并发送至活动邮箱。",
-            "ja": "実物作品は学内の回収ボックスへ提出してください。デジタル情報のみの場合は、作品情報をPDFにまとめて事務局メールアドレスへ送信してください。",
-            "en": "Place physical works in the campus collection box. For digital-only works, compile the work information as a PDF and email it to the project office."
+            "zh": "无需提前报名，完成作品提交即视为正式参加。请根据作品形式选择下方对应的提交方式。",
+            "ja": "事前の参加申込は不要です。作品の提出完了をもって正式参加となります。作品形式に応じて、以下の提出方法を選んでください。",
+            "en": "No advance registration is required. Completing a work submission constitutes formal participation. Choose the appropriate route below for your work."
         },
         "submission-digital-title": {
             "zh": "数字、图片或数据作品",
@@ -468,11 +448,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "专注社会设计、转型设计与艺术研究方法，特别关注边缘化社区与不同文化语境中的设计实践。她同时担任芬兰拉普兰大学兼职教授，并在纳米比亚、芬兰、澳大利亚和日本开展跨地域研究。",
             "ja": "ソーシャルデザイン、トランスフォーメーションデザイン、芸術に基づく研究手法を専門とし、周縁化されたコミュニティや異なる文化的文脈でのデザイン実践に取り組んでいます。フィンランドのラップランド大学客員教授も務め、ナミビア、フィンランド、オーストラリア、日本で研究を展開しています。",
             "en": "She specialises in social design, transformation design and arts-based research, with particular attention to marginalised communities and diverse cultural contexts. She is also an Adjunct Professor at the University of Lapland and has conducted research across Namibia, Finland, Australia and Japan."
-        },
-        "advisor-profile-link": {
-            "zh": "查看九州大学官方资料",
-            "ja": "九州大学公式プロフィール",
-            "en": "Kyushu University profile"
         },
         "footer-desc": {
             "zh": "废旧黑胶唱片再利用的可持续设计征集与成果展项目",
@@ -634,15 +609,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "advisor-sarantou-name": "Melanie Sarantou",
         "advisor-sarantou-role": "Professori · strateginen muotoilu, sosiaalinen muotoilu",
         "advisor-sarantou-bio": "Hän on erikoistunut sosiaaliseen muotoiluun, transformaatiomuotoiluun ja taidelähtöisiin tutkimusmenetelmiin sekä erityisesti marginalisoitujen yhteisöjen ja erilaisten kulttuuristen ympäristöjen muotoilukäytäntöihin. Hän toimii myös Lapin yliopiston dosenttina ja on tehnyt tutkimusta Namibiassa, Suomessa, Australiassa ja Japanissa.",
-        "advisor-profile-link": "Kyushun yliopiston profiili",
-        "title-apply": "Osallistumishaku",
-        "lead-apply": "Osallistumishakemukset vastaanotetaan edelleen sähköpostitse. Toimita valmis työ alla olevan Töiden toimittaminen -osion lajikohtaisten ohjeiden mukaan.",
-        "apply-method-title": "Hakutapa ja osoite",
-        "apply-method-text": "Lähetä osallistumisaikeesi ja lyhyt muotoiluideasi osoitteeseen <a href='mailto:rerecords2026@gmail.com' class='apply-email'>rerecords2026@gmail.com</a>. Älä liitä lopullisen työn aineistoa hakusähköpostiin.",
-        "apply-period-title": "Haku-, työskentely- ja toimitusaika",
-        "apply-period-text": "<span class='apply-date-highlight'>20.8.-10.11.2026</span>. Hakemuksia, materiaalien noutoa, työskentelyä ja töiden toimittamista vastaanotetaan koko tämän ajan.",
+        "apply-period-title": "Osallistumis- ja toimitusaika",
+        "apply-period-text": "<span class='apply-date-highlight'>20.8.-10.11.2026</span>. Voit valmistaa ja toimittaa työsi milloin tahansa tänä aikana; erillistä ennakkoilmoittautumista ei tarvita.",
         "title-submission": "Töiden toimittaminen",
-        "lead-submission": "Toimita fyysiset työt kampuksen keräyslaatikkoon. Jos työ sisältää vain digitaalista aineistoa, kokoa työn tiedot PDF-tiedostoksi ja lähetä se projektin sähköpostiin.",
+        "lead-submission": "Ennakkoilmoittautumista ei tarvita. Työn onnistunut toimittaminen merkitsee virallista osallistumista. Valitse alta työllesi sopiva toimitustapa.",
         "submission-digital-title": "Kuva-, data- tai digitaalinen työ",
         "submission-digital-text": "Kokoa työn tiedot ja osallistumislomake PDF-tiedostoksi ja lähetä se projektin sähköpostiin alla mainittujen pakollisten aineistojen kanssa.",
         "submission-digital-requirements": "<strong>Pakolliset:</strong> vähintään yksi kuva työstä, yksi lyhyt esittelyvideo sekä kaikki työn ymmärtämiseen, katseluun tai suorittamiseen tarvittavat lisätiedostot.",

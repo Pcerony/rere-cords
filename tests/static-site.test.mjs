@@ -55,10 +55,25 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=3"><\/script>\s*<script src="app\.js\?v=18"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=4"><\/script>\s*<script src="app\.js\?v=19"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
+});
+
+test('submitting a work is the only participation step', () => {
+    const html = read('index.html');
+    const app = read('app.js');
+    const submissionStart = html.indexOf('id="submission"');
+    const submissionEnd = html.indexOf('</section>', submissionStart);
+    const submission = html.slice(submissionStart, submissionEnd);
+
+    assert.doesNotMatch(html, /id="apply"/);
+    assert.doesNotMatch(html, /data-i18n="(?:title-apply|lead-apply|apply-method-title|apply-method-text)"/);
+    assert.match(submission, /data-i18n="apply-period-title"/);
+    assert.match(submission, /data-i18n="apply-period-text"/);
+    assert.match(app, /无需提前报名|事前の参加申込は不要|No advance registration is required/);
+    assert.doesNotMatch(app, /"title-apply"|"lead-apply"|"apply-method-title"|"apply-method-text"/);
 });
 
 test('homepage uses the confirmed 2026 collection period, handoff point, and exhibition room', () => {
@@ -69,7 +84,7 @@ test('homepage uses the confirmed 2026 collection period, handoff point, and exh
     assert.match(app, /2026年8月20日（木）〜2026年11月10日（火）/);
     assert.match(app, /7号館2階MEDIA STUDIO部屋前/);
     assert.match(app, /回収ボックス/);
-    assert.match(app, /作品情報をPDF/);
+    assert.match(app, /作品情報[^\n]*PDF/);
     assert.match(app, /多次元棟\s*2階\s*スタジオ201/);
     assert.match(config, /mailto:rerecords2026@gmail\.com/);
     assert.doesNotMatch(app, /2026年5月1日|7月30日|2026年8月10日/);
@@ -136,9 +151,9 @@ test('homepage contains safety, advisor, and precise submission guidance', () =>
     assert.match(html, /src="\.\/素材\/faculty-melanie-sarantou\.jpg"/);
     assert.match(html, /data-i18n="advisor-zhang-bio"/);
     assert.match(html, /data-i18n="advisor-sarantou-bio"/);
-    assert.match(html, /data-i18n="advisor-profile-link"/);
-    assert.match(html, /href="https:\/\/www\.sd\.design\.kyushu-u\.ac\.jp\/faculty\/zhang-yanfang\/"/);
-    assert.match(html, /href="https:\/\/www\.sd\.design\.kyushu-u\.ac\.jp\/en\/faculty\/sarantou-melanie\/"/);
+    assert.match(html, /<a class="advisor-name-link" href="https:\/\/www\.sd\.design\.kyushu-u\.ac\.jp\/faculty\/zhang-yanfang\/"[^>]*data-i18n="advisor-zhang-name"/);
+    assert.match(html, /<a class="advisor-name-link" href="https:\/\/www\.sd\.design\.kyushu-u\.ac\.jp\/en\/faculty\/sarantou-melanie\/"[^>]*data-i18n="advisor-sarantou-name"/);
+    assert.doesNotMatch(html, /advisor-index|class="advisor-link"|data-i18n="advisor-profile-link"/);
     assert.ok(statSync(resolve(root, '素材/faculty-zhang-yanfang.jpg')).size > 0);
     assert.ok(statSync(resolve(root, '素材/faculty-melanie-sarantou.jpg')).size > 0);
     assert.match(html, /data-i18n="submission-digital-requirements"/);
@@ -172,7 +187,9 @@ test('new language and advisor surfaces reuse the editorial visual system', () =
     assert.doesNotMatch(css, /\.language-menu-option\[aria-selected='true'\]::after/);
     assert.match(css, /\.advisors-container\s*\{[^}]*max-width:\s*900px;/s);
     assert.match(css, /\.advisor-bio\s*\{[^}]*color:\s*var\(--color-text-muted\);[^}]*font-size:\s*0\.9rem;/s);
-    assert.doesNotMatch(html, /class="advisor-link"[^>]*>[\s\S]*?<span aria-hidden="true">↗<\/span>/);
+    assert.match(css, /\.advisor-portrait\s*\{[^}]*border-radius:\s*[^;]*%[^;]*\/[^;]*%[^;]*;[^}]*overflow:\s*hidden;/s);
+    assert.match(css, /\.advisor-name-link:hover/);
+    assert.match(css, /\.language-current-flag,\s*\.language-option-flag\s*\{[^}]*border-radius:\s*50%;[^}]*overflow:\s*hidden;/s);
 });
 
 test('new information sections use spacing and internal separators instead of decorative frames', () => {
