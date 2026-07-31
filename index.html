@@ -74,7 +74,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=21">
+    <link rel="stylesheet" href="styles.css?v=22">
 </head>
 <body>
 
@@ -146,7 +146,7 @@
                     <p class="hero-subtitle" data-i18n="hero-subtitle">废旧黑胶唱片再利用与可持续设计展</p>
                     
                     <p class="hero-description" data-i18n="hero-description">
-                        面向九州大学大桥校区学生、校友及教职工征集创意。活动发放100张废旧唱片作为设计原料，通过裁切与热塑重构，探讨废弃塑料的可持续循环与设计实践。
+                        面向九州大学大桥校区学生、校友及教职工征集创意。可使用活动提供的废旧唱片进行实体或过程创作，也可提交与唱片文化、材料循环及可持续设计直接相关的纯数字作品。
                     </p>
                 </div>
             </div>
@@ -170,7 +170,7 @@
             <div class="section-container">
                 <div class="section-header reveal-on-scroll">
                     <h2 class="section-title" data-i18n="title-concept">企划理念</h2>
-                    <p class="section-lead" data-i18n="lead-concept">将废旧黑胶唱片作为材料进行再利用与创作，探讨资源循环与环境友好设计的实践可能。</p>
+                    <p class="section-lead" data-i18n="lead-concept">从实体材料、创作过程或数字想象出发，重新理解废旧唱片及其背后的资源循环问题。</p>
                 </div>
 
  
@@ -178,7 +178,7 @@
                     <div class="about-text-content">
                         <h3 data-i18n="details-title">材料循环与可持续设计</h3>
                         <p data-i18n="details-text">
-                            黑胶唱片的主要成分为聚氯乙烯（PVC），属于难降解塑料。本项目通过设计介入，将废弃材料转化为具实用或审美价值的新产品，以此探讨并实践联合国可持续发展目标（负责任的消费和生产）。
+                            黑胶唱片的主要成分为难降解的聚氯乙烯（PVC）。本项目既关注废弃材料的实体再利用，也接受通过过程记录或纯数字媒介重新讨论唱片文化、资源循环与负责任生产消费的作品。
                         </p>
                         <div class="quick-stats">
                             <div class="stat-item">
@@ -199,14 +199,73 @@
             </div>
         </section>
 
+        <!-- Participant Pathways -->
+        <section id="pathways">
+            <div class="section-container pathways-container">
+                <div class="section-header reveal-on-scroll">
+                    <span class="pathway-kicker" data-i18n="pathway-kicker">开始之前</span>
+                    <h2 class="section-title" id="pathway-heading" data-i18n="title-pathways">选择你的参与路径</h2>
+                    <p class="section-lead" data-i18n="lead-pathways">三种方式都属于正式参与，没有主次之分。这里的选择只用于显示对应说明，不会提交或登记任何信息，并且可以随时更改。</p>
+                </div>
+
+                <div class="pathway-selector reveal-on-scroll">
+                    <div class="pathway-tabs" role="tablist" aria-labelledby="pathway-heading">
+                        <button class="pathway-tab" id="pathway-tab-physical" type="button" role="tab" aria-selected="true" aria-controls="pathway-panel-physical" tabindex="0" data-pathway-tab="physical">
+                            <span class="pathway-tab-label" data-i18n="pathway-physical-title">实体成品</span>
+                            <span class="pathway-tab-note" data-i18n="pathway-physical-tab-note">领取唱片 · 提交实物</span>
+                        </button>
+                        <button class="pathway-tab" id="pathway-tab-record-digital" type="button" role="tab" aria-selected="false" aria-controls="pathway-panel-record-digital" tabindex="-1" data-pathway-tab="record-digital">
+                            <span class="pathway-tab-label" data-i18n="pathway-record-digital-title">唱片参与的数字成果</span>
+                            <span class="pathway-tab-note" data-i18n="pathway-record-digital-tab-note">领取唱片 · 提交过程记录</span>
+                        </button>
+                        <button class="pathway-tab" id="pathway-tab-digital-native" type="button" role="tab" aria-selected="false" aria-controls="pathway-panel-digital-native" tabindex="-1" data-pathway-tab="digital-native">
+                            <span class="pathway-tab-label" data-i18n="pathway-digital-native-title">纯数字作品</span>
+                            <span class="pathway-tab-note" data-i18n="pathway-digital-native-tab-note">无需唱片 · 线上提交</span>
+                        </button>
+                    </div>
+
+                    <div class="pathway-panels">
+                        <div class="pathway-panel" id="pathway-panel-physical" role="tabpanel" aria-labelledby="pathway-tab-physical" data-pathway-panel="physical">
+                            <p class="pathway-summary" data-i18n="pathway-physical-summary">将废旧唱片转化为可在线下展出的实体作品。适合产品、装置、服饰、平面或材料实验等方向。</p>
+                            <dl class="pathway-facts">
+                                <div><dt data-i18n="pathway-record-label">唱片</dt><dd data-i18n="pathway-physical-record">需要领取活动唱片或自行准备废旧唱片，最多使用6张。</dd></div>
+                                <div><dt data-i18n="pathway-outcome-label">最终成果</dt><dd data-i18n="pathway-physical-outcome">一件安全、稳定并适合搬运与展示的实体作品。</dd></div>
+                                <div><dt data-i18n="pathway-submit-label">提交</dt><dd data-i18n="pathway-physical-submit">将实物投入校内回收箱；图像、视频等补充资料可选。</dd></div>
+                            </dl>
+                        </div>
+
+                        <div class="pathway-panel" id="pathway-panel-record-digital" role="tabpanel" aria-labelledby="pathway-tab-record-digital" data-pathway-panel="record-digital" hidden>
+                            <p class="pathway-summary" data-i18n="pathway-record-digital-summary">唱片实际参与实验、表演、服务或临时制作，但最终成果以影像、数据、声音或其他数字记录呈现。</p>
+                            <dl class="pathway-facts">
+                                <div><dt data-i18n="pathway-record-label">唱片</dt><dd data-i18n="pathway-record-digital-record">需要领取活动唱片或自行准备废旧唱片，并记录它在过程中的实际作用。</dd></div>
+                                <div><dt data-i18n="pathway-outcome-label">最终成果</dt><dd data-i18n="pathway-record-digital-outcome">以图像、视频、声音、数据或交互文件呈现的过程与结果。</dd></div>
+                                <div><dt data-i18n="pathway-submit-label">提交</dt><dd data-i18n="pathway-record-digital-submit">线上提交作品资料、过程证据、至少1张图像和1段简短说明视频。</dd></div>
+                            </dl>
+                        </div>
+
+                        <div class="pathway-panel" id="pathway-panel-digital-native" role="tabpanel" aria-labelledby="pathway-tab-digital-native" data-pathway-panel="digital-native" hidden>
+                            <p class="pathway-summary" data-i18n="pathway-digital-native-summary">无需领取或加工实体唱片。作品须明确回应废旧唱片、模拟媒介文化、材料循环或可持续设计，而不是与主题无关的一般数字创作。</p>
+                            <dl class="pathway-facts">
+                                <div><dt data-i18n="pathway-record-label">唱片</dt><dd data-i18n="pathway-digital-native-record">无需实体唱片，可直接开始数字创作。</dd></div>
+                                <div><dt data-i18n="pathway-outcome-label">最终成果</dt><dd data-i18n="pathway-digital-native-outcome">图像、影像、声音、数据、网页、交互作品或其他数字形式。</dd></div>
+                                <div><dt data-i18n="pathway-submit-label">提交</dt><dd data-i18n="pathway-digital-native-submit">线上提交完整作品、主题说明、代表图像、简短视频及展示、播放或运行要求。</dd></div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Official Poster Section (Sticky Pinning Scroll Animation) -->
         <section id="poster">
             <div class="poster-sticky-track">
                 <div class="poster-sticky-sticky">
                     <div class="section-container">
                         <div class="section-header reveal-on-scroll">
-                            <h2 class="section-title" data-i18n="title-poster">如何获得唱片？</h2>
-                            <p class="section-lead" data-i18n="lead-poster">共有两种途径可以获取本次活动所需的废旧黑胶唱片，请选择适合您的方式。</p>
+                            <h2 class="section-title" data-i18n="title-poster">需要实体唱片时，如何获得？</h2>
+                            <p class="section-lead" data-i18n="lead-poster">实体成品与“唱片参与的数字成果”需要使用唱片，可从校园海报获取或自行购买；纯数字作品可跳过本节。</p>
+                            <p class="pathway-context-note" data-pathway-context="record-required" data-i18n="pathway-record-required-note">你当前选择的路径需要实体唱片，请从下列方式中选择。</p>
+                            <p class="pathway-context-note" data-pathway-context="record-optional" data-i18n="pathway-record-optional-note" hidden>你当前选择的是纯数字作品，无需领取唱片，可直接进入创作与线上提交。</p>
                         </div>
 
                         <div class="poster-display-container reveal-on-scroll">
@@ -255,7 +314,7 @@
             <div class="section-container">
                 <div class="section-header reveal-on-scroll">
                     <h2 class="section-title" data-i18n="title-requirements">作品要求</h2>
-                    <p class="section-lead" data-i18n="lead-requirements">设计类别不限；加工方式须以安全、合规并适合所用工具为前提。以下为本次征集的基本规则。</p>
+                    <p class="section-lead" data-i18n="lead-requirements">设计类别不限。涉及实体唱片的路径须遵守材料与加工安全规则；纯数字作品须说明与活动主题的明确关系。</p>
                 </div>
 
                 <div class="req-grid reveal-on-scroll">
@@ -305,7 +364,7 @@
                         </div>
                         <div class="req-body">
                             <h3 class="req-title" data-i18n="req-limit-title">用料上限</h3>
-                            <p class="req-desc" data-i18n="req-limit-text">每件作品最多使用 <strong>6张</strong> 废旧唱片。多余的唱片无需归还，可自由保留或另行利用。</p>
+                            <p class="req-desc" data-i18n="req-limit-text">使用实体唱片的作品最多使用 <strong>6张</strong>。纯数字作品无需领取唱片；多余唱片无需归还。</p>
                         </div>
                     </div>
 
@@ -344,14 +403,14 @@
                         </div>
                         <div class="req-body">
                             <h3 class="req-title" data-i18n="req-sub-title">提交内容</h3>
-                            <p class="req-desc" data-i18n="req-sub-text">实物作品投入校内回收箱；数字作品以PDF和相关资料通过邮件提交。两类作品所需资料不同，请查看下方“提交作品”说明。</p>
+                            <p class="req-desc" data-i18n="req-sub-text">实体成品线下提交；两类数字成果线上提交。三条路径所需材料不同，请以“提交作品”中的当前路径说明为准。</p>
                         </div>
                     </div>
 
                 </div>
 
                 <!-- Keep-safe Notice -->
-                <div class="req-notice reveal-on-scroll">
+                <div class="req-notice reveal-on-scroll" data-pathway-context="record-required">
                     <div class="req-notice-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2L2 20h20L12 2Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
@@ -372,6 +431,8 @@
                     <span class="safety-kicker" data-i18n="safety-kicker">制作前请阅读</span>
                     <h2 class="section-title" data-i18n="title-safety">加工安全说明</h2>
                     <p class="section-lead" data-i18n="lead-safety">废旧唱片通常以PVC为主要材料。裁切、加热、打磨、钻孔与粘接均可能产生伤害或有害暴露，请先评估方法、材料与场所是否安全。</p>
+                    <p class="pathway-context-note pathway-context-note-dark" data-pathway-context="record-required" data-i18n="pathway-safety-required-note">你当前选择的路径会接触实体唱片，请完整阅读并遵守以下规定。</p>
+                    <p class="pathway-context-note pathway-context-note-dark" data-pathway-context="record-optional" data-i18n="pathway-safety-optional-note" hidden>纯数字路径如不接触实体唱片，下列PVC加工风险不适用；如制作展示装置或改用实体材料，仍须遵守相应场所与设备规范。</p>
                 </div>
 
                 <div class="safety-hazards reveal-on-scroll">
@@ -415,7 +476,7 @@
             <div class="section-container">
                 <div class="section-header reveal-on-scroll">
                     <h2 class="section-title" data-i18n="title-timeline">プロジェクトスケジュール</h2>
-                    <p class="section-lead" data-i18n="lead-timeline">参加の基本プロセスは、制作・提出と対面成果展示の2段階です。11月中旬の交流サロンは自由参加です。</p>
+                    <p class="section-lead" data-i18n="lead-timeline">所有路径都经过选择方式、制作与提交、线下成果展览。只有使用实体唱片的路径需要领取材料；11月中旬的交流沙龙可选参加。</p>
                 </div>
  
                 <div class="timeline-wrapper">
@@ -427,8 +488,8 @@
                         <div class="timeline-marker">1</div>
                         <div class="timeline-content-card">
                             <span class="timeline-date" data-i18n="time-step1">2026年8月20日 - 11月10日</span>
-                            <h3 data-i18n="title-step1">分发、制作与随时提交</h3>
-                            <p data-i18n="text-step1">领取废旧唱片后即可开始制作，并可在此期间随时提交完成的作品；最终截止时间为11月10日。</p>
+                            <h3 data-i18n="title-step1">选择路径、制作与随时提交</h3>
+                            <p data-i18n="text-step1">先选择参与路径。实体成品和唱片参与的数字成果需要取得唱片；纯数字作品可直接开始制作。期间随时接受提交，最终截止为11月10日。</p>
                         </div>
                     </div>
 
@@ -449,7 +510,7 @@
                         <div class="timeline-content-card">
                             <span class="timeline-date" data-i18n="time-step3">2026.11.20 - 11.25</span>
                             <h3 data-i18n="title-step3">成果展示会</h3>
-                            <p data-i18n="text-step3">在九州大学大桥校区多次元楼2层 Studio 201 举办线下成果展；展览道具优先采用可循环材料。</p>
+                            <p data-i18n="text-step3">三条路径的提交作品均可进入线下成果展；数字作品将依据提交的展示、播放或运行要求协调呈现方式。</p>
                         </div>
                     </div>
                 </div>
@@ -493,7 +554,7 @@
             <div class="section-container">
                 <div class="section-header reveal-on-scroll">
                     <h2 class="section-title" data-i18n="title-submission">提交作品</h2>
-                    <p class="section-lead" data-i18n="lead-submission">无需提前报名，完成作品提交即视为正式参加。请根据作品形式选择下方对应的提交方式。</p>
+                    <p class="section-lead" data-i18n="lead-submission">无需提前报名，完成作品提交即视为正式参加。下方会显示你当前所选路径的材料要求；返回上方切换路径即可同步更新。</p>
                 </div>
 
                 <div class="submission-panel reveal-on-scroll">
@@ -502,20 +563,34 @@
                         <p data-i18n="apply-period-text"><span class="apply-date-highlight">2026年8月20日（星期四）至11月10日（星期二）</span>。期间可随时制作并提交作品；无需另行报名。</p>
                     </div>
                     <div class="submission-routes">
-                        <div class="submission-route">
-                            <span class="submission-route-index">01</span>
+                        <div class="submission-route" data-pathway-submission="physical">
                             <div>
-                                <h3 data-i18n="submission-digital-title">数字、图片或数据作品</h3>
-                                <p data-i18n="submission-digital-text">将作品信息和参与表整理为PDF，并与下列必需资料一并发送至活动邮箱。</p>
-                                <p class="submission-requirements" data-i18n="submission-digital-requirements"><strong>必须包含：</strong>至少1张作品图像、1段简短说明视频，以及理解、查看或运行作品所需的补充资料。</p>
+                                <figure class="submission-illustration" aria-hidden="true">
+                                    <img src="./素材/illustrations/web/physical-handoff-transparent-v1.png" alt="" width="720" height="540" loading="lazy" decoding="async">
+                                </figure>
+                                <h3 data-i18n="submission-physical-title">实体成品</h3>
+                                <p data-i18n="submission-physical-text">请将实物作品投入7号馆2层 MEDIA STUDIO 房间前的回收箱。参与表可随实物纸质提交，也可单独以PDF发送至活动邮箱。</p>
+                                <p class="submission-requirements" data-i18n="submission-physical-options"><strong>必需：</strong>实体作品与参与表。作品图像、视频及其他补充资料可选择提交。</p>
                             </div>
                         </div>
-                        <div class="submission-route">
-                            <span class="submission-route-index">02</span>
+                        <div class="submission-route" data-pathway-submission="record-digital" hidden>
                             <div>
-                                <h3 data-i18n="submission-physical-title">实物作品</h3>
-                                <p data-i18n="submission-physical-text">请将实物作品投入7号馆2层 MEDIA STUDIO 房间前的回收箱。参与表可随实物纸质提交，也可单独以PDF发送至活动邮箱。</p>
-                                <p class="submission-requirements" data-i18n="submission-physical-options"><strong>可选择：</strong>只提交实物作品，或同时提交作品图像、视频及其他补充资料。</p>
+                                <figure class="submission-illustration" aria-hidden="true">
+                                    <img src="./素材/illustrations/web/digital-submission-transparent-v1.png" alt="" width="720" height="540" loading="lazy" decoding="async">
+                                </figure>
+                                <h3 data-i18n="submission-digital-title">唱片参与的数字成果</h3>
+                                <p data-i18n="submission-digital-text">将作品信息和参与表整理为PDF，并与完整数字成果及唱片实际参与创作过程的证据一并发送至活动邮箱。</p>
+                                <p class="submission-requirements" data-i18n="submission-digital-requirements"><strong>必须包含：</strong>至少1张作品图像、1段简短说明视频、过程记录，以及理解、播放或运行作品所需的补充资料。</p>
+                            </div>
+                        </div>
+                        <div class="submission-route" data-pathway-submission="digital-native" hidden>
+                            <div>
+                                <figure class="submission-illustration" aria-hidden="true">
+                                    <img src="./素材/illustrations/web/digital-submission-transparent-v1.png" alt="" width="720" height="540" loading="lazy" decoding="async">
+                                </figure>
+                                <h3 data-i18n="submission-digital-native-title">纯数字作品</h3>
+                                <p data-i18n="submission-digital-native-text">线上提交完整作品与参与表，并说明作品与废旧唱片、模拟媒介文化、材料循环或可持续设计的关系。</p>
+                                <p class="submission-requirements" data-i18n="submission-digital-native-requirements"><strong>必须包含：</strong>至少1张代表图像、1段简短说明视频、完整作品文件或访问方式，以及现场展示、播放或运行要求。</p>
                             </div>
                         </div>
                     </div>
@@ -636,7 +711,7 @@
     </div>
 
     <script src="submission-config.js?v=2"></script>
-    <script src="translations.js?v=4"></script>
-    <script src="app.js?v=19"></script>
+    <script src="translations.js?v=5"></script>
+    <script src="app.js?v=20"></script>
 </body>
 </html>

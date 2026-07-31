@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Sustainable Design Exhibition with Recycled Vinyl Records"
         },
         "hero-description": {
-            "zh": "面向九州大学大桥校区学生、校友及教职工征集创意。活动发放100张废旧唱片作为设计原料，通过裁切与热塑重构，探讨废弃塑料的可持续循环与设计实践方式。",
-            "ja": "九州大学大橋キャンパスの学生・教職員・卒業生を対象とした、廃棄レコードの再利用デザイン企画。100枚の廃棄レコードを素材として無償提供し、カットや熱成形などの加工を通じて、プラスチックの持続可能な循環とデザインの実践を探求します。",
-            "en": "We invite creative proposals from students, alumni, and staff at Kyushu University Ohashi Campus. Providing 100 discarded vinyl records as design materials, this project explores sustainable cycling and design practices for waste plastics through cutting and thermoforming."
+            "zh": "面向九州大学大桥校区学生、校友及教职工征集创意。可使用活动提供的废旧唱片进行实体或过程创作，也可提交与唱片文化、材料循环及可持续设计直接相关的纯数字作品。",
+            "ja": "九州大学大橋キャンパスの学生・教職員・卒業生を対象に作品を募集します。提供する廃棄レコードを使った実物・プロセス作品に加え、レコード文化、素材循環、サステナブルデザインに直接関係する純デジタル作品も応募できます。",
+            "en": "We invite work from students, alumni, and staff at Kyushu University Ohashi Campus. You may use the supplied discarded records in a physical work or creative process, or submit a fully digital work directly related to record culture, material circulation, or sustainable design."
         },
         "title-concept": {
             "zh": "企划理念",
@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Project Concept"
         },
         "lead-concept": {
-            "zh": "将废旧黑胶唱片作为材料进行再利用与创作，探讨资源循环与环境友好设计的实践可能。",
-            "ja": "廃棄予定となったアナログレコードをデザイン素材として再利用・制作し、資源循環と環境配慮デザインの新たな可能性を探求します。",
-            "en": "By reusing and creating with discarded vinyl records as design materials, we explore practical possibilities for resource cycling and eco-friendly design."
+            "zh": "从实体材料、创作过程或数字想象出发，重新理解废旧唱片及其背后的资源循环问题。",
+            "ja": "実物素材、制作プロセス、デジタルな想像力から、廃棄レコードとその背後にある資源循環を捉え直します。",
+            "en": "Approach discarded records and the questions of material circulation behind them through physical material, creative process, or digital imagination."
         },
         "card1-title": {
             "zh": "材料重构",
@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Material Cycling & Sustainable Design"
         },
         "details-text": {
-            "zh": "黑胶唱片的主要成分为聚氯乙烯（PVC），属于难降解塑料。本项目通过设计介入，将100张废置唱片切割、热塑并重构为生活器具、饰品或艺术装置，以此探讨并实践联合国可持续发展目标（负责任的消费和生产）。",
-            "ja": "アナログレコードの主原料であるポリ塩化ビニル（PVC）は、自然分解が困難なプラスチックです。本プロジェクトではデザインの介入により、100枚の廃棄レコードを裁断・熱成形し、生活道具やアクセサリー、アート作品へ再構築することで、国連の持続可能な開発目標（SDGs 目標12「つくる責任 つかう責任」）を実践的に探求します。",
-            "en": "The primary material of vinyl records is polyvinyl chloride (PVC), a non-biodegradable plastic. Through design intervention, this project cuts, thermoforms, and reconstructs 100 discarded records into functional objects, accessories, and art pieces to put UN SDG 12 (Responsible Consumption and Production) into practice."
+            "zh": "黑胶唱片的主要成分为难降解的聚氯乙烯（PVC）。本项目既关注废弃材料的实体再利用，也接受通过过程记录或纯数字媒介重新讨论唱片文化、资源循环与负责任生产消费的作品。",
+            "ja": "アナログレコードの主原料であるポリ塩化ビニル（PVC）は、自然分解が困難なプラスチックです。本プロジェクトは廃棄素材の実物としての再利用に加え、プロセス記録や純デジタルメディアを通じて、レコード文化、資源循環、責任ある生産と消費を捉え直す作品も受け入れます。",
+            "en": "Vinyl records are primarily made from polyvinyl chloride (PVC), a material that does not readily biodegrade. Alongside physical reuse, this project accepts process-based and fully digital work that reconsiders record culture, material circulation, and responsible production and consumption."
         },
         "stat-records": {
             "zh": "提供唱片数量",
@@ -89,15 +89,155 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "提出作品の展示",
             "en": "Submitted Works Exhibition"
         },
+        "pathway-kicker": {
+            "zh": "开始之前",
+            "ja": "制作を始める前に",
+            "en": "Before You Begin"
+        },
+        "title-pathways": {
+            "zh": "选择你的参与路径",
+            "ja": "参加ルートを選ぶ",
+            "en": "Choose Your Participation Path"
+        },
+        "lead-pathways": {
+            "zh": "三种方式都属于正式参与，没有主次之分。这里的选择只用于显示对应说明，不会提交或登记任何信息，并且可以随时更改。",
+            "ja": "3つの方法はいずれも正式な参加ルートで、優劣はありません。この選択は該当する案内を表示するためだけのもので、情報の送信や登録は行われず、いつでも変更できます。",
+            "en": "All three routes are equally valid forms of participation. This choice only changes the guidance shown on this page; it sends or registers no information and can be changed at any time."
+        },
+        "pathway-physical-title": {
+            "zh": "实体成品",
+            "ja": "実物作品",
+            "en": "Physical Work"
+        },
+        "pathway-physical-tab-note": {
+            "zh": "领取唱片 · 提交实物",
+            "ja": "レコードを入手・実物を提出",
+            "en": "Obtain a record · Submit an object"
+        },
+        "pathway-record-digital-title": {
+            "zh": "唱片参与的数字成果",
+            "ja": "レコードを使ったデジタル成果",
+            "en": "Record-Based Digital Outcome"
+        },
+        "pathway-record-digital-tab-note": {
+            "zh": "领取唱片 · 提交过程记录",
+            "ja": "レコードを入手・プロセスを提出",
+            "en": "Obtain a record · Submit the process"
+        },
+        "pathway-digital-native-title": {
+            "zh": "纯数字作品",
+            "ja": "純デジタル作品",
+            "en": "Fully Digital Work"
+        },
+        "pathway-digital-native-tab-note": {
+            "zh": "无需唱片 · 线上提交",
+            "ja": "レコード不要・オンライン提出",
+            "en": "No record needed · Submit online"
+        },
+        "pathway-physical-summary": {
+            "zh": "将废旧唱片转化为可在线下展出的实体作品。适合产品、装置、服饰、平面或材料实验等方向。",
+            "ja": "廃棄レコードを会場で展示できる実物作品へ変換します。プロダクト、インスタレーション、服飾、グラフィック、素材実験などに適しています。",
+            "en": "Transform discarded records into a physical work suitable for onsite display, such as a product, installation, garment, graphic piece, or material experiment."
+        },
+        "pathway-record-digital-summary": {
+            "zh": "唱片实际参与实验、表演、服务或临时制作，但最终成果以影像、数据、声音或其他数字记录呈现。",
+            "ja": "レコードを実験、パフォーマンス、サービス、一時的な制作に実際に用い、最終成果を映像、データ、音声などのデジタル記録として提示します。",
+            "en": "Use a record in an experiment, performance, service, or temporary construction, then present the outcome as video, data, sound, or other digital documentation."
+        },
+        "pathway-digital-native-summary": {
+            "zh": "无需领取或加工实体唱片。作品须明确回应废旧唱片、模拟媒介文化、材料循环或可持续设计，而不是与主题无关的一般数字创作。",
+            "ja": "実物のレコードを入手・加工する必要はありません。一般的なデジタル作品ではなく、廃棄レコード、アナログメディア文化、素材循環、サステナブルデザインのいずれかに明確に応答する作品としてください。",
+            "en": "No physical record pickup or processing is required. Rather than unrelated general digital art, the work must clearly respond to discarded records, analog-media culture, material circulation, or sustainable design."
+        },
+        "pathway-record-label": {
+            "zh": "唱片",
+            "ja": "レコード",
+            "en": "Record"
+        },
+        "pathway-outcome-label": {
+            "zh": "最终成果",
+            "ja": "最終成果",
+            "en": "Outcome"
+        },
+        "pathway-submit-label": {
+            "zh": "提交",
+            "ja": "提出",
+            "en": "Submission"
+        },
+        "pathway-physical-record": {
+            "zh": "需要领取活动唱片或自行准备废旧唱片，最多使用6张。",
+            "ja": "配布レコードを受け取るか自分で廃棄レコードを用意し、最大6枚まで使用できます。",
+            "en": "Collect a supplied record or source discarded records yourself; use no more than six."
+        },
+        "pathway-physical-outcome": {
+            "zh": "一件安全、稳定并适合搬运与展示的实体作品。",
+            "ja": "安全で安定し、運搬と展示に適した実物作品。",
+            "en": "A safe, stable physical work suitable for transport and display."
+        },
+        "pathway-physical-submit": {
+            "zh": "将实物投入校内回收箱；图像、视频等补充资料可选。",
+            "ja": "実物を学内回収ボックスへ提出します。画像や動画などの補足資料は任意です。",
+            "en": "Deliver the work to the campus collection box; images, video, and other supplements are optional."
+        },
+        "pathway-record-digital-record": {
+            "zh": "需要领取活动唱片或自行准备废旧唱片，并记录它在过程中的实际作用。",
+            "ja": "配布レコードを受け取るか自分で用意し、制作プロセスで実際にどのように使ったかを記録します。",
+            "en": "Collect or source a discarded record and document its actual role in the process."
+        },
+        "pathway-record-digital-outcome": {
+            "zh": "以图像、视频、声音、数据或交互文件呈现的过程与结果。",
+            "ja": "画像、映像、音声、データ、インタラクティブファイルで示すプロセスと成果。",
+            "en": "A process and outcome presented through images, video, sound, data, or interactive files."
+        },
+        "pathway-record-digital-submit": {
+            "zh": "线上提交作品资料、过程证据、至少1张图像和1段简短说明视频。",
+            "ja": "作品資料、プロセスの証拠、画像1点以上、短い説明動画1本をオンラインで提出します。",
+            "en": "Submit the work, process evidence, at least one image, and one short explanatory video online."
+        },
+        "pathway-digital-native-record": {
+            "zh": "无需实体唱片，可直接开始数字创作。",
+            "ja": "実物レコードは不要で、そのままデジタル制作を始められます。",
+            "en": "No physical record is needed; begin the digital work directly."
+        },
+        "pathway-digital-native-outcome": {
+            "zh": "图像、影像、声音、数据、网页、交互作品或其他数字形式。",
+            "ja": "画像、映像、音声、データ、ウェブ、インタラクティブ作品などのデジタル形式。",
+            "en": "Images, moving image, sound, data, web, interactive work, or another digital form."
+        },
+        "pathway-digital-native-submit": {
+            "zh": "线上提交完整作品、主题说明、代表图像、简短视频及展示、播放或运行要求。",
+            "ja": "完成作品、テーマとの関係の説明、代表画像、短い動画、展示・再生・実行条件をオンラインで提出します。",
+            "en": "Submit the complete work, theme statement, representative image, short video, and display, playback, or execution requirements online."
+        },
+        "pathway-record-required-note": {
+            "zh": "你当前选择的路径需要实体唱片，请从下列方式中选择。",
+            "ja": "現在選択中のルートでは実物レコードが必要です。以下から入手方法を選んでください。",
+            "en": "Your selected path uses a physical record. Choose one of the following ways to obtain it."
+        },
+        "pathway-record-optional-note": {
+            "zh": "你当前选择的是纯数字作品，无需领取唱片，可直接进入创作与线上提交。",
+            "ja": "純デジタル作品ではレコードの入手は不要です。このセクションを飛ばして制作とオンライン提出へ進めます。",
+            "en": "For your selected fully digital path, record pickup is optional: no record is required, so you may proceed directly to making and online submission."
+        },
+        "pathway-safety-required-note": {
+            "zh": "你当前选择的路径会接触实体唱片，请完整阅读并遵守以下规定。",
+            "ja": "現在選択中のルートでは実物レコードを扱います。以下の規定をすべて読み、遵守してください。",
+            "en": "Your selected path handles physical records. Read and follow all of the rules below."
+        },
+        "pathway-safety-optional-note": {
+            "zh": "纯数字路径如不接触实体唱片，下列PVC加工风险不适用；如制作展示装置或改用实体材料，仍须遵守相应场所与设备规范。",
+            "ja": "純デジタル制作で実物レコードを扱わない場合、以下のPVC加工リスクは適用されません。展示装置や他の実物素材を扱う場合は、該当する施設・機器の規則に従ってください。",
+            "en": "If a fully digital work does not handle a physical record, the PVC-processing risks below do not apply. Any display hardware or other physical material must still follow the relevant workspace and equipment rules."
+        },
         "title-poster": {
-            "zh": "如何获得唱片？",
-            "ja": "レコードの入手方法",
-            "en": "How to Obtain Records"
+            "zh": "需要实体唱片时，如何获得？",
+            "ja": "実物レコードが必要な場合の入手方法",
+            "en": "How to Obtain a Record When You Need One"
         },
         "lead-poster": {
-            "zh": "共有两种途径可以获取本次活动所需的废旧黑胶唱片，请选择适合您的方式。",
-            "ja": "廃棄レコードを入手する方法は2通りあります。ご都合に合わせた方法をお選びください。",
-            "en": "There are two ways to obtain discarded vinyl records for this project. Please choose the method that works best for you."
+            "zh": "实体成品与“唱片参与的数字成果”需要使用唱片，可从校园海报获取或自行购买；纯数字作品可跳过本节。",
+            "ja": "実物作品とレコードを使ったデジタル成果ではレコードが必要です。学内ポスターから入手するか自費で購入してください。純デジタル作品はこのセクションを飛ばせます。",
+            "en": "Physical works and record-based digital outcomes use a record, available from campus posters or through self-purchase. Fully digital work can skip this section."
         },
         "method1-title": {
             "zh": "从校园海报背面取下",
@@ -155,9 +295,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Requirements"
         },
         "lead-requirements": {
-            "zh": "设计类别不限；加工方式须以安全、合规并适合所用工具为前提。以下为本次征集的基本规则。",
-            "ja": "デザイン分野は問いませんが、加工は安全かつ規則に沿い、使用する工具に適した方法で行ってください。以下が本公募の基本ルールです。",
-            "en": "Design categories are open, but all processing must be safe, permitted, and appropriate for the tools used. These are the basic rules for this open call."
+            "zh": "设计类别不限。涉及实体唱片的路径须遵守材料与加工安全规则；纯数字作品须说明与活动主题的明确关系。",
+            "ja": "デザイン分野は問いません。実物レコードを扱うルートでは素材と加工の安全規定を守り、純デジタル作品では企画テーマとの明確な関係を説明してください。",
+            "en": "Design categories are open. Routes involving physical records must follow material and processing safety rules; fully digital work must explain its clear relationship to the project theme."
         },
         "req-cat-title": {
             "zh": "设计类别",
@@ -175,9 +315,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Record Usage Limit"
         },
         "req-limit-text": {
-            "zh": "每件作品最多使用 <strong>6张</strong> 废旧唱片。多余的唱片无需归还，可自由保留或另行利用。",
-            "ja": "1作品につき使用できる廃棄レコードは最大 <strong>6枚</strong> です。余ったレコードの返却は不要で、自由にご活用いただけます。",
-            "en": "Each entry may use up to <strong>6</strong> discarded records. Unused records do not need to be returned and may be kept freely."
+            "zh": "使用实体唱片的作品最多使用 <strong>6张</strong>。纯数字作品无需领取唱片；多余唱片无需归还。",
+            "ja": "実物レコードを使う作品は最大 <strong>6枚</strong> までです。純デジタル作品はレコードの入手不要で、余ったレコードの返却も必要ありません。",
+            "en": "Work using physical records may use up to <strong>6</strong>. Fully digital work requires no record pickup, and unused records do not need to be returned."
         },
         "req-proc-title": {
             "zh": "加工方法",
@@ -195,9 +335,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Materials"
         },
         "req-sub-text": {
-            "zh": "实物作品投入校内回收箱；数字作品以PDF和相关资料通过邮件提交。两类作品所需资料不同，请查看下方“提交作品”说明。",
-            "ja": "実物作品は学内の回収ボックスへ、デジタル作品はPDFと関連資料をメールで提出します。必要資料が異なるため、下記の「作品提出」をご確認ください。",
-            "en": "Place physical works in the campus collection box; submit digital works by email as a PDF with supporting files. Review Submit Your Work below for each route."
+            "zh": "实体成品线下提交；两类数字成果线上提交。三条路径所需材料不同，请以“提交作品”中的当前路径说明为准。",
+            "ja": "実物作品は対面で、2種類のデジタル成果はオンラインで提出します。必要資料はルートごとに異なるため、下記「作品提出」の選択中ルートを確認してください。",
+            "en": "Submit physical works offline and both digital routes online. Required materials differ by pathway; follow the selected route in Submit Your Work below."
         },
         "req-notice-text": {
             "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。请于11月10日前投入7号馆2层 MEDIA STUDIO 房间前的回收箱。",
@@ -295,29 +435,29 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submit Your Work"
         },
         "lead-submission": {
-            "zh": "无需提前报名，完成作品提交即视为正式参加。请根据作品形式选择下方对应的提交方式。",
-            "ja": "事前の参加申込は不要です。作品の提出完了をもって正式参加となります。作品形式に応じて、以下の提出方法を選んでください。",
-            "en": "No advance registration is required. Completing a work submission constitutes formal participation. Choose the appropriate route below for your work."
+            "zh": "无需提前报名，完成作品提交即视为正式参加。下方会显示你当前所选路径的材料要求；返回上方切换路径即可同步更新。",
+            "ja": "事前申込は不要で、作品の提出完了をもって正式参加となります。現在選択中のルートに必要な資料を下に表示します。上の選択へ戻るといつでも切り替えられます。",
+            "en": "No advance registration is required; completed submission constitutes formal participation. The requirements for your selected path appear below and update whenever you change the choice above."
         },
         "submission-digital-title": {
-            "zh": "数字、图片或数据作品",
-            "ja": "画像・データ作品",
-            "en": "Image or Data-Based Work"
+            "zh": "唱片参与的数字成果",
+            "ja": "レコードを使ったデジタル成果",
+            "en": "Record-Based Digital Outcome"
         },
         "submission-digital-text": {
-            "zh": "将作品信息和参与表整理为PDF，并与下列必需资料一并发送至活动邮箱。",
-            "ja": "作品情報と参加票をPDFにまとめ、以下の必須資料とともに事務局メールアドレスへ送信してください。",
-            "en": "Compile the work information and participation form as a PDF, then email it to the project office with the required files below."
+            "zh": "将作品信息和参与表整理为PDF，并与完整数字成果及唱片实际参与创作过程的证据一并发送至活动邮箱。",
+            "ja": "作品情報と参加票をPDFにまとめ、完成したデジタル成果およびレコードが制作に実際に関わったことを示す記録とともにメールで提出してください。",
+            "en": "Email the work information and participation form as a PDF together with the complete digital outcome and evidence that a record was actually used in the creative process."
         },
         "submission-digital-requirements": {
-            "zh": "<strong>必须包含：</strong>至少1张作品图像、1段简短说明视频，以及理解、查看或运行作品所需的补充资料。",
-            "ja": "<strong>必須：</strong>作品画像1点以上、短い説明動画1本、作品の理解・閲覧・実行に必要な補足資料。",
-            "en": "<strong>Required:</strong> at least one image of the work, one short explanatory video, and any supplementary files needed to understand, view, or run it."
+            "zh": "<strong>必须包含：</strong>至少1张作品图像、1段简短说明视频、过程记录，以及理解、播放或运行作品所需的补充资料。",
+            "ja": "<strong>必須：</strong>作品画像1点以上、短い説明動画1本、プロセス記録、作品の理解・再生・実行に必要な補足資料。",
+            "en": "<strong>Required:</strong> at least one work image, one short explanatory video, process documentation, and supporting files needed to understand, play, or run the work."
         },
         "submission-physical-title": {
-            "zh": "实物作品",
+            "zh": "实体成品",
             "ja": "実物作品",
-            "en": "Physical Work"
+            "en": "Physical Finished Work"
         },
         "submission-physical-text": {
             "zh": "请将实物作品投入7号馆2层 MEDIA STUDIO 房间前的回收箱。参与表可随实物纸质提交，也可单独以PDF发送至活动邮箱。",
@@ -325,24 +465,39 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Place physical works in the collection box in front of the MEDIA STUDIO room on 2F of Building 7. Include a paper participation form or email it separately as a PDF."
         },
         "submission-physical-options": {
-            "zh": "<strong>可选择：</strong>只提交实物作品，或同时提交作品图像、视频及其他补充资料。",
-            "ja": "<strong>選択可能：</strong>実物作品のみ、または作品画像・動画・その他の補足資料を併せて提出できます。",
-            "en": "<strong>Choose:</strong> submit only the physical work, or add images, video, and other supplementary material."
+            "zh": "<strong>必需：</strong>实体作品与参与表。作品图像、视频及其他补充资料可选择提交。",
+            "ja": "<strong>必須：</strong>実物作品と参加票。作品画像、動画、その他の補足資料は任意です。",
+            "en": "<strong>Required:</strong> the physical work and participation form. Images, video, and other supporting material are optional."
+        },
+        "submission-digital-native-title": {
+            "zh": "纯数字作品",
+            "ja": "純デジタル作品",
+            "en": "Fully Digital Work"
+        },
+        "submission-digital-native-text": {
+            "zh": "线上提交完整作品与参与表，并说明作品与废旧唱片、模拟媒介文化、材料循环或可持续设计的关系。",
+            "ja": "完成作品と参加票をオンラインで提出し、廃棄レコード、アナログメディア文化、素材循環、サステナブルデザインとの関係を説明してください。",
+            "en": "Submit the complete work and participation form online, explaining its relationship to discarded records, analog-media culture, material circulation, or sustainable design."
+        },
+        "submission-digital-native-requirements": {
+            "zh": "<strong>必须包含：</strong>至少1张代表图像、1段简短说明视频、完整作品文件或访问方式，以及现场展示、播放或运行要求。",
+            "ja": "<strong>必須：</strong>代表画像1点以上、短い説明動画1本、完成作品ファイルまたはアクセス方法、会場での展示・再生・実行条件。",
+            "en": "<strong>Required:</strong> at least one representative image, one short explanatory video, the complete work file or access method, and onsite display, playback, or execution requirements."
         },
         "submission-status-label": {
-            "zh": "数字作品提交",
-            "ja": "デジタル作品の提出",
-            "en": "Digital Submission"
+            "zh": "线上资料渠道",
+            "ja": "オンライン資料提出",
+            "en": "Online Materials"
         },
         "submission-status": {
-            "zh": "通过活动邮箱接收PDF及相关资料",
-            "ja": "事務局メールでPDFと関連資料を受付中",
-            "en": "PDF and supporting files accepted by email"
+            "zh": "通过活动邮箱接收参与表、PDF及相关资料",
+            "ja": "事務局メールで参加票、PDF、関連資料を受け付けます",
+            "en": "Participation forms, PDFs, and supporting files are accepted by email"
         },
         "submission-cta": {
-            "zh": "通过邮件提交数字作品",
-            "ja": "メールでデジタル作品を提出",
-            "en": "Submit Digital Work by Email"
+            "zh": "通过邮件提交参与表或数字资料",
+            "ja": "参加票・デジタル資料をメールで提出",
+            "en": "Email Participation Form or Digital Files"
         },
         "submission-fallback": {
             "zh": "下载备用参与表",
@@ -355,9 +510,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Project Schedule"
         },
         "lead-timeline": {
-            "zh": "参加活动的基础流程只有制作与提交、线下成果展览两步。11月中旬的交流沙龙可自由选择参加。",
-            "ja": "参加の基本プロセスは、制作・提出と対面成果展示の2段階です。11月中旬の交流サロンは自由参加です。",
-            "en": "The required participant path has two stages: make and submit your work, then take part in the offline exhibition. The mid-November exchange salon is optional."
+            "zh": "所有路径都经过选择方式、制作与提交、线下成果展览。只有使用实体唱片的路径需要领取材料；11月中旬的交流沙龙可选参加。",
+            "ja": "すべてのルートは、方法の選択、制作・提出、対面成果展示へ進みます。素材の入手が必要なのは実物レコードを使うルートだけで、11月中旬の交流サロンは自由参加です。",
+            "en": "Every path moves through choosing a route, making and submitting, and the onsite exhibition. Only paths using physical records require material pickup; the mid-November exchange salon is optional."
         },
         "time-step1": {
             "zh": "2026年8月20日 - 11月10日",
@@ -365,14 +520,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "August 20 - November 10, 2026"
         },
         "title-step1": {
-            "zh": "分发、制作与随时提交",
-            "ja": "素材配布・制作・随時提出",
-            "en": "Distribution, Making, and Rolling Submission"
+            "zh": "选择路径、制作与随时提交",
+            "ja": "ルート選択・制作・随時提出",
+            "en": "Choose a Path, Make, and Submit"
         },
         "text-step1": {
-            "zh": "领取废旧唱片后即可开始制作，并可在此期间随时提交完成的作品；最终截止时间为11月10日。",
-            "ja": "廃棄レコードを受け取り次第制作を始め、期間中は完成した作品を随時提出できます。最終締切は11月10日です。",
-            "en": "Begin making after collecting your records and submit a finished work at any time during this period. The final deadline is November 10."
+            "zh": "先选择参与路径。实体成品和唱片参与的数字成果需要取得唱片；纯数字作品可直接开始制作。期间随时接受提交，最终截止为11月10日。",
+            "ja": "まず参加ルートを選びます。実物作品とレコードを使ったデジタル成果はレコードを入手し、純デジタル作品はそのまま制作を始められます。期間中は随時提出でき、最終締切は11月10日です。",
+            "en": "Choose a participation path first. Physical work and record-based digital outcomes require a record; fully digital work can begin directly. Submissions are accepted throughout the period until November 10."
         },
         "timeline-optional-badge": {
             "zh": "可选参加",
@@ -405,9 +560,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Exhibition"
         },
         "text-step3": {
-            "zh": "在九州大学大桥校区多次元楼2层 Studio 201 举办线下成果展；展览道具优先采用可循环材料。",
-            "ja": "九州大学大橋キャンパス 多次元棟 2階 スタジオ201で成果展示を行います。展示什器には循環可能な素材を優先して使用します。",
-            "en": "The exhibition will be held in Studio 201, 2F, Multidimensional Building, Kyushu University Ohashi Campus, using recyclable display materials wherever possible."
+            "zh": "三条路径的提交作品均可进入线下成果展；数字作品将依据提交的展示、播放或运行要求协调呈现方式。",
+            "ja": "3つのルートで提出された作品はいずれも対面成果展示の対象です。デジタル作品は、提出された展示・再生・実行条件に基づいて提示方法を調整します。",
+            "en": "Submitted work from all three pathways is eligible for the onsite exhibition. Digital work will be presented according to the submitted display, playback, or execution requirements."
         },
         "title-advisors": {
             "zh": "指导教师",
@@ -545,16 +700,44 @@ document.addEventListener('DOMContentLoaded', () => {
         "doc-title": "RERE-CORDS | Käytöstä poistettujen vinyylilevyjen kestävän muotoilun näyttely",
         "sdg-badge-text": "Vastuullista kuluttamista ja tuotantoa",
         "hero-subtitle": "Kestävän muotoilun näyttely kierrätetyistä vinyylilevyistä",
-        "hero-description": "Kutsumme Kyushun yliopiston Ohashin kampuksen opiskelijat, alumnit ja henkilökunnan kehittämään uusia käyttötapoja käytöstä poistetuille vinyylilevyille. Jaamme 100 levyä materiaaliksi ja tutkimme turvallisen työstämisen kautta muovin kiertoa ja kestävää muotoilua.",
+        "hero-description": "Kutsumme Kyushun yliopiston Ohashin kampuksen opiskelijat, alumnit ja henkilökunnan osallistumaan. Voit käyttää projektin tarjoamia poistolevyjä fyysisessä työssä tai prosessissa tai toimittaa täysin digitaalisen työn, joka liittyy suoraan levykulttuuriin, materiaalikiertoon tai kestävään muotoiluun.",
         "title-concept": "Projektin idea",
-        "lead-concept": "Käytämme poistettuja vinyylilevyjä uudelleen muotoilumateriaalina ja tutkimme resurssikierron sekä ympäristövastuullisen muotoilun mahdollisuuksia.",
+        "lead-concept": "Tarkastelemme poistolevyjä ja niiden taustalla olevaa materiaalikiertoa fyysisen materiaalin, luovan prosessin tai digitaalisen mielikuvituksen kautta.",
         "details-title": "Materiaalikierto ja kestävä muotoilu",
-        "details-text": "Vinyylilevyjen päämateriaali on polyvinyylikloridi eli PVC, joka hajoaa luonnossa huonosti. Projektissa poistettu materiaali muutetaan muotoilun avulla käyttöesineiksi, asusteiksi tai taideteoksiksi YK:n kestävän kehityksen tavoitteen 12 hengessä.",
+        "details-text": "Vinyylilevyt koostuvat pääasiassa polyvinyylikloridista eli PVC:stä, joka ei hajoa helposti luonnossa. Fyysisen uusiokäytön lisäksi projekti hyväksyy prosessipohjaisia ja täysin digitaalisia töitä, jotka tarkastelevat uudelleen levykulttuuria, materiaalikiertoa sekä vastuullista tuotantoa ja kulutusta.",
         "stat-records": "Jaettavien levyjen määrä",
         "stat-target": "Keskeinen kestävän kehityksen tavoite",
         "stat-exhibit": "Näyttelyyn toimitetut työt",
-        "title-poster": "Mistä saat levyn?",
-        "lead-poster": "Projektin käytöstä poistettuja vinyylilevyjä saa kahdella tavalla. Valitse sinulle sopivin vaihtoehto.",
+        "pathway-kicker": "Ennen aloittamista",
+        "title-pathways": "Valitse osallistumisreittisi",
+        "lead-pathways": "Kaikki kolme reittiä ovat samanarvoisia osallistumistapoja. Valinta muuttaa vain tällä sivulla näkyviä ohjeita, ei lähetä tai rekisteröi tietoja, ja sen voi vaihtaa milloin tahansa.",
+        "pathway-physical-title": "Fyysinen työ",
+        "pathway-physical-tab-note": "Hanki levy · Toimita esine",
+        "pathway-record-digital-title": "Levyä hyödyntävä digitaalinen tulos",
+        "pathway-record-digital-tab-note": "Hanki levy · Toimita prosessi",
+        "pathway-digital-native-title": "Täysin digitaalinen työ",
+        "pathway-digital-native-tab-note": "Ei levyä · Toimita verkossa",
+        "pathway-physical-summary": "Muuta poistolevy paikan päällä esiteltäväksi fyysiseksi työksi, kuten tuotteeksi, installaatioksi, vaatteeksi, graafiseksi työksi tai materiaalikokeeksi.",
+        "pathway-record-digital-summary": "Käytä levyä kokeessa, esityksessä, palvelussa tai väliaikaisessa rakenteessa ja esitä tulos videona, datana, äänenä tai muuna digitaalisena dokumentaationa.",
+        "pathway-digital-native-summary": "Fyysistä levyä ei tarvitse noutaa tai työstää. Työn on liityttävä selvästi poistolevyihin, analogisen median kulttuuriin, materiaalikiertoon tai kestävään muotoiluun eikä oltava teemasta irrallinen digitaalinen työ.",
+        "pathway-record-label": "Levy",
+        "pathway-outcome-label": "Lopputulos",
+        "pathway-submit-label": "Toimitus",
+        "pathway-physical-record": "Nouda projektin levy tai hanki poistolevyt itse. Yhdessä työssä saa käyttää enintään kuutta levyä.",
+        "pathway-physical-outcome": "Turvallinen ja vakaa fyysinen työ, joka sopii kuljetukseen ja näyttelyyn.",
+        "pathway-physical-submit": "Jätä työ kampuksen keräyslaatikkoon. Kuvat, video ja muut lisäaineistot ovat vapaaehtoisia.",
+        "pathway-record-digital-record": "Nouda tai hanki poistolevy ja dokumentoi sen todellinen rooli prosessissa.",
+        "pathway-record-digital-outcome": "Kuvina, videona, äänenä, datana tai interaktiivisina tiedostoina esitetty prosessi ja tulos.",
+        "pathway-record-digital-submit": "Toimita työ, prosessidokumentaatio, vähintään yksi kuva ja lyhyt selitysvideo verkossa.",
+        "pathway-digital-native-record": "Fyysistä levyä ei tarvita; digitaalisen työn voi aloittaa suoraan.",
+        "pathway-digital-native-outcome": "Kuva, liikkuva kuva, ääni, data, verkkotyö, interaktiivinen työ tai muu digitaalinen muoto.",
+        "pathway-digital-native-submit": "Toimita valmis työ, teemaselostus, edustava kuva, lyhyt video sekä näyttö-, toisto- tai suoritusvaatimukset verkossa.",
+        "pathway-record-required-note": "Valitsemasi reitti käyttää fyysistä levyä. Valitse alta tapa hankkia se.",
+        "pathway-record-optional-note": "Täysin digitaalisessa työssä levyn nouto on vapaaehtoista: levyä ei tarvita, joten voit siirtyä suoraan tekemiseen ja verkkotoimitukseen.",
+        "pathway-safety-required-note": "Valitsemasi reitti käsittelee fyysisiä levyjä. Lue kaikki alla olevat säännöt ja noudata niitä.",
+        "pathway-safety-optional-note": "Jos täysin digitaalinen työ ei käsittele fyysistä levyä, alla olevat PVC-työstön riskit eivät koske sitä. Näyttölaitteiden ja muiden fyysisten materiaalien kanssa on silti noudatettava työtilan ja laitteiden sääntöjä.",
+        "title-poster": "Miten saat levyn, kun tarvitset sellaisen?",
+        "lead-poster": "Fyysinen työ ja levyä hyödyntävä digitaalinen tulos käyttävät levyä, jonka voi ottaa kampuksen julisteesta tai hankkia itse. Täysin digitaalinen työ voi ohittaa tämän osion.",
         "method1-title": "Ota levy kampuksen julisteesta",
         "method1-desc": "Etsi RERE-CORDS-juliste Kyushun yliopiston Ohashin kampukselta. Jokaisen julisteen taakse on kiinnitetty yksi käytöstä poistettu vinyylilevy, jonka voit ottaa ilman erillistä ilmoittautumista.",
         "method1-note1": "※ Jos levy on jo otettu, tarkista toinen juliste tai pyydä lisämateriaalia sähköpostitse.",
@@ -564,15 +747,15 @@ document.addEventListener('DOMContentLoaded', () => {
         "method2-note1": "※ Yhdessä työssä saa käyttää enintään kuutta levyä myös silloin, kun levyt on hankittu itse.",
         "method2-note2": "※ Julisteisiin kiinnitetyt levyt ovat EP-kokoisia. Itse hankittu levy voi olla myös LP-kokoinen.",
         "title-requirements": "Työn vaatimukset",
-        "lead-requirements": "Muotoilun ala on vapaa, mutta kaiken työstämisen on oltava turvallista, sallittua ja käytettäville työkaluille sopivaa. Alla ovat haun perussäännöt.",
+        "lead-requirements": "Muotoilun ala on vapaa. Fyysisiä levyjä käyttävien reittien on noudatettava materiaalien ja työstämisen turvallisuussääntöjä; täysin digitaalisen työn on selitettävä selkeä suhteensa projektin teemaan.",
         "req-cat-title": "Muotoilun ala",
         "req-cat-text": "Alarajoituksia ei ole. Mahdollisia aloja ovat graafinen, tuote-, palvelu- ja muotisuunnittelu sekä yhteiskunnallisiin kysymyksiin keskittyvä muotoilu.",
         "req-limit-title": "Levyjen enimmäismäärä",
-        "req-limit-text": "Yhdessä työssä saa käyttää enintään <strong>6</strong> käytöstä poistettua levyä. Käyttämättömiä levyjä ei tarvitse palauttaa.",
+        "req-limit-text": "Fyysisiä levyjä käyttävässä työssä saa käyttää enintään <strong>6</strong> levyä. Täysin digitaalinen työ ei vaadi levyn noutoa, eikä käyttämättömiä levyjä tarvitse palauttaa.",
         "req-proc-title": "Työstötavat",
         "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset.",
         "req-sub-title": "Toimitettava aineisto",
-        "req-sub-text": "Jätä fyysiset työt kampuksen keräyslaatikkoon. Lähetä digitaaliset työt sähköpostitse PDF-tiedostona ja liitä mukaan tarvittavat lisäaineistot. Tarkista eri toimitustavat alla olevasta osiosta.",
+        "req-sub-text": "Toimita fyysinen työ paikan päällä ja molemmat digitaaliset reitit verkossa. Vaaditut aineistot vaihtelevat reitin mukaan; noudata alla olevan toimitusosion valittua reittiä.",
         "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Jätä työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon 10. marraskuuta mennessä.",
         "safety-kicker": "Lue ennen työskentelyä",
         "title-safety": "Työstämisen turvallisuus",
@@ -590,17 +773,17 @@ document.addEventListener('DOMContentLoaded', () => {
         "safety-stop-title": "Keskeytä poikkeustilanteessa",
         "safety-stop-text": "Jos havaitset savua, voimakkaan tai ärsyttävän hajun, silmien, nenän tai kurkun ärsytystä, huimausta tai laitevian, lopeta heti, sammuta laite, poistu tilasta ja ota yhteys tilan vastuuhenkilöön. Hakeudu tarvittaessa hoitoon.",
         "title-timeline": "Projektin aikataulu",
-        "lead-timeline": "Osallistumisen pakollinen polku koostuu kahdesta vaiheesta: työn valmistaminen ja toimittaminen sekä fyysinen näyttely. Marraskuun puolivälin keskustelutilaisuus on vapaaehtoinen.",
+        "lead-timeline": "Jokainen reitti etenee reitin valinnasta tekemiseen ja toimittamiseen sekä paikan päällä järjestettävään näyttelyyn. Materiaalin nouto koskee vain fyysisiä levyjä käyttäviä reittejä; marraskuun keskustelutilaisuus on vapaaehtoinen.",
         "time-step1": "20.8.-10.11.2026",
-        "title-step1": "Materiaalien jako, työskentely ja jatkuva toimitus",
-        "text-step1": "Aloita työskentely heti levyn saatuasi ja toimita valmis työ milloin tahansa tämän ajanjakson aikana. Viimeinen määräpäivä on 10. marraskuuta.",
+        "title-step1": "Valitse reitti, tee ja toimita",
+        "text-step1": "Valitse ensin osallistumisreitti. Fyysinen työ ja levyä hyödyntävä digitaalinen tulos tarvitsevat levyn; täysin digitaalisen työn voi aloittaa suoraan. Töitä vastaanotetaan koko jakson ajan 10. marraskuuta saakka.",
         "timeline-optional-badge": "Vapaaehtoinen",
         "time-salon": "Noin 15.11.2026",
         "title-salon": "Keskustelutilaisuus",
         "text-salon": "Rento tilaisuus, jossa osallistujat voivat keskustella töistään ja jakaa kokemuksiaan. Tarkemmat tiedot ilmoitetaan myöhemmin, eikä osallistuminen vaikuta työn toimittamiseen tai näyttelyyn.",
         "time-step3": "20.-25.11.2026",
         "title-step3": "Fyysinen tulosnäyttely",
-        "text-step3": "Näyttely järjestetään Studio 201:ssä, Moniulotteisen rakennuksen 2. kerroksessa, Kyushun yliopiston Ohashin kampuksella. Näyttelyrakenteissa suositaan kierrätettäviä materiaaleja.",
+        "text-step3": "Kaikkien kolmen reitin kautta toimitetut työt voivat osallistua paikan päällä järjestettävään näyttelyyn. Digitaaliset työt esitetään toimitettujen näyttö-, toisto- tai suoritusvaatimusten mukaisesti.",
         "title-advisors": "Ohjaavat opettajat",
         "lead-advisors": "Strategisen muotoilun osasto, Faculty of Design, Kyushun yliopisto",
         "advisor-zhang-name": "ZHANG Yanfang",
@@ -612,16 +795,19 @@ document.addEventListener('DOMContentLoaded', () => {
         "apply-period-title": "Osallistumis- ja toimitusaika",
         "apply-period-text": "<span class='apply-date-highlight'>20.8.-10.11.2026</span>. Voit valmistaa ja toimittaa työsi milloin tahansa tänä aikana; erillistä ennakkoilmoittautumista ei tarvita.",
         "title-submission": "Töiden toimittaminen",
-        "lead-submission": "Ennakkoilmoittautumista ei tarvita. Työn onnistunut toimittaminen merkitsee virallista osallistumista. Valitse alta työllesi sopiva toimitustapa.",
-        "submission-digital-title": "Kuva-, data- tai digitaalinen työ",
-        "submission-digital-text": "Kokoa työn tiedot ja osallistumislomake PDF-tiedostoksi ja lähetä se projektin sähköpostiin alla mainittujen pakollisten aineistojen kanssa.",
-        "submission-digital-requirements": "<strong>Pakolliset:</strong> vähintään yksi kuva työstä, yksi lyhyt esittelyvideo sekä kaikki työn ymmärtämiseen, katseluun tai suorittamiseen tarvittavat lisätiedostot.",
-        "submission-physical-title": "Fyysinen työ",
+        "lead-submission": "Ennakkoilmoittautumista ei tarvita; valmis toimitus merkitsee virallista osallistumista. Valitsemasi reitin vaatimukset näkyvät alla ja päivittyvät, kun vaihdat valintaa ylempänä.",
+        "submission-digital-title": "Levyä hyödyntävä digitaalinen tulos",
+        "submission-digital-text": "Lähetä työn tiedot ja osallistumislomake PDF-muodossa sekä valmis digitaalinen tulos ja näyttö siitä, että levyä käytettiin todella luovassa prosessissa.",
+        "submission-digital-requirements": "<strong>Pakolliset:</strong> vähintään yksi kuva työstä, lyhyt selitysvideo, prosessidokumentaatio sekä työn ymmärtämiseen, toistamiseen tai suorittamiseen tarvittavat lisätiedostot.",
+        "submission-physical-title": "Valmis fyysinen työ",
         "submission-physical-text": "Jätä fyysinen työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon. Liitä mukaan paperinen osallistumislomake tai lähetä se erikseen PDF-tiedostona.",
-        "submission-physical-options": "<strong>Valitse:</strong> toimita vain fyysinen työ tai liitä mukaan kuvia, video ja muuta täydentävää aineistoa.",
-        "submission-status-label": "Digitaalinen toimitus",
-        "submission-status": "PDF-tiedostot ja lisäaineistot vastaanotetaan sähköpostitse",
-        "submission-cta": "Lähetä digitaalinen työ sähköpostilla",
+        "submission-physical-options": "<strong>Pakolliset:</strong> fyysinen työ ja osallistumislomake. Kuvat, video ja muu lisäaineisto ovat vapaaehtoisia.",
+        "submission-digital-native-title": "Täysin digitaalinen työ",
+        "submission-digital-native-text": "Toimita valmis työ ja osallistumislomake verkossa ja selitä työn suhde poistolevyihin, analogisen median kulttuuriin, materiaalikiertoon tai kestävään muotoiluun.",
+        "submission-digital-native-requirements": "<strong>Pakolliset:</strong> vähintään yksi edustava kuva, lyhyt selitysvideo, valmis työtiedosto tai pääsytapa sekä näyttelytilan näyttö-, toisto- tai suoritusvaatimukset.",
+        "submission-status-label": "Verkkoaineistot",
+        "submission-status": "Osallistumislomakkeet, PDF-tiedostot ja lisäaineistot vastaanotetaan sähköpostitse",
+        "submission-cta": "Lähetä osallistumislomake tai digitaaliset tiedostot sähköpostilla",
         "submission-fallback": "Lataa varalomake",
         "title-venue": "Näyttelypaikan tiedot",
         "lead-venue": "Näyttely järjestetään 20.-25. marraskuuta 2026 Studio 201:ssä, Moniulotteisen rakennuksen 2. kerroksessa, Kyushun yliopiston Ohashin kampuksella. Näyttely on avoin yleisölle.",
@@ -816,6 +1002,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function initParticipantPathways() {
+        const pathways = ['physical', 'record-digital', 'digital-native'];
+        const tabs = [...document.querySelectorAll('[data-pathway-tab]')];
+        const panels = [...document.querySelectorAll('[data-pathway-panel]')];
+        const submissions = [...document.querySelectorAll('[data-pathway-submission]')];
+        const recordRequiredNotes = [...document.querySelectorAll('[data-pathway-context="record-required"]')];
+        const recordOptionalNotes = [...document.querySelectorAll('[data-pathway-context="record-optional"]')];
+        if (tabs.length !== pathways.length || panels.length !== pathways.length) return;
+
+        const storedPathway = localStorage.getItem('rere_cords_pathway');
+        let currentPathway = pathways.includes(storedPathway) ? storedPathway : 'physical';
+
+        function selectPathway(pathway, moveFocus = false) {
+            currentPathway = pathways.includes(pathway) ? pathway : 'physical';
+            const usesPhysicalRecord = currentPathway !== 'digital-native';
+
+            tabs.forEach((tab) => {
+                const selected = tab.dataset.pathwayTab === currentPathway;
+                tab.setAttribute('aria-selected', String(selected));
+                tab.tabIndex = selected ? 0 : -1;
+                if (selected && moveFocus) tab.focus();
+            });
+            panels.forEach((panel) => {
+                panel.hidden = panel.dataset.pathwayPanel !== currentPathway;
+            });
+            submissions.forEach((submission) => {
+                submission.hidden = submission.dataset.pathwaySubmission !== currentPathway;
+            });
+            recordRequiredNotes.forEach((note) => {
+                note.hidden = !usesPhysicalRecord;
+            });
+            recordOptionalNotes.forEach((note) => {
+                note.hidden = usesPhysicalRecord;
+            });
+
+            document.documentElement.dataset.participationPathway = currentPathway;
+            localStorage.setItem('rere_cords_pathway', currentPathway);
+        }
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => selectPathway(tab.dataset.pathwayTab));
+            tab.addEventListener('keydown', (event) => {
+                const currentIndex = pathways.indexOf(currentPathway);
+                let nextIndex = currentIndex;
+
+                switch (event.key) {
+                    case 'ArrowRight':
+                    case 'ArrowDown':
+                        nextIndex = (currentIndex + 1) % pathways.length;
+                        break;
+                    case 'ArrowLeft':
+                    case 'ArrowUp':
+                        nextIndex = (currentIndex - 1 + pathways.length) % pathways.length;
+                        break;
+                    case 'Home':
+                        nextIndex = 0;
+                        break;
+                    case 'End':
+                        nextIndex = pathways.length - 1;
+                        break;
+                    default:
+                        return;
+                }
+
+                event.preventDefault();
+                selectPathway(pathways[nextIndex], true);
+            });
+        });
+
+        selectPathway(currentPathway);
+    }
+
     function initSubmissionEntry() {
         const cta = document.getElementById('submission-cta');
         const fallback = document.getElementById('submission-fallback');
@@ -919,6 +1177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set default language on load
     updateLanguage(currentLang);
+    initParticipantPathways();
     initSubmissionEntry();
 
     /* --------------------------------------------------------------------------

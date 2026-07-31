@@ -55,7 +55,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=4"><\/script>\s*<script src="app\.js\?v=19"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=5"><\/script>\s*<script src="app\.js\?v=20"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -74,6 +74,54 @@ test('submitting a work is the only participation step', () => {
     assert.match(submission, /data-i18n="apply-period-text"/);
     assert.match(app, /无需提前报名|事前の参加申込は不要|No advance registration is required/);
     assert.doesNotMatch(app, /"title-apply"|"lead-apply"|"apply-method-title"|"apply-method-text"/);
+});
+
+test('homepage offers three equally valid participant pathways before record pickup', () => {
+    const html = read('index.html');
+    const pathwaysIndex = html.indexOf('id="pathways"');
+    const posterIndex = html.indexOf('id="poster"');
+    const pathwaysEnd = html.indexOf('</section>', pathwaysIndex);
+    const pathways = html.slice(pathwaysIndex, pathwaysEnd);
+
+    assert.ok(pathwaysIndex >= 0, 'homepage must contain #pathways');
+    assert.ok(posterIndex > pathwaysIndex, '#pathways must appear before optional record pickup');
+    assert.match(pathways, /role="tablist"[^>]+aria-labelledby="pathway-heading"/);
+    assert.equal((pathways.match(/data-pathway-tab=/g) || []).length, 3);
+    assert.equal((pathways.match(/role="tabpanel"/g) || []).length, 3);
+    for (const pathway of ['physical', 'record-digital', 'digital-native']) {
+        assert.match(pathways, new RegExp(`data-pathway-tab="${pathway}"`));
+        assert.match(pathways, new RegExp(`id="pathway-panel-${pathway}"`));
+    }
+    assert.doesNotMatch(pathways, /<form\b/i, 'choosing a pathway must not register a participant');
+});
+
+test('participant pathway interaction is accessible, persistent, and shared with submission', () => {
+    const html = read('index.html');
+    const app = read('app.js');
+
+    assert.equal((html.match(/data-pathway-submission=/g) || []).length, 3);
+    assert.match(html, /data-pathway-context="record-required"/);
+    assert.match(html, /data-pathway-context="record-optional"/);
+    assert.match(app, /function initParticipantPathways\(\)/);
+    assert.match(app, /rere_cords_pathway/);
+    assert.match(app, /aria-selected/);
+    assert.match(app, /case 'ArrowRight':/);
+    assert.match(app, /case 'ArrowLeft':/);
+    assert.match(app, /case 'Home':/);
+    assert.match(app, /case 'End':/);
+    assert.match(app, /panel\.hidden =/);
+    assert.match(app, /submission\.hidden =/);
+});
+
+test('digital-native eligibility stays tied to the RERE-CORDS theme', () => {
+    const app = read('app.js');
+
+    assert.match(app, /无需领取或加工实体唱片/);
+    assert.match(app, /废旧唱片、模拟媒介文化、材料循环或可持续设计/);
+    assert.match(app, /No physical record pickup or processing is required/);
+    assert.match(app, /discarded records, analog-media culture, material circulation, or sustainable design/);
+    assert.match(app, /展示、播放或运行要求/);
+    assert.match(app, /record pickup is optional/i);
 });
 
 test('homepage uses the confirmed 2026 collection period, handoff point, and exhibition room', () => {
@@ -199,8 +247,10 @@ test('new information sections use spacing and internal separators instead of de
     assert.doesNotMatch(css, /\.advisor-list\s*\{[^}]*(?:border-top|border-bottom):/s);
     assert.match(css, /\.advisor-profile \+ \.advisor-profile\s*\{[^}]*border-top:/s);
     assert.doesNotMatch(css, /\.submission-panel\s*\{[^}]*(?:border-top|border-bottom|border-left|border-right):/s);
-    assert.match(css, /\.submission-route \+ \.submission-route\s*\{[^}]*border-left:/s);
+    assert.doesNotMatch(css, /\.submission-route \+ \.submission-route\s*\{[^}]*(?:border-left|border-right):/s);
     assert.match(css, /\.submission-actions\s*\{[^}]*border-top:/s);
+    assert.match(css, /\.pathway-facts > div \+ div\s*\{[^}]*border-left:/s);
+    assert.doesNotMatch(css, /\.pathway-selector\s*\{[^}]*(?:border-top|border-bottom|border-left|border-right):/s);
     assert.doesNotMatch(css, /\.safety-mandatory > div\s*\{[^}]*(?:border-left|border-right):/s);
     assert.doesNotMatch(css, /\.submission-route \.submission-requirements\s*\{[^}]*(?:border-left|border-right):/s);
     assert.doesNotMatch(css, /\.timeline-optional-content\s*\{[^}]*(?:border-left|border-right):/s);

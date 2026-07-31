@@ -291,12 +291,14 @@ a {
 }
 
 html[dir='rtl'] #concept .section-header,
+html[dir='rtl'] #pathways .section-header,
 html[dir='rtl'] #safety .section-header,
 html[dir='rtl'] #advisors .section-header {
     text-align: right;
 }
 
 html[dir='rtl'] #concept .section-lead,
+html[dir='rtl'] #pathways .section-lead,
 html[dir='rtl'] #safety .section-lead,
 html[dir='rtl'] #advisors .section-lead {
     margin-left: auto;
@@ -483,6 +485,7 @@ section {
 }
 
 #concept { background-color: #ffffff; }
+#pathways { background-color: var(--color-bg-base); }
 #poster { background-color: var(--color-bg-base); }
 #requirements { background-color: #ffffff; }
 #safety { background-color: var(--color-text-main); }
@@ -531,6 +534,198 @@ section {
     margin-left: 0;
     margin-right: auto;
 }
+
+/* --------------------------------------------------------------------------
+   6.1 Participant Pathways
+   -------------------------------------------------------------------------- */
+.pathways-container {
+    max-width: 900px;
+}
+
+#pathways .section-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+#pathways .section-lead {
+    margin-left: 0;
+}
+
+.pathway-kicker {
+    color: var(--color-secondary);
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.pathway-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pathway-tab {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font: inherit;
+    min-height: 92px;
+    padding: 0 1.25rem 1.15rem;
+    text-align: left;
+}
+
+.pathway-tab:first-child {
+    padding-left: 0;
+}
+
+.pathway-tab:last-child {
+    padding-right: 0;
+}
+
+.pathway-tab[aria-selected='true'] {
+    border-bottom-color: var(--color-secondary);
+    border-bottom-width: 2px;
+    color: var(--color-text-main);
+}
+
+.pathway-tab:hover {
+    color: var(--color-text-main);
+}
+
+.pathway-tab:focus-visible {
+    background: rgba(193, 85, 53, 0.06);
+    outline: none;
+}
+
+.pathway-tab-label,
+.pathway-tab-note {
+    display: block;
+}
+
+.pathway-tab-label {
+    font-family: var(--font-header);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.pathway-tab-note {
+    font-size: 0.76rem;
+    line-height: 1.5;
+    margin-top: 0.35rem;
+}
+
+.pathway-panels {
+    min-height: 250px;
+}
+
+.pathway-panel {
+    padding: 2.25rem 0 0;
+}
+
+.pathway-panel[hidden] {
+    display: none;
+}
+
+.pathway-summary {
+    color: var(--color-text-main);
+    font-family: var(--font-header);
+    font-size: 1.15rem;
+    line-height: 1.65;
+    max-width: 720px;
+}
+
+.pathway-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 2rem;
+}
+
+.pathway-facts > div {
+    min-width: 0;
+    padding: 0 1.5rem;
+}
+
+.pathway-facts > div:first-child {
+    padding-left: 0;
+}
+
+.pathway-facts > div + div {
+    border-left: 1px solid var(--color-border);
+}
+
+.pathway-facts dt {
+    color: var(--color-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.pathway-facts dd {
+    color: var(--color-text-muted);
+    font-size: 0.86rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.pathway-context-note {
+    color: var(--color-secondary);
+    font-size: 0.82rem;
+    line-height: 1.65;
+    margin: 1.25rem auto 0;
+    max-width: 660px;
+}
+
+.pathway-context-note[hidden] {
+    display: none;
+}
+
+.pathway-context-note-dark {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 700px) {
+    .pathway-tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .pathway-tab,
+    .pathway-tab:first-child,
+    .pathway-tab:last-child {
+        min-height: 0;
+        padding: 1rem 0;
+    }
+
+    .pathway-tab[aria-selected='true'] {
+        padding-left: 0.75rem;
+    }
+
+    .pathway-panels {
+        min-height: 0;
+    }
+
+    .pathway-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .pathway-facts > div,
+    .pathway-facts > div:first-child {
+        padding: 1rem 0;
+    }
+
+    .pathway-facts > div + div {
+        border-left: 0;
+        border-top: 1px solid var(--color-border);
+    }
+}
+
 /* Stats / Details Panel (Completely Flat & Minimalist) */
 .about-details-box {
     background-color: transparent;
@@ -1120,27 +1315,27 @@ section {
 }
 
 .submission-routes {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: block;
 }
 
 .submission-route {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 1.25rem;
+    display: block;
     padding: 2rem 2.25rem;
 }
 
-.submission-route + .submission-route {
-    border-left: 1px solid var(--color-border);
+.submission-route[hidden] {
+    display: none;
 }
 
-.submission-route-index {
-    color: var(--color-secondary);
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    padding-top: 0.25rem;
+.submission-route > div {
+    align-items: center;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+}
+
+.submission-route > div > .submission-illustration {
+    grid-row: 1 / span 4;
 }
 
 .submission-route h3 {
@@ -1149,6 +1344,19 @@ section {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.65rem;
+}
+
+.submission-illustration {
+    aspect-ratio: 4 / 3;
+    margin: 0;
+    max-width: 240px;
+}
+
+.submission-illustration img {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
 }
 
 .submission-route p {
@@ -1235,21 +1443,21 @@ section {
 }
 
 @media (max-width: 768px) {
-    .submission-routes {
-        grid-template-columns: 1fr;
-    }
-
     .submission-route {
         padding: 1.5rem;
+    }
+
+    .submission-route > div {
+        display: block;
     }
 
     .submission-period {
         padding: 0 1.5rem 1.5rem;
     }
 
-    .submission-route + .submission-route {
-        border-left: 0;
-        border-top: 1px solid var(--color-border);
+    .submission-illustration {
+        margin-bottom: 1rem;
+        max-width: 230px;
     }
 
     .submission-actions {
