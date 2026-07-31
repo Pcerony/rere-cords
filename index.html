@@ -88,9 +88,31 @@
             </div>
             
             <div class="header-controls">
-                <div class="lang-switch-container">
+                <div class="language-menu" id="language-menu">
+                    <button class="language-menu-trigger" id="language-menu-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="language-menu-list">
+                        <span class="language-current-flag" id="language-current-flag" aria-hidden="true">🇬🇧</span>
+                        <span class="language-current-name" id="language-current-name">English</span>
+                        <span class="language-menu-chevron" aria-hidden="true"></span>
+                    </button>
+                    <div class="language-menu-popover" id="language-menu-popover" hidden>
+                        <div class="language-menu-list" id="language-menu-list" role="listbox" aria-label="Language">
+                            <button class="language-menu-option" type="button" role="option" data-language-option="en" aria-selected="true"><span class="language-option-flag" aria-hidden="true">🇬🇧</span><span>English</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="ja" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇯🇵</span><span>日本語</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="zh" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇨🇳</span><span>简体中文</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="zh-TW" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇹🇼</span><span>繁體中文</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="ko" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇰🇷</span><span>한국어</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="id" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇮🇩</span><span>Bahasa Indonesia</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="vi" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇻🇳</span><span>Tiếng Việt</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="th" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇹🇭</span><span>ไทย</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="bn" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇧🇩</span><span>বাংলা</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="ar" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇪🇬</span><span>العربية</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="fr" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇫🇷</span><span>Français</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="hi" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇮🇳</span><span>हिन्दी</span></button>
+                            <button class="language-menu-option" type="button" role="option" data-language-option="fi" aria-selected="false"><span class="language-option-flag" aria-hidden="true">🇫🇮</span><span>Suomi</span></button>
+                        </div>
+                    </div>
                     <label class="visually-hidden" for="language-select">Language</label>
-                    <select id="language-select" class="language-select" aria-label="Language">
+                    <select id="language-select" class="language-select" aria-label="Language" hidden>
                         <option value="en">English</option>
                         <option value="ja">日本語</option>
                         <option value="zh">简体中文</option>
@@ -442,20 +464,30 @@
                     <p class="section-lead" data-i18n="lead-advisors">九州大学大学院艺术工学研究院战略设计部门</p>
                 </div>
                 <div class="advisor-list reveal-on-scroll">
-                    <div class="advisor-person">
-                        <span class="advisor-index">01</span>
-                        <div>
+                    <article class="advisor-profile">
+                        <div class="advisor-portrait">
+                            <img src="./素材/faculty-zhang-yanfang.jpg" alt="ZHANG Yanfang" width="888" height="691" loading="lazy" decoding="async">
+                        </div>
+                        <div class="advisor-details">
+                            <span class="advisor-index">01</span>
                             <h3 data-i18n="advisor-zhang-name">張 彦芳</h3>
-                            <p data-i18n="advisor-zhang-role">准教授 · 通用设计、社会设计</p>
+                            <p class="advisor-role" data-i18n="advisor-zhang-role">准教授 · 通用设计、社会设计</p>
+                            <p class="advisor-bio" data-i18n="advisor-zhang-bio">以通用设计与社会设计为核心，围绕“不让任何人掉队”的理念开展研究与实践。长期通过 Design for SDGs 与 Global Goals Jam 等工作坊，连接政府、大学、企业、NPO 与社区，共同探索社会议题的设计解决方案。</p>
+                            <a class="advisor-link" href="https://www.sd.design.kyushu-u.ac.jp/faculty/zhang-yanfang/" target="_blank" rel="noopener noreferrer"><span data-i18n="advisor-profile-link">查看九州大学官方资料</span><span aria-hidden="true">↗</span></a>
                         </div>
-                    </div>
-                    <div class="advisor-person">
-                        <span class="advisor-index">02</span>
-                        <div>
+                    </article>
+                    <article class="advisor-profile">
+                        <div class="advisor-portrait">
+                            <img src="./素材/faculty-melanie-sarantou.jpg" alt="Melanie Sarantou" width="960" height="821" loading="lazy" decoding="async">
+                        </div>
+                        <div class="advisor-details">
+                            <span class="advisor-index">02</span>
                             <h3 data-i18n="advisor-sarantou-name">Melanie Sarantou</h3>
-                            <p data-i18n="advisor-sarantou-role">教授 · 战略设计、社会设计</p>
+                            <p class="advisor-role" data-i18n="advisor-sarantou-role">教授 · 战略设计、社会设计</p>
+                            <p class="advisor-bio" data-i18n="advisor-sarantou-bio">专注社会设计、转型设计与艺术研究方法，特别关注边缘化社区与不同文化语境中的设计实践。她同时担任芬兰拉普兰大学兼职教授，并在纳米比亚、芬兰、澳大利亚和日本开展跨地域研究。</p>
+                            <a class="advisor-link" href="https://www.sd.design.kyushu-u.ac.jp/en/faculty/sarantou-melanie/" target="_blank" rel="noopener noreferrer"><span data-i18n="advisor-profile-link">查看九州大学官方资料</span><span aria-hidden="true">↗</span></a>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>

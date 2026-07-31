@@ -144,4 +144,5 @@ test('language, submission, and motion foundations are present', () => {
     assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
     assert.match(css, /submission-cta/);
     assert.match(css, /#poster\s*\{[^}]*overflow-x:\s*clip;/s);
+    assert.match(css, /@media\s*\(max-width:\s*480px\)[\s\S]*?\.venue-transit-combined\s*\{[^}]*grid-template-columns:\s*1fr;/);
 });

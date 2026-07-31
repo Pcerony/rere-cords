@@ -449,6 +449,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "准教授 · ユニバーサルデザイン、ソーシャルデザイン",
             "en": "Associate Professor · Universal Design, Social Design"
         },
+        "advisor-zhang-bio": {
+            "zh": "以通用设计与社会设计为核心，围绕“不让任何人掉队”的理念开展研究与实践。长期通过 Design for SDGs 与 Global Goals Jam 等工作坊，连接政府、大学、企业、NPO 与社区，共同探索社会议题的设计解决方案。",
+            "ja": "ユニバーサルデザインとソーシャルデザインを軸に、「誰一人取り残さない」という理念のもとで研究と実践に取り組んでいます。Design for SDGs や Global Goals Jam などのワークショップを通じ、行政、大学、企業、NPO、地域をつなぎ、社会課題に対するデザインの可能性を探究しています。",
+            "en": "Her research and practice centre on universal and social design guided by the principle of leaving no one behind. Through initiatives including Design for SDGs and Global Goals Jam workshops, she connects government, universities, businesses, NPOs and communities to explore design responses to social challenges."
+        },
         "advisor-sarantou-name": {
             "zh": "Melanie Sarantou",
             "ja": "SARANTOU Melanie",
@@ -458,6 +463,16 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "教授 · 战略设计、社会设计",
             "ja": "教授 · ストラテジックデザイン、ソーシャルデザイン",
             "en": "Professor · Strategic Design, Social Design"
+        },
+        "advisor-sarantou-bio": {
+            "zh": "专注社会设计、转型设计与艺术研究方法，特别关注边缘化社区与不同文化语境中的设计实践。她同时担任芬兰拉普兰大学兼职教授，并在纳米比亚、芬兰、澳大利亚和日本开展跨地域研究。",
+            "ja": "ソーシャルデザイン、トランスフォーメーションデザイン、芸術に基づく研究手法を専門とし、周縁化されたコミュニティや異なる文化的文脈でのデザイン実践に取り組んでいます。フィンランドのラップランド大学客員教授も務め、ナミビア、フィンランド、オーストラリア、日本で研究を展開しています。",
+            "en": "She specialises in social design, transformation design and arts-based research, with particular attention to marginalised communities and diverse cultural contexts. She is also an Adjunct Professor at the University of Lapland and has conducted research across Namibia, Finland, Australia and Japan."
+        },
+        "advisor-profile-link": {
+            "zh": "查看九州大学官方资料",
+            "ja": "九州大学公式プロフィール",
+            "en": "Kyushu University profile"
         },
         "footer-desc": {
             "zh": "废旧黑胶唱片再利用的可持续设计征集与成果展项目",
@@ -615,8 +630,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "lead-advisors": "Strategisen muotoilun osasto, Faculty of Design, Kyushun yliopisto",
         "advisor-zhang-name": "ZHANG Yanfang",
         "advisor-zhang-role": "Apulaisprofessori · universaali muotoilu, sosiaalinen muotoilu",
+        "advisor-zhang-bio": "Hänen tutkimuksensa ja käytännön työnsä keskittyvät universaaliin ja sosiaaliseen muotoiluun ketään unohtamatta. Design for SDGs- ja Global Goals Jam -työpajojen kautta hän yhdistää hallintoa, yliopistoja, yrityksiä, järjestöjä ja yhteisöjä etsimään muotoiluratkaisuja yhteiskunnallisiin haasteisiin.",
         "advisor-sarantou-name": "Melanie Sarantou",
         "advisor-sarantou-role": "Professori · strateginen muotoilu, sosiaalinen muotoilu",
+        "advisor-sarantou-bio": "Hän on erikoistunut sosiaaliseen muotoiluun, transformaatiomuotoiluun ja taidelähtöisiin tutkimusmenetelmiin sekä erityisesti marginalisoitujen yhteisöjen ja erilaisten kulttuuristen ympäristöjen muotoilukäytäntöihin. Hän toimii myös Lapin yliopiston dosenttina ja on tehnyt tutkimusta Namibiassa, Suomessa, Australiassa ja Japanissa.",
+        "advisor-profile-link": "Kyushun yliopiston profiili",
         "title-apply": "Osallistumishaku",
         "lead-apply": "Osallistumishakemukset vastaanotetaan edelleen sähköpostitse. Toimita valmis työ alla olevan Töiden toimittaminen -osion lajikohtaisten ohjeiden mukaan.",
         "apply-method-title": "Hakutapa ja osoite",
@@ -719,6 +737,91 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const languageSelect = document.getElementById('language-select');
         if (languageSelect) languageSelect.value = currentLang;
+
+        const languageOptions = document.querySelectorAll('[data-language-option]');
+        languageOptions.forEach((option) => {
+            option.setAttribute('aria-selected', String(option.dataset.languageOption === currentLang));
+        });
+
+        const activeOption = document.querySelector(`[data-language-option="${currentLang}"]`);
+        const currentFlag = document.getElementById('language-current-flag');
+        const currentName = document.getElementById('language-current-name');
+        if (activeOption && currentFlag && currentName) {
+            currentFlag.textContent = activeOption.querySelector('.language-option-flag')?.textContent || '';
+            currentName.textContent = activeOption.querySelector('span:last-child')?.textContent || currentLang;
+        }
+    }
+
+    function initLanguageMenu() {
+        const menu = document.getElementById('language-menu');
+        const trigger = document.getElementById('language-menu-trigger');
+        const popover = document.getElementById('language-menu-popover');
+        const options = [...document.querySelectorAll('[data-language-option]')];
+        if (!menu || !trigger || !popover || options.length === 0) return;
+
+        const selectedIndex = () => Math.max(0, options.findIndex((option) => option.dataset.languageOption === currentLang));
+
+        function setOpen(open, focusIndex = null) {
+            menu.classList.toggle('is-open', open);
+            trigger.setAttribute('aria-expanded', String(open));
+            popover.hidden = !open;
+            if (open && focusIndex !== null) options[focusIndex]?.focus();
+        }
+
+        function moveFocus(currentOption, offset) {
+            const currentIndex = options.indexOf(currentOption);
+            const nextIndex = (currentIndex + offset + options.length) % options.length;
+            options[nextIndex].focus();
+        }
+
+        trigger.addEventListener('click', () => {
+            setOpen(popover.hidden, selectedIndex());
+        });
+
+        trigger.addEventListener('keydown', (event) => {
+            if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+            event.preventDefault();
+            const offset = event.key === 'ArrowDown' ? 0 : -1;
+            setOpen(true, (selectedIndex() + offset + options.length) % options.length);
+        });
+
+        options.forEach((option) => {
+            option.addEventListener('click', () => {
+                updateLanguage(option.dataset.languageOption);
+                setOpen(false);
+                trigger.focus();
+            });
+
+            option.addEventListener('keydown', (event) => {
+                switch (event.key) {
+                    case 'ArrowDown':
+                        event.preventDefault();
+                        moveFocus(option, 1);
+                        break;
+                    case 'ArrowUp':
+                        event.preventDefault();
+                        moveFocus(option, -1);
+                        break;
+                    case 'Home':
+                        event.preventDefault();
+                        options[0].focus();
+                        break;
+                    case 'End':
+                        event.preventDefault();
+                        options.at(-1).focus();
+                        break;
+                    case 'Escape':
+                        event.preventDefault();
+                        setOpen(false);
+                        trigger.focus();
+                        break;
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target)) setOpen(false);
+        });
     }
 
     function isValidExternalUrl(value) {
@@ -779,6 +882,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const languageSelect = document.getElementById('language-select');
     languageSelect?.addEventListener('change', (event) => updateLanguage(event.target.value));
+    initLanguageMenu();
 
 
 

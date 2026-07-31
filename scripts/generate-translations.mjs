@@ -8,6 +8,16 @@ if (!dictionaryMatch) throw new Error('Unable to parse i18nDict from app.js');
 
 const dictionary = JSON.parse(dictionaryMatch[1]);
 const activeKeys = [...new Set([...html.matchAll(/data-i18n="([^"]+)"/g)].map((match) => match[1]))];
+let existingTranslations = {};
+
+try {
+    const existingSource = await readFile(new URL('../translations.js', import.meta.url), 'utf8');
+    const existingMatch = existingSource.match(/window\.RERE_CORDS_EXTRA_TRANSLATIONS = (\{[\s\S]*\});/);
+    if (existingMatch) existingTranslations = JSON.parse(existingMatch[1]);
+} catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+}
+
 const targets = {
     'zh-TW': { source: 'zh-CN', valueKey: 'zh' },
     ko: { source: 'en', valueKey: 'en' },
@@ -75,7 +85,8 @@ const manualOverrides = {
     vi: {
         'safety-prohibited-text': 'Không đốt đĩa, gia nhiệt bằng ngọn lửa trần, cắt PVC bằng laser hoặc gia nhiệt trong không gian kín hay thiếu thông gió. Không sử dụng dụng cụ điện hoặc thiết bị xưởng trong trường khi chưa được cho phép và đào tạo.',
         'title-step1': 'Phân phối vật liệu, chế tác và nộp bài linh hoạt',
-        'text-step1': 'Bạn có thể bắt đầu chế tác ngay sau khi nhận đĩa và nộp tác phẩm hoàn chỉnh vào bất kỳ thời điểm nào trong giai đoạn này. Hạn cuối là ngày 10 tháng 11.'
+        'text-step1': 'Bạn có thể bắt đầu chế tác ngay sau khi nhận đĩa và nộp tác phẩm hoàn chỉnh vào bất kỳ thời điểm nào trong giai đoạn này. Hạn cuối là ngày 10 tháng 11.',
+        'advisor-profile-link': 'Hồ sơ tại Đại học Kyushu'
     },
     th: {
         'safety-prohibited-text': 'ห้ามเผาแผ่นเสียง ห้ามให้ความร้อนด้วยเปลวไฟ ห้ามตัด PVC ด้วยเลเซอร์ และห้ามให้ความร้อนในพื้นที่ปิดหรือระบายอากาศไม่เพียงพอ ห้ามใช้เครื่องมือไฟฟ้าหรืออุปกรณ์ในเวิร์กช็อปของมหาวิทยาลัยโดยไม่ได้รับอนุญาตและการฝึกอบรม',
@@ -105,6 +116,9 @@ const manualOverrides = {
 
 for (const [language, config] of Object.entries(targets)) {
     const values = await mapWithConcurrency(activeKeys, 5, async (key) => {
+        const existingValue = existingTranslations[language]?.[key];
+        if (typeof existingValue === 'string' && existingValue.trim() !== '') return existingValue;
+
         const sourceText = dictionary[key]?.[config.valueKey];
         if (!sourceText) throw new Error(`Missing ${config.valueKey} source for ${key}`);
         return translate(sourceText, config.source, language);
