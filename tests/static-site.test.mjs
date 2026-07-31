@@ -54,7 +54,8 @@ test('homepage contains one disabled submission entry before the venue', () => {
     assert.ok(venueIndex > submissionIndex, '#submission must appear before #venue');
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
-    assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="translations\.js\?v=1"><\/script>\s*<script src="app\.js\?v=16"><\/script>/);
+    assert.match(html, /styles\.css\?v=17/);
+    assert.match(html, /submission-config\.js\?v=1"><\/script>\s*<script src="translations\.js\?v=2"><\/script>\s*<script src="app\.js\?v=17"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
