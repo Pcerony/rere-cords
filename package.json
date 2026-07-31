@@ -1,0 +1,13 @@
+{
+  "name": "rere-cords-website",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "prototype": "node prototype-server/server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "busboy": "1.6.0"
+  }
+}

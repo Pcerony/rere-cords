@@ -7,3 +7,7 @@
 
 # Scratch files
 scratch/
+
+# Local Node dependencies and upload prototype receipts
+node_modules/
+prototype-data/

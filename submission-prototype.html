@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f4f0">
+    <title>作品上传原型 | RERE-CORDS</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="submission-prototype.css">
+</head>
+<body>
+    <header class="prototype-header">
+        <a class="prototype-brand" href="/submission-prototype.html" aria-label="RERE-CORDS upload prototype home">
+            <span>RE</span>RE-CORDS
+        </a>
+        <nav class="prototype-nav" aria-label="Prototype views">
+            <span class="prototype-badge">LOCAL PROTOTYPE</span>
+            <a href="/submission-admin.html">接收确认台</a>
+        </nav>
+    </header>
+
+    <main class="prototype-shell">
+        <section class="submission-workspace" aria-labelledby="page-title">
+            <div class="workspace-heading">
+                <p class="section-index">DIGITAL WORK SUBMISSION / 01</p>
+                <h1 id="page-title">上传数字作品</h1>
+                <p>填写作品信息并添加附件。提交成功后，服务器会返回一份包含文件校验摘要的接收凭证。</p>
+            </div>
+
+            <form id="submission-form" enctype="multipart/form-data" novalidate>
+                <fieldset class="form-section">
+                    <legend>创作者信息 <span>Creator</span></legend>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="creatorName">姓名 <span>Full name</span></label>
+                            <input id="creatorName" name="creatorName" type="text" maxlength="120" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">邮箱 <span>Email</span></label>
+                            <input id="email" name="email" type="email" maxlength="254" autocomplete="email" required>
+                        </div>
+                        <div class="field field-wide">
+                            <label for="affiliation">所属机构 <span>Affiliation, optional</span></label>
+                            <input id="affiliation" name="affiliation" type="text" maxlength="160" autocomplete="organization">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>作品信息 <span>Work</span></legend>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="workTitle">作品标题 <span>Work title</span></label>
+                            <input id="workTitle" name="workTitle" type="text" maxlength="160" required>
+                        </div>
+                        <div class="field">
+                            <label for="workType">作品类型 <span>Work type</span></label>
+                            <select id="workType" name="workType" required>
+                                <option value="">请选择</option>
+                                <option value="image">图像 / Image</option>
+                                <option value="data">数据 / Data</option>
+                                <option value="interactive">交互作品 / Interactive</option>
+                                <option value="video">影像 / Video</option>
+                                <option value="mixed">混合媒介 / Mixed</option>
+                                <option value="other">其他 / Other</option>
+                            </select>
+                        </div>
+                        <div class="field field-wide">
+                            <label for="description">作品说明 <span>Description</span></label>
+                            <textarea id="description" name="description" rows="6" maxlength="3000" required></textarea>
+                            <div class="field-meta"><span>建议包含概念、观看方法和运行条件</span><output id="description-count" for="description">0 / 3000</output></div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>作品文件 <span>Files</span></legend>
+                    <div class="upload-limits" aria-label="Prototype upload limits">
+                        <span>最多 8 个文件</span>
+                        <span>单个不超过 25 MiB</span>
+                        <span>总计不超过 100 MiB</span>
+                    </div>
+                    <div id="file-dropzone" class="file-dropzone" tabindex="0" role="button" aria-controls="files" aria-describedby="file-types">
+                        <strong>选择文件或拖放到这里</strong>
+                        <span id="file-types">JPEG、PNG、WebP、GIF、PDF、MP4、WebM、TXT、CSV、JSON、ZIP</span>
+                    </div>
+                    <input id="files" class="file-input-visually-hidden" name="files" type="file" multiple accept="image/jpeg,image/png,image/webp,image/gif,application/pdf,video/mp4,video/webm,text/plain,text/csv,application/json,application/zip,.zip" tabindex="-1">
+                    <div id="selected-files" class="selected-files" aria-live="polite"></div>
+                </fieldset>
+
+                <label class="prototype-confirmation">
+                    <input id="prototype-confirmation" type="checkbox" required>
+                    <span>我理解这是本地原型，当前字段与限制仍可能调整。</span>
+                </label>
+
+                <div class="submit-row">
+                    <button id="submit-work" class="primary-action" type="submit">提交作品</button>
+                    <p id="submission-status" class="submission-status" aria-live="polite">等待填写</p>
+                </div>
+                <progress id="upload-progress" class="upload-progress" max="100" value="0" hidden>0%</progress>
+            </form>
+        </section>
+
+        <aside class="receipt-rail" aria-label="Submission receipt">
+            <div class="receipt-intro">
+                <p class="section-index">SERVER RECEIPT / 02</p>
+                <h2>接收凭证</h2>
+                <p>成功提交后，这里会显示服务器实际保存的内容，而不是只显示浏览器端的发送状态。</p>
+            </div>
+            <section id="submission-receipt" class="receipt-card" hidden aria-labelledby="receipt-title">
+                <div class="receipt-success">RECEIVED</div>
+                <h2 id="receipt-title">服务器已接收</h2>
+                <dl id="receipt-summary" class="receipt-summary"></dl>
+                <div id="receipt-files" class="receipt-files"></div>
+                <div class="receipt-actions">
+                    <button id="copy-receipt" class="secondary-action" type="button">复制凭证</button>
+                    <a id="open-admin-receipt" class="text-action" href="/submission-admin.html">在确认台查看</a>
+                </div>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="prototype-footer">
+        <span>RERE-CORDS / Submission systems prototype</span>
+        <span>Data remains on this computer</span>
+    </footer>
+    <script src="submission-prototype.js"></script>
+</body>
+</html>

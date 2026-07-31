@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f4f0">
+    <title>接收确认台 | RERE-CORDS</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="submission-prototype.css">
+</head>
+<body class="admin-page">
+    <header class="prototype-header">
+        <a class="prototype-brand" href="/submission-prototype.html"><span>RE</span>RE-CORDS</a>
+        <nav class="prototype-nav" aria-label="Prototype views">
+            <span class="prototype-badge">LOCAL PROTOTYPE</span>
+            <a href="/submission-prototype.html">参与者上传页</a>
+        </nav>
+    </header>
+
+    <main class="admin-shell">
+        <section class="admin-heading" aria-labelledby="admin-title">
+            <div>
+                <p class="section-index">RECEIPT CONSOLE / LOCAL</p>
+                <h1 id="admin-title">作品接收确认台</h1>
+                <p>从本地存储重新读取提交记录，用于独立确认信息、附件和服务器接收时间。</p>
+            </div>
+            <button id="refresh-submissions" class="secondary-action" type="button">刷新记录</button>
+        </section>
+
+        <aside class="prototype-warning" aria-label="Local prototype warning">
+            <strong>本地原型 / Local prototype</strong>
+            <span>当前没有正式管理员认证。服务默认只允许本机访问，请勿暴露到公共网络。</span>
+        </aside>
+
+        <section class="admin-summary" aria-label="Receipt summary">
+            <div>
+                <span>已接收</span>
+                <strong id="submission-count">0</strong>
+            </div>
+            <p id="admin-status" aria-live="polite">正在读取本地记录...</p>
+        </section>
+
+        <section aria-labelledby="receipt-list-title">
+            <div class="list-heading">
+                <h2 id="receipt-list-title">接收记录</h2>
+                <span>Newest first</span>
+            </div>
+            <p id="submission-empty" class="empty-state" hidden>还没有收到作品。可先从参与者上传页完成一次测试提交。</p>
+            <div id="submission-list" class="submission-list"></div>
+        </section>
+    </main>
+
+    <footer class="prototype-footer">
+        <span>RERE-CORDS / Organizer receipt console</span>
+        <span>Filesystem-backed prototype</span>
+    </footer>
+    <script src="submission-admin.js"></script>
+</body>
+</html>
