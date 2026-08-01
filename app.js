@@ -89,6 +89,21 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "提出作品の展示",
             "en": "Submitted Works Exhibition"
         },
+        "stat-records-detail": {
+            "zh": "这100枚废旧唱片从停止经营的老唱片店回收而来。本项目希望让它们不再被闲置或丢弃，而是作为创作材料重新进入循环。",
+            "ja": "100枚の廃レコードは、閉店した老舗レコード店から回収したものです。使われないまま廃棄されるのではなく、創作素材として再び循環させることを目指します。",
+            "en": "These 100 discarded records were recovered from a long-established record shop that closed. Rather than leaving them unused or discarded, the project returns them to circulation as creative material."
+        },
+        "stat-target-detail": {
+            "zh": "SDG 12“负责任消费和生产”关注减少废弃物、高效使用资源与材料再利用。通过重新设计废旧唱片并思考它的生命周期，我们把这一目标转化为具体的设计实践。",
+            "ja": "SDG 12「つくる責任 つかう責任」は、廃棄物の削減、資源の効率的な利用、素材の再利用を掲げています。廃レコードを再設計し、そのライフサイクルを考えることで、この目標を具体的なデザイン実践に変えます。",
+            "en": "SDG 12, Responsible Consumption and Production, calls for reducing waste, using resources efficiently, and reusing materials. By redesigning discarded records and considering their life cycle, the project turns that goal into a practical design question."
+        },
+        "stat-exhibit-detail": {
+            "zh": "本项目没有评审和筛选环节，凡完成提交的作品均安排展示。我们希望让不同回应在同一空间里相遇，使材料浪费与环境责任更容易被看见并引发交流。",
+            "ja": "本プロジェクトに審査や選考の過程はなく、提出が完了したすべての作品を展示します。異なる応答を同じ空間で紹介することで、素材の廃棄と環境への責任を見えやすくし、対話につなげます。",
+            "en": "There is no judging or selection stage: every submitted work will be included in the exhibition. By bringing different responses together, we hope to make material waste and environmental responsibility more visible and encourage conversation."
+        },
         "pathway-kicker": {
             "zh": "开始之前",
             "ja": "制作を始める前に",
@@ -713,6 +728,9 @@ document.addEventListener('DOMContentLoaded', () => {
         "stat-records": "Jaettavien levyjen määrä",
         "stat-target": "Keskeinen kestävän kehityksen tavoite",
         "stat-exhibit": "Näyttelyyn toimitetut työt",
+        "stat-records-detail": "Nämä 100 käytöstä poistettua levyä kerättiin toimintansa lopettaneesta pitkään toimineesta levykaupasta. Sen sijaan että levyt jäisivät käyttämättä tai päätyisivät jätteeksi, ne palautetaan kiertoon luovan työn materiaalina.",
+        "stat-target-detail": "SDG 12, vastuullinen kulutus ja tuotanto, pyrkii vähentämään jätettä, tehostamaan resurssien käyttöä ja lisäämään materiaalien uudelleenkäyttöä. Suunnittelemalla poistolevyt uudelleen ja tarkastelemalla niiden elinkaarta hanke muuttaa tavoitteen konkreettiseksi muotoilukysymykseksi.",
+        "stat-exhibit-detail": "Hankkeessa ei ole arviointi- tai valintavaihetta: jokainen toimitettu työ otetaan mukaan näyttelyyn. Tuomalla erilaiset vastaukset yhteen haluamme tehdä materiaalihukan ja ympäristövastuun näkyvämmiksi sekä herättää keskustelua.",
         "pathway-kicker": "Ennen aloittamista",
         "title-pathways": "Valitse osallistumisreittisi",
         "lead-pathways": "Kaikki kolme reittiä ovat samanarvoisia osallistumistapoja. Valinta muuttaa vain tällä sivulla näkyviä ohjeita, ei lähetä tai rekisteröi tietoja, ja sen voi vaihtaa milloin tahansa.",

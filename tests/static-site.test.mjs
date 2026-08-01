@@ -55,7 +55,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=6"><\/script>\s*<script src="app\.js\?v=21"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=7"><\/script>\s*<script src="app\.js\?v=22"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -122,6 +122,24 @@ test('digital-native eligibility stays tied to the RERE-CORDS theme', () => {
     assert.match(app, /discarded records, analog-media culture, material circulation, or sustainable design/);
     assert.match(app, /展示、播放或运行要求/);
     assert.match(app, /record pickup is optional/i);
+});
+
+test('concept statistics expand into source, SDG 12, and exhibition policy', () => {
+    const html = read('index.html');
+    const app = read('app.js');
+    const conceptStart = html.indexOf('id="concept"');
+    const conceptEnd = html.indexOf('</section>', conceptStart);
+    const concept = html.slice(conceptStart, conceptEnd);
+
+    assert.equal((concept.match(/<details class="stat-item"/g) || []).length, 3);
+    assert.equal((concept.match(/<summary class="stat-summary"/g) || []).length, 3);
+    for (const key of ['stat-records-detail', 'stat-target-detail', 'stat-exhibit-detail']) {
+        assert.match(concept, new RegExp(`data-i18n="${key}"`));
+    }
+    assert.match(app, /从停止经营的老唱片店回收/);
+    assert.match(app, /负责任消费和生产/);
+    assert.match(app, /没有评审和筛选环节/);
+    assert.match(app, /凡完成提交的作品均安排展示/);
 });
 
 test('homepage uses the confirmed 2026 collection period, handoff point, and exhibition room', () => {
@@ -193,7 +211,9 @@ test('homepage exposes a complete custom language menu and simplified participan
     assert.match(html, /data-i18n="timeline-optional-badge"/);
     assert.doesNotMatch(html, /data-i18n="(?:time|title|text)-step[245]"/);
     assert.doesNotMatch(html, /data-i18n="title-step2"/);
-    assert.doesNotMatch(html, /入选|评审|颁奖|審査|表彰|Awards?/i);
+    const timelineStart = html.indexOf('id="timeline"');
+    const timelineEnd = html.indexOf('</section>', timelineStart);
+    assert.doesNotMatch(html.slice(timelineStart, timelineEnd), /入选|评审|颁奖|審査|表彰|Awards?/i);
 });
 
 test('homepage contains safety, advisor, and precise submission guidance', () => {
