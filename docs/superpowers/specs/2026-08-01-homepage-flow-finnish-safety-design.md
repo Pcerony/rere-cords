@@ -58,4 +58,3 @@ Keep the current restrained editorial visual language. The required timeline use
 ## Verification
 
 Run the Node static-site tests, parse-check JavaScript, and inspect the rendered page in a browser at desktop and mobile widths. Verify all four language buttons, timeline hierarchy, long Finnish text wrapping, no overlap, the disabled submission state, and reduced-motion behavior.
-

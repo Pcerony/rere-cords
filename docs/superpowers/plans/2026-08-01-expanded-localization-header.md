@@ -53,4 +53,3 @@
 - [ ] Run `node --test tests/static-site.test.mjs`, `node --check app.js`, `node --check translations.js`, and `git diff --check`.
 - [ ] Check desktop and mobile rendering, all language selections, Arabic RTL, header states, horizontal overflow, broken images, and console errors.
 - [ ] Commit only intended project files and leave `.superpowers/` and `提交文件/` untouched.
-

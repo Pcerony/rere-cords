@@ -151,4 +151,3 @@ Run:
 git add index.html app.js styles.css tests/static-site.test.mjs docs/superpowers/specs/2026-08-01-homepage-flow-finnish-safety-design.md docs/superpowers/plans/2026-08-01-homepage-flow-finnish-safety.md
 git commit -m "feat: simplify multilingual participant flow"
 ```
-

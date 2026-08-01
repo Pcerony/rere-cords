@@ -23,4 +23,3 @@ JavaScript schedules the visual-state update with `requestAnimationFrame` and li
 ## Verification
 
 Static tests enforce the language list, complete translations, English fallback, RTL handling, selector markup, and removal of the hidden-header behavior. Browser checks cover desktop and mobile, all language options, Arabic direction, hero transparency, scrolled header styling, overflow, resources, and runtime errors.
-
