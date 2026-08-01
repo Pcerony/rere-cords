@@ -840,10 +840,14 @@ section {
     margin: 1.25rem 0 0;
 }
 
-/* Record acquisition methods (two columns under poster) */
+/* Record acquisition methods */
+.record-methods-outer .section-container {
+    max-width: 1080px;
+}
+
 .record-methods {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     margin-top: 3rem;
     border: 1px solid var(--color-border);
@@ -856,8 +860,8 @@ section {
     align-items: flex-start;
 }
 
-.record-method-card:first-child {
-    border-right: 1px solid var(--color-border);
+.record-method-card + .record-method-card {
+    border-left: 1px solid var(--color-border);
 }
 
 .method-num {
@@ -914,14 +918,14 @@ section {
     opacity: 1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .record-methods {
         grid-template-columns: 1fr;
     }
 
-    .record-method-card:first-child {
-        border-right: none;
-        border-bottom: 1px solid var(--color-border);
+    .record-method-card + .record-method-card {
+        border-left: 0;
+        border-top: 1px solid var(--color-border);
     }
 }
 

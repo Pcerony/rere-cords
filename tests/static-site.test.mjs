@@ -55,7 +55,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=7"><\/script>\s*<script src="app\.js\?v=22"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=8"><\/script>\s*<script src="app\.js\?v=23"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -168,6 +168,24 @@ test('records collected from posters are reserved for project participation', ()
     assert.match(app, /本プロジェクトへの参加に直接関係する目的に限り/);
     assert.match(app, /ポスター裏面のレコードが不足している場合は/);
     assert.doesNotMatch(app, /ポスター裏面のレコードがすでに取り外されている場合は/);
+});
+
+test('record pickup methods include the MEDIA STUDIO collection point', () => {
+    const html = read('index.html');
+    const app = read('app.js');
+    const methodsStart = html.indexOf('class="record-methods reveal-on-scroll"');
+    const methodsEnd = html.indexOf('</section>', methodsStart);
+    const methods = html.slice(methodsStart, methodsEnd);
+
+    assert.equal((methods.match(/class="record-method-card"/g) || []).length, 3);
+    const posterIndex = methods.indexOf('data-i18n="method1-title"');
+    const pickupIndex = methods.indexOf('data-i18n="method-pickup-title"');
+    const purchaseIndex = methods.indexOf('data-i18n="method2-title"');
+    assert.ok(posterIndex >= 0 && pickupIndex > posterIndex && purchaseIndex > pickupIndex);
+    assert.match(methods, /record-pickup-box-transparent-v1\.png/);
+    assert.match(app, /7号馆2楼 MEDIA STUDIO 房间前/);
+    assert.match(app, /数量相对充足/);
+    assert.match(app, /7号館2階 MEDIA STUDIO 部屋前/);
 });
 
 test('every translated homepage key has all supported language values', () => {

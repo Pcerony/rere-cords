@@ -250,9 +250,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "How to Obtain a Record When You Need One"
         },
         "lead-poster": {
-            "zh": "实体成品与“唱片参与的数字成果”需要使用唱片，可从校园海报获取或自行购买；纯数字作品可跳过本节。",
-            "ja": "実物作品とレコードを使ったデジタル成果ではレコードが必要です。学内ポスターから入手するか自費で購入してください。純デジタル作品はこのセクションを飛ばせます。",
-            "en": "Physical works and record-based digital outcomes use a record, available from campus posters or through self-purchase. Fully digital work can skip this section."
+            "zh": "实体成品与“唱片参与的数字成果”需要使用唱片，可从校园海报、集中领取盒获取或自行购买；纯数字作品可跳过本节。",
+            "ja": "実物作品とレコードを使ったデジタル成果ではレコードが必要です。学内ポスター、集中配布ボックスから入手するか、自費で購入してください。純デジタル作品はこのセクションを飛ばせます。",
+            "en": "Physical works and record-based digital outcomes use a record, available from campus posters, the central pickup box, or through self-purchase. Fully digital work can skip this section."
         },
         "method1-title": {
             "zh": "从校园海报背面取下",
@@ -270,14 +270,29 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "The analog records may only be collected for purposes directly related to participation in this project. Any collection for personal use of the analog records is strictly prohibited."
         },
         "method1-note1": {
-            "zh": "* 若海报背面的唱片已被取走，请寻找其他位置的海报，或通过邮箱联系我们补充。",
-            "ja": "※ ポスター裏面のレコードが不足している場合は、別の場所のポスターを探すか、事務局メールアドレスまでご連絡ください。",
-            "en": "※ If the record on a poster has already been taken, please check posters at other locations or contact the secretariat via email."
+            "zh": "* 若海报背面的唱片不足，请寻找其他位置的海报，或前往集中领取盒。",
+            "ja": "※ ポスター裏面のレコードが不足している場合は、別の場所のポスターを探すか、集中配布ボックスをご利用ください。",
+            "en": "※ If records are in short supply behind a poster, please check posters at other locations or use the central pickup box."
         },
         "method1-note2": {
             "zh": "* 我们会在正式张贴后公布所有海报位置，并且公布详细的补充唱片周期时间。",
             "ja": "※ 正式な掲示開始後、すべてのポスター設置場所およびレコードの補充スケジュールを公開いたします。",
             "en": "※ All poster locations and the record replenishment schedule will be published once official posting begins."
+        },
+        "method-pickup-title": {
+            "zh": "到集中领取盒领取",
+            "ja": "集中配布ボックスからの受け取り",
+            "en": "Use the Central Pickup Box"
+        },
+        "method-pickup-desc": {
+            "zh": "若海报背面的唱片不足，可前往九州大学大桥校区7号馆2楼 MEDIA STUDIO 房间前的集中领取盒。该处会集中补充唱片，数量相对充足。",
+            "ja": "ポスター裏面のレコードが不足している場合は、九州大学大橋キャンパス7号館2階 MEDIA STUDIO 部屋前の集中配布ボックスをご利用ください。ここにはレコードをまとめて補充するため、比較的多くの枚数を用意しています。",
+            "en": "If records are in short supply behind the posters, visit the central pickup box in front of the MEDIA STUDIO room on 2F of Building 7 at Kyushu University Ohashi Campus. Records are replenished there in one place, so the supply is generally more plentiful."
+        },
+        "method-pickup-note": {
+            "zh": "* 请按实际创作需要领取，每件作品使用的唱片总数仍不得超过6张。",
+            "ja": "※ 制作に必要な枚数のみ受け取り、1作品あたりの使用枚数は合計6枚までとしてください。",
+            "en": "※ Take only what your work requires; the total limit remains six records per entry."
         },
         "method2-title": {
             "zh": "自费购买",
@@ -760,12 +775,15 @@ document.addEventListener('DOMContentLoaded', () => {
         "pathway-safety-required-note": "Valitsemasi reitti käsittelee fyysisiä levyjä. Lue kaikki alla olevat säännöt ja noudata niitä.",
         "pathway-safety-optional-note": "Jos täysin digitaalinen työ ei käsittele fyysistä levyä, alla olevat PVC-työstön riskit eivät koske sitä. Näyttölaitteiden ja muiden fyysisten materiaalien kanssa on silti noudatettava työtilan ja laitteiden sääntöjä.",
         "title-poster": "Miten saat levyn, kun tarvitset sellaisen?",
-        "lead-poster": "Fyysinen työ ja levyä hyödyntävä digitaalinen tulos käyttävät levyä, jonka voi ottaa kampuksen julisteesta tai hankkia itse. Täysin digitaalinen työ voi ohittaa tämän osion.",
+        "lead-poster": "Fyysinen työ ja levyä hyödyntävä digitaalinen tulos käyttävät levyä, jonka voi ottaa kampuksen julisteesta tai keskitetystä jakelulaatikosta tai hankkia itse. Täysin digitaalinen työ voi ohittaa tämän osion.",
         "method1-title": "Ota levy kampuksen julisteesta",
         "method1-desc": "Etsi RERE-CORDS-juliste Kyushun yliopiston Ohashin kampukselta. Jokaisen julisteen taakse on kiinnitetty yksi käytöstä poistettu vinyylilevy, jonka voit ottaa ilman erillistä ilmoittautumista.",
         "method1-purpose-note": "※ Analogisia levyjä saa ottaa vain tähän projektiin osallistumiseen suoraan liittyvää tarkoitusta varten. Levyjen ottaminen henkilökohtaiseen käyttöön on ehdottomasti kielletty.",
-        "method1-note1": "※ Jos levy on jo otettu, tarkista toinen juliste tai pyydä lisämateriaalia sähköpostitse.",
+        "method1-note1": "※ Jos julisteen takana ei ole riittävästi levyjä, tarkista toinen juliste tai käytä keskitettyä jakelulaatikkoa.",
         "method1-note2": "※ Julisteiden sijainnit ja levyjen täydennysaikataulu julkaistaan, kun kampanjan julisteet on asetettu esille.",
+        "method-pickup-title": "Nouda keskitetystä jakelulaatikosta",
+        "method-pickup-desc": "Jos julisteiden takana olevia levyjä ei ole riittävästi, käytä keskitettyä jakelulaatikkoa Kyushun yliopiston Ohashin kampuksen rakennuksen 7 toisessa kerroksessa MEDIA STUDIO -huoneen edessä. Levyjä täydennetään sinne keskitetysti, joten niitä on yleensä paremmin saatavilla.",
+        "method-pickup-note": "※ Ota vain työssäsi tarvitsemasi määrä. Yhdessä työssä saa edelleen käyttää enintään kuutta levyä.",
         "method2-title": "Hanki levy itse",
         "method2-desc": "Voit myös ostaa käytöstä poistetun vinyylilevyn omalla kustannuksellasi käytetyn musiikin liikkeestä tai verkkopalvelusta.",
         "method2-note1": "※ Yhdessä työssä saa käyttää enintään kuutta levyä myös silloin, kun levyt on hankittu itse.",
