@@ -55,7 +55,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=5"><\/script>\s*<script src="app\.js\?v=20"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=2"><\/script>\s*<script src="translations\.js\?v=6"><\/script>\s*<script src="app\.js\?v=21"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -137,6 +137,19 @@ test('homepage uses the confirmed 2026 collection period, handoff point, and exh
     assert.match(config, /mailto:rerecords2026@gmail\.com/);
     assert.doesNotMatch(app, /2026年5月1日|7月30日|2026年8月10日/);
     assert.doesNotMatch(html, /2026年5月1日|7月30日|2026年8月10日/);
+});
+
+test('records collected from posters are reserved for project participation', () => {
+    const html = read('index.html');
+    const app = read('app.js');
+
+    assert.match(html, /data-i18n="method1-purpose-note"/);
+    assert.match(app, /The analog records may only be collected for purposes directly related to participation in this project\./);
+    assert.match(app, /Any collection for personal use of the analog records is strictly prohibited\./);
+    assert.match(app, /实体唱片只可为与参与本项目直接相关的目的领取/);
+    assert.match(app, /本プロジェクトへの参加に直接関係する目的に限り/);
+    assert.match(app, /ポスター裏面のレコードが不足している場合は/);
+    assert.doesNotMatch(app, /ポスター裏面のレコードがすでに取り外されている場合は/);
 });
 
 test('every translated homepage key has all supported language values', () => {

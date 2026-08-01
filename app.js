@@ -249,9 +249,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "九州大学大橋キャンパス内に掲示されている RERE-CORDS のポスターをお探しください。各ポスターの裏面に廃棄レコードが1枚添付されており、手続き不要でそのままお持ち帰りいただけます。",
             "en": "Look for RERE-CORDS posters displayed across Kyushu University Ohashi Campus. Each poster has a discarded vinyl record attached to its back — simply take it with no paperwork required."
         },
+        "method1-purpose-note": {
+            "zh": "※ 实体唱片只可为与参与本项目直接相关的目的领取。严禁为个人使用而领取实体唱片。",
+            "ja": "※ アナログレコードは、本プロジェクトへの参加に直接関係する目的に限り受け取ることができます。個人利用を目的とした受け取りは固く禁止します。",
+            "en": "The analog records may only be collected for purposes directly related to participation in this project. Any collection for personal use of the analog records is strictly prohibited."
+        },
         "method1-note1": {
             "zh": "* 若海报背面的唱片已被取走，请寻找其他位置的海报，或通过邮箱联系我们补充。",
-            "ja": "※ ポスター裏面のレコードがすでに取り外されている場合は、別の場所のポスターを探すか、事務局メールアドレスまでご連絡ください。",
+            "ja": "※ ポスター裏面のレコードが不足している場合は、別の場所のポスターを探すか、事務局メールアドレスまでご連絡ください。",
             "en": "※ If the record on a poster has already been taken, please check posters at other locations or contact the secretariat via email."
         },
         "method1-note2": {
@@ -740,6 +745,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "lead-poster": "Fyysinen työ ja levyä hyödyntävä digitaalinen tulos käyttävät levyä, jonka voi ottaa kampuksen julisteesta tai hankkia itse. Täysin digitaalinen työ voi ohittaa tämän osion.",
         "method1-title": "Ota levy kampuksen julisteesta",
         "method1-desc": "Etsi RERE-CORDS-juliste Kyushun yliopiston Ohashin kampukselta. Jokaisen julisteen taakse on kiinnitetty yksi käytöstä poistettu vinyylilevy, jonka voit ottaa ilman erillistä ilmoittautumista.",
+        "method1-purpose-note": "※ Analogisia levyjä saa ottaa vain tähän projektiin osallistumiseen suoraan liittyvää tarkoitusta varten. Levyjen ottaminen henkilökohtaiseen käyttöön on ehdottomasti kielletty.",
         "method1-note1": "※ Jos levy on jo otettu, tarkista toinen juliste tai pyydä lisämateriaalia sähköpostitse.",
         "method1-note2": "※ Julisteiden sijainnit ja levyjen täydennysaikataulu julkaistaan, kun kampanjan julisteet on asetettu esille.",
         "method2-title": "Hanki levy itse",

@@ -861,6 +861,12 @@ section {
     opacity: 0.85;
 }
 
+.method-policy-note {
+    color: var(--color-text-main);
+    font-weight: 600;
+    opacity: 1;
+}
+
 @media (max-width: 600px) {
     .record-methods {
         grid-template-columns: 1fr;
