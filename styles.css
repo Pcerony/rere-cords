@@ -535,6 +535,17 @@ section {
     margin-right: auto;
 }
 
+.section-illustration {
+    margin: 0;
+    pointer-events: none;
+}
+
+.section-illustration img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
 /* --------------------------------------------------------------------------
    6.1 Participant Pathways
    -------------------------------------------------------------------------- */
@@ -726,6 +737,11 @@ section {
     }
 }
 
+.section-illustration-wide {
+    margin: -1.75rem auto 3.5rem;
+    max-width: 720px;
+}
+
 /* Stats / Details Panel (Completely Flat & Minimalist) */
 .about-details-box {
     background-color: transparent;
@@ -808,6 +824,21 @@ section {
     letter-spacing: -0.03em;
 }
 
+.method-body {
+    min-width: 0;
+}
+
+.method-illustration {
+    margin: -0.75rem 0 1.25rem;
+    max-width: 250px;
+}
+
+.method-illustration img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
 .method-title {
     font-family: var(--font-header);
     font-size: 1.1rem;
@@ -884,6 +915,20 @@ section {
     padding: 2rem 2.25rem 2rem 0;
 }
 
+.safety-hazard-illustration {
+    aspect-ratio: 4 / 3;
+    grid-column: 1 / -1;
+    margin: -0.5rem 0 0.75rem 2rem;
+    max-width: 230px;
+}
+
+.safety-hazard-illustration img {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
 .safety-hazard:nth-child(2n) {
     border-left: 1px solid rgba(255, 255, 255, 0.18);
     padding-left: 2.25rem;
@@ -947,6 +992,11 @@ section {
         padding: 1.5rem 0;
     }
 
+    .safety-hazard-illustration {
+        margin-left: 2rem;
+        max-width: 220px;
+    }
+
     .safety-hazard:nth-child(n + 2) {
         border-top: 1px solid rgba(255, 255, 255, 0.18);
     }
@@ -985,17 +1035,18 @@ section {
 }
 
 .req-illustration {
-    width: 96px;
-    height: 96px;
-    margin-bottom: 1.75rem;
-    color: var(--color-primary);
-    opacity: 0.7;
+    aspect-ratio: 4 / 3;
+    margin: -0.75rem 0 1.25rem;
+    max-width: 230px;
+    width: 100%;
     flex-shrink: 0;
 }
 
-.req-illustration svg {
-    width: 100%;
+.req-illustration img {
+    display: block;
     height: 100%;
+    object-fit: contain;
+    width: 100%;
 }
 
 .req-title {
@@ -1481,6 +1532,19 @@ section {
     padding: 1rem 0;
 }
 
+.timeline-illustration {
+    aspect-ratio: 4 / 3;
+    margin: 0;
+    width: 220px;
+}
+
+.timeline-illustration img {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
 .timeline-line {
     position: absolute;
     left: 20px;
@@ -1511,6 +1575,13 @@ section {
 .timeline-optional {
     margin: -0.5rem 0 3.5rem 5.5rem;
     position: relative;
+}
+
+.timeline-optional-content {
+    align-items: center;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) 220px;
 }
 
 .timeline-optional::before {
@@ -1605,10 +1676,18 @@ section {
 }
 
 .timeline-content-card {
+    align-items: center;
     background-color: transparent;
     border: none;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) 220px;
     padding: 0;
     transition: none;
+}
+
+.timeline-copy {
+    min-width: 0;
 }
 
 .timeline-date {
@@ -2038,6 +2117,18 @@ section {
     .timeline-item {
         padding-left: 40px;
         margin-bottom: 2.5rem;
+    }
+
+    .timeline-content-card,
+    .timeline-optional-content {
+        align-items: start;
+        gap: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-illustration {
+        margin-top: 1rem;
+        width: min(220px, 100%);
     }
 
     .timeline-optional {
