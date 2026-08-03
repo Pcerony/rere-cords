@@ -1267,10 +1267,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const stickyTrack = document.querySelector('.poster-sticky-track');
         const posterFrame = document.querySelector('.poster-frame');
         const posterVinyl = document.querySelector('.poster-vinyl');
-        if (!stickyTrack || !posterFrame || !posterVinyl) return;
+        const wrapper = document.querySelector('.poster-interactive-wrapper');
+        if (!stickyTrack || !posterFrame || !posterVinyl || !wrapper) return;
         if (reducedMotionQuery.matches) return;
 
         function updatePosterAnimation() {
+            if (window.innerWidth <= 768) {
+                posterFrame.style.transform = '';
+                posterVinyl.style.transform = '';
+                posterVinyl.style.opacity = '';
+                return;
+            }
+
             const rect = stickyTrack.getBoundingClientRect();
             const trackHeight = stickyTrack.offsetHeight;
             const windowHeight = window.innerHeight;
@@ -1278,15 +1286,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrollableDistance = trackHeight - windowHeight;
             if (scrollableDistance <= 0) return;
 
-            // Compute progress inside the pinned sticky track (0 to 1)
             const currentScroll = -rect.top;
             let progress = currentScroll / scrollableDistance;
             progress = Math.max(0, Math.min(1, progress));
 
-            // Map progress: 
-            // 0 - 0.05: Holds in place at center
-            // 0.05 - 0.95: Smoothly slides open & rotates vinyl
-            // 0.95 - 1.0: Stays fully open as track unpins
             let animProgress = 0;
             if (progress > 0.05 && progress < 0.95) {
                 animProgress = (progress - 0.05) / 0.9;
@@ -1294,14 +1297,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 animProgress = 1;
             }
 
-            // Smooth cubic easing for high-end feel
             const easeProgress = animProgress < 0.5
                 ? 2 * animProgress * animProgress
                 : 1 - Math.pow(-2 * animProgress + 2, 2) / 2;
 
-            const isMobile = window.innerWidth <= 768;
-            const maxFrameShift = isMobile ? -18 : -22;
-            const maxVinylShift = isMobile ? 38 : 48;
+            const maxFrameShift = -22;
+            const maxVinylShift = 48;
             const maxRotation = 180;
 
             const frameX = easeProgress * maxFrameShift;
@@ -1312,6 +1313,19 @@ document.addEventListener('DOMContentLoaded', () => {
             posterFrame.style.transform = `translateX(${frameX}%)`;
             posterVinyl.style.transform = `translateX(${vinylX}%) rotate(${rotation}deg)`;
             posterVinyl.style.opacity = opacity;
+        }
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        wrapper.classList.add('is-revealed');
+                    } else {
+                        wrapper.classList.remove('is-revealed');
+                    }
+                });
+            }, { threshold: 0.2 });
+            observer.observe(stickyTrack);
         }
 
         const schedulePosterUpdate = createFrameScheduler(updatePosterAnimation);

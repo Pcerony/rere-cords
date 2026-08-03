@@ -1424,14 +1424,39 @@ section {
     max-width: 480px;
 }
 
-/* Hover States (Sleek and Elegant) */
-.poster-interactive-wrapper:hover .poster-frame {
+/* Hover & Revealed States (Sleek and Elegant) */
+.poster-interactive-wrapper:hover .poster-frame,
+.poster-interactive-wrapper.is-revealed .poster-frame {
     transform: translateX(-22%);
 }
 
-.poster-interactive-wrapper:hover .poster-vinyl {
+.poster-interactive-wrapper:hover .poster-vinyl,
+.poster-interactive-wrapper.is-revealed .poster-vinyl {
     transform: translateX(48%) rotate(180deg);
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .poster-sticky-track {
+        height: auto;
+    }
+
+    .poster-sticky-sticky {
+        position: relative;
+        top: auto;
+        height: auto;
+        padding-top: 2.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .poster-interactive-wrapper.is-revealed .poster-frame {
+        transform: translateX(-16%);
+    }
+
+    .poster-interactive-wrapper.is-revealed .poster-vinyl {
+        transform: translateX(38%) rotate(180deg);
+        opacity: 1;
+    }
 }
 
 .apply-date-highlight {
