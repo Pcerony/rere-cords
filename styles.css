@@ -39,6 +39,11 @@
     padding: 0;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -597,8 +602,8 @@ section {
     font-size: 1.125rem;
     line-height: 1.6;
     max-width: 600px;
-    word-break: keep-all;
-    overflow-wrap: break-word;
+    word-break: normal;
+    overflow-wrap: anywhere;
 }
 
 .pathway-illustration {
