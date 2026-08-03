@@ -1438,24 +1438,20 @@ section {
 
 @media (max-width: 768px) {
     .poster-sticky-track {
-        height: auto;
+        height: 135vh;
     }
 
     .poster-sticky-sticky {
-        position: relative;
-        top: auto;
-        height: auto;
-        padding-top: 2.5rem;
-        padding-bottom: 2rem;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        height: 100dvh;
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
     }
 
-    .poster-interactive-wrapper.is-revealed .poster-frame {
-        transform: translateX(-16%);
-    }
-
-    .poster-interactive-wrapper.is-revealed .poster-vinyl {
-        transform: translateX(38%) rotate(180deg);
-        opacity: 1;
+    .poster-interactive-wrapper {
+        max-width: 290px;
     }
 }
 

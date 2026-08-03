@@ -1267,18 +1267,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const stickyTrack = document.querySelector('.poster-sticky-track');
         const posterFrame = document.querySelector('.poster-frame');
         const posterVinyl = document.querySelector('.poster-vinyl');
-        const wrapper = document.querySelector('.poster-interactive-wrapper');
-        if (!stickyTrack || !posterFrame || !posterVinyl || !wrapper) return;
+        if (!stickyTrack || !posterFrame || !posterVinyl) return;
         if (reducedMotionQuery.matches) return;
 
         function updatePosterAnimation() {
-            if (window.innerWidth <= 768) {
-                posterFrame.style.transform = '';
-                posterVinyl.style.transform = '';
-                posterVinyl.style.opacity = '';
-                return;
-            }
-
             const rect = stickyTrack.getBoundingClientRect();
             const trackHeight = stickyTrack.offsetHeight;
             const windowHeight = window.innerHeight;
@@ -1301,8 +1293,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? 2 * animProgress * animProgress
                 : 1 - Math.pow(-2 * animProgress + 2, 2) / 2;
 
-            const maxFrameShift = -22;
-            const maxVinylShift = 48;
+            const isMobile = window.innerWidth <= 768;
+            const maxFrameShift = isMobile ? -18 : -22;
+            const maxVinylShift = isMobile ? 40 : 48;
             const maxRotation = 180;
 
             const frameX = easeProgress * maxFrameShift;
@@ -1313,19 +1306,6 @@ document.addEventListener('DOMContentLoaded', () => {
             posterFrame.style.transform = `translateX(${frameX}%)`;
             posterVinyl.style.transform = `translateX(${vinylX}%) rotate(${rotation}deg)`;
             posterVinyl.style.opacity = opacity;
-        }
-
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        wrapper.classList.add('is-revealed');
-                    } else {
-                        wrapper.classList.remove('is-revealed');
-                    }
-                });
-            }, { threshold: 0.2 });
-            observer.observe(stickyTrack);
         }
 
         const schedulePosterUpdate = createFrameScheduler(updatePosterAnimation);
