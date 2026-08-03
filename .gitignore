@@ -8,6 +8,11 @@
 # Scratch files
 scratch/
 
+# Test output and temporary visual audit artifacts
+output/
+.playwright-cli/
+.superpowers/
+
 # Local Node dependencies and upload prototype receipts
 node_modules/
 prototype-data/

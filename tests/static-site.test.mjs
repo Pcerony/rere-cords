@@ -76,7 +76,7 @@ test('submitting a work is the only participation step', () => {
     assert.doesNotMatch(app, /"title-apply"|"lead-apply"|"apply-method-title"|"apply-method-text"/);
 });
 
-test('homepage offers three equally valid participant pathways before record pickup', () => {
+test('homepage offers a clear physical participant flow before record pickup', () => {
     const html = read('index.html');
     const pathwaysIndex = html.indexOf('id="pathways"');
     const posterIndex = html.indexOf('id="poster"');
@@ -85,61 +85,34 @@ test('homepage offers three equally valid participant pathways before record pic
 
     assert.ok(pathwaysIndex >= 0, 'homepage must contain #pathways');
     assert.ok(posterIndex > pathwaysIndex, '#pathways must appear before optional record pickup');
-    assert.match(pathways, /role="tablist"[^>]+aria-labelledby="pathway-heading"/);
-    assert.equal((pathways.match(/data-pathway-tab=/g) || []).length, 3);
-    assert.equal((pathways.match(/role="tabpanel"/g) || []).length, 3);
-    for (const pathway of ['physical', 'record-digital', 'digital-native']) {
-        assert.match(pathways, new RegExp(`data-pathway-tab="${pathway}"`));
-        assert.match(pathways, new RegExp(`id="pathway-panel-${pathway}"`));
-    }
-    assert.doesNotMatch(pathways, /<form\b/i, 'choosing a pathway must not register a participant');
+    assert.match(pathways, /id="pathway-panel-physical"/);
+    assert.doesNotMatch(pathways, /role="tablist"/, 'tablist removed for single physical flow');
+    assert.doesNotMatch(pathways, /data-pathway-tab="digital-native"/);
+    assert.doesNotMatch(pathways, /<form\b/i, 'pathway display must not register a participant');
 });
 
-test('participant pathway interaction is accessible, persistent, and shared with submission', () => {
+test('participant pathway structure is clean and shared with physical submission', () => {
     const html = read('index.html');
     const app = read('app.js');
 
-    assert.equal((html.match(/data-pathway-submission=/g) || []).length, 3);
-    assert.match(html, /data-pathway-context="record-required"/);
-    assert.match(html, /data-pathway-context="record-optional"/);
+    assert.equal((html.match(/data-pathway-submission=/g) || []).length, 1);
+    assert.match(html, /data-pathway-submission="physical"/);
     assert.match(app, /function initParticipantPathways\(\)/);
     assert.match(app, /rere_cords_pathway/);
-    assert.match(app, /aria-selected/);
-    assert.match(app, /case 'ArrowRight':/);
-    assert.match(app, /case 'ArrowLeft':/);
-    assert.match(app, /case 'Home':/);
-    assert.match(app, /case 'End':/);
-    assert.match(app, /panel\.hidden =/);
-    assert.match(app, /submission\.hidden =/);
 });
 
-test('digital-native eligibility stays tied to the RERE-CORDS theme', () => {
-    const app = read('app.js');
-
-    assert.match(app, /无需领取或加工实体唱片/);
-    assert.match(app, /废旧唱片、模拟媒介文化、材料循环或可持续设计/);
-    assert.match(app, /No physical record pickup or processing is required/);
-    assert.match(app, /discarded records, analog-media culture, material circulation, or sustainable design/);
-    assert.match(app, /展示、播放或运行要求/);
-    assert.match(app, /record pickup is optional/i);
-});
-
-test('concept statistics expand into source, SDG 12, and exhibition policy', () => {
+test('concept statistics focus on SDG 12', () => {
     const html = read('index.html');
     const app = read('app.js');
+
     const conceptStart = html.indexOf('id="concept"');
     const conceptEnd = html.indexOf('</section>', conceptStart);
     const concept = html.slice(conceptStart, conceptEnd);
 
-    assert.equal((concept.match(/<details class="stat-item"/g) || []).length, 3);
-    assert.equal((concept.match(/<summary class="stat-summary"/g) || []).length, 3);
-    for (const key of ['stat-records-detail', 'stat-target-detail', 'stat-exhibit-detail']) {
-        assert.match(concept, new RegExp(`data-i18n="${key}"`));
-    }
-    assert.match(app, /从停止经营的老唱片店回收/);
+    assert.equal((concept.match(/class="sdg-block"/g) || []).length, 1);
+    assert.match(concept, /SDG 12/);
+    assert.match(concept, /data-i18n="stat-target-detail"/);
     assert.match(app, /负责任消费和生产/);
-    assert.match(app, /没有评审和筛选环节/);
-    assert.match(app, /凡完成提交的作品均安排展示/);
 });
 
 test('homepage uses the confirmed 2026 collection period, handoff point, and exhibition room', () => {
@@ -150,7 +123,6 @@ test('homepage uses the confirmed 2026 collection period, handoff point, and exh
     assert.match(app, /2026年8月20日（木）〜2026年11月10日（火）/);
     assert.match(app, /7号館2階MEDIA STUDIO部屋前/);
     assert.match(app, /回収ボックス/);
-    assert.match(app, /作品情報[^\n]*PDF/);
     assert.match(app, /多次元棟\s*2階\s*スタジオ201/);
     assert.match(config, /mailto:rerecords2026@gmail\.com/);
     assert.doesNotMatch(app, /2026年5月1日|7月30日|2026年8月10日/);
@@ -177,14 +149,13 @@ test('record pickup methods include the MEDIA STUDIO collection point', () => {
     const methodsEnd = html.indexOf('</section>', methodsStart);
     const methods = html.slice(methodsStart, methodsEnd);
 
-    assert.equal((methods.match(/class="record-method-card"/g) || []).length, 3);
+    assert.equal((methods.match(/class="record-method-card(?:\s|")/g) || []).length, 3);
     const posterIndex = methods.indexOf('data-i18n="method1-title"');
     const pickupIndex = methods.indexOf('data-i18n="method-pickup-title"');
     const purchaseIndex = methods.indexOf('data-i18n="method2-title"');
     assert.ok(posterIndex >= 0 && pickupIndex > posterIndex && purchaseIndex > pickupIndex);
     assert.match(methods, /record-pickup-box-transparent-v1\.png/);
     assert.match(app, /7号馆2楼 MEDIA STUDIO 房间前/);
-    assert.match(app, /数量相对充足/);
     assert.match(app, /7号館2階 MEDIA STUDIO 部屋前/);
 });
 
@@ -234,7 +205,7 @@ test('homepage exposes a complete custom language menu and simplified participan
     assert.doesNotMatch(html.slice(timelineStart, timelineEnd), /入选|评审|颁奖|審査|表彰|Awards?/i);
 });
 
-test('homepage contains safety, advisor, and precise submission guidance', () => {
+test('homepage contains safety, advisor, and physical submission guidance', () => {
     const html = read('index.html');
     const advisorStart = html.indexOf('id="advisors"');
     const zhangIndex = html.indexOf('張 彦芳', advisorStart);
@@ -255,7 +226,6 @@ test('homepage contains safety, advisor, and precise submission guidance', () =>
     assert.doesNotMatch(html, /advisor-index|class="advisor-link"|data-i18n="advisor-profile-link"/);
     assert.ok(statSync(resolve(root, '素材/faculty-zhang-yanfang.jpg')).size > 0);
     assert.ok(statSync(resolve(root, '素材/faculty-melanie-sarantou.jpg')).size > 0);
-    assert.match(html, /data-i18n="submission-digital-requirements"/);
     assert.match(html, /data-i18n="submission-physical-options"/);
 });
 

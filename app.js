@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Sustainable Design Exhibition with Recycled Vinyl Records"
         },
         "hero-description": {
-            "zh": "面向九州大学大桥校区学生、校友及教职工征集创意。可使用活动提供的废旧唱片进行实体或过程创作，也可提交与唱片文化、材料循环及可持续设计直接相关的纯数字作品。",
-            "ja": "九州大学大橋キャンパスの学生・教職員・卒業生を対象に作品を募集します。提供する廃棄レコードを使った実物・プロセス作品に加え、レコード文化、素材循環、サステナブルデザインに直接関係する純デジタル作品も応募できます。",
-            "en": "We invite work from students, alumni, and staff at Kyushu University Ohashi Campus. You may use the supplied discarded records in a physical work or creative process, or submit a fully digital work directly related to record culture, material circulation, or sustainable design."
+            "zh": "面向九州大学艺术工学部与艺术工学府学生征集作品。欢迎使用活动提供的废旧唱片作为素材进行创作。",
+            "ja": "九州大学芸術工学部・芸術工学府の学生を対象に作品を募集します。提供する廃棄レコードを素材として使った作品を募集します。",
+            "en": "We invite work from students of the School of Design and Graduate School of Design at Kyushu University. We welcome your creativity to upcycle discarded records."
         },
         "title-concept": {
             "zh": "企划理念",
@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Project Concept"
         },
         "lead-concept": {
-            "zh": "从实体材料、创作过程或数字想象出发，重新理解废旧唱片及其背后的资源循环问题。",
-            "ja": "実物素材、制作プロセス、デジタルな想像力から、廃棄レコードとその背後にある資源循環を捉え直します。",
-            "en": "Approach discarded records and the questions of material circulation behind them through physical material, creative process, or digital imagination."
+            "zh": "通过废旧黑胶唱片的实体再利用与设计重构，重新探讨资源循环与可持续设计。",
+            "ja": "廃棄レコードの素材再利用とデザイン再構築を通じて、資源循環とサステナブルデザインを考えます。",
+            "en": "Rethinking resource circulation and sustainable design through physical reuse and reconstruction of discarded vinyl records."
         },
         "card1-title": {
             "zh": "材料重构",
@@ -110,14 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Before You Begin"
         },
         "title-pathways": {
-            "zh": "选择你的参与路径",
-            "ja": "参加ルートを選ぶ",
-            "en": "Choose Your Participation Path"
+            "zh": "参与与制作流程",
+            "ja": "参加・制作プロセス",
+            "en": "Participation & Process"
         },
         "lead-pathways": {
-            "zh": "三种方式都属于正式参与，没有主次之分。这里的选择只用于显示对应说明，不会提交或登记任何信息，并且可以随时更改。",
-            "ja": "3つの方法はいずれも正式な参加ルートで、優劣はありません。この選択は該当する案内を表示するためだけのもので、情報の送信や登録は行われず、いつでも変更できます。",
-            "en": "All three routes are equally valid forms of participation. This choice only changes the guidance shown on this page; it sends or registers no information and can be changed at any time."
+            "zh": "从领取废旧唱片到制作实体作品，提交后即可参加成果展示会。",
+            "ja": "廃棄レコードの入手から実物作品の制作・提出まで。提出完了後、成果展示会へ参加できます。",
+            "en": "From obtaining discarded records to crafting a physical work and submitting it for the onsite exhibition."
         },
         "pathway-physical-title": {
             "zh": "实体成品",
@@ -235,24 +235,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "For your selected fully digital path, record pickup is optional: no record is required, so you may proceed directly to making and online submission."
         },
         "pathway-safety-required-note": {
-            "zh": "你当前选择的路径会接触实体唱片，请完整阅读并遵守以下规定。",
-            "ja": "現在選択中のルートでは実物レコードを扱います。以下の規定をすべて読み、遵守してください。",
-            "en": "Your selected path handles physical records. Read and follow all of the rules below."
-        },
-        "pathway-safety-optional-note": {
-            "zh": "纯数字路径如不接触实体唱片，下列PVC加工风险不适用；如制作展示装置或改用实体材料，仍须遵守相应场所与设备规范。",
-            "ja": "純デジタル制作で実物レコードを扱わない場合、以下のPVC加工リスクは適用されません。展示装置や他の実物素材を扱う場合は、該当する施設・機器の規則に従ってください。",
-            "en": "If a fully digital work does not handle a physical record, the PVC-processing risks below do not apply. Any display hardware or other physical material must still follow the relevant workspace and equipment rules."
+            "zh": "请在加工前完整阅读并遵守以下安全规定。",
+            "ja": "加工・制作を行う前に、以下の規定をすべて読み遵守してください。",
+            "en": "Read and follow all of the processing safety rules below."
         },
         "title-poster": {
-            "zh": "需要实体唱片时，如何获得？",
-            "ja": "実物レコードが必要な場合の入手方法",
-            "en": "How to Obtain a Record When You Need One"
+            "zh": "如何获得实体唱片？",
+            "ja": "レコードの入手方法",
+            "en": "How to Obtain a Record"
         },
         "lead-poster": {
-            "zh": "实体成品与“唱片参与的数字成果”需要使用唱片，可从校园海报、集中领取盒获取或自行购买；纯数字作品可跳过本节。",
-            "ja": "実物作品とレコードを使ったデジタル成果ではレコードが必要です。学内ポスター、集中配布ボックスから入手するか、自費で購入してください。純デジタル作品はこのセクションを飛ばせます。",
-            "en": "Physical works and record-based digital outcomes use a record, available from campus posters, the central pickup box, or through self-purchase. Fully digital work can skip this section."
+            "zh": "制作实体作品所需唱片，可从校园海报、集中领取盒获取或自行购买。",
+            "ja": "実物作品の制作に必要なレコードは、学内ポスター、集中配布ボックスから入手するか自費で購入できます。",
+            "en": "Records needed for physical works are available from campus posters, the central pickup box, or through self-purchase."
         },
         "method1-title": {
             "zh": "从校园海报背面取下",
@@ -260,9 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Take from Campus Posters"
         },
         "method1-desc": {
-            "zh": "在九州大学大桥校区内寻找张贴的 RERE-CORDS 活动海报，每张海报背面均附有一张废旧黑胶唱片，可直接取下带走，无需任何手续。",
-            "ja": "九州大学大橋キャンパス内に掲示されている RERE-CORDS のポスターをお探しください。各ポスターの裏面に廃棄レコードが1枚添付されており、手続き不要でそのままお持ち帰りいただけます。",
-            "en": "Look for RERE-CORDS posters displayed across Kyushu University Ohashi Campus. Each poster has a discarded vinyl record attached to its back — simply take it with no paperwork required."
+            "zh": "在九州大学大桥校区内寻找张贴的 RERE-CORDS 活动海报，每张海报背面均附有一张废旧黑胶唱片，可直接取下带走。",
+            "ja": "九州大学大橋キャンパス内に掲示されている RERE-CORDS のポスターをお探しください。各ポスターの裏面に廃棄レコードが1枚添付されており、そのままお持ち帰りいただけます。",
+            "en": "Look for RERE-CORDS posters displayed across Kyushu University Ohashi Campus. Each poster has a discarded vinyl record attached to its back."
         },
         "method1-purpose-note": {
             "zh": "※ 实体唱片只可为与参与本项目直接相关的目的领取。严禁为个人使用而领取实体唱片。",
@@ -285,9 +280,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Use the Central Pickup Box"
         },
         "method-pickup-desc": {
-            "zh": "若海报背面的唱片不足，可前往九州大学大桥校区7号馆2楼 MEDIA STUDIO 房间前的集中领取盒。该处会集中补充唱片，数量相对充足。",
-            "ja": "ポスター裏面のレコードが不足している場合は、九州大学大橋キャンパス7号館2階 MEDIA STUDIO 部屋前の集中配布ボックスをご利用ください。ここにはレコードをまとめて補充するため、比較的多くの枚数を用意しています。",
-            "en": "If records are in short supply behind the posters, visit the central pickup box in front of the MEDIA STUDIO room on 2F of Building 7 at Kyushu University Ohashi Campus. Records are replenished there in one place, so the supply is generally more plentiful."
+            "zh": "若海报背面的唱片不足，可前往九州大学大桥校区7号馆2楼 MEDIA STUDIO 房间前的集中领取盒。",
+            "ja": "ポスター裏面のレコードが不足している場合は、九州大学大橋キャンパス7号館2階 MEDIA STUDIO 部屋前の集中配布ボックスをご利用ください。",
+            "en": "If records are in short supply behind the posters, visit the central pickup box in front of the MEDIA STUDIO room on 2F of Building 7 at Kyushu University Ohashi Campus."
         },
         "method-pickup-note": {
             "zh": "* 请按实际创作需要领取，每件作品使用的唱片总数仍不得超过6张。",
@@ -330,9 +325,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Requirements"
         },
         "lead-requirements": {
-            "zh": "设计类别不限。涉及实体唱片的路径须遵守材料与加工安全规则；纯数字作品须说明与活动主题的明确关系。",
-            "ja": "デザイン分野は問いません。実物レコードを扱うルートでは素材と加工の安全規定を守り、純デジタル作品では企画テーマとの明確な関係を説明してください。",
-            "en": "Design categories are open. Routes involving physical records must follow material and processing safety rules; fully digital work must explain its clear relationship to the project theme."
+            "zh": "设计类别不限。制作实体作品须遵守材料与加工安全规则。",
+            "ja": "デザイン分野は問いません。実物作品の制作では素材と加工の安全規定を守ってください。",
+            "en": "Design categories are open. Creating physical works must follow material and processing safety rules."
         },
         "req-cat-title": {
             "zh": "设计类别",
@@ -340,9 +335,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Design Category"
         },
         "req-cat-text": {
-            "zh": "类别不限。推荐方向：平面设计、产品设计、服务设计、时装，以及聚焦社会议题的设计实践。",
-            "ja": "ジャンル・分野は問いません。推奨分野：グラフィックデザイン、プロダクトデザイン、サービスデザイン、ファッション、社会課題解決に関するデザインなど。",
-            "en": "No category restrictions. Recommended areas: graphic design, product design, service design, fashion, and social issue design."
+            "zh": "类别不限。推荐方向：平面设计、产品设计、服务设计、时装。",
+            "ja": "ジャンル・分野は問いません。推奨分野：グラフィックデザイン、プロダクトデザイン、サービスデザイン、ファッションなど。",
+            "en": "No category restrictions. Recommended areas: graphic design, product design, service design, and fashion."
         },
         "req-limit-title": {
             "zh": "用料上限",
@@ -350,9 +345,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Record Usage Limit"
         },
         "req-limit-text": {
-            "zh": "使用实体唱片的作品最多使用 <strong>6张</strong>。纯数字作品无需领取唱片；多余唱片无需归还。",
-            "ja": "実物レコードを使う作品は最大 <strong>6枚</strong> までです。純デジタル作品はレコードの入手不要で、余ったレコードの返却も必要ありません。",
-            "en": "Work using physical records may use up to <strong>6</strong>. Fully digital work requires no record pickup, and unused records do not need to be returned."
+            "zh": "使用实体唱片的作品最多使用 <strong>6张</strong>。多余唱片无需归还。",
+            "ja": "実物レコードを使う作品は最大 <strong>6枚</strong> までです。余ったレコードの返却は不要です。",
+            "en": "Work using physical records may use up to <strong>6</strong>. Unused records do not need to be returned."
         },
         "req-proc-title": {
             "zh": "加工方法",
@@ -370,9 +365,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Materials"
         },
         "req-sub-text": {
-            "zh": "实体成品线下提交；两类数字成果线上提交。三条路径所需材料不同，请以“提交作品”中的当前路径说明为准。",
-            "ja": "実物作品は対面で、2種類のデジタル成果はオンラインで提出します。必要資料はルートごとに異なるため、下記「作品提出」の選択中ルートを確認してください。",
-            "en": "Submit physical works offline and both digital routes online. Required materials differ by pathway; follow the selected route in Submit Your Work below."
+            "zh": "实体作品请线下投入回收箱；图像、视频等补充资料及参与表可线上或纸质提交。",
+            "ja": "実物作品は学内回収ボックスへ提出してください。画像や動画などの補足資料および参加フォームはオンラインまたは紙で提出できます。",
+            "en": "Submit physical works offline to the collection box; optional supplements and participation forms can be submitted online or in print."
         },
         "req-notice-text": {
             "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。请于11月10日前投入7号馆2层 MEDIA STUDIO 房间前的回收箱。",
@@ -470,9 +465,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submit Your Work"
         },
         "lead-submission": {
-            "zh": "无需提前报名，完成作品提交即视为正式参加。下方会显示你当前所选路径的材料要求；返回上方切换路径即可同步更新。",
-            "ja": "事前申込は不要で、作品の提出完了をもって正式参加となります。現在選択中のルートに必要な資料を下に表示します。上の選択へ戻るといつでも切り替えられます。",
-            "en": "No advance registration is required; completed submission constitutes formal participation. The requirements for your selected path appear below and update whenever you change the choice above."
+            "zh": "无需提前报名，完成作品提交即视为正式参加。请将实体作品投入回收箱并提交参与表。",
+            "ja": "事前申込は不要で、作品の提出完了をもって正式参加となります。実物作品を回収ボックスへ入れ、参加票を提出してください。",
+            "en": "No advance registration is required; completed submission constitutes formal participation. Deliver physical works to the collection box and submit the participation form."
         },
         "submission-digital-title": {
             "zh": "唱片参与的数字成果",
@@ -545,9 +540,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Project Schedule"
         },
         "lead-timeline": {
-            "zh": "所有路径都经过选择方式、制作与提交、线下成果展览。只有使用实体唱片的路径需要领取材料；11月中旬的交流沙龙可选参加。",
-            "ja": "すべてのルートは、方法の選択、制作・提出、対面成果展示へ進みます。素材の入手が必要なのは実物レコードを使うルートだけで、11月中旬の交流サロンは自由参加です。",
-            "en": "Every path moves through choosing a route, making and submitting, and the onsite exhibition. Only paths using physical records require material pickup; the mid-November exchange salon is optional."
+            "zh": "从领取材料、制作与提交到线下成果展览。11月中旬的交流沙龙可选参加。",
+            "ja": "素材の入手、制作・提出から対面成果展示まで。11月中旬の交流サロンは自由参加です。",
+            "en": "From material pickup, making, and submission to the onsite exhibition. The mid-November exchange salon is optional."
         },
         "time-step1": {
             "zh": "2026年8月20日 - 11月10日",
@@ -555,14 +550,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "August 20 - November 10, 2026"
         },
         "title-step1": {
-            "zh": "选择路径、制作与随时提交",
-            "ja": "ルート選択・制作・随時提出",
-            "en": "Choose a Path, Make, and Submit"
+            "zh": "领取材料、制作与随时提交",
+            "ja": "素材入手・制作・随時提出",
+            "en": "Obtain Materials, Make, and Submit"
         },
         "text-step1": {
-            "zh": "先选择参与路径。实体成品和唱片参与的数字成果需要取得唱片；纯数字作品可直接开始制作。期间随时接受提交，最终截止为11月10日。",
-            "ja": "まず参加ルートを選びます。実物作品とレコードを使ったデジタル成果はレコードを入手し、純デジタル作品はそのまま制作を始められます。期間中は随時提出でき、最終締切は11月10日です。",
-            "en": "Choose a participation path first. Physical work and record-based digital outcomes require a record; fully digital work can begin directly. Submissions are accepted throughout the period until November 10."
+            "zh": "领取活动唱片或自行准备废旧唱片并开展制作。期间随时接受提交，最终截止时间为11月10日。",
+            "ja": "配布レコードを受け取るか自分で用意し、制作を行います。期間中は随時提出でき、最終締切は11月10日です。",
+            "en": "Obtain supplied records or source discarded records yourself to begin making. Submissions are accepted throughout the period until November 10."
         },
         "timeline-optional-badge": {
             "zh": "可选参加",
@@ -595,9 +590,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Exhibition"
         },
         "text-step3": {
-            "zh": "三条路径的提交作品均可进入线下成果展；数字作品将依据提交的展示、播放或运行要求协调呈现方式。",
-            "ja": "3つのルートで提出された作品はいずれも対面成果展示の対象です。デジタル作品は、提出された展示・再生・実行条件に基づいて提示方法を調整します。",
-            "en": "Submitted work from all three pathways is eligible for the onsite exhibition. Digital work will be presented according to the submitted display, playback, or execution requirements."
+            "zh": "提交的实体作品将在九州大学大桥校区多次元楼 2F 成果展示会中公开展出。",
+            "ja": "提出された実物作品は、九州大学大橋キャンパス多次元棟2階の成果展示会で公開発表されます。",
+            "en": "Submitted physical works will be publicly exhibited at the 2F Studio exhibition at Kyushu University Ohashi Campus."
         },
         "title-advisors": {
             "zh": "指导教师",
@@ -608,6 +603,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "九州大学大学院艺术工学研究院战略设计部门",
             "ja": "九州大学大学院芸術工学研究院 ストラテジックデザイン部門",
             "en": "Department of Strategic Design, Faculty of Design, Kyushu University"
+        },
+        "advisor-profile-btn": {
+            "zh": "研究者 Profile",
+            "ja": "教員プロフィール",
+            "en": "Faculty Profile"
         },
         "advisor-zhang-name": {
             "zh": "張 彦芳",
@@ -648,6 +648,21 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "RERE-CORDS 活动运营方 · 如有任何疑问，欢迎随时联络我们",
             "ja": "RERE-CORDS 運営事務局 · ご不明な点がございましたら、いつでもお気軽にご連絡ください",
             "en": "RERE-CORDS Organizers · Have a question? Feel free to reach us anytime"
+        },
+        "instagram-follow-label": {
+            "zh": "获取最新消息：关注官方 Instagram",
+            "ja": "最新情報はこちら：公式 Instagram",
+            "en": "Get the latest updates: Follow official Instagram"
+        },
+        "instagram-qr-hint": {
+            "zh": "扫一扫关注 @rerecords20262026",
+            "ja": "スキャンして公式 Instagram をフォロー",
+            "en": "Scan to follow @rerecords20262026"
+        },
+        "instagram-expand-hint": {
+            "zh": "[点击展开二维码 ↓]",
+            "ja": "[QRコードを表示 ↓]",
+            "en": "[Click to view QR code ↓]"
         },
         "title-venue": {
             "zh": "成果展览信息",
@@ -735,7 +750,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "doc-title": "RERE-CORDS | Käytöstä poistettujen vinyylilevyjen kestävän muotoilun näyttely",
         "sdg-badge-text": "Vastuullista kuluttamista ja tuotantoa",
         "hero-subtitle": "Kestävän muotoilun näyttely kierrätetyistä vinyylilevyistä",
-        "hero-description": "Kutsumme Kyushun yliopiston Ohashin kampuksen opiskelijat, alumnit ja henkilökunnan osallistumaan. Voit käyttää projektin tarjoamia poistolevyjä fyysisessä työssä tai prosessissa tai toimittaa täysin digitaalisen työn, joka liittyy suoraan levykulttuuriin, materiaalikiertoon tai kestävään muotoiluun.",
+        "hero-description": "Kutsumme Kyushun yliopiston muotoilutieteiden tiedekunnan ja tutkijakoulun opiskelijat osallistumaan. Kutsumme töitä, joissa käytetään tarjottuja poistolevyjä materiaalina.",
         "title-concept": "Projektin idea",
         "lead-concept": "Tarkastelemme poistolevyjä ja niiden taustalla olevaa materiaalikiertoa fyysisen materiaalin, luovan prosessin tai digitaalisen mielikuvituksen kautta.",
         "details-title": "Materiaalikierto ja kestävä muotoilu",
@@ -774,15 +789,15 @@ document.addEventListener('DOMContentLoaded', () => {
         "pathway-record-optional-note": "Täysin digitaalisessa työssä levyn nouto on vapaaehtoista: levyä ei tarvita, joten voit siirtyä suoraan tekemiseen ja verkkotoimitukseen.",
         "pathway-safety-required-note": "Valitsemasi reitti käsittelee fyysisiä levyjä. Lue kaikki alla olevat säännöt ja noudata niitä.",
         "pathway-safety-optional-note": "Jos täysin digitaalinen työ ei käsittele fyysistä levyä, alla olevat PVC-työstön riskit eivät koske sitä. Näyttölaitteiden ja muiden fyysisten materiaalien kanssa on silti noudatettava työtilan ja laitteiden sääntöjä.",
-        "title-poster": "Miten saat levyn, kun tarvitset sellaisen?",
+        "title-poster": "Miten saat levyn?",
         "lead-poster": "Fyysinen työ ja levyä hyödyntävä digitaalinen tulos käyttävät levyä, jonka voi ottaa kampuksen julisteesta tai keskitetystä jakelulaatikosta tai hankkia itse. Täysin digitaalinen työ voi ohittaa tämän osion.",
         "method1-title": "Ota levy kampuksen julisteesta",
-        "method1-desc": "Etsi RERE-CORDS-juliste Kyushun yliopiston Ohashin kampukselta. Jokaisen julisteen taakse on kiinnitetty yksi käytöstä poistettu vinyylilevy, jonka voit ottaa ilman erillistä ilmoittautumista.",
+        "method1-desc": "Etsi RERE-CORDS-juliste Kyushun yliopiston Ohashin kampukselta. Jokaisen julisteen taakse on kiinnitetty yksi käytöstä poistettu vinyylilevy, jonka voit ottaa.",
         "method1-purpose-note": "※ Analogisia levyjä saa ottaa vain tähän projektiin osallistumiseen suoraan liittyvää tarkoitusta varten. Levyjen ottaminen henkilökohtaiseen käyttöön on ehdottomasti kielletty.",
         "method1-note1": "※ Jos julisteen takana ei ole riittävästi levyjä, tarkista toinen juliste tai käytä keskitettyä jakelulaatikkoa.",
         "method1-note2": "※ Julisteiden sijainnit ja levyjen täydennysaikataulu julkaistaan, kun kampanjan julisteet on asetettu esille.",
         "method-pickup-title": "Nouda keskitetystä jakelulaatikosta",
-        "method-pickup-desc": "Jos julisteiden takana olevia levyjä ei ole riittävästi, käytä keskitettyä jakelulaatikkoa Kyushun yliopiston Ohashin kampuksen rakennuksen 7 toisessa kerroksessa MEDIA STUDIO -huoneen edessä. Levyjä täydennetään sinne keskitetysti, joten niitä on yleensä paremmin saatavilla.",
+        "method-pickup-desc": "Jos julisteiden takana olevia levyjä ei ole riittävästi, käytä keskitettyä jakelulaatikkoa Kyushun yliopiston Ohashin kampuksen rakennuksen 7 toisessa kerroksessa MEDIA STUDIO -huoneen edessä.",
         "method-pickup-note": "※ Ota vain työssäsi tarvitsemasi määrä. Yhdessä työssä saa edelleen käyttää enintään kuutta levyä.",
         "method2-title": "Hanki levy itse",
         "method2-desc": "Voit myös ostaa käytöstä poistetun vinyylilevyn omalla kustannuksellasi käytetyn musiikin liikkeestä tai verkkopalvelusta.",
@@ -791,7 +806,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "title-requirements": "Työn vaatimukset",
         "lead-requirements": "Muotoilun ala on vapaa. Fyysisiä levyjä käyttävien reittien on noudatettava materiaalien ja työstämisen turvallisuussääntöjä; täysin digitaalisen työn on selitettävä selkeä suhteensa projektin teemaan.",
         "req-cat-title": "Muotoilun ala",
-        "req-cat-text": "Alarajoituksia ei ole. Mahdollisia aloja ovat graafinen, tuote-, palvelu- ja muotisuunnittelu sekä yhteiskunnallisiin kysymyksiin keskittyvä muotoilu.",
+        "req-cat-text": "Alarajoituksia ei ole. Mahdollisia aloja ovat graafinen, tuote-, palvelu- ja muotisuunnittelu.",
         "req-limit-title": "Levyjen enimmäismäärä",
         "req-limit-text": "Fyysisiä levyjä käyttävässä työssä saa käyttää enintään <strong>6</strong> levyä. Täysin digitaalinen työ ei vaadi levyn noutoa, eikä käyttämättömiä levyjä tarvitse palauttaa.",
         "req-proc-title": "Työstötavat",
@@ -828,6 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "text-step3": "Kaikkien kolmen reitin kautta toimitetut työt voivat osallistua paikan päällä järjestettävään näyttelyyn. Digitaaliset työt esitetään toimitettujen näyttö-, toisto- tai suoritusvaatimusten mukaisesti.",
         "title-advisors": "Ohjaavat opettajat",
         "lead-advisors": "Strategisen muotoilun osasto, Faculty of Design, Kyushun yliopisto",
+        "advisor-profile-btn": "Tutkijan profiili",
         "advisor-zhang-name": "ZHANG Yanfang",
         "advisor-zhang-role": "Apulaisprofessori · universaali muotoilu, sosiaalinen muotoilu",
         "advisor-zhang-bio": "Hänen tutkimuksensa ja käytännön työnsä keskittyvät universaaliin ja sosiaaliseen muotoiluun ketään unohtamatta. Design for SDGs- ja Global Goals Jam -työpajojen kautta hän yhdistää hallintoa, yliopistoja, yrityksiä, järjestöjä ja yhteisöjä etsimään muotoiluratkaisuja yhteiskunnallisiin haasteisiin.",
@@ -868,7 +884,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "transit-note-title": "Pysäköinti",
         "transit-note-text": "Kampuksella ei ole vieraspysäköintiä. Saavu julkisilla liikennevälineillä.",
         "footer-desc": "Käytöstä poistettuja vinyylilevyjä hyödyntävä kestävän muotoilun haku- ja näyttelyprojekti",
-        "footer-contact-label": "RERE-CORDS-järjestäjät · Kysyttävää? Ota meihin yhteyttä"
+        "footer-contact-label": "RERE-CORDS-järjestäjät · Kysyttävää? Ota meihin yhteyttä",
+        "instagram-follow-label": "Uusimmat tiedot: Seuraa virallista Instagramia",
+        "instagram-qr-hint": "Skannaa ja seuraa @rerecords20262026",
+        "instagram-expand-hint": "[Näytä QR-koodi ↓]"
     };
 
     Object.entries(fiTranslations).forEach(([key, value]) => {
