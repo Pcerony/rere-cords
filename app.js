@@ -355,9 +355,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Processing Techniques"
         },
         "req-proc-text": {
-            "zh": "可采用裁切、弯曲、拼接或与其他材料组合等方法，但必须遵守下方安全规范。涉及加热、打磨或电动工具时，仅可在获准并具备相应安全条件的场所进行。",
-            "ja": "切断、曲げ、接合、他素材との組み合わせなどが可能ですが、下記の安全規定を必ず守ってください。加熱、研磨、電動工具を伴う作業は、許可され必要な安全設備を備えた場所でのみ行えます。",
-            "en": "You may cut, bend, join, or combine records with other materials, but the safety rules below are mandatory. Heating, sanding, or power-tool work is allowed only in an authorized space with suitable safety controls."
+            "zh": "可采用裁切、弯曲、拼接或与其他材料组合等方法，但必须遵守下方安全规范。涉及加热、打磨或电动工具时，仅可在获准并具备相应安全条件的场所进行。产生的废料请按照地方自治体规定的处理方式妥善废弃。",
+            "ja": "切断、曲げ、接合、他素材との組み合わせなどが可能ですが、下記の安全規定を必ず守ってください。加熱、研磨、電動工具を伴う作業は、許可され必要な安全設備を備えた場所でのみ行えます。自治体の定めた処分方法にて適切に廃棄してください。",
+            "en": "You may cut, bend, join, or combine records with other materials, but the safety rules below are mandatory. Heating, sanding, or power-tool work is allowed only in an authorized space with suitable safety controls. Please dispose of waste materials properly in accordance with the disposal regulations specified by the local municipality."
         },
         "req-sub-title": {
             "zh": "提交内容",
@@ -405,9 +405,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Heat, Fumes, and Burns"
         },
         "safety-heat-text": {
-            "zh": "PVC过热或分解时会产生刺激性烟气。不得使用明火或无控温设备，仅可在获准且具有效通风或局部排风的场所低温、短时加工，并防止接触高温表面。",
-            "ja": "PVCは過熱・分解すると刺激性のヒュームを発生します。裸火や温度制御できない器具は使用せず、許可された有効な換気・局所排気設備のある場所で、低温かつ短時間のみ加工し、高温面への接触を避けてください。",
-            "en": "Overheated or degrading PVC can release irritating fumes. Never use an open flame or uncontrolled heat; use only low, brief heat in an authorized workspace with effective ventilation or local exhaust, and avoid hot surfaces."
+            "zh": "PVC过热或燃烧会热分解产生氯化氢等有毒气体。严禁明火炙烤或高温干烧；唱片热弯曲仅许采用60°C~80°C温水低温软化法，需保持良好换气通风并佩戴防热手套防烫伤。",
+            "ja": "PVCの過熱・燃焼は塩化水素等の有毒ガスを発生させます。直火や高温熱風による炙りは絶対禁止です。曲げ加工には換気の良い場所で『60°C〜80°Cの温水軟化法』のみ許容し、火傷に注意してください。",
+            "en": "Overheating or burning PVC releases toxic hydrogen chloride gas. Never use open flames or dry heat; for bending, use only low-temp warm water softening (60°C–80°C) in well-ventilated areas and guard against burns."
         },
         "safety-tool-title": {
             "zh": "工具、粉尘与用电",
@@ -415,9 +415,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Tools, Dust, and Electricity"
         },
         "safety-tool-text": {
-            "zh": "钻孔、锯切和打磨可能产生粉尘、缠卷、飞溅、噪声或触电风险。仅使用受过培训且获准操作的设备，并按工具和场所要求采取集尘、听力及呼吸防护。",
-            "ja": "穴あけ、切断、研磨には、粉じん、巻き込まれ、飛散、騒音、感電の危険があります。訓練を受け、使用許可のある設備のみを使い、工具と施設の規則に従って集じん、聴覚、呼吸用保護具を使用してください。",
-            "en": "Drilling, sawing, and sanding can create dust, entanglement, projectiles, noise, or electrical hazards. Use only equipment you are trained and authorized to operate, with dust extraction, hearing, and respiratory protection as required."
+            "zh": "钻孔、锯切和打磨可能产生粉尘、缠卷、飞溅、噪声或触电风险。打磨钻孔时务必佩戴防尘口罩与护目镜，粉尘不得随意吹散，需及时清理工作现场以防粉尘扩散吸入。",
+            "ja": "穴あけ、切断、研磨には粉じん、巻き込まれ、飛散、騒音等の危険があります。作業時は必ず防塵マスク・保護ゴーグルを着用し、粉じんを飛散させず速やかに清掃を行ってください。",
+            "en": "Drilling, sawing, and sanding create dust, entanglement, projectiles, noise, or electrical hazards. Wear dust masks and goggles when sanding/drilling, and clean up dust promptly without dispersing it."
         },
         "safety-chemical-title": {
             "zh": "胶黏剂与混合材料",
@@ -435,9 +435,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Prohibited"
         },
         "safety-prohibited-text": {
-            "zh": "禁止燃烧唱片、明火加热、激光切割PVC，以及在密闭或通风不足的空间内加热。未经许可与培训，不得使用电动工具或校园工坊设备。",
-            "ja": "レコードの燃焼、裸火による加熱、PVCのレーザー加工、密閉または換気不足の空間での加熱は禁止です。許可と訓練なしに電動工具や学内工房設備を使用しないでください。",
-            "en": "Do not burn records, heat them with an open flame, laser-cut PVC, or heat it in an enclosed or poorly ventilated space. Do not use power tools or campus workshop equipment without authorization and training."
+            "zh": "严禁燃烧唱片、明火炙烤、激光切割PVC（释放有毒氯气）及密闭空间加热。未受相应安全培训禁止使用电动工具；如参加者决定使用校内工坊，须自行办理预约并遵守设施规约，责任自负。",
+            "ja": "レコードの燃焼、直火加熱、PVCのレーザー加工（有毒塩素ガス発生）、密閉空間での加熱を固く禁じます。未訓練での電動工具使用は禁止です。学内工房を使用する場合は参加者個人が予約を行い規約を遵守してください。",
+            "en": "Do not burn records, heat them with open flames, laser-cut PVC (releases toxic chlorine gas), or heat in enclosed spaces. Do not use power tools without training. If choosing to use campus workshops, reserve independently and obey facility rules."
         },
         "safety-stop-title": {
             "zh": "异常时立即停止",
@@ -808,11 +808,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "req-cat-title": "Muotoilun ala",
         "req-cat-text": "Alarajoituksia ei ole. Mahdollisia aloja ovat graafinen, tuote-, palvelu- ja muotisuunnittelu.",
         "req-limit-title": "Levyjen enimmäismäärä",
-        "req-limit-text": "Fyysisiä levyjä käyttävässä työssä saa käyttää enintään <strong>6</strong> levyä. Täysin digitaalinen työ ei vaadi levyn noutoa, eikä käyttämättömiä levyjä tarvitse palauttaa.",
+        "req-limit-text": "Fyysisiä levyjä käyttävässä työssä saa käyttää enintään <strong>6</strong> levyä. Käyttämättömiä levyjä ei tarvitse palauttaa.",
         "req-proc-title": "Työstötavat",
-        "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset.",
+        "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset. Hävitä syntyvät jätteet asianmukaisesti paikallisten viranomaismääräysten mukaisesti.",
         "req-sub-title": "Toimitettava aineisto",
-        "req-sub-text": "Toimita fyysinen työ paikan päällä ja molemmat digitaaliset reitit verkossa. Vaaditut aineistot vaihtelevat reitin mukaan; noudata alla olevan toimitusosion valittua reittiä.",
+        "req-sub-text": "Toimita fyysinen työ kierrätyslaatikkoon paikan päällä. Täydentävät aineistot, kuten kuvat ja videot, sekä osallistumislomake voidaan toimittaa verkossa tai paperilla.",
         "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Jätä työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon 10. marraskuuta mennessä.",
         "safety-kicker": "Lue ennen työskentelyä",
         "title-safety": "Työstämisen turvallisuus",
