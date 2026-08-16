@@ -355,9 +355,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Processing Techniques"
         },
         "req-proc-text": {
-            "zh": "可采用裁切、弯曲、拼接或与其他材料组合等方法，但必须遵守下方安全规范。涉及加热、打磨或电动工具时，仅可在获准并具备相应安全条件的场所进行。产生的废料请按照地方自治体规定的处理方式妥善废弃。",
-            "ja": "切断、曲げ、接合、他素材との組み合わせなどが可能ですが、下記の安全規定を必ず守ってください。加熱、研磨、電動工具を伴う作業は、許可され必要な安全設備を備えた場所でのみ行えます。自治体の定めた処分方法にて適切に廃棄してください。",
-            "en": "You may cut, bend, join, or combine records with other materials, but the safety rules below are mandatory. Heating, sanding, or power-tool work is allowed only in an authorized space with suitable safety controls. Please dispose of waste materials properly in accordance with the disposal regulations specified by the local municipality."
+            "zh": "可采用裁切、弯曲、拼接或与其他材料组合等方法，但必须遵守下方安全规范。涉及加热、打磨或电动工具时，仅可在获准并具备相应安全条件的场所进行。",
+            "ja": "切断、曲げ、接合、他素材との組み合わせなどが可能ですが、下記の安全規定を必ず守ってください。加熱、研磨、電動工具を伴う作業は、許可され必要な安全設備を備えた場所でのみ行えます。",
+            "en": "You may cut, bend, join, or combine records with other materials, but the safety rules below are mandatory. Heating, sanding, or power-tool work is allowed only in an authorized space with suitable safety controls."
         },
         "req-sub-title": {
             "zh": "提交内容",
@@ -370,9 +370,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submit physical works offline to the collection box; optional supplements and participation forms can be submitted online or in print."
         },
         "req-notice-text": {
-            "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。请于11月10日前投入7号馆2层 MEDIA STUDIO 房间前的回收箱。",
-            "ja": "完成した実物作品は大切に保管し、運搬前に鋭利な縁や不安定な部品を安全な状態にしてください。11月10日までに7号館2階MEDIA STUDIO部屋前の回収ボックスへ提出してください。",
-            "en": "Store finished physical works safely and secure sharp edges or unstable parts before transport. Place them in the collection box in front of MEDIA STUDIO on 2F of Building 7 by November 10."
+            "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。产生的废料请按照地方自治体规定的处理方式妥善废弃。请于11月10日前投入7号馆2层 MEDIA STUDIO 房间前的回收箱。",
+            "ja": "完成した実物作品は大切に保管し、運搬前に鋭利な縁や不安定な部品を安全な状態にしてください。発生した端材やごみは自治体の定めた処分方法にて適切に廃棄してください。11月10日までに7号館2階MEDIA STUDIO部屋前の回収ボックスへ提出してください。",
+            "en": "Store finished physical works safely and secure sharp edges or unstable parts before transport. Please dispose of waste materials properly in accordance with the disposal regulations specified by the local municipality. Place them in the collection box in front of MEDIA STUDIO on 2F of Building 7 by November 10."
         },
         "safety-kicker": {
             "zh": "制作前请阅读",
@@ -810,10 +810,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "req-limit-title": "Levyjen enimmäismäärä",
         "req-limit-text": "Fyysisiä levyjä käyttävässä työssä saa käyttää enintään <strong>6</strong> levyä. Käyttämättömiä levyjä ei tarvitse palauttaa.",
         "req-proc-title": "Työstötavat",
-        "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset. Hävitä syntyvät jätteet asianmukaisesti paikallisten viranomaismääräysten mukaisesti.",
+        "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset.",
         "req-sub-title": "Toimitettava aineisto",
         "req-sub-text": "Toimita fyysinen työ kierrätyslaatikkoon paikan päällä. Täydentävät aineistot, kuten kuvat ja videot, sekä osallistumislomake voidaan toimittaa verkossa tai paperilla.",
-        "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Jätä työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon 10. marraskuuta mennessä.",
+        "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Hävitä syntyvät jätteet asianmukaisesti paikallisten viranomaismääräysten mukaisesti. Jätä työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon 10. marraskuuta mennessä.",
         "safety-kicker": "Lue ennen työskentelyä",
         "title-safety": "Työstämisen turvallisuus",
         "lead-safety": "Käytöstä poistettujen levyjen päämateriaali on yleensä PVC. Leikkaaminen, kuumentaminen, hiominen, poraaminen ja liimaaminen voivat aiheuttaa vammoja tai haitallista altistumista. Arvioi menetelmän, materiaalin ja työtilan turvallisuus ennen aloittamista.",
