@@ -48,6 +48,25 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Desktop display scaling optimizations for clear readability */
+@media (min-width: 1024px) {
+    html {
+        font-size: 17.5px;
+    }
+}
+
+@media (min-width: 1366px) {
+    html {
+        font-size: 18.5px;
+    }
+}
+
+@media (min-width: 1600px) {
+    html {
+        font-size: 19.5px;
+    }
+}
+
 body {
     overflow-x: hidden;
     position: relative;
@@ -496,9 +515,15 @@ section {
 #venue { background-color: var(--color-bg-base); }
 
 .section-container {
-    max-width: 800px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 0 2rem;
+}
+
+@media (min-width: 1200px) {
+    .section-container {
+        max-width: 960px;
+    }
 }
 
 .section-header {
