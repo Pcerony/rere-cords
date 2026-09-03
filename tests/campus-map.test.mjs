@@ -76,7 +76,7 @@ test('the map shows one selected-location photo as a floating overlay', () => {
     const app = read('app.js');
     const styles = read('styles.css');
 
-    assert.match(html, /data-i18n="map-title">唱片领取点 V 地图/);
+    assert.match(html, /data-i18n="map-title">唱片领取点地图/);
     assert.doesNotMatch(html, /class="campus-map-badge"/);
     assert.doesNotMatch(html, /class="campus-map-lead"/);
     assert.match(html, /id="map-photo-panel"[^>]*hidden/);

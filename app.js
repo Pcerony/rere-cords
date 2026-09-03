@@ -752,11 +752,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "fi": "Interaktiivinen 3D-kampuskartta"
         },
         "map-title": {
-            "zh": "唱片领取点 V 地图",
-            "ja": "レコード配布ポイント V マップ",
-            "en": "Record Pickup Points V Map",
-            "zh-TW": "唱片領取點 V 地圖",
-            "fi": "Levyjen noutopisteet V -kartta"
+            "zh": "唱片领取点地图",
+            "ja": "レコード配布ポイントマップ",
+            "en": "Record Pickup Points Map",
+            "zh-TW": "唱片領取點地圖",
+            "fi": "Levyjen noutopisteiden kartta"
         },
         "map-lead": {
             "zh": "大桥校区的海报张贴、唱片领取与成果展点位，以建筑白模与右侧详情对应呈现。",
