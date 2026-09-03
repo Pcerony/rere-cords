@@ -743,6 +743,125 @@ document.addEventListener('DOMContentLoaded', () => {
             "zh": "注",
             "ja": "注",
             "en": "Note"
+        },
+        "map-badge": {
+            "zh": "3D 校园互动导航",
+            "ja": "3D キャンパスマップ",
+            "en": "3D Campus Map",
+            "zh-TW": "3D 校園互動導航",
+            "fi": "Interaktiivinen 3D-kampuskartta"
+        },
+        "map-title": {
+            "zh": "唱片领取点 V 地图",
+            "ja": "レコード配布ポイント V マップ",
+            "en": "Record Pickup Points V Map",
+            "zh-TW": "唱片領取點 V 地圖",
+            "fi": "Levyjen noutopisteet V -kartta"
+        },
+        "map-lead": {
+            "zh": "大桥校区的海报张贴、唱片领取与成果展点位，以建筑白模与右侧详情对应呈现。",
+            "ja": "大橋キャンパスのポスター掲示・レコード配布・成果展示の地点を、建物モデルと右側の詳細で示します。",
+            "en": "Poster, record pickup, and exhibition locations across Ohashi Campus, paired with the white model and location details.",
+            "zh-TW": "大橋校區的海報張貼、唱片領取與成果展點位，以建築白模與右側詳情對應呈現。",
+            "fi": "Ohashin kampuksen juliste-, levynouto- ja näyttelypaikat yhdistyvät valkoiseen malliin ja sijaintitietoihin."
+        },
+        "map-loading": {
+            "zh": "加载 3D 校园白模中...",
+            "ja": "3Dキャンパスマップを読み込み中...",
+            "en": "Loading 3D Campus Model...",
+            "zh-TW": "載入 3D 校園白模中...",
+            "fi": "Ladataan 3D-mallia..."
+        },
+        "map-reset-view": {
+            "zh": "全景",
+            "ja": "全景",
+            "en": "Overview",
+            "zh-TW": "全景",
+            "fi": "Yleisnäkymä"
+        },
+        "map-exhibition-view": {
+            "zh": "展览 · 多次元",
+            "ja": "展示 · 多次元デザイン実験棟",
+            "en": "Exhibition · Multi-Dimensional Design Experimental Building",
+            "zh-TW": "展覽 · 多次元",
+            "fi": "Näyttely · Moniulotteisen suunnittelun kokeilurakennus"
+        },
+        "map-hint": {
+            "zh": "建筑标记与右侧详情相互对应",
+            "ja": "建物マーカーと右側の詳細が対応しています",
+            "en": "Building markers correspond to the location details",
+            "zh-TW": "建築標記與右側詳情相互對應",
+            "fi": "Rakennusmerkit vastaavat sijaintitietoja"
+        },
+        "loc-all": {
+            "zh": "全景 (All)",
+            "ja": "全体 (All)",
+            "en": "Overview (All)",
+            "zh-TW": "全景 (All)",
+            "fi": "Yleiskuva"
+        },
+        "loc-bldg7-hub": {
+            "zh": "7号馆 2F (集中领取/工具/回收)",
+            "ja": "7号館 2F (集中配布・工具貸出・回収)",
+            "en": "Bldg 7, 2F (Central Hub)",
+            "zh-TW": "7號館 2F (集中領取/工具/回收)",
+            "fi": "Rakennus 7, 2. krs (Päänoutopiste)"
+        },
+        "loc-bldg1": {
+            "zh": "1号馆 2F 掲示板",
+            "ja": "1号館 2F 掲示板",
+            "en": "Bldg 1, 2F Board",
+            "zh-TW": "1號館 2F 佈告欄",
+            "fi": "Rakennus 1, 2. krs"
+        },
+        "loc-bldg2": {
+            "zh": "2号馆 2F 掲示板",
+            "ja": "2号館 2F 掲示板",
+            "en": "Bldg 2, 2F Board",
+            "zh-TW": "2號館 2F 佈告欄",
+            "fi": "Rakennus 2, 2. krs"
+        },
+        "loc-bldg5": {
+            "zh": "5号馆 1F 掲示板",
+            "ja": "5号館 1F 掲示板",
+            "en": "Bldg 5, 1F Board",
+            "zh-TW": "5號館 1F 佈告欄",
+            "fi": "Rakennus 5, 1. krs"
+        },
+        "loc-bldg7-1f": {
+            "zh": "7号馆 1F 掲示板",
+            "ja": "7号館 1F 掲示板",
+            "en": "Bldg 7, 1F Board",
+            "zh-TW": "7號館 1F 佈告欄",
+            "fi": "Rakennus 7, 1. krs"
+        },
+        "loc-library": {
+            "zh": "图书馆 1F 掲示板",
+            "ja": "図書館 1F 掲示板",
+            "en": "Library 1F Board",
+            "zh-TW": "圖書館 1F 佈告欄",
+            "fi": "Kirjasto 1. krs"
+        },
+        "loc-bldg8": {
+            "zh": "多次元 · 展览",
+            "ja": "多次元 · 展示",
+            "en": "Multi-Dimensional · Exhibition",
+            "zh-TW": "多次元 · 展覽",
+            "fi": "Moniulotteinen · Näyttely"
+        },
+        "map-meta-floor-label": {
+            "zh": "具体楼层：",
+            "ja": "設置階：",
+            "en": "Floor:",
+            "zh-TW": "具體樓層：",
+            "fi": "Kerros:"
+        },
+        "map-meta-items-label": {
+            "zh": "现场提供：",
+            "ja": "提供備品・素材：",
+            "en": "Available Items:",
+            "zh-TW": "現場提供：",
+            "fi": "Saatavilla:"
         }
     };
 
@@ -966,6 +1085,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (activeOption && currentFlag && currentName) {
             currentFlag.textContent = activeOption.querySelector('.language-option-flag')?.textContent || '';
             currentName.textContent = activeOption.querySelector('span:last-child')?.textContent || currentLang;
+        }
+
+        if (typeof window.updateMapLanguageDetails === 'function') {
+            window.updateMapLanguageDetails(currentLang);
         }
     }
 
@@ -1352,4 +1475,880 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initPosterLightbox();
+
+    /* --------------------------------------------------------------------------
+       7. Interactive 2.5D Campus Site Plan (Three.js)
+       -------------------------------------------------------------------------- */
+    const CAMPUS_LOCATIONS = {
+        "all": {
+            tag: { zh: "🌐 校区全貌", ja: "🌐 キャンパス全景", en: "🌐 Campus Overview", 'zh-TW': "🌐 校區全貌", fi: "🌐 Kampuksen yleisnäkymä" },
+            tagType: "default",
+            title: { zh: "九州大学 大桥校区 (大橋キャンパス)", ja: "九州大学 大橋キャンパス", en: "Kyushu University Ohashi Campus", 'zh-TW': "九州大學 大橋校區", fi: "Kyushun yliopisto, Ohashin kampus" },
+            desc: {
+                zh: "大桥校区内共设有 6 处海报张贴点与黑胶唱片领取点。7号馆 2 楼设有集中领取箱、安全工具免费借用处及作品回收箱；多次元设计实验栋 2 楼为 11 月成果展与沙龙会场。",
+                ja: "大橋キャンパス内に計6箇所のポスター掲示・レコード配布スポットを設置しています。7号館2階には集中配布BOX・安全具無料レンタル・作品回収BOXが備わっており、多次元デザイン実験棟2階は11月の成果展会場です。",
+                en: "A total of 6 poster and record pickup spots are located across Ohashi Campus. Building 7 2F serves as the central hub with safety tool loans and submission boxes, while the Multi-Dimensional Design Experimental Building 2F hosts the November exhibition.",
+                'zh-TW': "大橋校區內共設有 6 處海報張貼點與黑膠唱片領取點。7號館 2 樓設有集中領取箱、安全工具免費借用處及作品回收箱；多次元設計實驗棟 2 樓為 11 月成果展與沙龍會場。",
+                fi: "Ohashin kampuksella on 6 juliste- ja vinyylinnoutopistettä. Rakennuksen 7 toinen kerros toimii pääkeskuksena (työkalulainaus ja palautuslaatikko), ja Moniulotteisen suunnittelun kokeilurakennuksen toisessa kerroksessa järjestetään marraskuun näyttely."
+            },
+            floor: { zh: "大桥校区全域", ja: "キャンパス各棟", en: "Campus-wide", 'zh-TW': "大橋校區全域", fi: "Koko kampus" },
+            items: { zh: "宣传海报 · 实体EP唱片 · 安全指南腰封 · 集中发放点 · 工具借用", ja: "公式ポスター · EPレコード実物 · 安全指南帯 · 集中配布BOX · 工具レンタル", en: "Official Posters · Vinyl Records · Safety Obi Band · Central Pickup Box · Safety Tools", 'zh-TW': "宣傳海報 · 實體EP唱片 · 安全指南腰封 · 集中發放點 · 工具借用", fi: "Julisteet · Vinyylilevyt · Turvallisuusnauha · Noutolaatikko · Työkalulainaus" },
+        },
+        "bldg-7-hub": {
+            tag: { zh: "🌟 核心物资与服务枢纽", ja: "🌟 総合拠点・集中配布＆安全具貸出", en: "🌟 Primary Hub & Safety Loan", 'zh-TW': "🌟 核心物資與服務樞紐", fi: "🌟 Päänoutopiste & Työkalulainaus" },
+            tagType: "badge-hub",
+            title: { zh: "7号馆 2F MEDIA STUDIO 房间前", ja: "7号館 2F MEDIA STUDIO 部屋前", en: "Building 7, 2F (In front of MEDIA STUDIO)", 'zh-TW': "7號館 2F MEDIA STUDIO 房間前", fi: "Rakennus 7, 2. krs (MEDIA STUDIO)" },
+            desc: {
+                zh: "【核心服务点】设有官方黑胶唱片集中领取盒（配布BOX），常备充足唱片；同时提供护目镜、防割手套、DS2防尘口罩与安全P钩刀的无偿短期借用；亦为 11 月 10 日前实物作品的最终提交回收箱所在处。",
+                ja: "【メイン拠点】予備レコードを常備する「集中配布ボックス」を設置。保護メガネ・耐切創手袋・DS2防塵マスク・Pカッターの無償レンタル（プランB）を実施。11月10日締切の実物作品回収ボックスもここに設置されます。",
+                en: "【Main Hub】Features the Central Pickup Box stocked with extra records, free short-term loan of safety tool kits (goggles, cut-resistant gloves, DS2 masks, acrylic cutters), and the physical submission drop box.",
+                'zh-TW': "【核心服務點】設有官方黑膠唱片集中領取盒（配布BOX），常備充足唱片；同時提供護目鏡、防割手套、DS2防塵口罩與安全P鉤刀的無償短期借用；亦為 11 月 10 日前實物作品的最終提交回收箱所在處。",
+                fi: "【Pääkeskus】Sisältää vinyylien päänoutolaatikon, turvavarusteiden (suojalasit, viiltosuojakäsineet, DS2-maskit, leikkurit) ilmaisen lainauksen ja fyysisten töiden palautuslaatikon."
+            },
+            floor: { zh: "7号馆 2 楼 (2F) MEDIA STUDIO 房间正前方", ja: "7号館 2階 MEDIA STUDIO 部屋前", en: "Building 7, 2nd Floor, in front of MEDIA STUDIO", 'zh-TW': "7號館 2 樓 (2F) MEDIA STUDIO 房間正前方", fi: "Rakennus 7, 2. krs, MEDIA STUDIOn edessä" },
+            items: { zh: "黑胶唱片集中领取盒 · 安全防护工具包无偿借用 · 实物作品提交回收箱", ja: "レコード集中配布BOX · 安全保護具無償レンタル · 実物作品回収BOX", en: "Central Record Pickup Box · Free Safety Tool Kit Loans · Final Submission Drop Box", 'zh-TW': "黑膠唱片集中領取盒 · 安全防護工具包無償借用 · 實物作品提交回收箱", fi: "Vinyylien noutolaatikko · Turvatyökalujen lainaus · Töiden palautuslaatikko" },
+        },
+        "bldg-1": {
+            tag: { zh: "📍 常规张贴点", ja: "📍 ポスター掲示スポット", en: "📍 Poster Spot", 'zh-TW': "📍 常規張貼點", fi: "📍 Julistepiste" },
+            tagType: "default",
+            title: { zh: "1号馆 2F 走廊布告栏 (1号館 2F 掲示板)", ja: "1号館 2F 掲示板", en: "Building 1, 2F Bulletin Board", 'zh-TW': "1號館 2F 走廊佈告欄", fi: "Rakennus 1, 2. krs Ilmoitustaulu" },
+            desc: {
+                zh: "正门进入直行右侧 1 号馆（事务・大讲义栋）2 楼布告栏。海报背面挂载有 1 张附带双语安全腰封的 EP 黑胶唱片，取下即可直接带走创作。",
+                ja: "正門を入ってすぐ右手の1号館（事務・大講義棟）2階掲示板。ポスター裏面に安全帯付きEPレコードが添付されており、そのままお持ち帰りいただけます。",
+                en: "Located on the 2F bulletin board in Building 1 (Administration & Lecture Hall). An EP vinyl record with safety obi band is attached to the back of the poster.",
+                'zh-TW': "正門進入直行右側 1 號館（事務・大講義棟）2 樓佈告欄。海報背面掛載有 1 張附帶雙語安全腰封的 EP 黑膠唱片，取下即可直接帶走創作。",
+                fi: "Sijaitsee rakennuksen 1 toisen kerroksen ilmoitustaululla. Julisteen taustalla on EP-vinyylilevy turvanauhalla."
+            },
+            floor: { zh: "1 号馆 2 楼 (2F)", ja: "1号館 2階", en: "Building 1, 2nd Floor", 'zh-TW': "1 號館 2 樓 (2F)", fi: "Rakennus 1, 2. krs" },
+            items: { zh: "活动宣传海报 · 实体 EP 唱片（背面取用） · 安全指南腰封", ja: "公式ポスター · 実物EPレコード · 安全加工ガイドライン帯", en: "Official Poster · Physical EP Record · Safety Guide Obi Band", 'zh-TW': "活動宣傳海報 · 實體 EP 唱片（背面取用） · 安全指南腰封", fi: "Juliste · EP-vinyyli · Turvallisuusohje" },
+        },
+        "bldg-2": {
+            tag: { zh: "📍 常规张贴点", ja: "📍 ポスター掲示スポット", en: "📍 Poster Spot", 'zh-TW': "📍 常規張貼點", fi: "📍 Julistepiste" },
+            tagType: "default",
+            title: { zh: "2号馆 2F 走廊布告栏 (2号館 2F 掲示板)", ja: "2号館 2F 掲示板", en: "Building 2, 2F Bulletin Board", 'zh-TW': "2號館 2F 走廊佈告欄", fi: "Rakennus 2, 2. krs Ilmoitustaulu" },
+            desc: {
+                zh: "中庭北侧 2 号馆（音响设计・基础教学大楼）2 楼布告栏。海报背面附带实体 EP 唱片，如已被取完可前往 7 号馆 2 楼集中领取。",
+                ja: "中庭北側の2号館（音響設計・基礎教育棟）2階掲示板。ポスター裏面にEPレコードが添付されています。在庫がない場合は7号館2階をご利用ください。",
+                en: "Located on the 2F bulletin board in Building 2 (Acoustic Design & Lectures, north of courtyard). Discarded vinyl record attached to poster back.",
+                'zh-TW': "中庭北側 2 號館（音響設計・基礎教學大樓）2 樓佈告欄。海報背面附帶實體 EP 唱片，如已被取完可前往 7 號館 2 樓集中領取。",
+                fi: "Sijaitsee rakennuksen 2 toisen kerroksen ilmoitustaululla. Julisteen taustalla on vinyylilevy."
+            },
+            floor: { zh: "2 号馆 2 楼 (2F)", ja: "2号館 2階", en: "Building 2, 2nd Floor", 'zh-TW': "2 號館 2 樓 (2F)", fi: "Rakennus 2, 2. krs" },
+            items: { zh: "活动宣传海报 · 实体 EP 唱片（背面取用） · 安全指南腰封", ja: "公式ポスター · 実物EPレコード · 安全加工ガイドライン帯", en: "Official Poster · Physical EP Record · Safety Guide Obi Band", 'zh-TW': "活動宣傳海報 · 實體 EP 唱片（背面取用） · 安全指南腰封", fi: "Juliste · EP-vinyyli · Turvallisuusohje" },
+        },
+        "bldg-5": {
+            tag: { zh: "📍 常规张贴点", ja: "📍 ポスター掲示スポット", en: "📍 Poster Spot", 'zh-TW': "📍 常規张贴点", fi: "📍 Julistepiste" },
+            tagType: "default",
+            title: { zh: "5号馆 1F 大厅布告栏 (5号館 1F 掲示板)", ja: "5号館 1F 掲示板", en: "Building 5, 1F Bulletin Board", 'zh-TW': "5號館 1F 大廳佈告欄", fi: "Rakennus 5, 1. krs Ilmoitustaulu" },
+            desc: {
+                zh: "中庭南侧 5 号馆（视觉传达・环境设计栋）1 楼入口公共布告栏。海报背面附有 EP 唱片与双语安全告知单。",
+                ja: "中庭南側の5号館（視覚情報・環境設計棟）1階エントランス掲示板。ポスター裏面にEPレコードと安全帯を添付しています。",
+                en: "Located on the 1F entrance bulletin board in Building 5 (Visual Communication & Environmental Design).",
+                'zh-TW': "中庭南側 5 號館（視覺傳達・環境設計棟）1 樓入口公共佈告欄。海報背面附有 EP 唱片與雙語安全告知單。",
+                fi: "Sijaitsee rakennuksen 5 ensimmäisen kerroksen aulassa."
+            },
+            floor: { zh: "5 号馆 1 楼 (1F)", ja: "5号館 1階", en: "Building 5, 1st Floor", 'zh-TW': "5 號館 1 樓 (1F)", fi: "Rakennus 5, 1. krs" },
+            items: { zh: "活动宣传海报 · 实体 EP 唱片（背面取用） · 安全指南腰封", ja: "公式ポスター · 実物EPレコード · 安全加工ガイドライン帯", en: "Official Poster · Physical EP Record · Safety Guide Obi Band", 'zh-TW': "活動宣傳海報 · 實體 EP 唱片（背面取用） · 安全指南腰封", fi: "Juliste · EP-vinyyli · Turvallisuusohje" },
+        },
+        "bldg-7-1f": {
+            tag: { zh: "📍 常规张贴点", ja: "📍 ポスター掲示スポット", en: "📍 Poster Spot", 'zh-TW': "📍 常規張貼點", fi: "📍 Julistepiste" },
+            tagType: "default",
+            title: { zh: "7号馆 1F 走廊布告栏 (7号館 1F 掲示板)", ja: "7号館 1F 掲示板", en: "Building 7, 1F Bulletin Board", 'zh-TW': "7號館 1F 走廊佈告欄", fi: "Rakennus 7, 1. krs Ilmoitustaulu" },
+            desc: {
+                zh: "7 号馆（信息媒体栋）1 楼走廊布告栏。如需更多唱片或借用安全工具，请前往同栋 2 楼 MEDIA STUDIO 前。",
+                ja: "7号館（情報処理教育・メディア棟）1階掲示板。追加レコードや工具レンタルは2階MEDIA STUDIO前をご利用ください。",
+                en: "Located on the 1F bulletin board in Building 7 (Information Media Hall). Head upstairs to 2F for the central tool loan and pickup box.",
+                'zh-TW': "7號館（資訊媒體棟）1 樓走廊佈告欄。如需更多唱片或借用安全工具，請前往同棟 2 樓 MEDIA STUDIO 前。",
+                fi: "Sijaitsee rakennuksen 7 ensimmäisessä kerroksessa."
+            },
+            floor: { zh: "7 号馆 1 楼 (1F)", ja: "7号館 1階", en: "Building 7, 1st Floor", 'zh-TW': "7 號館 1 樓 (1F)", fi: "Rakennus 7, 1. krs" },
+            items: { zh: "活动宣传海报 · 实体 EP 唱片（背面取用） · 安全指南腰封", ja: "公式ポスター · 実物EPレコード · 安全加工ガイドライン帯", en: "Official Poster · Physical EP Record · Safety Guide Obi Band", 'zh-TW': "活動宣傳海報 · 實體 EP 唱片（背面取用） · 安全指南腰封", fi: "Juliste · EP-vinyyli · Turvallisuusohje" },
+        },
+        "library": {
+            tag: { zh: "📍 常规张贴点", ja: "📍 ポスター掲示スポット", en: "📍 Poster Spot", 'zh-TW': "📍 常規張貼點", fi: "📍 Julistepiste" },
+            tagType: "default",
+            title: { zh: "艺术工学图书馆 1F 馆内布告栏 (図書館 掲示板)", ja: "芸術工学図書館 1F 掲示板", en: "Design Library, 1F Bulletin Board", 'zh-TW': "藝術工學圖書館 1F 館內佈告欄", fi: "Muotoilukirjasto, 1. krs Ilmoitustaulu" },
+            desc: {
+                zh: "大桥校区艺术工学图书馆 1 楼入口布告栏。海报背面附有一张废旧黑胶唱片，可直接取下用于创作。",
+                ja: "芸術工学図書館1階エントランスの掲示板。裏面にEPレコードが添付されています。",
+                en: "Located on the 1F entrance bulletin board inside Kyushu University Design Library. Includes record attached to poster back.",
+                'zh-TW': "大橋校區藝術工學圖書館 1 樓入口佈告欄。海報背面附有一張廢舊黑膠唱片，可直接取下用於創作。",
+                fi: "Sijaitsee muotoilukirjaston 1. kerroksen ilmoitustaululla."
+            },
+            floor: { zh: "艺术工学图书馆 1 楼 (1F)", ja: "芸術工学図書館 1階", en: "Design Library, 1st Floor", 'zh-TW': "藝術工學圖書館 1 樓 (1F)", fi: "Muotoilukirjasto, 1. krs" },
+            items: { zh: "活动宣传海报 · 实体 EP 唱片（背面取用） · 安全指南腰封", ja: "公式ポスター · 実物EPレコード · 安全加工ガイドライン帯", en: "Official Poster · Physical EP Record · Safety Guide Obi Band", 'zh-TW': "活動宣傳海報 · 實體 EP 唱片（背面取用） · 安全指南腰封", fi: "Juliste · EP-vinyyli · Turvallisuusohje" },
+        },
+        "bldg-8": {
+            tag: { zh: "🌟 11月成果展与沙龙主会场", ja: "🌟 11月成果展示会＆サロン会場", en: "🌟 Nov Exhibition & Salon Venue", 'zh-TW': "🌟 11月成果展與沙龍主會場", fi: "🌟 Marraskuun näyttelytila" },
+            tagType: "badge-exhibit",
+            title: { zh: "多次元设计实验栋 2F Studio 201", ja: "多次元デザイン実験棟 2F スタジオ201", en: "Multi-Dimensional Design Experimental Building, 2F, Studio 201", 'zh-TW': "多次元設計實驗棟 2F Studio 201", fi: "Moniulotteisen suunnittelun kokeilurakennus, 2. krs (Studio 201)" },
+            desc: {
+                zh: "【展览与沙龙会场】2026年11月20日 - 25日 线下成果展主办地（开放市民与师生参观）；11月15日前后交流沙龙亦在此举行。",
+                ja: "【成果展・サロン本会場】2026年11月20日〜25日の成果展示会メイン会場。11月中旬の交流サロンもここで開催されます。",
+                en: "【Main Venue】The physical exhibition venue (Nov 20-25, 2026, open to public) and participant networking salon.",
+                'zh-TW': "【展覽與沙龍會場】2026年11月20日 - 25日 線下成果展主辦地（開放市民與師生參觀）；11月15日前後交流沙龍亦在此舉行。",
+                fi: "【Päänäyttelytila】RERE-CORDS-näyttely (20.–25.11.2026) ja verkostoitumissalonki."
+            },
+            floor: { zh: "多次元设计实验栋 2 楼 Studio 201", ja: "多次元デザイン実験棟 2階 スタジオ201", en: "Multi-Dimensional Design Experimental Building, 2nd Floor, Studio 201", 'zh-TW': "多次元設計實驗棟 2 樓 Studio 201", fi: "Moniulotteisen suunnittelun kokeilurakennus, 2. krs, Studio 201" },
+            items: { zh: "实体与数字作品展示 · 现场投票与互动 · 评委沙龙与颁奖会", ja: "作品展示ブース · 来場者投票 · 講評＆交流サロン", en: "Artwork Exhibition · Audience Voting · Review & Awards Salon", 'zh-TW': "實體與數位作品展示 · 現場投票與互動 · 評委沙龍與頒獎會", fi: "Teosnäyttely · Yleisöäänestys · Palkintotilaisuus" },
+        }
+    };
+
+    const CAMPUS_MAP_LABELS = {
+        "bldg-7-hub": {
+            zh: "7号馆 · 2F\n集中领取",
+            ja: "7号館 · 2F\n集中配布",
+            en: "Bldg 7 · 2F\nCentral pickup",
+            'zh-TW': "7號館 · 2F\n集中領取",
+            fi: "Rakennus 7 · 2F\nNoutopiste"
+        },
+        "bldg-1": {
+            zh: "1号馆 · 2F\n布告栏",
+            ja: "1号館 · 2F\n掲示板",
+            en: "Bldg 1 · 2F\nBulletin board",
+            'zh-TW': "1號館 · 2F\n佈告欄",
+            fi: "Rakennus 1 · 2F\nIlmoitustaulu"
+        },
+        "bldg-2": {
+            zh: "2号馆 · 2F\n布告栏",
+            ja: "2号館 · 2F\n掲示板",
+            en: "Bldg 2 · 2F\nBulletin board",
+            'zh-TW': "2號館 · 2F\n佈告欄",
+            fi: "Rakennus 2 · 2F\nIlmoitustaulu"
+        },
+        "bldg-5": {
+            zh: "5号馆 · 1F\n布告栏",
+            ja: "5号館 · 1F\n掲示板",
+            en: "Bldg 5 · 1F\nBulletin board",
+            'zh-TW': "5號館 · 1F\n佈告欄",
+            fi: "Rakennus 5 · 1F\nIlmoitustaulu"
+        },
+        "bldg-7-1f": {
+            zh: "7号馆 · 1F\n布告栏",
+            ja: "7号館 · 1F\n掲示板",
+            en: "Bldg 7 · 1F\nBulletin board",
+            'zh-TW': "7號館 · 1F\n佈告欄",
+            fi: "Rakennus 7 · 1F\nIlmoitustaulu"
+        },
+        library: {
+            zh: "图书馆 · 1F\n布告栏",
+            ja: "図書館 · 1F\n掲示板",
+            en: "Library · 1F\nBulletin board",
+            'zh-TW': "圖書館 · 1F\n佈告欄",
+            fi: "Kirjasto · 1F\nIlmoitustaulu"
+        },
+        "bldg-8": {
+            zh: "多次元 · 2F\n成果展",
+            ja: "多次元デザイン実験棟 · 2F\n成果展示",
+            en: "Multi-Dimensional Building · 2F\nExhibition",
+            'zh-TW': "多次元 · 2F\n成果展",
+            fi: "Moniulotteinen rakennus · 2F\nNäyttely"
+        }
+    };
+
+    const CAMPUS_LOCATION_PHOTOS = [
+        {
+            id: 'b1',
+            locationKey: 'bldg-1',
+            src: './素材/地点/b1.JPG',
+            brightness: '1.08',
+            caption: { zh: '1号馆 · 2F', ja: '1号館 · 2F', en: 'Bldg 1 · 2F', 'zh-TW': '1號館 · 2F', fi: 'Rakennus 1 · 2F' },
+            alt: { zh: '1号馆二楼海报张贴点现场照片', ja: '1号館2階ポスター掲示場所の写真', en: 'Photo of the Building 1, 2F poster location', 'zh-TW': '1號館二樓海報張貼點現場照片', fi: 'Kuva rakennuksen 1 toisen kerroksen julistepisteestä' }
+        },
+        {
+            id: 'b2',
+            locationKey: 'bldg-2',
+            src: './素材/地点/b2.JPG',
+            brightness: '1.12',
+            caption: { zh: '2号馆 · 2F', ja: '2号館 · 2F', en: 'Bldg 2 · 2F', 'zh-TW': '2號館 · 2F', fi: 'Rakennus 2 · 2F' },
+            alt: { zh: '2号馆二楼海报张贴点现场照片', ja: '2号館2階ポスター掲示場所の写真', en: 'Photo of the Building 2, 2F poster location', 'zh-TW': '2號館二樓海報張貼點現場照片', fi: 'Kuva rakennuksen 2 toisen kerroksen julistepisteestä' }
+        },
+        {
+            id: 'b5',
+            locationKey: 'bldg-5',
+            src: './素材/地点/b5.JPG',
+            brightness: '1.1',
+            caption: { zh: '5号馆 · 1F', ja: '5号館 · 1F', en: 'Bldg 5 · 1F', 'zh-TW': '5號館 · 1F', fi: 'Rakennus 5 · 1F' },
+            alt: { zh: '5号馆一楼海报张贴点现场照片', ja: '5号館1階ポスター掲示場所の写真', en: 'Photo of the Building 5, 1F poster location', 'zh-TW': '5號館一樓海報張貼點現場照片', fi: 'Kuva rakennuksen 5 ensimmäisen kerroksen julistepisteestä' }
+        },
+        {
+            id: 'b7-1f',
+            locationKey: 'bldg-7-1f',
+            src: './素材/地点/b7-1f.JPG',
+            brightness: '1.14',
+            caption: { zh: '7号馆 · 1F', ja: '7号館 · 1F', en: 'Bldg 7 · 1F', 'zh-TW': '7號館 · 1F', fi: 'Rakennus 7 · 1F' },
+            alt: { zh: '7号馆一楼海报张贴点现场照片', ja: '7号館1階ポスター掲示場所の写真', en: 'Photo of the Building 7, 1F poster location', 'zh-TW': '7號館一樓海報張貼點現場照片', fi: 'Kuva rakennuksen 7 ensimmäisen kerroksen julistepisteestä' }
+        },
+        {
+            id: 'b7-2f',
+            locationKey: 'bldg-7-hub',
+            src: './素材/地点/b7-2f.JPG',
+            brightness: '1.16',
+            caption: { zh: '7号馆 · 2F', ja: '7号館 · 2F', en: 'Bldg 7 · 2F', 'zh-TW': '7號館 · 2F', fi: 'Rakennus 7 · 2F' },
+            alt: { zh: '7号馆二楼海报与唱片领取点现场照片', ja: '7号館2階ポスター・レコード配布場所の写真', en: 'Photo of the Building 7, 2F poster and record pickup location', 'zh-TW': '7號館二樓海報與唱片領取點現場照片', fi: 'Kuva rakennuksen 7 toisen kerroksen juliste- ja levynoutopisteestä' }
+        }
+    ];
+
+    function getCampusMapLabel(locationKey, lang = currentLang) {
+        const labels = CAMPUS_MAP_LABELS[locationKey] || {};
+        return labels[lang] || labels.en || locationKey;
+    }
+
+    function updateMapPhotoPanel(locationKey, lang = currentLang) {
+        const panel = document.getElementById('map-photo-panel');
+        const grid = document.getElementById('map-photo-grid');
+        if (!panel || !grid) return;
+
+        const photo = CAMPUS_LOCATION_PHOTOS.find((candidate) => candidate.locationKey === locationKey);
+        panel.hidden = !photo;
+        grid.replaceChildren();
+        if (!photo) return;
+
+        const figure = document.createElement('figure');
+        figure.className = 'map-photo-item is-selected';
+        figure.dataset.photoId = photo.id;
+        figure.dataset.photoLocation = photo.locationKey;
+
+        const frame = document.createElement('div');
+        frame.className = 'map-photo-frame';
+
+        const image = document.createElement('img');
+        image.src = photo.src;
+        image.alt = photo.alt[lang] || photo.alt.en || '';
+        image.width = 4032;
+        image.height = 3024;
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        image.style.setProperty('--map-photo-brightness', photo.brightness);
+        frame.append(image);
+
+        const caption = document.createElement('figcaption');
+        caption.textContent = photo.caption[lang] || photo.caption.en || '';
+        figure.append(frame, caption);
+        grid.append(figure);
+    }
+
+
+    let activeMapLocationKey = 'all';
+
+    function updateMapDetailPanel(key, lang = currentLang) {
+        const data = CAMPUS_LOCATIONS[key] || CAMPUS_LOCATIONS.all;
+        const tagEl = document.getElementById('map-detail-tag');
+        const titleEl = document.getElementById('map-detail-title');
+        const descEl = document.getElementById('map-detail-desc');
+        const floorEl = document.getElementById('map-meta-floor');
+        const itemsEl = document.getElementById('map-meta-items');
+
+        if (tagEl) {
+            tagEl.className = 'detail-badge ' + (data.tagType || '');
+            tagEl.textContent = data.tag[lang] || data.tag.en || '';
+        }
+        if (titleEl) titleEl.textContent = data.title[lang] || data.title.en || '';
+        if (descEl) descEl.textContent = data.desc[lang] || data.desc.en || '';
+        if (floorEl) floorEl.textContent = data.floor[lang] || data.floor.en || '';
+        if (itemsEl) itemsEl.textContent = data.items[lang] || data.items.en || '';
+
+        document.querySelectorAll('.map-location-button').forEach((button) => {
+            const isActive = button.dataset.location === key;
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+        });
+
+        updateMapPhotoPanel(key, lang);
+
+    }
+
+    window.updateMapLanguageDetails = function(lang) {
+        updateMapDetailPanel(activeMapLocationKey, lang);
+        if (typeof window.updateCampusMapLabels === 'function') {
+            window.updateCampusMapLabels(lang);
+        }
+    };
+
+    function initCampus3DMap() {
+        const viewport = document.getElementById('campus-3d-viewport');
+        const loadingIndicator = document.getElementById('map-loading-indicator');
+        function createCampusLayout(source) {
+            const buildingIds = new Set(source.buildings.map((building) => building.id));
+            return {
+                ...source,
+                buildings: source.buildings.filter((building) => Array.isArray(building.shape) && building.shape.length >= 3),
+                markers: source.markers.filter((marker) => buildingIds.has(marker.buildingId))
+            };
+        }
+
+        const campusMap = createCampusLayout(window.RERE_CORDS_CAMPUS_MAP);
+
+        if (!viewport || !campusMap || typeof THREE === 'undefined') return;
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xFFFFFF);
+
+        const width = viewport.clientWidth || 900;
+        const height = viewport.clientHeight || 520;
+        const camera = new THREE.PerspectiveCamera(31, width / height, 1, 600);
+        const renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: false,
+            powerPreference: 'high-performance'
+        });
+
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.NoToneMapping;
+        viewport.appendChild(renderer.domElement);
+
+        let controls = null;
+        if (typeof THREE.OrbitControls !== 'undefined') {
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            // Keep camera movement deterministic; location selections are the only view changes.
+            controls.enabled = false;
+            controls.enableRotate = false;
+            controls.enableZoom = false;
+            controls.enablePan = false;
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.07;
+            controls.minDistance = 58;
+            controls.maxDistance = 270;
+            controls.maxPolarAngle = Math.PI / 2.16;
+        }
+
+        const materials = {
+            ground: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.95 }),
+            path: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.94 }),
+            lawn: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.96 }),
+            field: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.96 }),
+            tennis: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.94 }),
+            water: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.84 }),
+            building: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.84 }),
+            contextBuilding: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.9 }),
+            hubBuilding: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.82 }),
+            exhibitBuilding: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.82 }),
+            line: new THREE.LineBasicMaterial({ color: 0xA7A7A7, transparent: true, opacity: 0.72 }),
+            treeTrunk: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.94 }),
+            treeCanopy: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.95 }),
+            markerPoster: new THREE.MeshStandardMaterial({ color: 0x171717, roughness: 0.5, metalness: 0.08 }),
+            markerHub: new THREE.MeshStandardMaterial({ color: 0x526647, roughness: 0.46, metalness: 0.06 }),
+            markerExhibit: new THREE.MeshStandardMaterial({ color: 0xC15535, roughness: 0.46, metalness: 0.06 }),
+            markerCenter: new THREE.MeshStandardMaterial({ color: 0xFFFFFF, roughness: 0.82 })
+        };
+
+        function shapeFromPoints(points) {
+            const shape = new THREE.Shape();
+            points.forEach(([x, z], index) => {
+                const shapeY = -z;
+                if (index === 0) shape.moveTo(x, shapeY);
+                else shape.lineTo(x, shapeY);
+            });
+            shape.closePath();
+            return shape;
+        }
+
+        function createPlanShape(points, material, y = 0, depth = 0) {
+            const geometry = depth > 0
+                ? new THREE.ExtrudeGeometry(shapeFromPoints(points), { depth, bevelEnabled: false })
+                : new THREE.ShapeGeometry(shapeFromPoints(points));
+            geometry.rotateX(-Math.PI / 2);
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.y = y;
+            mesh.receiveShadow = true;
+            return mesh;
+        }
+
+        function createCirclePlane(center, radius, material, y = 0) {
+            const mesh = new THREE.Mesh(new THREE.CircleGeometry(radius, 48), material);
+            mesh.rotation.x = -Math.PI / 2;
+            mesh.position.set(center.x, y, center.z);
+            mesh.receiveShadow = true;
+            return mesh;
+        }
+
+        function createReferencePlan() {
+            const reference = campusMap.reference;
+            if (!reference?.image || reference.render === false) return;
+
+            const material = new THREE.MeshBasicMaterial({
+                color: 0xFFFFFF,
+                transparent: true,
+                opacity: reference.opacity || 0.06,
+                depthWrite: false
+            });
+            const plane = new THREE.Mesh(
+                new THREE.PlaneGeometry(reference.worldWidth, reference.worldDepth),
+                material
+            );
+            plane.rotation.x = -Math.PI / 2;
+            plane.position.y = 0.705;
+            plane.renderOrder = 0;
+            scene.add(plane);
+
+            new THREE.TextureLoader().load(reference.image, (texture) => {
+                texture.colorSpace = THREE.SRGBColorSpace;
+                material.map = texture;
+                material.needsUpdate = true;
+            });
+        }
+
+        function createMapLabelTexture(locationKey, lang = currentLang) {
+            const lines = getCampusMapLabel(locationKey, lang).split('\n');
+            const canvas = document.createElement('canvas');
+            canvas.width = 360;
+            canvas.height = lines.length > 1 ? 112 : 76;
+            const context = canvas.getContext('2d');
+            context.fillStyle = 'rgba(255, 255, 255, 0.94)';
+            context.fillRect(4, 4, canvas.width - 8, canvas.height - 8);
+            context.strokeStyle = 'rgba(23, 23, 23, 0.3)';
+            context.lineWidth = 2;
+            context.strokeRect(4, 4, canvas.width - 8, canvas.height - 8);
+            context.fillStyle = '#171717';
+            context.font = '600 27px Alegreya Sans, Arial, sans-serif';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            const lineHeight = 31;
+            const startY = canvas.height / 2 - ((lines.length - 1) * lineHeight) / 2;
+            lines.forEach((line, index) => context.fillText(line, canvas.width / 2, startY + index * lineHeight));
+            return {
+                texture: new THREE.CanvasTexture(canvas),
+                width: lines.some((line) => line.length > 12) ? 14.5 : 11.5,
+                height: lines.length > 1 ? 4.15 : 3.2
+            };
+        }
+
+        function createFloatingLocationLabel(marker, stemHeight) {
+            const labelData = createMapLabelTexture(marker.locationKey);
+            const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+                map: labelData.texture,
+                transparent: true,
+                depthTest: false
+            }));
+            sprite.scale.set(labelData.width, labelData.height, 1);
+            // The label is a child of the marker group, so keep it in group-local X/Z.
+            const labelLift = marker.locationKey === 'bldg-7-hub' ? 2.4 : 0;
+            sprite.position.set(0, 1 + stemHeight + 4.6 + labelLift, 0);
+            sprite.renderOrder = 5;
+            sprite.userData = { id: marker.locationKey, isMapLabel: true };
+            labelSpritesByLocation[marker.locationKey] = sprite;
+            interactiveObjects.push(sprite);
+            return sprite;
+        }
+
+        function createExtrudedBuilding(building) {
+            const material = building.tone === 'hub'
+                ? materials.hubBuilding
+                : building.tone === 'exhibit'
+                    ? materials.exhibitBuilding
+                    : building.tone === 'context'
+                        ? materials.contextBuilding
+                        : materials.building;
+            const group = new THREE.Group();
+            const footprint = building.shape.reduce((bounds, [x, z]) => ({
+                minX: Math.min(bounds.minX, x),
+                maxX: Math.max(bounds.maxX, x),
+                minZ: Math.min(bounds.minZ, z),
+                maxZ: Math.max(bounds.maxZ, z)
+            }), { minX: Infinity, maxX: -Infinity, minZ: Infinity, maxZ: -Infinity });
+            const width = footprint.maxX - footprint.minX;
+            const depth = footprint.maxZ - footprint.minZ;
+            const centerX = (footprint.minX + footprint.maxX) / 2;
+            const centerZ = (footprint.minZ + footprint.maxZ) / 2;
+            const mesh = new THREE.Mesh(
+                new THREE.BoxGeometry(width, building.height, depth),
+                material
+            );
+            mesh.position.set(centerX, 0.72 + building.height / 2, centerZ);
+            mesh.castShadow = true;
+            group.add(mesh);
+
+            const edges = new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry), materials.line);
+            edges.position.copy(mesh.position);
+            group.add(edges);
+
+            group.userData = { id: building.id, footprint, height: building.height, isBuilding: true };
+            mesh.userData = { id: building.id, group, isBuilding: true };
+            interactiveObjects.push(mesh);
+            buildingsById[building.id] = { ...building, footprint, group };
+            scene.add(group);
+            return group;
+        }
+
+        function createFieldLines(center, size) {
+            const points = [
+                new THREE.Vector3(center.x - size.x / 2, 0.91, center.z - size.z / 2),
+                new THREE.Vector3(center.x + size.x / 2, 0.91, center.z - size.z / 2),
+                new THREE.Vector3(center.x + size.x / 2, 0.91, center.z + size.z / 2),
+                new THREE.Vector3(center.x - size.x / 2, 0.91, center.z + size.z / 2),
+                new THREE.Vector3(center.x - size.x / 2, 0.91, center.z - size.z / 2),
+                new THREE.Vector3(center.x, 0.91, center.z - size.z / 2),
+                new THREE.Vector3(center.x, 0.91, center.z + size.z / 2),
+                new THREE.Vector3(center.x, 0.91, center.z + size.z / 2),
+                new THREE.Vector3(center.x, 0.91, center.z - size.z / 2)
+            ];
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const line = new THREE.LineSegments(geometry, new THREE.LineBasicMaterial({
+                color: 0xC8C8C8,
+                transparent: true,
+                opacity: 0.76
+            }));
+            scene.add(line);
+        }
+
+        function createTreeGroup(tree) {
+            const group = new THREE.Group();
+            const scale = tree.scale || 1;
+            const trunk = new THREE.Mesh(
+                new THREE.CylinderGeometry(0.34 * scale, 0.5 * scale, 2.2 * scale, 7),
+                materials.treeTrunk
+            );
+            trunk.position.y = 1.1 * scale;
+            trunk.castShadow = true;
+            group.add(trunk);
+
+            const canopy = new THREE.Mesh(
+                new THREE.SphereGeometry(1.9 * scale, 16, 10),
+                materials.treeCanopy
+            );
+            canopy.position.y = 3.2 * scale;
+            canopy.scale.set(1.18, 0.92, 1.08);
+            canopy.castShadow = true;
+            group.add(canopy);
+
+            group.position.set(tree.x, 0.82, tree.z);
+            scene.add(group);
+        }
+
+        function createLandmark(landmark) {
+            if (landmark.type === 'field') {
+                if (landmark.shape) {
+                    const field = createPlanShape(landmark.shape, materials.field, 0.82, 0.12);
+                    field.receiveShadow = true;
+                    scene.add(field);
+                    return;
+                }
+                const field = new THREE.Mesh(
+                    new THREE.BoxGeometry(landmark.size.x, 0.18, landmark.size.z),
+                    materials.field
+                );
+                field.position.set(landmark.center.x, 0.82, landmark.center.z);
+                field.receiveShadow = true;
+                scene.add(field);
+                createFieldLines(landmark.center, {
+                    x: landmark.size.x - 2,
+                    z: landmark.size.z - 2
+                });
+                return;
+            }
+
+            if (landmark.type === 'tennis') {
+                if (landmark.shape) {
+                    const court = createPlanShape(landmark.shape, materials.tennis, 0.84, 0.1);
+                    court.receiveShadow = true;
+                    scene.add(court);
+                    return;
+                }
+                const court = new THREE.Mesh(
+                    new THREE.BoxGeometry(landmark.size.x, 0.16, landmark.size.z),
+                    materials.tennis
+                );
+                court.position.set(landmark.center.x, 0.82, landmark.center.z);
+                court.receiveShadow = true;
+                scene.add(court);
+                createFieldLines(landmark.center, {
+                    x: landmark.size.x - 1.6,
+                    z: landmark.size.z - 1.6
+                });
+                return;
+            }
+
+            if (landmark.type === 'circle') {
+                const outer = createCirclePlane(landmark.center, landmark.radius + 2.2, materials.path, 0.81);
+                const inner = createCirclePlane(landmark.center, landmark.radius, materials.lawn, 0.86);
+                scene.add(outer, inner);
+                return;
+            }
+
+            if (landmark.type === 'fountain') {
+                const outer = new THREE.Mesh(
+                    new THREE.CylinderGeometry(landmark.radius + 2.8, landmark.radius + 2.8, 0.18, 48),
+                    materials.path
+                );
+                outer.position.set(landmark.center.x, 0.85, landmark.center.z);
+                outer.receiveShadow = true;
+                scene.add(outer);
+
+                const basin = new THREE.Mesh(
+                    new THREE.CylinderGeometry(landmark.radius, landmark.radius, 0.26, 48),
+                    materials.water
+                );
+                basin.position.set(landmark.center.x, 0.98, landmark.center.z);
+                scene.add(basin);
+
+                const rim = new THREE.Mesh(
+                    new THREE.TorusGeometry(landmark.radius + 0.15, 0.42, 8, 48),
+                    materials.building
+                );
+                rim.rotation.x = Math.PI / 2;
+                rim.position.set(landmark.center.x, 1.1, landmark.center.z);
+                rim.castShadow = true;
+                scene.add(rim);
+
+                const nozzle = new THREE.Mesh(
+                    new THREE.CylinderGeometry(0.65, 0.9, 0.8, 16),
+                    materials.water
+                );
+                nozzle.position.set(landmark.center.x, 1.38, landmark.center.z);
+                scene.add(nozzle);
+            }
+        }
+
+        const interactiveObjects = [];
+        const buildingsById = {};
+        const locationsByBuilding = {};
+        const labelSpritesByLocation = {};
+
+        const base = createPlanShape(campusMap.ground.boundary, materials.ground, 0, 0.7);
+        base.receiveShadow = true;
+        scene.add(base);
+        createReferencePlan();
+
+        campusMap.ground.paths.forEach((path) => {
+            scene.add(createPlanShape(path.shape, materials.path, 0.73, 0.05));
+        });
+        campusMap.ground.lawns.forEach((lawn) => {
+            scene.add(createPlanShape(lawn.shape, materials.lawn, 0.76, 0.06));
+        });
+        campusMap.landmarks.forEach(createLandmark);
+        campusMap.trees.forEach(createTreeGroup);
+        campusMap.buildings.forEach(createExtrudedBuilding);
+
+        function getMarkerPosition(marker) {
+            const building = buildingsById[marker.buildingId];
+            if (!building) return { x: 0, z: 0, height: 0 };
+            const { footprint } = building;
+            const width = footprint.maxX - footprint.minX;
+            const depth = footprint.maxZ - footprint.minZ;
+            return {
+                x: (footprint.minX + footprint.maxX) / 2 + width * (marker.offset.x || 0) / 2,
+                z: (footprint.minZ + footprint.maxZ) / 2 + depth * (marker.offset.z || 0) / 2,
+                height: building.height
+            };
+        }
+
+        function createAnchoredMarker(marker) {
+            const position = getMarkerPosition(marker);
+            const color = marker.tone === 'hub'
+                ? materials.markerHub
+                : marker.tone === 'exhibit'
+                    ? materials.markerExhibit
+                    : materials.markerPoster;
+            const group = new THREE.Group();
+
+            const shadow = new THREE.Mesh(
+                new THREE.RingGeometry(1.1, 1.55, 24),
+                new THREE.MeshBasicMaterial({ color: 0xB8B8B8, transparent: true, opacity: 0.24, side: THREE.DoubleSide })
+            );
+            shadow.rotation.x = -Math.PI / 2;
+            shadow.position.y = 0.96;
+            group.add(shadow);
+
+            const stemHeight = Math.max(8, position.height + 5);
+            const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, stemHeight, 8), color);
+            stem.position.y = 1 + stemHeight / 2;
+            stem.castShadow = true;
+            group.add(stem);
+
+            const record = new THREE.Mesh(
+                new THREE.CylinderGeometry(1.45, 1.45, 0.24, 32),
+                color
+            );
+            record.position.y = 1 + stemHeight + 1.35;
+            record.castShadow = true;
+            record.userData = { id: marker.locationKey, group, isMarker: true };
+            group.add(record);
+
+            const recordLabel = new THREE.Mesh(
+                new THREE.CylinderGeometry(0.34, 0.34, 0.28, 24),
+                materials.markerCenter
+            );
+            recordLabel.position.y = record.position.y + 0.05;
+            group.add(recordLabel);
+
+            const recordRing = new THREE.Mesh(
+                new THREE.TorusGeometry(0.6, 0.08, 6, 32),
+                materials.markerCenter
+            );
+            recordRing.rotation.x = Math.PI / 2;
+            recordRing.position.y = record.position.y + 0.18;
+            group.add(recordRing);
+
+            const label = createFloatingLocationLabel(marker, stemHeight);
+            if (label) group.add(label);
+
+            group.position.set(position.x, 0, position.z);
+            group.userData = { id: marker.locationKey, baseY: 0, height: position.height };
+            animatedPins.push(group);
+            interactiveObjects.push(record);
+            locationsByBuilding[marker.buildingId] = locationsByBuilding[marker.buildingId] || marker.locationKey;
+            scene.add(group);
+        }
+
+        const animatedPins = [];
+        campusMap.markers.forEach(createAnchoredMarker);
+
+        window.updateCampusMapLabels = (lang) => {
+            Object.entries(labelSpritesByLocation).forEach(([locationKey, sprite]) => {
+                const labelData = createMapLabelTexture(locationKey, lang);
+                if (sprite.material.map) sprite.material.map.dispose();
+                sprite.material.map = labelData.texture;
+                sprite.material.needsUpdate = true;
+                sprite.scale.set(labelData.width, labelData.height, 1);
+            });
+        };
+        window.updateCampusMapLabels(currentLang);
+
+        const sunLight = new THREE.DirectionalLight(0xFFFFFF, 0.78);
+        sunLight.position.set(-90, 130, -80);
+        sunLight.castShadow = true;
+        sunLight.shadow.mapSize.width = 1024;
+        sunLight.shadow.mapSize.height = 1024;
+        sunLight.shadow.camera.near = 10;
+        sunLight.shadow.camera.far = 300;
+        sunLight.shadow.camera.left = -115;
+        sunLight.shadow.camera.right = 115;
+        sunLight.shadow.camera.top = 115;
+        sunLight.shadow.camera.bottom = -115;
+        sunLight.shadow.bias = -0.0004;
+        scene.add(sunLight);
+        scene.add(new THREE.HemisphereLight(0xFFFFFF, 0xB8B8B8, 0.52));
+        scene.add(new THREE.AmbientLight(0xF0F0F0, 0.18));
+
+        let targetCamPos = { ...campusMap.views.overview.camera };
+        let targetControlsPos = { ...campusMap.views.overview.target };
+        let isTransitioning = false;
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function applyView(view) {
+            const nextView = view || campusMap.views.overview;
+            targetCamPos = { ...nextView.camera };
+            targetControlsPos = { ...nextView.target };
+            if (reducedMotion) {
+                camera.position.set(targetCamPos.x, targetCamPos.y, targetCamPos.z);
+                if (controls) controls.target.set(targetControlsPos.x, targetControlsPos.y, targetControlsPos.z);
+                isTransitioning = false;
+            } else {
+                isTransitioning = true;
+            }
+        }
+
+        function focusLocation(locationKey) {
+            activeMapLocationKey = CAMPUS_LOCATIONS[locationKey] ? locationKey : 'all';
+            updateMapDetailPanel(activeMapLocationKey, currentLang);
+            applyView(campusMap.views[activeMapLocationKey] || campusMap.views.overview);
+        }
+
+        updateMapDetailPanel(activeMapLocationKey, currentLang);
+        applyView(campusMap.views.overview);
+
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+
+        function getPointerPos(event) {
+            const rect = renderer.domElement.getBoundingClientRect();
+            return {
+                x: ((event.clientX - rect.left) / rect.width) * 2 - 1,
+                y: -((event.clientY - rect.top) / rect.height) * 2 + 1
+            };
+        }
+
+        function getLocationForHit(hit) {
+            const id = hit?.userData?.id;
+            if (!id) return null;
+            if (CAMPUS_LOCATIONS[id]) return id;
+            return locationsByBuilding[id] || null;
+        }
+
+        renderer.domElement.addEventListener('pointermove', (event) => {
+            const pointer = getPointerPos(event);
+            mouse.set(pointer.x, pointer.y);
+            raycaster.setFromCamera(mouse, camera);
+            const intersections = raycaster.intersectObjects(interactiveObjects, false);
+            renderer.domElement.style.cursor = intersections.length ? 'pointer' : 'default';
+        });
+
+        renderer.domElement.addEventListener('click', (event) => {
+            const pointer = getPointerPos(event);
+            mouse.set(pointer.x, pointer.y);
+            raycaster.setFromCamera(mouse, camera);
+            const intersections = raycaster.intersectObjects(interactiveObjects, false);
+            const locationKey = getLocationForHit(intersections[0]?.object);
+            if (locationKey) focusLocation(locationKey);
+        });
+
+        document.querySelectorAll('.map-location-button').forEach((button) => {
+            button.addEventListener('click', () => focusLocation(button.dataset.location));
+        });
+
+        if (loadingIndicator) {
+            window.setTimeout(() => loadingIndicator.classList.add('loaded'), 280);
+        }
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsed = clock.getElapsedTime();
+
+            if (!reducedMotion) {
+                animatedPins.forEach((pin, index) => {
+                    pin.position.y = Math.sin(elapsed * 2 + index * 0.65) * 0.12;
+                    pin.rotation.y = Math.sin(elapsed * 0.35 + index) * 0.08;
+                });
+            }
+
+            if (isTransitioning) {
+                camera.position.x += (targetCamPos.x - camera.position.x) * 0.08;
+                camera.position.y += (targetCamPos.y - camera.position.y) * 0.08;
+                camera.position.z += (targetCamPos.z - camera.position.z) * 0.08;
+                if (controls) {
+                    controls.target.x += (targetControlsPos.x - controls.target.x) * 0.08;
+                    controls.target.y += (targetControlsPos.y - controls.target.y) * 0.08;
+                    controls.target.z += (targetControlsPos.z - controls.target.z) * 0.08;
+                }
+                if (Math.hypot(
+                    targetCamPos.x - camera.position.x,
+                    targetCamPos.y - camera.position.y,
+                    targetCamPos.z - camera.position.z
+                ) < 0.25) {
+                    isTransitioning = false;
+                }
+            }
+
+            if (controls) controls.update();
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        function handleResize() {
+            const nextWidth = viewport.clientWidth;
+            const nextHeight = viewport.clientHeight;
+            if (!nextWidth || !nextHeight) return;
+            camera.aspect = nextWidth / nextHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(nextWidth, nextHeight);
+        }
+
+        window.addEventListener('resize', handleResize);
+        if (typeof ResizeObserver !== 'undefined') {
+            const mapResizeObserver = new ResizeObserver(handleResize);
+            mapResizeObserver.observe(viewport);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCampus3DMap);
+    } else {
+        initCampus3DMap();
+    }
 });

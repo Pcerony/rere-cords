@@ -74,7 +74,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=24">
+    <link rel="stylesheet" href="styles.css?v=28">
+    <!-- Three.js & OrbitControls for 3D White Model Campus Map -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
 
@@ -295,6 +298,76 @@
                         </div>
                         <div class="methods-shared-policy">
                             <p class="method-note method-policy-note" data-i18n="method1-purpose-note">※ 实体唱片只可为与参与本项目直接相关的目的领取。严禁为个人使用而领取实体唱片。</p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive 2.5D Campus Map -->
+                    <div class="campus-map-section" id="campus-map-section">
+                        <div class="campus-map-header reveal-on-scroll">
+                            <h3 class="campus-map-title" data-i18n="map-title">唱片领取点 V 地图</h3>
+                        </div>
+
+                        <div class="campus-map-tool reveal-on-scroll">
+                            <div class="campus-map-stage" aria-label="Campus map">
+                                <div class="campus-3d-viewport" id="campus-3d-viewport" role="img" aria-label="Campus map">
+                                    <div class="map-loading-indicator" id="map-loading-indicator">
+                                        <div class="map-spinner"></div>
+                                        <span data-i18n="map-loading">加载 3D 校园白模中...</span>
+                                    </div>
+                                </div>
+                                <div class="map-photo-panel" id="map-photo-panel" hidden aria-label="Selected location photo">
+                                    <div class="map-photo-grid" id="map-photo-grid"></div>
+                                </div>
+                            </div>
+                            <div class="map-navigation-row">
+                                <aside class="map-location-index" id="map-location-index" aria-label="Campus locations">
+                                    <nav class="map-location-list" id="map-nav-pills" aria-label="Campus locations">
+                                        <button class="map-location-button map-location-button-overview active" type="button" data-location="all" aria-pressed="true">
+                                            <span class="map-location-number" aria-hidden="true">00</span>
+                                            <span data-i18n="loc-all">全景 (All)</span>
+                                        </button>
+                                        <button class="map-location-button map-location-button-hub" type="button" data-location="bldg-7-hub" aria-pressed="false">
+                                            <span class="map-location-number" aria-hidden="true">01</span>
+                                            <span data-i18n="loc-bldg7-hub">7号馆 2F (集中领取/工具/回收)</span>
+                                        </button>
+                                        <button class="map-location-button" type="button" data-location="bldg-1" aria-pressed="false">
+                                            <span class="map-location-number" aria-hidden="true">02</span>
+                                            <span data-i18n="loc-bldg1">1号馆 2F 掲示板</span>
+                                        </button>
+                                        <button class="map-location-button" type="button" data-location="bldg-2" aria-pressed="false">
+                                            <span class="map-location-number" aria-hidden="true">03</span>
+                                            <span data-i18n="loc-bldg2">2号馆 2F 掲示板</span>
+                                        </button>
+                                        <button class="map-location-button" type="button" data-location="bldg-5" aria-pressed="false">
+                                            <span class="map-location-number" aria-hidden="true">04</span>
+                                            <span data-i18n="loc-bldg5">5号馆 1F 掲示板</span>
+                                        </button>
+                                        <button class="map-location-button" type="button" data-location="bldg-7-1f" aria-pressed="false">
+                                            <span class="map-location-number" aria-hidden="true">05</span>
+                                            <span data-i18n="loc-bldg7-1f">7号馆 1F 掲示板</span>
+                                        </button>
+                                        <button class="map-location-button" type="button" data-location="library" aria-pressed="false">
+                                            <span class="map-location-number" aria-hidden="true">06</span>
+                                            <span data-i18n="loc-library">图书馆 1F 掲示板</span>
+                                        </button>
+                                        <button class="map-location-button map-location-button-exhibit" type="button" data-location="bldg-8" aria-pressed="false">
+                                            <span class="map-location-number" aria-hidden="true">EX</span>
+                                            <span data-i18n="loc-bldg8">多次元 · 展览</span>
+                                        </button>
+                                    </nav>
+                                </aside>
+                                <div class="map-detail-surface" id="map-detail-panel" aria-live="polite">
+                                    <div class="map-detail-header">
+                                        <div class="detail-badge" id="map-detail-tag">🌐 校区全貌</div>
+                                        <h4 class="detail-title" id="map-detail-title">九州大学 大桥校区 (大橋キャンパス)</h4>
+                                    </div>
+                                    <p class="detail-desc" id="map-detail-desc">大桥校区内共设有 6 处海报张贴点与黑胶唱片领取点。7号馆 2 楼设有集中领取箱、安全工具免费借用处及作品回收箱；多次元设计实验栋 2 楼为 11 月成果展与沙龙会场。</p>
+                                    <div class="detail-meta">
+                                        <div class="meta-item"><strong data-i18n="map-meta-floor-label">具体楼层：</strong><span id="map-meta-floor">大桥校区全域</span></div>
+                                        <div class="meta-item"><strong data-i18n="map-meta-items-label">现场提供：</strong><span id="map-meta-items">宣传海报 · 实体EP唱片 · 安全指南腰封 · 集中发放点 · 工具借用</span></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -685,8 +758,9 @@
         </div>
     </div>
 
+    <script src="campus-map-data.js?v=7"></script>
     <script src="submission-config.js?v=2"></script>
-    <script src="translations.js?v=8"></script>
-    <script src="app.js?v=23"></script>
+    <script src="translations.js?v=11"></script>
+    <script src="app.js?v=32"></script>
 </body>
 </html>
