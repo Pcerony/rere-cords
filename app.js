@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Material Cycling & Sustainable Design"
         },
         "details-text": {
-            "zh": "黑胶唱片的主要成分为难降解的聚氯乙烯（PVC）。本项目既关注废弃材料的实体再利用，也接受通过过程记录或纯数字媒介重新讨论唱片文化、资源循环与负责任生产消费的作品。",
-            "ja": "アナログレコードの主原料であるポリ塩化ビニル（PVC）は、自然分解が困難なプラスチックです。本プロジェクトは廃棄素材の実物としての再利用に加え、プロセス記録や純デジタルメディアを通じて、レコード文化、資源循環、責任ある生産と消費を捉え直す作品も受け入れます。",
-            "en": "Vinyl records are primarily made from polyvinyl chloride (PVC), a material that does not readily biodegrade. Alongside physical reuse, this project accepts process-based and fully digital work that reconsiders record culture, material circulation, and responsible production and consumption."
+            "zh": "黑胶唱片的主要成分为难降解的聚氯乙烯（PVC）。本项目通过废旧唱片的实体再利用与设计重构，重新讨论材料循环与负责任生产消费。",
+            "ja": "アナログレコードの主原料であるポリ塩化ビニル（PVC）は、自然分解が困難なプラスチックです。本プロジェクトは廃レコードの実物としての再利用とデザインによる再構築を通じ、素材循環と責任ある生産・消費を考えます。",
+            "en": "Vinyl records are primarily made from polyvinyl chloride (PVC), a material that does not readily biodegrade. Through physical reuse and redesign of discarded records, this project explores material circulation and responsible production and consumption."
         },
         "stat-records": {
             "zh": "提供唱片数量",
@@ -190,9 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "A safe, stable physical work suitable for transport and display."
         },
         "pathway-physical-submit": {
-            "zh": "将实物投入校内回收箱；图像、视频等补充资料可选。",
-            "ja": "実物を学内回収ボックスへ提出します。画像や動画などの補足資料は任意です。",
-            "en": "Deliver the work to the campus collection box; images, video, and other supplements are optional."
+            "zh": "实体作品与打印后的纸质参评表必须一起提交；图像、视频等补充资料可选。",
+            "ja": "実物作品と印刷した紙の参加票は必ず一緒に提出してください。画像や動画などの補足資料は任意です。",
+            "en": "The physical work and a printed paper participation form must be submitted together; images, video, and other supporting materials are optional."
         },
         "pathway-record-digital-record": {
             "zh": "需要领取活动唱片或自行准备废旧唱片，并记录它在过程中的实际作用。",
@@ -365,9 +365,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Materials"
         },
         "req-sub-text": {
-            "zh": "实体作品请线下投入回收箱；图像、视频等补充资料及参与表可线上或纸质提交。",
-            "ja": "実物作品は学内回収ボックスへ提出してください。画像や動画などの補足資料および参加フォームはオンラインまたは紙で提出できます。",
-            "en": "Submit physical works offline to the collection box; optional supplements and participation forms can be submitted online or in print."
+            "zh": "仅接收实体作品。请将实体成品与打印后的纸质参评表一起投入回收箱；图像、视频等补充资料可通过邮件发送。",
+            "ja": "実物作品のみを受け付けます。完成した実物作品と印刷した紙の参加票を一緒に回収ボックスへ入れてください。画像や動画などの補足資料はメールで送信できます。",
+            "en": "Only physical works are accepted. Place the finished physical work and a printed paper participation form together in the collection box; optional images, video, and other supporting materials may be sent by email."
         },
         "req-notice-text": {
             "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。产生的废料请按照地方自治体规定的处理方式妥善废弃。请于11月10日前投入7号馆2层 MEDIA STUDIO 房间前的回收箱。",
@@ -455,9 +455,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Participation & Submission Period"
         },
         "apply-period-text": {
-            "zh": "<span class='apply-date-highlight'>2026年8月20日（星期四）至11月10日（星期二）</span>。期间可随时制作并提交作品；无需另行报名。",
-            "ja": "<span class='apply-date-highlight'>2026年8月20日（木）〜2026年11月10日（火）</span>。期間中は随時制作・提出でき、事前の参加申込は不要です。",
-            "en": "<span class='apply-date-highlight'>August 20 (Thu) - November 10 (Tue), 2026</span>. Make and submit your work at any time during this period; no separate application is needed."
+            "zh": "<span class='apply-date-highlight'>2026年10月1日（星期四）至11月10日（星期二）</span>。期间接受实体作品与纸质参评表；无需另行报名。",
+            "ja": "<span class='apply-date-highlight'>2026年10月1日（木）〜2026年11月10日（火）</span>。実物作品と紙の参加票を受け付けます。事前の参加申込は不要です。",
+            "en": "<span class='apply-date-highlight'>October 1 (Thu) - November 10 (Tue), 2026</span>. Physical works and printed participation forms are accepted during this period; no separate registration is required."
         },
         "title-submission": {
             "zh": "提交作品",
@@ -465,9 +465,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submit Your Work"
         },
         "lead-submission": {
-            "zh": "无需提前报名，完成作品提交即视为正式参加。请将实体作品投入回收箱并提交参与表。",
-            "ja": "事前申込は不要で、作品の提出完了をもって正式参加となります。実物作品を回収ボックスへ入れ、参加票を提出してください。",
-            "en": "No advance registration is required; completed submission constitutes formal participation. Deliver physical works to the collection box and submit the participation form."
+            "zh": "无需提前报名，完成作品提交即视为正式参加。本项目仅接收实体作品，实体作品与纸质参评表必须一起提交。",
+            "ja": "事前申込は不要で、作品の提出完了をもって正式参加となります。実物作品のみを受け付け、実物作品と紙の参加票は必ず一緒に提出してください。",
+            "en": "No advance registration is required; completed submission constitutes formal participation. This project accepts physical works only, and the physical work and printed participation form must be submitted together."
         },
         "submission-digital-title": {
             "zh": "唱片参与的数字成果",
@@ -490,14 +490,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Physical Finished Work"
         },
         "submission-physical-text": {
-            "zh": "请将实物作品投入7号馆2层 MEDIA STUDIO 房间前的回收箱。参与表可随实物纸质提交，也可单独以PDF发送至活动邮箱。",
-            "ja": "実物作品は7号館2階MEDIA STUDIO部屋前の回収ボックスへ入れてください。参加票は紙で同封するか、PDFで事務局メールアドレスへ別途送信できます。",
-            "en": "Place physical works in the collection box in front of the MEDIA STUDIO room on 2F of Building 7. Include a paper participation form or email it separately as a PDF."
+            "zh": "请将实体作品与打印后的纸质参评表一起投入7号馆2层 MEDIA STUDIO 房间前的作品回收箱。两者必须同时提交。",
+            "ja": "実物作品と印刷した紙の参加票を一緒に、7号館2階MEDIA STUDIO部屋前の作品回収ボックスへ入れてください。両方を同時に提出する必要があります。",
+            "en": "Place the physical work and a printed paper participation form together in the work collection box in front of the MEDIA STUDIO room on 2F of Building 7. Both must be submitted at the same time."
         },
         "submission-physical-options": {
-            "zh": "<strong>必需：</strong>实体作品与参与表。作品图像、视频及其他补充资料可选择提交。",
-            "ja": "<strong>必須：</strong>実物作品と参加票。作品画像、動画、その他の補足資料は任意です。",
-            "en": "<strong>Required:</strong> the physical work and participation form. Images, video, and other supporting material are optional."
+            "zh": "<strong>必需：</strong>实体作品与纸质参评表。<strong>可选：</strong>图像、视频及其他补充资料，可作为邮件附件，或以视频网站、日本云存储服务或 Google Drive 链接发送。",
+            "ja": "<strong>必須：</strong>実物作品と紙の参加票。<strong>任意：</strong>画像、動画、その他の補足資料は、メールの添付ファイル、動画サイト、日本国内のクラウドストレージ、または Google Drive のリンクで送信できます。",
+            "en": "<strong>Required:</strong> the physical work and printed participation form. <strong>Optional:</strong> images, video, and other supporting materials may be sent as email attachments or as links to a video platform, a Japanese cloud storage service, or Google Drive."
         },
         "submission-digital-native-title": {
             "zh": "纯数字作品",
@@ -515,19 +515,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "<strong>Required:</strong> at least one representative image, one short explanatory video, the complete work file or access method, and onsite display, playback, or execution requirements."
         },
         "submission-status-label": {
-            "zh": "线上资料渠道",
-            "ja": "オンライン資料提出",
-            "en": "Online Materials"
+            "zh": "参评表",
+            "ja": "参加票",
+            "en": "Participation Form"
         },
         "submission-status": {
-            "zh": "通过活动邮箱接收参与表、PDF及相关资料",
-            "ja": "事務局メールで参加票、PDF、関連資料を受け付けます",
-            "en": "Participation forms, PDFs, and supporting files are accepted by email"
+            "zh": "参评表正在准备中，发布后开放下载",
+            "ja": "参加票は準備中です。公開後にダウンロードできます",
+            "en": "The participation form is being prepared and will be available to download once published"
         },
         "submission-cta": {
-            "zh": "通过邮件提交参与表或数字资料",
-            "ja": "参加票・デジタル資料をメールで提出",
-            "en": "Email Participation Form or Digital Files"
+            "zh": "10月1日起通过邮件发送补充资料",
+            "ja": "10月1日から補足資料をメールで送信",
+            "en": "Email Supporting Materials from October 1"
         },
         "submission-fallback": {
             "zh": "下载备用参与表",
@@ -540,24 +540,24 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Project Schedule"
         },
         "lead-timeline": {
-            "zh": "从领取材料、制作与提交到线下成果展览。11月中旬的交流沙龙可选参加。",
-            "ja": "素材の入手、制作・提出から対面成果展示まで。11月中旬の交流サロンは自由参加です。",
-            "en": "From material pickup, making, and submission to the onsite exhibition. The mid-November exchange salon is optional."
+            "zh": "从领取材料、制作与提交到线下成果展览。展览最后一天的交流沙龙可选参加。",
+            "ja": "素材の入手、制作・提出から対面成果展示まで。展示最終日の交流サロンは自由参加です。",
+            "en": "From material pickup, making, and submission to the onsite exhibition. The exchange salon on the exhibition's final day is optional."
         },
         "time-step1": {
-            "zh": "2026年8月20日 - 11月10日",
-            "ja": "2026年8月20日（木）〜11月10日（火）",
-            "en": "August 20 - November 10, 2026"
+            "zh": "制作：2026年8月20日 - 11月10日 · 提交：10月1日 - 11月10日",
+            "ja": "制作：2026年8月20日〜11月10日 · 提出：10月1日〜11月10日",
+            "en": "Making: Aug 20 - Nov 10 · Submission: Oct 1 - Nov 10, 2026"
         },
         "title-step1": {
-            "zh": "领取材料、制作与随时提交",
-            "ja": "素材入手・制作・随時提出",
+            "zh": "领取材料、制作与提交",
+            "ja": "素材入手・制作・提出",
             "en": "Obtain Materials, Make, and Submit"
         },
         "text-step1": {
-            "zh": "领取活动唱片或自行准备废旧唱片并开展制作。期间随时接受提交，最终截止时间为11月10日。",
-            "ja": "配布レコードを受け取るか自分で用意し、制作を行います。期間中は随時提出でき、最終締切は11月10日です。",
-            "en": "Obtain supplied records or source discarded records yourself to begin making. Submissions are accepted throughout the period until November 10."
+            "zh": "领取活动唱片或自行准备废旧唱片并开展制作。实体作品从10月1日起接受提交，最终截止时间为11月10日。",
+            "ja": "配布レコードを受け取るか自分で用意し、制作を行います。実物作品の提出は10月1日から受け付け、最終締切は11月10日です。",
+            "en": "Obtain supplied records or source discarded records yourself to begin making. Physical work submissions open October 1 and close November 10."
         },
         "timeline-optional-badge": {
             "zh": "可选参加",
@@ -565,9 +565,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Optional"
         },
         "time-salon": {
-            "zh": "2026年11月15日前后",
-            "ja": "2026年11月15日頃",
-            "en": "Around November 15, 2026"
+            "zh": "2026年10月25日",
+            "ja": "2026年10月25日（日）",
+            "en": "October 25, 2026"
         },
         "title-salon": {
             "zh": "交流沙龙",
@@ -575,14 +575,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Exchange Salon"
         },
         "text-salon": {
-            "zh": "面向参与者开展轻松的作品交流与经验分享。活动时间和形式另行通知，不参加也不影响作品提交与展览。",
-            "ja": "参加者同士で作品や制作経験を気軽に共有します。日時と形式は別途案内し、不参加でも作品提出や展示には影響しません。",
-            "en": "An informal session for participants to discuss their work and share experiences. Details will be announced separately; attendance does not affect submission or exhibition."
+            "zh": "成果展最后一天面向参与者开展轻松的作品交流与经验分享。可选参加，不参加也不影响作品提交与展览。",
+            "ja": "成果展示会の最終日に、参加者同士で作品や制作経験を気軽に共有します。自由参加で、不参加でも作品提出や展示には影響しません。",
+            "en": "On the exhibition's final day, participants can informally discuss their work and share experiences. Attendance is optional and does not affect submission or exhibition."
         },
         "time-step3": {
-            "zh": "2026年11月20日 - 11月25日",
-            "ja": "2026.11.20 - 11.25",
-            "en": "November 20 - November 25, 2026"
+            "zh": "2026年10月20日 - 10月25日",
+            "ja": "2026.10.20 - 10.25",
+            "en": "October 20 - October 25, 2026"
         },
         "title-step3": {
             "zh": "线下成果展览",
@@ -670,9 +670,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Exhibition Venue Info"
         },
         "lead-venue": {
-            "zh": "展览将于2026年11月20日至25日在九州大学大桥校区多次元楼2层 Studio 201 举办，欢迎公众参观。",
-            "ja": "成果展示会は2026年11月20日から25日まで、九州大学大橋キャンパス 多次元棟 2階 スタジオ201で開催予定です。一般の方もご来場いただけます。",
-            "en": "The exhibition will be held from November 20 to 25, 2026, in Studio 201, 2F, Multidimensional Building, Kyushu University Ohashi Campus, and is open to the public."
+            "zh": "展览将于2026年10月20日至25日在九州大学大桥校区多次元楼2层 Studio 201 举办，欢迎公众参观。",
+            "ja": "成果展示会は2026年10月20日から25日まで、九州大学大橋キャンパス 多次元棟 2階 スタジオ201で開催予定です。一般の方もご来場いただけます。",
+            "en": "The exhibition will be held from October 20 to 25, 2026, in Studio 201, 2F, Multidimensional Building, Kyushu University Ohashi Campus, and is open to the public."
         },
         "venue-address-label": {
             "zh": "地址",
@@ -873,7 +873,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "title-concept": "Projektin idea",
         "lead-concept": "Tarkastelemme poistolevyjä ja niiden taustalla olevaa materiaalikiertoa fyysisen materiaalin, luovan prosessin tai digitaalisen mielikuvituksen kautta.",
         "details-title": "Materiaalikierto ja kestävä muotoilu",
-        "details-text": "Vinyylilevyt koostuvat pääasiassa polyvinyylikloridista eli PVC:stä, joka ei hajoa helposti luonnossa. Fyysisen uusiokäytön lisäksi projekti hyväksyy prosessipohjaisia ja täysin digitaalisia töitä, jotka tarkastelevat uudelleen levykulttuuria, materiaalikiertoa sekä vastuullista tuotantoa ja kulutusta.",
+        "details-text": "Vinyylilevyt koostuvat pääasiassa polyvinyylikloridista eli PVC:stä, joka ei hajoa helposti luonnossa. Projekti tarkastelee materiaalikiertoa sekä vastuullista tuotantoa ja kulutusta poistolevyjen fyysisen uusiokäytön ja uudelleensuunnittelun kautta.",
         "stat-records": "Jaettavien levyjen määrä",
         "stat-target": "Keskeinen kestävän kehityksen tavoite",
         "stat-exhibit": "Näyttelyyn toimitetut työt",
@@ -882,7 +882,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "stat-exhibit-detail": "Hankkeessa ei ole arviointi- tai valintavaihetta: jokainen toimitettu työ otetaan mukaan näyttelyyn. Tuomalla erilaiset vastaukset yhteen haluamme tehdä materiaalihukan ja ympäristövastuun näkyvämmiksi sekä herättää keskustelua.",
         "pathway-kicker": "Ennen aloittamista",
         "title-pathways": "Valitse osallistumisreittisi",
-        "lead-pathways": "Kaikki kolme reittiä ovat samanarvoisia osallistumistapoja. Valinta muuttaa vain tällä sivulla näkyviä ohjeita, ei lähetä tai rekisteröi tietoja, ja sen voi vaihtaa milloin tahansa.",
+        "lead-pathways": "Prosessi etenee poistolevyn hankinnasta fyysisen työn valmistamiseen ja toimittamiseen paikan päällä järjestettävään näyttelyyn.",
         "pathway-physical-title": "Fyysinen työ",
         "pathway-physical-tab-note": "Hanki levy · Toimita esine",
         "pathway-record-digital-title": "Levyä hyödyntävä digitaalinen tulos",
@@ -897,7 +897,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "pathway-submit-label": "Toimitus",
         "pathway-physical-record": "Nouda projektin levy tai hanki poistolevyt itse. Yhdessä työssä saa käyttää enintään kuutta levyä.",
         "pathway-physical-outcome": "Turvallinen ja vakaa fyysinen työ, joka sopii kuljetukseen ja näyttelyyn.",
-        "pathway-physical-submit": "Jätä työ kampuksen keräyslaatikkoon. Kuvat, video ja muut lisäaineistot ovat vapaaehtoisia.",
+        "pathway-physical-submit": "Fyysinen työ ja tulostettu osallistumislomake on toimitettava yhdessä. Kuvat, videot ja muut lisäaineistot ovat vapaaehtoisia.",
         "pathway-record-digital-record": "Nouda tai hanki poistolevy ja dokumentoi sen todellinen rooli prosessissa.",
         "pathway-record-digital-outcome": "Kuvina, videona, äänenä, datana tai interaktiivisina tiedostoina esitetty prosessi ja tulos.",
         "pathway-record-digital-submit": "Toimita työ, prosessidokumentaatio, vähintään yksi kuva ja lyhyt selitysvideo verkossa.",
@@ -909,7 +909,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "pathway-safety-required-note": "Valitsemasi reitti käsittelee fyysisiä levyjä. Lue kaikki alla olevat säännöt ja noudata niitä.",
         "pathway-safety-optional-note": "Jos täysin digitaalinen työ ei käsittele fyysistä levyä, alla olevat PVC-työstön riskit eivät koske sitä. Näyttölaitteiden ja muiden fyysisten materiaalien kanssa on silti noudatettava työtilan ja laitteiden sääntöjä.",
         "title-poster": "Miten saat levyn?",
-        "lead-poster": "Fyysinen työ ja levyä hyödyntävä digitaalinen tulos käyttävät levyä, jonka voi ottaa kampuksen julisteesta tai keskitetystä jakelulaatikosta tai hankkia itse. Täysin digitaalinen työ voi ohittaa tämän osion.",
+        "lead-poster": "Fyysiseen työhön tarvittavan levyn voi ottaa kampuksen julisteesta tai keskitetystä jakelulaatikosta tai hankkia itse.",
         "method1-title": "Ota levy kampuksen julisteesta",
         "method1-desc": "Etsi RERE-CORDS-juliste Kyushun yliopiston Ohashin kampukselta. Jokaisen julisteen taakse on kiinnitetty yksi käytöstä poistettu vinyylilevy, jonka voit ottaa.",
         "method1-purpose-note": "※ Analogisia levyjä saa ottaa vain tähän projektiin osallistumiseen suoraan liittyvää tarkoitusta varten. Levyjen ottaminen henkilökohtaiseen käyttöön on ehdottomasti kielletty.",
@@ -923,7 +923,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "method2-note1": "※ Yhdessä työssä saa käyttää enintään kuutta levyä myös silloin, kun levyt on hankittu itse.",
         "method2-note2": "※ Julisteisiin kiinnitetyt levyt ovat EP-kokoisia. Itse hankittu levy voi olla myös LP-kokoinen.",
         "title-requirements": "Työn vaatimukset",
-        "lead-requirements": "Muotoilun ala on vapaa. Fyysisiä levyjä käyttävien reittien on noudatettava materiaalien ja työstämisen turvallisuussääntöjä; täysin digitaalisen työn on selitettävä selkeä suhteensa projektin teemaan.",
+        "lead-requirements": "Muotoilun ala on vapaa. Fyysisen työn valmistuksessa on noudatettava materiaali- ja työturvallisuussääntöjä.",
         "req-cat-title": "Muotoilun ala",
         "req-cat-text": "Alarajoituksia ei ole. Mahdollisia aloja ovat graafinen, tuote-, palvelu- ja muotisuunnittelu.",
         "req-limit-title": "Levyjen enimmäismäärä",
@@ -931,7 +931,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "req-proc-title": "Työstötavat",
         "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset.",
         "req-sub-title": "Toimitettava aineisto",
-        "req-sub-text": "Toimita fyysinen työ kierrätyslaatikkoon paikan päällä. Täydentävät aineistot, kuten kuvat ja videot, sekä osallistumislomake voidaan toimittaa verkossa tai paperilla.",
+        "req-sub-text": "Vain fyysisiä töitä otetaan vastaan. Toimita valmis työ ja tulostettu osallistumislomake yhdessä keräyslaatikkoon. Valinnaiset kuvat ja videot voi lähettää sähköpostitse.",
         "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Hävitä syntyvät jätteet asianmukaisesti paikallisten viranomaismääräysten mukaisesti. Jätä työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon 10. marraskuuta mennessä.",
         "safety-kicker": "Lue ennen työskentelyä",
         "title-safety": "Työstämisen turvallisuus",
@@ -949,17 +949,17 @@ document.addEventListener('DOMContentLoaded', () => {
         "safety-stop-title": "Keskeytä poikkeustilanteessa",
         "safety-stop-text": "Jos havaitset savua, voimakkaan tai ärsyttävän hajun, silmien, nenän tai kurkun ärsytystä, huimausta tai laitevian, lopeta heti, sammuta laite, poistu tilasta ja ota yhteys tilan vastuuhenkilöön. Hakeudu tarvittaessa hoitoon.",
         "title-timeline": "Projektin aikataulu",
-        "lead-timeline": "Jokainen reitti etenee reitin valinnasta tekemiseen ja toimittamiseen sekä paikan päällä järjestettävään näyttelyyn. Materiaalin nouto koskee vain fyysisiä levyjä käyttäviä reittejä; marraskuun keskustelutilaisuus on vapaaehtoinen.",
-        "time-step1": "20.8.-10.11.2026",
-        "title-step1": "Valitse reitti, tee ja toimita",
-        "text-step1": "Valitse ensin osallistumisreitti. Fyysinen työ ja levyä hyödyntävä digitaalinen tulos tarvitsevat levyn; täysin digitaalisen työn voi aloittaa suoraan. Töitä vastaanotetaan koko jakson ajan 10. marraskuuta saakka.",
+        "lead-timeline": "Aikataulu etenee materiaalien noudosta ja valmistuksesta toimitukseen ja paikan päällä järjestettävään näyttelyyn. Näyttelyn viimeisen päivän keskustelutilaisuus on vapaaehtoinen.",
+        "time-step1": "Valmistus: 20.8.-10.11. · Toimitus: 1.10.-10.11.2026",
+        "title-step1": "Hanki materiaalit, valmista ja toimita",
+        "text-step1": "Nouda projektin levy tai hanki poistolevy itse ja aloita valmistus. Fyysisten töiden vastaanotto alkaa 1. lokakuuta ja päättyy 10. marraskuuta.",
         "timeline-optional-badge": "Vapaaehtoinen",
-        "time-salon": "Noin 15.11.2026",
+        "time-salon": "25.10.2026",
         "title-salon": "Keskustelutilaisuus",
-        "text-salon": "Rento tilaisuus, jossa osallistujat voivat keskustella töistään ja jakaa kokemuksiaan. Tarkemmat tiedot ilmoitetaan myöhemmin, eikä osallistuminen vaikuta työn toimittamiseen tai näyttelyyn.",
-        "time-step3": "20.-25.11.2026",
+        "text-salon": "Näyttelyn viimeisenä päivänä osallistujat voivat keskustella töistään ja jakaa kokemuksiaan. Osallistuminen on vapaaehtoista eikä vaikuta työn toimittamiseen tai näyttelyyn.",
+        "time-step3": "20.-25.10.2026",
         "title-step3": "Fyysinen tulosnäyttely",
-        "text-step3": "Kaikkien kolmen reitin kautta toimitetut työt voivat osallistua paikan päällä järjestettävään näyttelyyn. Digitaaliset työt esitetään toimitettujen näyttö-, toisto- tai suoritusvaatimusten mukaisesti.",
+        "text-step3": "Toimitetut fyysiset työt asetetaan julkisesti esille Kyushun yliopiston Ohashin kampuksella Studio 201:ssä.",
         "title-advisors": "Ohjaavat opettajat",
         "lead-advisors": "Strategisen muotoilun osasto, Faculty of Design, Kyushun yliopisto",
         "advisor-profile-btn": "Tutkijan profiili",
@@ -970,24 +970,24 @@ document.addEventListener('DOMContentLoaded', () => {
         "advisor-sarantou-role": "Professori · strateginen muotoilu, sosiaalinen muotoilu",
         "advisor-sarantou-bio": "Hän on erikoistunut sosiaaliseen muotoiluun, transformaatiomuotoiluun ja taidelähtöisiin tutkimusmenetelmiin sekä erityisesti marginalisoitujen yhteisöjen ja erilaisten kulttuuristen ympäristöjen muotoilukäytäntöihin. Hän toimii myös Lapin yliopiston dosenttina ja on tehnyt tutkimusta Namibiassa, Suomessa, Australiassa ja Japanissa.",
         "apply-period-title": "Osallistumis- ja toimitusaika",
-        "apply-period-text": "<span class='apply-date-highlight'>20.8.-10.11.2026</span>. Voit valmistaa ja toimittaa työsi milloin tahansa tänä aikana; erillistä ennakkoilmoittautumista ei tarvita.",
+        "apply-period-text": "<span class='apply-date-highlight'>1.10.-10.11.2026</span>. Fyysiset työt ja tulostetut osallistumislomakkeet otetaan vastaan tänä aikana; erillistä ennakkoilmoittautumista ei tarvita.",
         "title-submission": "Töiden toimittaminen",
-        "lead-submission": "Ennakkoilmoittautumista ei tarvita; valmis toimitus merkitsee virallista osallistumista. Valitsemasi reitin vaatimukset näkyvät alla ja päivittyvät, kun vaihdat valintaa ylempänä.",
+        "lead-submission": "Ennakkoilmoittautumista ei tarvita; valmis toimitus merkitsee virallista osallistumista. Vain fyysisiä töitä hyväksytään, ja työ sekä tulostettu osallistumislomake on toimitettava yhdessä.",
         "submission-digital-title": "Levyä hyödyntävä digitaalinen tulos",
         "submission-digital-text": "Lähetä työn tiedot ja osallistumislomake PDF-muodossa sekä valmis digitaalinen tulos ja näyttö siitä, että levyä käytettiin todella luovassa prosessissa.",
         "submission-digital-requirements": "<strong>Pakolliset:</strong> vähintään yksi kuva työstä, lyhyt selitysvideo, prosessidokumentaatio sekä työn ymmärtämiseen, toistamiseen tai suorittamiseen tarvittavat lisätiedostot.",
         "submission-physical-title": "Valmis fyysinen työ",
-        "submission-physical-text": "Jätä fyysinen työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon. Liitä mukaan paperinen osallistumislomake tai lähetä se erikseen PDF-tiedostona.",
-        "submission-physical-options": "<strong>Pakolliset:</strong> fyysinen työ ja osallistumislomake. Kuvat, video ja muu lisäaineisto ovat vapaaehtoisia.",
+        "submission-physical-text": "Jätä fyysinen työ ja tulostettu osallistumislomake yhdessä rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon.",
+        "submission-physical-options": "<strong>Pakolliset:</strong> fyysinen työ ja tulostettu osallistumislomake. <strong>Valinnaiset:</strong> kuvat, videot ja muut lisäaineistot voi lähettää sähköpostin liitteinä tai videoalustan, japanilaisen pilvipalvelun tai Google Driven linkkeinä.",
         "submission-digital-native-title": "Täysin digitaalinen työ",
         "submission-digital-native-text": "Toimita valmis työ ja osallistumislomake verkossa ja selitä työn suhde poistolevyihin, analogisen median kulttuuriin, materiaalikiertoon tai kestävään muotoiluun.",
         "submission-digital-native-requirements": "<strong>Pakolliset:</strong> vähintään yksi edustava kuva, lyhyt selitysvideo, valmis työtiedosto tai pääsytapa sekä näyttelytilan näyttö-, toisto- tai suoritusvaatimukset.",
-        "submission-status-label": "Verkkoaineistot",
-        "submission-status": "Osallistumislomakkeet, PDF-tiedostot ja lisäaineistot vastaanotetaan sähköpostitse",
-        "submission-cta": "Lähetä osallistumislomake tai digitaaliset tiedostot sähköpostilla",
+        "submission-status-label": "Osallistumislomake",
+        "submission-status": "Osallistumislomaketta valmistellaan, ja se tulee ladattavaksi julkaisun jälkeen",
+        "submission-cta": "Lähetä lisäaineistot sähköpostilla 1. lokakuuta alkaen",
         "submission-fallback": "Lataa varalomake",
         "title-venue": "Näyttelypaikan tiedot",
-        "lead-venue": "Näyttely järjestetään 20.-25. marraskuuta 2026 Studio 201:ssä, Moniulotteisen rakennuksen 2. kerroksessa, Kyushun yliopiston Ohashin kampuksella. Näyttely on avoin yleisölle.",
+        "lead-venue": "Näyttely järjestetään 20.-25. lokakuuta 2026 Studio 201:ssä, Moniulotteisen rakennuksen 2. kerroksessa, Kyushun yliopiston Ohashin kampuksella. Näyttely on avoin yleisölle.",
         "venue-address-label": "Osoite",
         "venue-address": "Studio 201, Moniulotteisen rakennuksen 2. kerros, Kyushu University Ohashi Campus | 4-9-1 Shiobaru, Minami-ku, Fukuoka 815-8540, Japani",
         "venue-transit-label": "Julkinen liikenne",
@@ -1268,7 +1268,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const fallbackUrl = isValidExternalUrl(config.fallbackDocumentUrl)
             ? config.fallbackDocumentUrl.trim()
             : '';
-        const enabled = config.enabled === true && formUrl !== '';
+        const opensAt = typeof config.opensAt === 'string' ? Date.parse(config.opensAt) : Number.NaN;
+        const hasOpened = Number.isNaN(opensAt) || Date.now() >= opensAt;
+        const enabled = config.enabled === true && formUrl !== '' && hasOpened;
 
         cta.classList.toggle('is-disabled', !enabled);
         cta.setAttribute('aria-disabled', String(!enabled));
@@ -1485,11 +1487,11 @@ document.addEventListener('DOMContentLoaded', () => {
             tagType: "default",
             title: { zh: "九州大学 大桥校区 (大橋キャンパス)", ja: "九州大学 大橋キャンパス", en: "Kyushu University Ohashi Campus", 'zh-TW': "九州大學 大橋校區", fi: "Kyushun yliopisto, Ohashin kampus" },
             desc: {
-                zh: "大桥校区内共设有 6 处海报张贴点与黑胶唱片领取点。7号馆 2 楼设有集中领取箱、安全工具免费借用处及作品回收箱；多次元设计实验栋 2 楼为 11 月成果展与沙龙会场。",
-                ja: "大橋キャンパス内に計6箇所のポスター掲示・レコード配布スポットを設置しています。7号館2階には集中配布BOX・安全具無料レンタル・作品回収BOXが備わっており、多次元デザイン実験棟2階は11月の成果展会場です。",
-                en: "A total of 6 poster and record pickup spots are located across Ohashi Campus. Building 7 2F serves as the central hub with safety tool loans and submission boxes, while the Multi-Dimensional Design Experimental Building 2F hosts the November exhibition.",
-                'zh-TW': "大橋校區內共設有 6 處海報張貼點與黑膠唱片領取點。7號館 2 樓設有集中領取箱、安全工具免費借用處及作品回收箱；多次元設計實驗棟 2 樓為 11 月成果展與沙龍會場。",
-                fi: "Ohashin kampuksella on 6 juliste- ja vinyylinnoutopistettä. Rakennuksen 7 toinen kerros toimii pääkeskuksena (työkalulainaus ja palautuslaatikko), ja Moniulotteisen suunnittelun kokeilurakennuksen toisessa kerroksessa järjestetään marraskuun näyttely."
+                zh: "大桥校区内共设有 6 处海报张贴点与黑胶唱片领取点。7号馆 2 楼设有集中领取箱、安全工具免费借用处及作品回收箱；多次元设计实验栋 2 楼为 10 月成果展与沙龙会场。",
+                ja: "大橋キャンパス内に計6箇所のポスター掲示・レコード配布スポットを設置しています。7号館2階には集中配布BOX・安全具無料レンタル・作品回収BOXが備わっており、多次元デザイン実験棟2階は10月の成果展・サロン会場です。",
+                en: "A total of 6 poster and record pickup spots are located across Ohashi Campus. Building 7 2F serves as the central hub with safety tool loans and submission boxes, while the Multi-Dimensional Design Experimental Building 2F hosts the October exhibition and salon.",
+                'zh-TW': "大橋校區內共設有 6 處海報張貼點與黑膠唱片領取點。7號館 2 樓設有集中領取箱、安全工具免費借用處及作品回收箱；多次元設計實驗棟 2 樓為 10 月成果展與沙龍會場。",
+                fi: "Ohashin kampuksella on 6 juliste- ja vinyylinnoutopistettä. Rakennuksen 7 toinen kerros toimii pääkeskuksena, ja Moniulotteisen suunnittelun kokeilurakennuksen toisessa kerroksessa järjestetään lokakuun näyttely ja keskustelutilaisuus."
             },
             floor: { zh: "大桥校区全域", ja: "キャンパス各棟", en: "Campus-wide", 'zh-TW': "大橋校區全域", fi: "Koko kampus" },
             items: { zh: "宣传海报 · 实体EP唱片 · 安全指南腰封 · 集中发放点 · 工具借用", ja: "公式ポスター · EPレコード実物 · 安全指南帯 · 集中配布BOX · 工具レンタル", en: "Official Posters · Vinyl Records · Safety Obi Band · Central Pickup Box · Safety Tools", 'zh-TW': "宣傳海報 · 實體EP唱片 · 安全指南腰封 · 集中發放點 · 工具借用", fi: "Julisteet · Vinyylilevyt · Turvallisuusnauha · Noutolaatikko · Työkalulainaus" },
@@ -1579,18 +1581,18 @@ document.addEventListener('DOMContentLoaded', () => {
             items: { zh: "活动宣传海报 · 实体 EP 唱片（背面取用） · 安全指南腰封", ja: "公式ポスター · 実物EPレコード · 安全加工ガイドライン帯", en: "Official Poster · Physical EP Record · Safety Guide Obi Band", 'zh-TW': "活動宣傳海報 · 實體 EP 唱片（背面取用） · 安全指南腰封", fi: "Juliste · EP-vinyyli · Turvallisuusohje" },
         },
         "bldg-8": {
-            tag: { zh: "🌟 11月成果展与沙龙主会场", ja: "🌟 11月成果展示会＆サロン会場", en: "🌟 Nov Exhibition & Salon Venue", 'zh-TW': "🌟 11月成果展與沙龍主會場", fi: "🌟 Marraskuun näyttelytila" },
+            tag: { zh: "🌟 10月成果展与沙龙主会场", ja: "🌟 10月成果展示会＆サロン会場", en: "🌟 Oct Exhibition & Salon Venue", 'zh-TW': "🌟 10月成果展與沙龍主會場", fi: "🌟 Lokakuun näyttelytila" },
             tagType: "badge-exhibit",
             title: { zh: "多次元设计实验栋 2F Studio 201", ja: "多次元デザイン実験棟 2F スタジオ201", en: "Multi-Dimensional Design Experimental Building, 2F, Studio 201", 'zh-TW': "多次元設計實驗棟 2F Studio 201", fi: "Moniulotteisen suunnittelun kokeilurakennus, 2. krs (Studio 201)" },
             desc: {
-                zh: "【展览与沙龙会场】2026年11月20日 - 25日 线下成果展主办地（开放市民与师生参观）；11月15日前后交流沙龙亦在此举行。",
-                ja: "【成果展・サロン本会場】2026年11月20日〜25日の成果展示会メイン会場。11月中旬の交流サロンもここで開催されます。",
-                en: "【Main Venue】The physical exhibition venue (Nov 20-25, 2026, open to public) and participant networking salon.",
-                'zh-TW': "【展覽與沙龍會場】2026年11月20日 - 25日 線下成果展主辦地（開放市民與師生參觀）；11月15日前後交流沙龍亦在此舉行。",
-                fi: "【Päänäyttelytila】RERE-CORDS-näyttely (20.–25.11.2026) ja verkostoitumissalonki."
+                zh: "【展览与沙龙会场】2026年10月20日 - 25日线下成果展主办地（开放市民与师生参观）；10月25日举行可选参加的交流沙龙。",
+                ja: "【成果展・サロン本会場】2026年10月20日〜25日の成果展示会メイン会場。最終日の10月25日に自由参加の交流サロンを開催します。",
+                en: "【Main Venue】The physical exhibition venue (Oct 20-25, 2026, open to the public), with an optional participant salon on the final day, October 25.",
+                'zh-TW': "【展覽與沙龍會場】2026年10月20日 - 25日線下成果展主辦地（開放市民與師生參觀）；10月25日舉行可選參加的交流沙龍。",
+                fi: "【Päänäyttelytila】RERE-CORDS-näyttely 20.-25.10.2026 ja vapaaehtoinen keskustelutilaisuus viimeisenä päivänä."
             },
             floor: { zh: "多次元设计实验栋 2 楼 Studio 201", ja: "多次元デザイン実験棟 2階 スタジオ201", en: "Multi-Dimensional Design Experimental Building, 2nd Floor, Studio 201", 'zh-TW': "多次元設計實驗棟 2 樓 Studio 201", fi: "Moniulotteisen suunnittelun kokeilurakennus, 2. krs, Studio 201" },
-            items: { zh: "实体与数字作品展示 · 现场投票与互动 · 评委沙龙与颁奖会", ja: "作品展示ブース · 来場者投票 · 講評＆交流サロン", en: "Artwork Exhibition · Audience Voting · Review & Awards Salon", 'zh-TW': "實體與數位作品展示 · 現場投票與互動 · 評委沙龍與頒獎會", fi: "Teosnäyttely · Yleisöäänestys · Palkintotilaisuus" },
+            items: { zh: "实体作品展示 · 可选交流沙龙", ja: "実物作品展示 · 自由参加の交流サロン", en: "Physical Work Exhibition · Optional Exchange Salon", 'zh-TW': "實體作品展示 · 可選交流沙龍", fi: "Fyysisten töiden näyttely · Vapaaehtoinen keskustelutilaisuus" },
         }
     };
 
