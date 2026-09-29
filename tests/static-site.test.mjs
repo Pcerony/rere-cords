@@ -339,8 +339,11 @@ test('processing safety section links to the multilingual tool reservation page'
     const section = html.slice(sectionStart, sectionEnd);
     const translations = mergeExtraTranslations(parseTranslations(read('app.js')));
 
-    assert.match(section, /href="safety-tool-reservation\.html"[^>]*data-i18n="reservation-entry"/);
-    assert.match(css, /\.safety-reservation-link\s*\{[^}]*background:\s*#ffffff;[^}]*color:\s*var\(--color-text-main\);[^}]*font-size:\s*1rem;[^}]*min-height:\s*3\.25rem;/s);
+    assert.match(section, /class="safety-reservation-link" href="safety-tool-reservation\.html"/);
+    assert.match(section, /data-i18n="reservation-entry"/);
+    assert.match(section, /<svg[^>]*class="safety-reservation-icon"[^>]*aria-hidden="true"/);
+    assert.match(section, /<svg[^>]*class="safety-reservation-arrow"[^>]*aria-hidden="true"/);
+    assert.match(css, /\.safety-reservation-link\s*\{[^}]*background:\s*#ffffff;[^}]*color:\s*var\(--color-text-main\);[^}]*font-size:\s*1\.2rem;[^}]*min-height:\s*5rem;[^}]*width:\s*100%;[^}]*max-width:\s*640px;/s);
     for (const language of ['zh', 'zh-TW', 'ja', 'en', 'ko', 'id', 'vi', 'th', 'bn', 'ar', 'fr', 'hi', 'fi']) {
         assert.equal(typeof translations['reservation-entry']?.[language], 'string', `reservation-entry.${language} must exist`);
         assert.notEqual(translations['reservation-entry'][language].trim(), '');
