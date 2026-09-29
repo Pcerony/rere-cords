@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { filterReservations, formatReservationItems, getStatusActions, setReservationStatus } from '../safety-tool-admin.js';
+import { buildNotificationMailto, filterReservations, formatReservationItems, getStatusActions, setReservationStatus } from '../safety-tool-admin.js';
 
 const page = readFileSync(new URL('../safety-tool-admin.html', import.meta.url), 'utf8');
 const styles = readFileSync(new URL('../safety-tool-admin.css', import.meta.url), 'utf8');
@@ -15,6 +15,38 @@ const reservation = {
 
 test('admin page shows translated equipment names and quantities', () => {
     assert.deepEqual(formatReservationItems(reservation.reservation_items), ['小刀 × 1', '安全手套 × 2']);
+});
+
+test('notification draft opens the participant email with Japanese and English reservation details', () => {
+    const mailto = buildNotificationMailto({
+        ...reservation,
+        participant_name: '山田',
+        reservation_items: [
+            ...reservation.reservation_items,
+            { equipment_id: 'goggles', quantity: 1 },
+            { equipment_id: 'mask', quantity: 2 }
+        ]
+    });
+    assert.match(mailto, /^mailto:example@example\.org\?/);
+    const params = new URLSearchParams(mailto.split('?')[1]);
+    assert.equal(params.get('subject'), '安全用具の準備ができました / Safety tools are ready [RRC-20260929-ABCDE123]');
+    const body = params.get('body');
+    for (const text of [
+        '山田', '予約番号：RRC-20260929-ABCDE123', 'カッター × 1', '保護メガネ × 1', '防じんマスク × 2', '安全手袋 × 2',
+        '受取日：2026-10-02', '返却期限：2026-10-04', '7号館2階 MEDIA STUDIO 前の小さなボックス',
+        'Dear 山田,', 'Reservation: RRC-20260929-ABCDE123', 'Cutter × 1', 'Safety goggles × 1', 'Dust mask × 2', 'Safety gloves × 2',
+        'Pickup date: 2026-10-02', 'Return by: 2026-10-04', 'Small box in front of MEDIA STUDIO, Building 7, 2F'
+    ]) {
+        assert.ok(body.includes(text), `email draft must include ${text}`);
+    }
+});
+
+test('notification draft rejects an invalid recipient and strips header breaks from names', () => {
+    const invalid = buildNotificationMailto({ ...reservation, email: 'bad\r\nBcc:attacker@example.org' });
+    assert.equal(invalid, null);
+    const mailto = buildNotificationMailto({ ...reservation, participant_name: 'Aki\r\nBcc:attacker@example.org' });
+    const body = new URLSearchParams(mailto.split('?')[1]).get('body');
+    assert.doesNotMatch(body, /\r\nBcc:/);
 });
 
 test('reservation filters include all or only the selected status', () => {
@@ -45,4 +77,7 @@ test('admin page contains an accessible sign-in and reservation list, without pu
     const script = readFileSync(new URL('../safety-tool-admin.js', import.meta.url), 'utf8');
     assert.doesNotMatch(`${page}\n${script}`, /service_role|sb_secret_/i);
     assert.match(styles, /@media\s*\(max-width:\s*700px\)/);
+    assert.match(page, /safety-tool-admin\.js\?v=2/);
+    assert.match(script, /打开日英通知邮件草稿/);
+    assert.match(script, /确认已放置并已通知/);
 });

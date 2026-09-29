@@ -19,7 +19,7 @@
         <header class="admin-page-heading">
             <span class="admin-kicker">MEDIA STUDIO / EQUIPMENT</span>
             <h1>安全道具预约管理</h1>
-            <p>请先实地放置道具并发送邮件，再将预约标记为「已放置并通知」。</p>
+            <p>先实地放置道具；检查电脑默认邮件应用的发件账户，再打开日英草稿并手动发送。完成后回到这里确认「已放置并已通知」。</p>
         </header>
 
         <section id="admin-login-section" class="admin-login" aria-labelledby="admin-login-title">
@@ -42,7 +42,7 @@
                     <select id="reservation-filter">
                         <option value="all">全部状态</option>
                         <option value="pending">待处理</option>
-                        <option value="ready">已放置并通知</option>
+                        <option value="ready">已放置并已通知</option>
                         <option value="cancelled">已取消</option>
                         <option value="returned">已归还</option>
                     </select>
@@ -58,6 +58,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js" defer></script>
     <script src="safety-tool-reservation-config.js?v=1" defer></script>
-    <script type="module" src="safety-tool-admin.js?v=1"></script>
+    <script type="module" src="safety-tool-admin.js?v=2"></script>
 </body>
 </html>

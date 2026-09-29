@@ -56,7 +56,7 @@ Supabase Publishable key 和项目 URL 是设计为可出现在浏览器里的�
 
 - 页面地址：[https://rerecords.space/safety-tool-admin.html](https://rerecords.space/safety-tool-admin.html)
 - 页面虽然公开可访问，但必须使用管理员账号登录；未授权用户不能读取预约资料。页面没有注册入口。
-- 管理台不会自动发邮件。只有道具已经实地放好并且管理员已经给参与者发出邮件，才可将状态设为「已放置并通知」。
+- 管理台不会自动发送邮件。管理员可点击「打开日英通知邮件草稿」，在电脑默认邮件应用中检查并手动发送；只有道具已经实地放好且邮件确实发出后，才可将状态设为「已放置并已通知」。
 
 首次设置时按以下步骤操作：
 
@@ -85,24 +85,30 @@ Supabase migration 的本地文件不会自动执行；必须在项目的 SQL Ed
 
 1. 在管理页面的「待处理」预约中检查领取日期、必须归还日期、道具种类与数量及参与者邮箱，确认能够准备。
 2. 先实地将对应道具放入「7号馆二楼 MEDIA STUDIO 房间前的小盒子」。
-3. 放置完成后，使用团队邮箱向申请中的邮箱发送通知，告知预约编号、已放置道具、领取地点及必须归还日期。**收到这封邮件前，参与者不应前往领取。**
-4. 邮件发送后，回到管理页面点「标记已放置并通知」并确认。此时状态变为 `ready`；`pending` 和 `ready` 都会占用库存。
+3. 点击该预约的「打开日英通知邮件草稿」。系统会调用电脑默认邮件应用，填入参与者邮箱、日英双语主题及预约编号、道具、领取地点和归还日期。检查发件账户、收件人和内容后手动发送；**收到这封邮件前，参与者不应前往领取。**
+4. 确认邮件已从邮箱发出后，回到管理页面点「确认已放置并已通知」。此时状态变为 `ready`；`pending` 和 `ready` 都会占用库存。打开草稿不代表邮件已发送，也不会更改预约状态。
 5. 参与者取消或管理员无法履约时，在管理页面点「取消预约」，库存才会重新开放。道具实际归还后点「确认已归还」，状态变为 `returned`。
 
-参与者邮件模板（将方括号内容替换为实际信息）：
+管理台会按实际预约自动填写以下日英双语邮件草稿：
 
 ```text
-件名 / Subject: RERE-CORDS 安全道具已放置 / Safety tools ready [预约编号]
+件名 / Subject: 安全用具の準備ができました / Safety tools are ready [预约编号]
 
-[姓名] 您好：
-您预约的 [道具与数量] 已放入九州大学大桥校区 7 号馆二楼 MEDIA STUDIO 房间前的小盒子。
-预约编号：[预约编号]
-请于 [归还日期] 前归还。请仅领取为您准备的道具。
+[姓名] 様：
+ご予約の安全用具を、九州大学大橋キャンパス7号館2階 MEDIA STUDIO 前の小さなボックスに設置しました。
+予約番号：[预约编号]
+用具：[道具与数量]
+受取日：[领取日期]
+返却期限：[归还日期]
+このメールを受信後にお受け取りください。必ず返却期限までにご返却ください。
 
-Hello [Name],
-Your reserved [tools and quantities] are now in the small box in front of MEDIA STUDIO, Building 7, 2F, Kyushu University Ohashi Campus.
+[Name],
+Your reserved tools have been placed in the small box in front of MEDIA STUDIO, Building 7, 2F, Kyushu University Ohashi Campus.
 Reservation: [reservation code]
-Please return the items by [return date] and take only the tools reserved for you.
+Equipment: [tools and quantities]
+Pickup date: [pickup date]
+Return by: [return date]
+Please pick up the tools after receiving this email and return them by the date above.
 ```
 
 ## 八、隐私与运维

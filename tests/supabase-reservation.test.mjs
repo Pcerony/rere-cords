@@ -79,7 +79,7 @@ test('Chinese setup guide explains project setup, deployment variables, and manu
 
 test('Chinese setup guide explains secure administrator setup and the dedicated manager page', () => {
     const guide = readFileSync(new URL('../docs/supabase-setup.md', import.meta.url), 'utf8');
-    for (const phrase of ['Authentication → Users', '关闭公开注册', 'reservation_admins', 'Auth 用户 UUID', 'safety-tool-admin.html', '标记已放置并通知']) {
+    for (const phrase of ['Authentication → Users', '关闭公开注册', 'reservation_admins', 'Auth 用户 UUID', 'safety-tool-admin.html', '确认已放置并已通知']) {
         assert.ok(guide.includes(phrase), `setup guide must include ${phrase}`);
     }
 });

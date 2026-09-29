@@ -5,9 +5,23 @@ const EQUIPMENT_NAMES = Object.freeze({
     gloves: '安全手套'
 });
 
+const EQUIPMENT_NAMES_JA = Object.freeze({
+    cutter: 'カッター',
+    goggles: '保護メガネ',
+    mask: '防じんマスク',
+    gloves: '安全手袋'
+});
+
+const EQUIPMENT_NAMES_EN = Object.freeze({
+    cutter: 'Cutter',
+    goggles: 'Safety goggles',
+    mask: 'Dust mask',
+    gloves: 'Safety gloves'
+});
+
 const STATUS_LABELS = Object.freeze({
     pending: '待处理',
-    ready: '已放置并通知',
+    ready: '已放置并已通知',
     cancelled: '已取消',
     returned: '已归还'
 });
@@ -20,10 +34,59 @@ const STATUS_ACTIONS = Object.freeze({
 });
 
 const ACTION_LABELS = Object.freeze({
-    ready: '标记已放置并通知',
+    ready: '确认已放置并已通知',
     cancelled: '取消预约',
     returned: '确认已归还'
 });
+
+function safeMailText(value) {
+    return String(value ?? '').replace(/[\r\n\t]+/g, ' ').trim();
+}
+
+function formatMailItems(items = [], names) {
+    return items.map(({ equipment_id: id, quantity }) => `- ${names[id] || safeMailText(id)} × ${quantity}`);
+}
+
+export function buildNotificationMailto(reservation) {
+    const email = safeMailText(reservation.email);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
+
+    const name = safeMailText(reservation.participant_name);
+    const code = safeMailText(reservation.reservation_code);
+    const japaneseItems = formatMailItems(reservation.reservation_items, EQUIPMENT_NAMES_JA);
+    const englishItems = formatMailItems(reservation.reservation_items, EQUIPMENT_NAMES_EN);
+    const subject = `安全用具の準備ができました / Safety tools are ready [${code}]`;
+    const body = [
+        `${name} 様`,
+        '',
+        'RERE-CORDSの安全用具をご予約いただき、ありがとうございます。',
+        'ご予約の用具を、7号館2階 MEDIA STUDIO 前の小さなボックスに設置しました。',
+        '',
+        `予約番号：${code}`,
+        '用具：',
+        ...japaneseItems,
+        `受取日：${safeMailText(reservation.pickup_date)}`,
+        `返却期限：${safeMailText(reservation.return_date)}`,
+        '受取場所：7号館2階 MEDIA STUDIO 前の小さなボックス',
+        'このメールを受信後にお受け取りください。必ず返却期限までにご返却ください。',
+        '',
+        '--- English ---',
+        `Dear ${name},`,
+        '',
+        'Thank you for reserving safety tools from RERE-CORDS.',
+        'Your reserved tools have been placed in the small box in front of MEDIA STUDIO, Building 7, 2F.',
+        '',
+        `Reservation: ${code}`,
+        'Equipment:',
+        ...englishItems,
+        `Pickup date: ${safeMailText(reservation.pickup_date)}`,
+        `Return by: ${safeMailText(reservation.return_date)}`,
+        'Pickup location: Small box in front of MEDIA STUDIO, Building 7, 2F',
+        'Please pick up the tools after receiving this email and return them by the date above.'
+    ].join('\r\n');
+
+    return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 export function formatReservationItems(items = []) {
     return items.map(({ equipment_id: id, quantity }) => `${EQUIPMENT_NAMES[id] || id} × ${quantity}`);
@@ -120,6 +183,20 @@ function initializeAdminPage() {
         const actions = getStatusActions(reservation.status);
         if (actions.length) {
             const actionBar = node('div', 'admin-actions');
+            if (reservation.status === 'pending') {
+                const draftButton = node('button', 'admin-action admin-action-secondary', '打开日英通知邮件草稿');
+                draftButton.type = 'button';
+                draftButton.addEventListener('click', () => {
+                    const mailto = buildNotificationMailto(reservation);
+                    if (!mailto) {
+                        setMessage(dashboardMessage, '参与者邮箱格式无效，无法创建邮件草稿。', 'error');
+                        return;
+                    }
+                    setMessage(dashboardMessage, `已请求默认邮件应用打开预约 ${reservation.reservation_code} 的日英草稿。请检查发件账户、收件人和内容并手动发送；发送后再确认「已放置并已通知」。`);
+                    window.location.href = mailto;
+                });
+                actionBar.append(draftButton);
+            }
             for (const status of actions) {
                 const button = node('button', status === 'cancelled' ? 'admin-action admin-action-secondary' : 'admin-action', ACTION_LABELS[status]);
                 button.type = 'button';
@@ -183,7 +260,7 @@ function initializeAdminPage() {
 
     async function updateStatus(reservation, status, button) {
         const prompt = status === 'ready'
-            ? `确认 ${reservation.reservation_code} 的道具已放入领取盒，并且已向参与者发送邮件？`
+            ? `确认 ${reservation.reservation_code} 的道具已放入领取盒，且日英通知邮件已发送？`
             : status === 'cancelled'
                 ? `确认取消预约 ${reservation.reservation_code}？取消后库存会重新开放。`
                 : `确认预约 ${reservation.reservation_code} 的道具已经归还？`;
