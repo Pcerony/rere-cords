@@ -74,7 +74,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=28">
+    <link rel="stylesheet" href="styles.css?v=29">
     <!-- Three.js & OrbitControls for 3D White Model Campus Map -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -520,7 +520,10 @@
                         <div class="timeline-marker">1</div>
                         <div class="timeline-content-card">
                             <div class="timeline-copy">
-                                <span class="timeline-date" data-i18n="time-step1">制作：2026年8月20日 - 11月10日 · 提交：10月1日 - 11月10日</span>
+                                <div class="timeline-date-group">
+                                    <span class="timeline-date" data-i18n="time-step1-making">制作：2026年8月20日 - 11月10日</span>
+                                    <span class="timeline-date" data-i18n="time-step1-submission">提交：2026年10月1日 - 11月10日</span>
+                                </div>
                                 <h3 data-i18n="title-step1">领取材料、制作与提交</h3>
                                 <p data-i18n="text-step1">领取活动唱片或自行准备废旧唱片并开展制作。实体作品从10月1日起接受提交，最终截止时间为11月10日。</p>
                             </div>
@@ -531,7 +534,7 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="timeline-item timeline-item-last">
+                    <div class="timeline-item">
                         <div class="timeline-marker">2</div>
                         <div class="timeline-content-card">
                             <div class="timeline-copy">
@@ -760,7 +763,7 @@
 
     <script src="campus-map-data.js?v=7"></script>
     <script src="submission-config.js?v=3"></script>
-    <script src="translations.js?v=13"></script>
-    <script src="app.js?v=34"></script>
+    <script src="translations.js?v=14"></script>
+    <script src="app.js?v=35"></script>
 </body>
 </html>

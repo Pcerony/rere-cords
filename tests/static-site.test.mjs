@@ -58,7 +58,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=3"><\/script>\s*<script src="translations\.js\?v=13"><\/script>\s*<script src="app\.js\?v=34"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=3"><\/script>\s*<script src="translations\.js\?v=14"><\/script>\s*<script src="app\.js\?v=35"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -147,6 +147,23 @@ test('timeline ends with the exhibition and optional salon on October 25', () =>
     assert.doesNotMatch(app, /2026年11月15日|2026年11月20日\s*-\s*11月25日/);
     assert.match(html, /"startDate": "2026-10-20T10:00:00\+09:00"/);
     assert.match(html, /"endDate": "2026-10-25T17:00:00\+09:00"/);
+});
+
+test('timeline keeps schedule dates readable and aligns the optional salon to the main axis', () => {
+    const html = read('index.html');
+    const css = read('styles.css');
+    const timelineStart = html.indexOf('id="timeline"');
+    const timelineEnd = html.indexOf('</section>', timelineStart);
+    const timeline = html.slice(timelineStart, timelineEnd);
+
+    assert.match(timeline, /class="timeline-date-group"/);
+    assert.match(timeline, /data-i18n="time-step1-making"/);
+    assert.match(timeline, /data-i18n="time-step1-submission"/);
+    assert.doesNotMatch(timeline, /data-i18n="time-step1"/);
+    assert.doesNotMatch(timeline, /timeline-item-last/);
+    assert.match(css, /\.timeline-optional\s*\{[^}]*padding-left:\s*55px;/s);
+    assert.match(css, /\.timeline-optional-marker\s*\{[^}]*left:\s*15px;/s);
+    assert.doesNotMatch(css, /\.timeline-item-last::after/);
 });
 
 test('submission requires a physical work and printed form while supplements use email', () => {

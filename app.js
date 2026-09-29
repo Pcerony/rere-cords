@@ -544,10 +544,15 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "素材の入手、制作・提出から対面成果展示まで。展示最終日の交流サロンは自由参加です。",
             "en": "From material pickup, making, and submission to the onsite exhibition. The exchange salon on the exhibition's final day is optional."
         },
-        "time-step1": {
-            "zh": "制作：2026年8月20日 - 11月10日 · 提交：10月1日 - 11月10日",
-            "ja": "制作：2026年8月20日〜11月10日 · 提出：10月1日〜11月10日",
-            "en": "Making: Aug 20 - Nov 10 · Submission: Oct 1 - Nov 10, 2026"
+        "time-step1-making": {
+            "zh": "制作：2026年8月20日 - 11月10日",
+            "ja": "制作：2026年8月20日〜11月10日",
+            "en": "Making: August 20 - November 10, 2026"
+        },
+        "time-step1-submission": {
+            "zh": "提交：2026年10月1日 - 11月10日",
+            "ja": "提出：2026年10月1日〜11月10日",
+            "en": "Submission: October 1 - November 10, 2026"
         },
         "title-step1": {
             "zh": "领取材料、制作与提交",
@@ -950,7 +955,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "safety-stop-text": "Jos havaitset savua, voimakkaan tai ärsyttävän hajun, silmien, nenän tai kurkun ärsytystä, huimausta tai laitevian, lopeta heti, sammuta laite, poistu tilasta ja ota yhteys tilan vastuuhenkilöön. Hakeudu tarvittaessa hoitoon.",
         "title-timeline": "Projektin aikataulu",
         "lead-timeline": "Aikataulu etenee materiaalien noudosta ja valmistuksesta toimitukseen ja paikan päällä järjestettävään näyttelyyn. Näyttelyn viimeisen päivän keskustelutilaisuus on vapaaehtoinen.",
-        "time-step1": "Valmistus: 20.8.-10.11. · Toimitus: 1.10.-10.11.2026",
+        "time-step1-making": "Valmistus: 20.8.-10.11.2026",
+        "time-step1-submission": "Toimitus: 1.10.-10.11.2026",
         "title-step1": "Hanki materiaalit, valmista ja toimita",
         "text-step1": "Nouda projektin levy tai hanki poistolevy itse ja aloita valmistus. Fyysisten töiden vastaanotto alkaa 1. lokakuuta ja päättyy 10. marraskuuta.",
         "timeline-optional-badge": "Vapaaehtoinen",
