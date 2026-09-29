@@ -570,9 +570,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Optional"
         },
         "time-salon": {
-            "zh": "2026年10月25日",
-            "ja": "2026年10月25日（日）",
-            "en": "October 25, 2026"
+            "zh": "2026年11月25日",
+            "ja": "2026年11月25日（水）",
+            "en": "November 25, 2026"
         },
         "title-salon": {
             "zh": "交流沙龙",
@@ -585,9 +585,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "On the exhibition's final day, participants can informally discuss their work and share experiences. Attendance is optional and does not affect submission or exhibition."
         },
         "time-step3": {
-            "zh": "2026年10月20日 - 10月25日",
-            "ja": "2026.10.20 - 10.25",
-            "en": "October 20 - October 25, 2026"
+            "zh": "2026年11月22日 - 11月25日",
+            "ja": "2026.11.22 - 11.25",
+            "en": "November 22 - November 25, 2026"
         },
         "title-step3": {
             "zh": "线下成果展览",
@@ -675,9 +675,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Exhibition Venue Info"
         },
         "lead-venue": {
-            "zh": "展览将于2026年10月20日至25日在九州大学大桥校区多次元楼2层 Studio 201 举办，欢迎公众参观。",
-            "ja": "成果展示会は2026年10月20日から25日まで、九州大学大橋キャンパス 多次元棟 2階 スタジオ201で開催予定です。一般の方もご来場いただけます。",
-            "en": "The exhibition will be held from October 20 to 25, 2026, in Studio 201, 2F, Multidimensional Building, Kyushu University Ohashi Campus, and is open to the public."
+            "zh": "展览将于2026年11月22日至25日在九州大学大桥校区多次元楼2层 Studio 201 举办，欢迎公众参观。",
+            "ja": "成果展示会は2026年11月22日から25日まで、九州大学大橋キャンパス 多次元棟 2階 スタジオ201で開催予定です。一般の方もご来場いただけます。",
+            "en": "The exhibition will be held from November 22 to 25, 2026, in Studio 201, 2F, Multidimensional Building, Kyushu University Ohashi Campus, and is open to the public."
         },
         "venue-address-label": {
             "zh": "地址",
@@ -960,10 +960,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "title-step1": "Hanki materiaalit, valmista ja toimita",
         "text-step1": "Nouda projektin levy tai hanki poistolevy itse ja aloita valmistus. Fyysisten töiden vastaanotto alkaa 1. lokakuuta ja päättyy 10. marraskuuta.",
         "timeline-optional-badge": "Vapaaehtoinen",
-        "time-salon": "25.10.2026",
+        "time-salon": "25.11.2026",
         "title-salon": "Keskustelutilaisuus",
         "text-salon": "Näyttelyn viimeisenä päivänä osallistujat voivat keskustella töistään ja jakaa kokemuksiaan. Osallistuminen on vapaaehtoista eikä vaikuta työn toimittamiseen tai näyttelyyn.",
-        "time-step3": "20.-25.10.2026",
+        "time-step3": "22.-25.11.2026",
         "title-step3": "Fyysinen tulosnäyttely",
         "text-step3": "Toimitetut fyysiset työt asetetaan julkisesti esille Kyushun yliopiston Ohashin kampuksella Studio 201:ssä.",
         "title-advisors": "Ohjaavat opettajat",
@@ -993,7 +993,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "submission-cta": "Lähetä lisäaineistot sähköpostilla 1. lokakuuta alkaen",
         "submission-fallback": "Lataa varalomake",
         "title-venue": "Näyttelypaikan tiedot",
-        "lead-venue": "Näyttely järjestetään 20.-25. lokakuuta 2026 Studio 201:ssä, Moniulotteisen rakennuksen 2. kerroksessa, Kyushun yliopiston Ohashin kampuksella. Näyttely on avoin yleisölle.",
+        "lead-venue": "Näyttely järjestetään 22.-25. marraskuuta 2026 Studio 201:ssä, Moniulotteisen rakennuksen 2. kerroksessa, Kyushun yliopiston Ohashin kampuksella. Näyttely on avoin yleisölle.",
         "venue-address-label": "Osoite",
         "venue-address": "Studio 201, Moniulotteisen rakennuksen 2. kerros, Kyushu University Ohashi Campus | 4-9-1 Shiobaru, Minami-ku, Fukuoka 815-8540, Japani",
         "venue-transit-label": "Julkinen liikenne",
@@ -1591,11 +1591,11 @@ document.addEventListener('DOMContentLoaded', () => {
             tagType: "badge-exhibit",
             title: { zh: "多次元设计实验栋 2F Studio 201", ja: "多次元デザイン実験棟 2F スタジオ201", en: "Multi-Dimensional Design Experimental Building, 2F, Studio 201", 'zh-TW': "多次元設計實驗棟 2F Studio 201", fi: "Moniulotteisen suunnittelun kokeilurakennus, 2. krs (Studio 201)" },
             desc: {
-                zh: "【展览与沙龙会场】2026年10月20日 - 25日线下成果展主办地（开放市民与师生参观）；10月25日举行可选参加的交流沙龙。",
-                ja: "【成果展・サロン本会場】2026年10月20日〜25日の成果展示会メイン会場。最終日の10月25日に自由参加の交流サロンを開催します。",
-                en: "【Main Venue】The physical exhibition venue (Oct 20-25, 2026, open to the public), with an optional participant salon on the final day, October 25.",
-                'zh-TW': "【展覽與沙龍會場】2026年10月20日 - 25日線下成果展主辦地（開放市民與師生參觀）；10月25日舉行可選參加的交流沙龍。",
-                fi: "【Päänäyttelytila】RERE-CORDS-näyttely 20.-25.10.2026 ja vapaaehtoinen keskustelutilaisuus viimeisenä päivänä."
+                zh: "【展览与沙龙会场】2026年11月22日 - 25日线下成果展主办地（开放市民与师生参观）；11月25日举行可选参加的交流沙龙。",
+                ja: "【成果展・サロン本会場】2026年11月22日〜25日の成果展示会メイン会場。最終日の11月25日に自由参加の交流サロンを開催します。",
+                en: "【Main Venue】The physical exhibition venue (Nov 22-25, 2026, open to the public), with an optional participant salon on the final day, November 25.",
+                'zh-TW': "【展覽與沙龍會場】2026年11月22日 - 25日線下成果展主辦地（開放市民與師生參觀）；11月25日舉行可選參加的交流沙龍。",
+                fi: "【Päänäyttelytila】RERE-CORDS-näyttely 22.-25.11.2026 ja vapaaehtoinen keskustelutilaisuus viimeisenä päivänä."
             },
             floor: { zh: "多次元设计实验栋 2 楼 Studio 201", ja: "多次元デザイン実験棟 2階 スタジオ201", en: "Multi-Dimensional Design Experimental Building, 2nd Floor, Studio 201", 'zh-TW': "多次元設計實驗棟 2 樓 Studio 201", fi: "Moniulotteisen suunnittelun kokeilurakennus, 2. krs, Studio 201" },
             items: { zh: "实体作品展示 · 可选交流沙龙", ja: "実物作品展示 · 自由参加の交流サロン", en: "Physical Work Exhibition · Optional Exchange Salon", 'zh-TW': "實體作品展示 · 可選交流沙龍", fi: "Fyysisten töiden näyttely · Vapaaehtoinen keskustelutilaisuus" },

@@ -1783,10 +1783,20 @@ section {
     font-family: var(--font-mono);
     font-size: 0.65rem;
     line-height: 1.4;
-    margin-bottom: 0.65rem;
-    margin-right: 0.75rem;
+    margin: 0;
     padding: 0.2rem 0.45rem;
     text-transform: uppercase;
+}
+
+.timeline-optional-meta {
+    display: grid;
+    gap: 0.45rem;
+    justify-items: start;
+    margin-bottom: 0.65rem;
+}
+
+.timeline-optional-meta .timeline-date {
+    margin-bottom: 0;
 }
 
 .timeline-optional-content h3 {

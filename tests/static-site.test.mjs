@@ -58,7 +58,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=3"><\/script>\s*<script src="translations\.js\?v=14"><\/script>\s*<script src="app\.js\?v=35"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=3"><\/script>\s*<script src="translations\.js\?v=15"><\/script>\s*<script src="app\.js\?v=36"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -132,7 +132,7 @@ test('homepage uses the confirmed 2026 collection period, handoff point, and exh
     assert.doesNotMatch(html, /2026年5月1日|7月30日|2026年8月10日/);
 });
 
-test('timeline ends with the exhibition and optional salon on October 25', () => {
+test('timeline ends with the November 22-25 exhibition and optional salon on November 25', () => {
     const html = read('index.html');
     const app = read('app.js');
     const timelineStart = html.indexOf('id="timeline"');
@@ -142,11 +142,11 @@ test('timeline ends with the exhibition and optional salon on October 25', () =>
     const salonIndex = timeline.indexOf('data-i18n="time-salon"');
 
     assert.ok(exhibitionIndex >= 0 && salonIndex > exhibitionIndex, 'optional salon must follow the exhibition');
-    assert.match(app, /2026年10月20日\s*-\s*10月25日/);
-    assert.match(app, /2026年10月25日/);
+    assert.match(app, /2026年11月22日\s*-\s*11月25日/);
+    assert.match(app, /2026年11月25日/);
     assert.doesNotMatch(app, /2026年11月15日|2026年11月20日\s*-\s*11月25日/);
-    assert.match(html, /"startDate": "2026-10-20T10:00:00\+09:00"/);
-    assert.match(html, /"endDate": "2026-10-25T17:00:00\+09:00"/);
+    assert.match(html, /"startDate": "2026-11-22T10:00:00\+09:00"/);
+    assert.match(html, /"endDate": "2026-11-25T17:00:00\+09:00"/);
 });
 
 test('timeline keeps schedule dates readable and aligns the optional salon to the main axis', () => {
@@ -159,10 +159,12 @@ test('timeline keeps schedule dates readable and aligns the optional salon to th
     assert.match(timeline, /class="timeline-date-group"/);
     assert.match(timeline, /data-i18n="time-step1-making"/);
     assert.match(timeline, /data-i18n="time-step1-submission"/);
+    assert.match(timeline, /class="timeline-optional-meta"[\s\S]*?data-i18n="timeline-optional-badge"[\s\S]*?data-i18n="time-salon"/);
     assert.doesNotMatch(timeline, /data-i18n="time-step1"/);
     assert.doesNotMatch(timeline, /timeline-item-last/);
     assert.match(css, /\.timeline-optional\s*\{[^}]*padding-left:\s*55px;/s);
     assert.match(css, /\.timeline-optional-marker\s*\{[^}]*left:\s*15px;/s);
+    assert.match(css, /\.timeline-optional-meta\s*\{[^}]*display:\s*grid;/s);
     assert.doesNotMatch(css, /\.timeline-item-last::after/);
 });
 
