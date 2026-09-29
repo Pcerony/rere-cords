@@ -1,0 +1,351 @@
+.reservation-admin-page {
+    min-height: 100vh;
+    background: var(--color-bg-base);
+}
+
+.admin-header {
+    min-height: 68px;
+    padding: 0 5vw;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-brand {
+    font-family: var(--font-header);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.admin-header > span,
+.admin-kicker {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+}
+
+.admin-main {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 48px 0 72px;
+}
+
+.admin-page-heading {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border-dark);
+}
+
+.admin-page-heading h1 {
+    margin: 8px 0;
+    font-family: var(--font-header);
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.admin-page-heading p,
+.admin-message {
+    color: var(--color-text-muted);
+}
+
+.admin-login {
+    width: min(420px, 100%);
+    padding: 0 0 28px;
+}
+
+.admin-login h2,
+.admin-toolbar h2 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+#admin-login-form {
+    display: grid;
+    gap: 9px;
+}
+
+#admin-login-form label,
+.admin-filter span {
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+#admin-login-form input,
+.admin-filter select {
+    min-height: 42px;
+    padding: 8px 10px;
+    border: 1px solid var(--color-border-dark);
+    border-radius: 0;
+    background: #fff;
+    color: var(--color-text-main);
+    font: inherit;
+}
+
+#admin-login-form input:focus-visible,
+.admin-filter select:focus-visible,
+.admin-button:focus-visible,
+.admin-action:focus-visible,
+.admin-back:focus-visible {
+    outline: 3px solid #25715c;
+    outline-offset: 2px;
+}
+
+.admin-button,
+.admin-action {
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid var(--color-primary);
+    border-radius: 0;
+    background: var(--color-primary);
+    color: #fff;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-button:hover:not(:disabled),
+.admin-action:hover:not(:disabled) {
+    background: #3f5136;
+}
+
+.admin-button:disabled,
+.admin-action:disabled {
+    cursor: wait;
+    opacity: 0.55;
+}
+
+.admin-button-secondary,
+.admin-action-secondary {
+    border-color: var(--color-border-dark);
+    background: transparent;
+    color: var(--color-text-main);
+}
+
+.admin-button-secondary:hover:not(:disabled),
+.admin-action-secondary:hover:not(:disabled) {
+    background: rgba(20, 20, 19, 0.07);
+}
+
+.admin-message {
+    min-height: 1.6em;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.admin-message[data-state="error"] {
+    color: #a22f22;
+}
+
+.admin-message[data-state="success"] {
+    color: #286044;
+}
+
+.admin-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--color-border-dark);
+}
+
+.admin-toolbar h2 {
+    margin: 0 auto 0 0;
+}
+
+.admin-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-filter select {
+    min-height: 40px;
+    padding: 6px 28px 6px 9px;
+}
+
+.admin-reservation-list {
+    display: grid;
+    gap: 0;
+}
+
+.admin-reservation {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.admin-reservation-heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.admin-reservation-heading h3 {
+    font-family: var(--font-mono);
+    font-size: 0.98rem;
+}
+
+.admin-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 2px 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.admin-status-pending {
+    border: 1px solid #9a611b;
+    color: #75460e;
+    background: #fff4d5;
+}
+
+.admin-status-ready {
+    border: 1px solid #286044;
+    color: #205137;
+    background: #e6f3e9;
+}
+
+.admin-status-cancelled {
+    border: 1px solid #a22f22;
+    color: #8c281d;
+    background: #fae9e5;
+}
+
+.admin-status-returned {
+    border: 1px solid #28677b;
+    color: #205365;
+    background: #e5f1f5;
+}
+
+.admin-details {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px 20px;
+}
+
+.admin-detail dt {
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+}
+
+.admin-detail dd {
+    overflow-wrap: anywhere;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.admin-items {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.admin-items h4 {
+    font-size: 0.82rem;
+}
+
+.admin-items ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    list-style: none;
+}
+
+.admin-items li {
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.admin-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.admin-action {
+    min-height: 36px;
+    padding: 6px 11px;
+    font-size: 0.84rem;
+}
+
+.admin-empty {
+    padding: 32px 0;
+    color: var(--color-text-muted);
+}
+
+.admin-back {
+    display: inline-block;
+    margin-top: 32px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    .admin-header {
+        min-height: 58px;
+        padding: 0 20px;
+    }
+
+    .admin-main {
+        width: calc(100% - 40px);
+        padding-top: 32px;
+    }
+
+    .admin-page-heading h1 {
+        font-size: 1.65rem;
+    }
+
+    .admin-toolbar {
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+
+    .admin-toolbar h2 {
+        flex: 1 0 100%;
+    }
+
+    .admin-filter {
+        flex: 1 1 100%;
+        justify-content: space-between;
+    }
+
+    .admin-filter select {
+        flex: 1;
+        max-width: 250px;
+    }
+
+    .admin-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .admin-detail:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    .admin-items {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .admin-items ul {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .admin-actions > button {
+        flex: 1 1 100%;
+    }
+}

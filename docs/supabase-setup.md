@@ -50,17 +50,44 @@ Supabase Publishable key 和项目 URL 是设计为可出现在浏览器里的�
 5. 用相同日期和道具再尝试占满库存。超过两套时，申请应被拒绝并给出最早可预约日期；确认 `reservations` 中没有产生这次失败申请的部分记录。
 6. 测试完成后，取消测试预约并将测试数据清理掉，不要把测试邮件发给真实参与者。
 
-## 六、收到申请后的管理员操作
+## 六、设置管理员专用页面
 
-预约申请会直接进入 Supabase 的 `reservations` 表，状态为 `pending`。网站不会自动批准申请，也不会自动发送电子邮件；管理员需要定期查看 Supabase **Table Editor → reservations**。`reservation_items` 表可查看每项道具及数量。
+管理员可以使用专用页面查看姓名、课程、邮箱、道具明细、领取日和归还期限，并更新处理状态：
+
+- 页面地址：[https://rerecords.space/safety-tool-admin.html](https://rerecords.space/safety-tool-admin.html)
+- 页面虽然公开可访问，但必须使用管理员账号登录；未授权用户不能读取预约资料。页面没有注册入口。
+- 管理台不会自动发邮件。只有道具已经实地放好并且管理员已经给参与者发出邮件，才可将状态设为「已放置并通知」。
+
+首次设置时按以下步骤操作：
+
+1. 在 Supabase 项目进入 **Authentication → Sign In / Providers**，打开 Email 登录设置，关闭公开注册（**Allow new users to sign up**）。关闭后，只有你在后台创建/邀请的账号可以登录；不要和他人共享管理员账号。
+2. 进入 **Authentication → Users → Add user → Send invitation**，填入管理员邮箱并发送邀请。管理员通过邮件设置密码后，即可用该邮箱和密码登录管理页面。此处是 Supabase 官方 Dashboard 创建用户的入口；详情见 [Supabase 管理用户文档](https://supabase.com/docs/guides/auth/users)。
+3. 在 Users 用户列表中找到刚创建的账号并复制其 **User UID / ID**（UUID）。
+4. 在 **SQL Editor → New query** 执行本指南第二节中的新 migration：`supabase/migrations/202609290002_safety_tool_admin.sql`。它创建私有管理员名单并限制预约资料和状态操作。
+5. 再开一个 SQL 查询，把下方的 UUID 占位文本替换为刚复制的真实 ID（保留单引号），然后点 **Run**：
+
+   ```sql
+   insert into public.reservation_admins (user_id)
+   values ('替换为刚才复制的 Auth 用户 UUID');
+   ```
+
+   不要把占位文字原样执行。若要撤销某位管理员的权限，可在 SQL Editor 执行 `delete from public.reservation_admins where user_id = '该用户UUID';`，然后在 **Authentication → Users** 删除该账号。
+
+6. 打开管理页面并登录。若页面显示账号尚未获得管理员权限，检查 UUID 是否准确插入 `reservation_admins`，并确认第二个 migration 已成功执行。不要为了修复权限问题而开放 `reservations` 表给 `anon`。
+
+Supabase migration 的本地文件不会自动执行；必须在项目的 SQL Editor 手动运行第二个 migration，管理员页面才有读取权限。
+
+## 七、收到申请后的管理员操作
+
+预约申请会直接进入 Supabase 的 `reservations` 表，状态为 `pending`。网站不会自动批准申请，也不会自动发送电子邮件；管理员使用[专用管理页面](https://rerecords.space/safety-tool-admin.html)查看完整预约及道具明细。
 
 收到申请后按以下顺序处理：
 
-1. 检查申请的领取日期、归还日期、道具数量及参与者邮箱，确认能够准备。
+1. 在管理页面的「待处理」预约中检查领取日期、必须归还日期、道具种类与数量及参与者邮箱，确认能够准备。
 2. 先实地将对应道具放入「7号馆二楼 MEDIA STUDIO 房间前的小盒子」。
 3. 放置完成后，使用团队邮箱向申请中的邮箱发送通知，告知预约编号、已放置道具、领取地点及必须归还日期。**收到这封邮件前，参与者不应前往领取。**
-4. 邮件发送后，在 `reservations` 表中把该记录状态改为 `ready`。`pending` 和 `ready` 都会占用库存，因此确认或放置状态改变不会释放道具。
-5. 参与者取消或管理员无法履约时，将状态改为 `cancelled`，库存才会重新开放。道具实际归还后改为 `returned`。
+4. 邮件发送后，回到管理页面点「标记已放置并通知」并确认。此时状态变为 `ready`；`pending` 和 `ready` 都会占用库存。
+5. 参与者取消或管理员无法履约时，在管理页面点「取消预约」，库存才会重新开放。道具实际归还后点「确认已归还」，状态变为 `returned`。
 
 参与者邮件模板（将方括号内容替换为实际信息）：
 
@@ -78,11 +105,11 @@ Reservation: [reservation code]
 Please return the items by [return date] and take only the tools reserved for you.
 ```
 
-## 七、隐私与运维
+## 八、隐私与运维
 
 - 预约记录含姓名、所属课程、邮箱和日期。只让负责预约的管理员访问 Supabase Dashboard；不要导出或转发整张预约表。
 - 预约结束并确认道具归还或申请取消后，及时从 Supabase 删除不再需要的个人资料记录。删除父预约会级联删除对应道具明细。
-- 如果参与者要求取消，管理员在 Dashboard 将状态设为 `cancelled`。不要开放公开页面直接读取或编辑预约表。
+- 如果参与者要求取消，在管理员页面将状态设为 `cancelled`。不要开放公开页面直接读取或编辑预约表。
 - 若误设或泄露 Secret key / `service_role` key，立即在 Supabase 项目设置中轮换；Publishable key 泄露不等同于数据库密码泄露，但仍要依赖 RLS 和 RPC 限制权限。
 - 页面显示库存是实时参考值；最终申请由数据库在事务中再次检查。两人同时抢最后库存时，只有先获得库存的一份申请会成功。
 - 预约提交接口面向公开网页，基础方案没有 CAPTCHA/匿名用户限流；若出现虚假申请或恶意占库存，需要增加服务端 CAPTCHA 或限流（勿在浏览器中放置 Secret/service_role key）。

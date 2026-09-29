@@ -27,6 +27,30 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate public Supabase key
+        run: |
+          node --input-type=module <<'NODE'
+          const key = process.env.SUPABASE_PUBLISHABLE_KEY || '';
+          if (!key) {
+            console.log('No Supabase key configured; reservation pages will remain closed.');
+          } else {
+            let isPublicKey = /^sb_publishable_[A-Za-z0-9_-]+$/.test(key);
+            if (!isPublicKey) {
+              try {
+                const parts = key.split('.');
+                const payload = parts.length === 3 ? JSON.parse(Buffer.from(parts[1], 'base64url').toString('utf8')) : {};
+                isPublicKey = payload.role === 'anon';
+              } catch {
+                isPublicKey = false;
+              }
+            }
+            if (!isPublicKey) {
+              console.error('SUPABASE_PUBLISHABLE_KEY must be an sb_publishable key or a legacy anon JWT.');
+              process.exit(1);
+            }
+          }
+          NODE
+
       - name: Run site tests
         run: npm test
 
@@ -43,6 +67,7 @@ jobs:
             --exclude='prototype-server/' \
             --exclude='tests/' \
             --exclude='scripts/' \
+            --exclude='supabase/' \
             --exclude='docs/' \
             --exclude='output/' \
             --exclude='.playwright-cli/' \
