@@ -64,6 +64,20 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
 });
 
+test('public search metadata uses the canonical custom domain and has crawl discovery files', () => {
+    const html = read('index.html');
+    const robots = read('robots.txt');
+    const sitemap = read('sitemap.xml');
+
+    assert.match(html, /rel="canonical" href="https:\/\/rerecords\.space\/"/);
+    assert.match(html, /property="og:url" content="https:\/\/rerecords\.space\/"/);
+    assert.doesNotMatch(html, /pcerony\.github\.io\/rere-cords/);
+    assert.match(robots, /User-agent:\s*\*/);
+    assert.match(robots, /Allow:\s*\//);
+    assert.match(robots, /Sitemap:\s*https:\/\/rerecords\.space\/sitemap\.xml/);
+    assert.match(sitemap, /<loc>https:\/\/rerecords\.space\/<\/loc>/);
+});
+
 test('submitting a work is the only participation step', () => {
     const html = read('index.html');
     const app = read('app.js');
