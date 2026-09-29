@@ -1,53 +1,53 @@
-# Safety Tool Reservation Design
+# 加工安全道具预约系统设计规格
 
-## Goal
+## 目标
 
-Add an embedded-in-the-site reservation experience for borrowing four kinds of safety tools, with date-aware live availability backed by Supabase.
+为网站增加安全道具预约功能，参与者可按日期查看实时库存并提交预约，后端使用 Supabase。
 
-## Existing Context
+## 现有情况
 
-The website in `01_Website` is a multilingual static site hosted from GitHub Pages. The processing safety section is the `#safety` section in `index.html`. There is an existing local-only upload prototype, but no production backend or reservation service. The website currently supports 13 locales through `app.js` and `translations.js`.
+`01_Website` 是部署在 GitHub Pages 上的多语言静态网站。主页的加工安全说明位于 `index.html` 的 `#safety` 区块。项目里有仅供本地使用的作品上传原型，但没有线上后端或预约服务。网站目前通过 `app.js` 和 `translations.js` 支持 13 种语言。
 
-## User Experience
+## 参与者使用流程
 
-- Add a clear reservation entry point beneath the processing safety guidance and a dedicated reservation page consistent with the existing restrained visual style.
-- The reservation form collects participant name, course/program, email, selected equipment, requested quantity per equipment type, pickup date, and required return date.
-- The four equipment types are cutter, goggles, mask, and safety gloves. Each type has an initial capacity of two loan sets. Participants may request any subset and choose one or two units per selected type, subject to availability.
-- Pickup is at the small box in front of Media Studio, 2F, Building 7. The chosen return date is a firm deadline and is included in confirmation.
-- Availability is calculated per equipment type over the requested inclusive date range. The page shows currently available quantities and, when full, the earliest date a requested quantity can be borrowed.
-- A successful submission immediately becomes a confirmed reservation. The client receives a clear confirmation; no organizer approval step is implied.
-- Before backend configuration is complete, the page clearly reports that reservations are not open rather than accepting requests that cannot be recorded.
-- Reuse the site's language selection and localization conventions; provide complete UI copy for all currently supported locales.
+- 在加工安全说明下方增加清楚的预约入口，并提供一个与现有网站视觉风格一致的独立预约页面。
+- 表单收集姓名、所属课程／专业、邮箱、所需道具和数量、领取日期及必须归还日期。
+- 道具共四种：小刀、护目镜、口罩、安全手套。每种道具初始库存为两套。参与者可选择任意组合，并为每种已选道具选择 1 或 2 套，具体以预约日期内的可用库存为准。
+- 领取地点为「7号馆二楼 Media Studio 房间前的小盒子」。归还日期是必须遵守的期限，并显示在预约确认信息中。
+- 系统按道具种类和参与者选定的完整日期区间计算库存。页面显示当前可借数量；库存不足时，显示该数量最早可预约的日期。
+- 提交成功即成为已确认预约并占用库存；页面清楚告知参与者。此流程不需要主办方再审批。
+- 后端尚未配置完成时，页面明确显示预约暂未开放，不接受无法记录的申请。
+- 沿用网站现有语言选择和本地化方式，为目前支持的所有语言提供完整页面文案。
 
-## Architecture and Data Flow
+## 系统架构与数据流程
 
-- Keep the public site static and use the Supabase JavaScript client from the browser with only the project URL and anon/publishable key. Never expose a service-role key.
-- Store inventory and reservations in Supabase. Model reservation state explicitly (`confirmed`, `cancelled`, `returned`) and reservation line items per equipment type and quantity.
-- Expose a narrow database RPC for availability and another transactional RPC for reservation creation. The create RPC validates input and dates, serializes conflicting allocations, checks capacity across every day in the requested inclusive interval, and writes the reservation and line items atomically. If any selected item is unavailable, write nothing and return a conflict with availability guidance.
-- Enable Realtime updates for availability changes, with a refresh-on-focus/poll fallback so the UI remains correct if a realtime connection is interrupted. The booking RPC remains authoritative; UI counts are advisory until submission succeeds.
-- Use Row Level Security. Anonymous visitors may read aggregate availability only and may invoke validated creation/availability RPCs, but may not list or read reservation records or personal details. Organizer-only management of cancellations/returns must not be exposed through the public anon key; defer a secure organizer workflow unless already available.
-- Keep Supabase project configuration out of source control. Provide an example config shape and a runbook explaining where to find the project URL and anon key and where to set them for the static deployment.
-- Include SQL migrations/setup scripts in the repository and document the required Supabase dashboard steps. Do not attempt to create or modify the user's hosted Supabase project without their explicit configuration and action.
+- 网站保持静态部署。在浏览器中使用 Supabase JavaScript 客户端，并且只使用 Supabase 项目 URL 和 anon／publishable key；不得在前端公开 service-role key。
+- 在 Supabase 中保存库存和预约。预约状态明确区分 `confirmed`（已确认）、`cancelled`（已取消）和 `returned`（已归还）；每笔预约按道具种类及数量保存明细。
+- 使用受限的数据库 RPC 分别读取库存和创建预约。创建预约的 RPC 必须校验输入与日期，在事务中串行处理可能冲突的库存分配，并检查参与者选定的整个日期区间内是否有足够库存。只有所有道具都可用时，才一次性写入预约和道具明细；如果任一种道具库存不足，则不写入任何记录，并返回库存冲突及可参考的日期信息。
+- 库存变化通过 Supabase Realtime 更新；如果实时连接中断，页面还应在重新聚焦时或按间隔重新拉取库存。页面显示的数量仅供参考，最终以提交预约时数据库的检查结果为准。
+- 启用 Row Level Security（RLS）。匿名参与者只能读取汇总库存，并调用经过校验的预约创建和库存查询 RPC；不得读取预约记录或个人资料。主办方取消、归还预约等管理操作不得通过公开 anon key 开放。除非项目已有安全管理工作流，否则本次不增加主办方管理界面。
+- Supabase 配置不得写入版本库。提供配置示例和操作说明，指导主办方查找项目 URL 与 anon key，并将其配置到静态网站部署环境。
+- 在版本库中提供 SQL 初始化／迁移脚本和 Supabase 控制台操作说明。未经用户明确配置和操作，不尝试创建或修改其托管 Supabase 项目。
 
-## Validation and Failure Behavior
+## 校验与异常处理
 
-- Require non-empty name, course/program, valid email, at least one selected equipment type, integer quantities within 1–2, pickup date today or later, and return date on/after pickup date.
-- Validate again inside the database; the database is authoritative.
-- Distinguish invalid input, unavailable inventory/date conflict, missing backend configuration, network failure, and successful confirmation in the UI.
-- Do not claim a reservation is confirmed before the transactional RPC succeeds.
-- Do not expose names, emails, or individual reservation dates in public availability responses.
+- 必填姓名、课程／专业和有效邮箱；至少选择一种道具；道具数量必须是 1 或 2 的整数；领取日期不得早于当天；归还日期必须等于或晚于领取日期。
+- 数据库必须再次验证所有输入，数据库是最终权威。
+- 页面需分别处理无效输入、日期或库存冲突、后端尚未配置、网络错误和预约成功。
+- 数据库事务成功前不得向参与者声称预约已确认。
+- 面向公众的库存查询不得泄露姓名、邮箱或其他预约者的具体预约日期。
 
-## Testing
+## 测试要求
 
-- Unit-test client validation and availability/booking response handling.
-- Test SQL/database rules for date overlap, exact capacity, simultaneous conflicting requests, cancellation/return state effects, and no partial writes on conflicts.
-- Extend static-site tests to verify the safety-section entry point, reservation page assets, locale coverage, and absence of service-role credentials.
-- Run the existing `npm test` suite and manually verify desktop/mobile form states once Supabase is configured.
+- 对前端表单校验，以及库存查询和预约结果处理进行单元测试。
+- 对数据库规则进行测试，覆盖日期重叠、库存边界、同时提交冲突预约、取消／归还对库存的影响，以及库存冲突时不产生部分写入。
+- 扩展静态网站测试，验证安全说明中的预约入口、预约页面资源、所有语言文案齐全，以及前端不包含 service-role key。
+- 运行现有 `npm test` 测试集；Supabase 配置完成后，再手动检查桌面端和移动端的表单状态。
 
-## Decisions and Open Operational Requirement
+## 已确定的规则与上线前条件
 
-- Confirmed reservations automatically occupy inventory; there is no pending approval queue.
-- Two units of each of four equipment types are the initial stock.
-- Borrow periods use date granularity and an inclusive pickup-to-return range.
-- Site implementation can be completed before a hosted project is connected, but live availability and successful booking require the owner to finish the guided Supabase setup and add the public project URL/key to deployment configuration.
-- Public bookings contain personal data. Configure only the minimum retention/access needed; organizer-side booking edits require a secure authenticated admin path and are outside the public booking UI.
+- 预约提交成功后立即占用库存，不设待审批状态。
+- 初始库存为四种道具各两套。
+- 日期按自然日计算；领取日和归还日都包含在占用区间内。
+- 网站代码可以先完成，但实时库存和正式预约必须等主办方完成 Supabase 设置，并在部署配置中提供公开项目 URL 和 anon key 后才能启用。
+- 预约会包含个人信息，应只保留运营所需的最少信息和期限。主办方修改预约需要安全的身份验证管理入口，不在公开预约页面中提供。
