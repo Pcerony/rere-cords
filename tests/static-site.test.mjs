@@ -330,3 +330,17 @@ test('new information sections use spacing and internal separators instead of de
     assert.doesNotMatch(css, /\.submission-route \.submission-requirements\s*\{[^}]*(?:border-left|border-right):/s);
     assert.doesNotMatch(css, /\.timeline-optional-content\s*\{[^}]*(?:border-left|border-right):/s);
 });
+
+test('processing safety section links to the multilingual tool reservation page', () => {
+    const html = read('index.html');
+    const sectionStart = html.indexOf('id="safety"');
+    const sectionEnd = html.indexOf('</section>', sectionStart);
+    const section = html.slice(sectionStart, sectionEnd);
+    const translations = mergeExtraTranslations(parseTranslations(read('app.js')));
+
+    assert.match(section, /href="safety-tool-reservation\.html"[^>]*data-i18n="reservation-entry"/);
+    for (const language of ['zh', 'zh-TW', 'ja', 'en', 'ko', 'id', 'vi', 'th', 'bn', 'ar', 'fr', 'hi', 'fi']) {
+        assert.equal(typeof translations['reservation-entry']?.[language], 'string', `reservation-entry.${language} must exist`);
+        assert.notEqual(translations['reservation-entry'][language].trim(), '');
+    }
+});

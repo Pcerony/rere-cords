@@ -449,6 +449,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "ja": "煙、強い刺激臭、目・鼻・喉の刺激、めまい、機器の異常が生じた場合は、直ちに作業を中止し、機器を停止してその場を離れ、施設責任者に連絡してください。必要に応じて医療機関を受診してください。",
             "en": "If you notice smoke, a strong or irritating odor, eye, nose, or throat irritation, dizziness, or equipment trouble, stop immediately, shut down the equipment, leave the area, and contact the workspace supervisor. Seek medical help when needed."
         },
+        "reservation-entry": {
+            "zh": "预约安全道具",
+            "ja": "安全用具を予約",
+            "en": "Reserve Safety Tools"
+        },
         "apply-period-title": {
             "zh": "参与与提交时间",
             "ja": "参加・作品提出期間",
@@ -1012,7 +1017,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "footer-contact-label": "RERE-CORDS-järjestäjät · Kysyttävää? Ota meihin yhteyttä",
         "instagram-follow-label": "Uusimmat tiedot: Seuraa virallista Instagramia",
         "instagram-qr-hint": "Skannaa ja seuraa @rerecords20262026",
-        "instagram-expand-hint": "[Näytä QR-koodi ↓]"
+        "instagram-expand-hint": "[Näytä QR-koodi ↓]",
+        "reservation-entry": "Varaa suojavälineitä"
     };
 
     Object.entries(fiTranslations).forEach(([key, value]) => {

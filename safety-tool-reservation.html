@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f4f0">
+    <title>安全道具预约 | RERE-CORDS</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css?v=29">
+    <link rel="stylesheet" href="safety-tool-reservation.css?v=1">
+</head>
+<body class="reservation-page">
+    <header class="reservation-header">
+        <a class="reservation-brand" href="index.html#safety">RERE-CORDS</a>
+        <label class="visually-hidden" for="reservation-language">Language</label>
+        <select id="reservation-language" aria-label="Language">
+            <option value="zh">简体中文</option>
+            <option value="zh-TW">繁體中文</option>
+            <option value="ja">日本語</option>
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="th">ไทย</option>
+            <option value="bn">বাংলা</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+            <option value="hi">हिन्दी</option>
+            <option value="fi">Suomi</option>
+        </select>
+    </header>
+
+    <main class="reservation-main">
+        <section class="reservation-intro" aria-labelledby="reservation-title">
+            <span class="reservation-kicker">RERE-CORDS / MEDIA STUDIO</span>
+            <h1 id="reservation-title" data-copy="title">安全道具预约</h1>
+            <p data-copy="intro">请至少提前三天申请。提交后需等待管理员确认并放置道具；收到邮件后再领取。</p>
+            <p id="reservation-config-notice" class="reservation-notice" role="status" data-copy="closed" hidden>预约服务尚未开放。请稍后再试。</p>
+        </section>
+
+        <section class="reservation-location" aria-labelledby="location-title">
+            <div>
+                <h2 id="location-title" data-copy="location">领取地点</h2>
+                <p data-copy="address">7号馆二楼，MEDIA STUDIO 房间前的小盒子</p>
+            </div>
+            <p data-copy="return_note">请务必在所选日期前归还。领取日和归还日均计入借用时间。</p>
+        </section>
+
+        <form id="reservation-form" class="reservation-form" novalidate>
+            <div class="reservation-fields">
+                <label class="reservation-field" for="name">
+                    <span data-copy="name">姓名</span>
+                    <input id="name" name="name" type="text" maxlength="120" autocomplete="name" required>
+                </label>
+                <label class="reservation-field" for="course">
+                    <span data-copy="course">所属课程／专业</span>
+                    <input id="course" name="course" type="text" maxlength="160" autocomplete="organization-title" required>
+                </label>
+                <label class="reservation-field" for="email">
+                    <span data-copy="email">邮箱</span>
+                    <input id="email" name="email" type="email" maxlength="254" autocomplete="email" required>
+                </label>
+            </div>
+
+            <fieldset class="reservation-equipment">
+                <legend data-copy="equipment">选择道具</legend>
+                <div class="equipment-list">
+                    <div class="equipment-row" data-equipment="cutter">
+                        <label class="equipment-name" for="select-cutter"><input id="select-cutter" type="checkbox" value="cutter"><span data-copy="item_cutter">小刀</span></label>
+                        <span class="equipment-availability" id="stock-cutter" aria-live="polite"></span>
+                        <label class="equipment-quantity" for="quantity-cutter"><span data-copy="quantity">数量</span><select id="quantity-cutter" data-quantity="cutter" disabled><option value="1" data-copy="quantity_one">1 套</option><option value="2" data-copy="quantity_two">2 套</option></select></label>
+                    </div>
+                    <div class="equipment-row" data-equipment="goggles">
+                        <label class="equipment-name" for="select-goggles"><input id="select-goggles" type="checkbox" value="goggles"><span data-copy="item_goggles">护目镜</span></label>
+                        <span class="equipment-availability" id="stock-goggles" aria-live="polite"></span>
+                        <label class="equipment-quantity" for="quantity-goggles"><span data-copy="quantity">数量</span><select id="quantity-goggles" data-quantity="goggles" disabled><option value="1" data-copy="quantity_one">1 套</option><option value="2" data-copy="quantity_two">2 套</option></select></label>
+                    </div>
+                    <div class="equipment-row" data-equipment="mask">
+                        <label class="equipment-name" for="select-mask"><input id="select-mask" type="checkbox" value="mask"><span data-copy="item_mask">防尘口罩</span></label>
+                        <span class="equipment-availability" id="stock-mask" aria-live="polite"></span>
+                        <label class="equipment-quantity" for="quantity-mask"><span data-copy="quantity">数量</span><select id="quantity-mask" data-quantity="mask" disabled><option value="1" data-copy="quantity_one">1 套</option><option value="2" data-copy="quantity_two">2 套</option></select></label>
+                    </div>
+                    <div class="equipment-row" data-equipment="gloves">
+                        <label class="equipment-name" for="select-gloves"><input id="select-gloves" type="checkbox" value="gloves"><span data-copy="item_gloves">安全手套</span></label>
+                        <span class="equipment-availability" id="stock-gloves" aria-live="polite"></span>
+                        <label class="equipment-quantity" for="quantity-gloves"><span data-copy="quantity">数量</span><select id="quantity-gloves" data-quantity="gloves" disabled><option value="1" data-copy="quantity_one">1 套</option><option value="2" data-copy="quantity_two">2 套</option></select></label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="reservation-fields reservation-dates">
+                <label class="reservation-field" for="pickup-date">
+                    <span data-copy="pickup">领取日期</span>
+                    <input id="pickup-date" name="pickupDate" type="date" required>
+                    <small id="minimum-date-hint" data-copy="minimum">最早领取日期</small>
+                </label>
+                <label class="reservation-field" for="return-date">
+                    <span data-copy="return">归还日期</span>
+                    <input id="return-date" name="returnDate" type="date" required>
+                </label>
+            </div>
+
+            <div id="reservation-status" class="reservation-status" role="status" aria-live="polite"></div>
+            <button id="reservation-submit" class="reservation-submit" type="submit" data-copy="submit">提交预约申请</button>
+        </form>
+        <a class="reservation-back" href="index.html#safety" data-copy="back">返回网站</a>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js" defer></script>
+    <script src="safety-tool-reservation-config.js?v=1" defer></script>
+    <script type="module" src="safety-tool-reservation.js?v=1"></script>
+</body>
+</html>

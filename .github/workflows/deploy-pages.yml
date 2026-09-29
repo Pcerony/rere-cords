@@ -1,0 +1,75 @@
+name: Deploy static site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_URL: ${{ vars.SUPABASE_URL || secrets.SUPABASE_URL }}
+      SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY || secrets.SUPABASE_PUBLISHABLE_KEY }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Run site tests
+        run: npm test
+
+      - name: Prepare Pages files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='node_modules/' \
+            --exclude='prototype-data/' \
+            --exclude='prototype-server/' \
+            --exclude='tests/' \
+            --exclude='scripts/' \
+            --exclude='docs/' \
+            --exclude='output/' \
+            --exclude='.playwright-cli/' \
+            --exclude='.superpowers/' \
+            --exclude='_site/' \
+            --exclude='submission-admin.html' \
+            --exclude='submission-admin.js' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+            --exclude='*.md' \
+            --exclude='.DS_Store' \
+            ./ _site/
+          config="$(jq -n --arg url "$SUPABASE_URL" --arg key "$SUPABASE_PUBLISHABLE_KEY" '{supabaseUrl: $url, publishableKey: $key}')"
+          printf 'window.RERE_CORDS_RESERVATION_CONFIG = %s;\n' "$config" > _site/safety-tool-reservation-config.js
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
