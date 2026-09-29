@@ -31,7 +31,7 @@ const ADMIN_COPY = Object.freeze({
         page_title: '安全道具预约管理', internal: '内部管理', page_intro: '先实地放置道具；检查电脑默认邮件应用的发件账户，再打开日英草稿并手动发送。完成后回到这里确认「已放置并已通知」。',
         language: '语言', login_heading: '管理员登录', email: '邮箱', password: '密码', login: '登录', reservations: '预约记录', status: '状态',
         all_statuses: '全部状态', status_pending: '待处理', status_ready: '已放置并已通知', status_cancelled: '已取消', status_returned: '已归还',
-        refresh: '刷新', sign_out: '退出登录', back: '返回网站', name: '姓名', course: '课程／专业', pickup_date: '领取日期', return_date: '必须归还日期',
+        refresh: '刷新', sign_out: '退出登录', back: '返回网站', name: '姓名', student_number: '学号', course: '课程／专业', pickup_date: '领取日期', return_date: '必须归还日期',
         items: '预约道具', notification_draft: '打开日英通知邮件草稿', action_ready: '确认已放置并已通知', action_cancelled: '取消预约', action_returned: '确认已归还',
         empty_filtered: '此状态下没有预约。', empty: '目前没有预约记录。', loading: '正在读取预约…', loaded: '已载入 {{count}} 笔预约。',
         load_error: '读取失败。请确认已执行管理员数据库迁移，并检查网络后重试。', checking_admin: '正在验证管理员权限…',
@@ -46,7 +46,7 @@ const ADMIN_COPY = Object.freeze({
         page_title: 'Safety Tool Reservations', internal: 'Admin', page_intro: 'Place the tools in person first. Check the sender account in your default email app, then open and send the Japanese / English draft. Return here afterward to confirm that the tools are placed and the participant has been notified.',
         language: 'Language', login_heading: 'Administrator sign in', email: 'Email', password: 'Password', login: 'Sign in', reservations: 'Reservations', status: 'Status',
         all_statuses: 'All statuses', status_pending: 'Pending', status_ready: 'Placed and notified', status_cancelled: 'Cancelled', status_returned: 'Returned',
-        refresh: 'Refresh', sign_out: 'Sign out', back: 'Back to website', name: 'Name', course: 'Course / major', pickup_date: 'Pickup date', return_date: 'Return by',
+        refresh: 'Refresh', sign_out: 'Sign out', back: 'Back to website', name: 'Name', student_number: 'Student number', course: 'Course / major', pickup_date: 'Pickup date', return_date: 'Return by',
         items: 'Reserved equipment', notification_draft: 'Open Japanese / English email draft', action_ready: 'Confirm placed and notified', action_cancelled: 'Cancel reservation', action_returned: 'Confirm returned',
         empty_filtered: 'No reservations with this status.', empty: 'There are no reservations yet.', loading: 'Loading reservations…', loaded: 'Loaded {{count}} reservation(s).',
         load_error: 'Could not load reservations. Confirm the admin database migration has been run, then check your connection and try again.', checking_admin: 'Verifying administrator access…',
@@ -212,6 +212,7 @@ function initializeAdminPage() {
 
         const details = node('dl', 'admin-details');
         appendDetail(details, translate('name'), reservation.participant_name);
+        appendDetail(details, translate('student_number'), reservation.student_number || '—');
         appendDetail(details, translate('course'), reservation.course);
         const emailDetail = node('div', 'admin-detail');
         emailDetail.append(node('dt', '', translate('email')), node('dd', ''));
@@ -273,7 +274,7 @@ function initializeAdminPage() {
         try {
             const { data, error } = await client
                 .from('reservations')
-                .select('id,reservation_code,participant_name,course,email,pickup_date,return_date,status,created_at,reservation_items(equipment_id,quantity)')
+                .select('id,reservation_code,participant_name,student_number,course,email,pickup_date,return_date,status,created_at,reservation_items(equipment_id,quantity)')
                 .order('created_at', { ascending: false });
             if (error) throw error;
             reservations = data || [];

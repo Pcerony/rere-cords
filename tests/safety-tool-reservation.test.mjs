@@ -10,8 +10,8 @@ const script = readFileSync(new URL('../safety-tool-reservation.js', import.meta
 test('reservation page defaults to the main website language and removes redundant copy', () => {
     assert.match(page, /<html lang="en"/);
     assert.match(page, /<option value="en" selected>/);
-    assert.match(page, /safety-tool-reservation\.css\?v=2/);
-    assert.match(page, /safety-tool-reservation\.js\?v=2/);
+    assert.match(page, /safety-tool-reservation\.css\?v=3/);
+    assert.match(page, /safety-tool-reservation\.js\?v=3/);
     assert.doesNotMatch(page, /MEDIA STUDIO<\/span>|请至少提前三天申请|请务必在所选日期前归还|最早领取日期/);
     assert.match(styles, /\.reservation-intro\s*\{[^}]*padding:\s*0;/s);
     assert.match(styles, /\.reservation-intro\s*\{[^}]*border:\s*0;/s);
@@ -20,6 +20,7 @@ test('reservation page defaults to the main website language and removes redunda
 
 const validForm = {
     name: 'Aki Sato',
+    studentNumber: 'A12345678',
     course: 'Design',
     email: 'aki@example.jp',
     pickupDate: '2026-10-01',
@@ -56,6 +57,8 @@ test('reservation validation requires an equipment type and valid quantities', (
 
 test('reservation validation requires participant details and a valid email', () => {
     assert.ok(validateReservation({ ...validForm, name: ' ' }, '2026-09-28').includes('name_required'));
+    assert.ok(validateReservation({ ...validForm, studentNumber: ' ' }, '2026-09-28').includes('student_number_required'));
+    assert.ok(validateReservation({ ...validForm, studentNumber: 'A'.repeat(41) }, '2026-09-28').includes('student_number_required'));
     assert.ok(validateReservation({ ...validForm, course: '' }, '2026-09-28').includes('course_required'));
     assert.ok(validateReservation({ ...validForm, email: 'not-an-email' }, '2026-09-28').includes('email_invalid'));
 });
@@ -71,6 +74,7 @@ test('availability requests send only selected item quantities and the chosen da
 test('reservation RPC payload trims participant details without changing selected quantities', () => {
     assert.deepEqual(buildReservationRequest({ ...validForm, name: ' Aki ', email: ' Aki@Example.jp ' }), {
         p_name: 'Aki',
+        p_student_number: 'A12345678',
         p_course: 'Design',
         p_email: 'Aki@Example.jp',
         p_pickup_date: '2026-10-01',

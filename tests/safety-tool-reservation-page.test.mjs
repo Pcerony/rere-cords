@@ -7,7 +7,7 @@ const html = readFileSync(new URL('../safety-tool-reservation.html', import.meta
 const config = readFileSync(new URL('../safety-tool-reservation-config.js', import.meta.url), 'utf8');
 
 test('reservation page contains the required accessible participant form', () => {
-    for (const id of ['name', 'course', 'email', 'pickup-date', 'return-date']) {
+    for (const id of ['name', 'student-number', 'course', 'email', 'pickup-date', 'return-date']) {
         assert.match(html, new RegExp(`id="${id}"`));
     }
     for (const equipment of ['cutter', 'goggles', 'mask', 'gloves']) {
@@ -17,6 +17,8 @@ test('reservation page contains the required accessible participant form', () =>
     assert.match(html, /MEDIA STUDIO/);
     assert.match(html, /7号馆|Building 7/);
     assert.match(html, /safety-tool-reservation\.js/);
+    assert.match(html, /id="student-number"[^>]*required/);
+    assert.match(html, /data-copy="student_number"/);
 });
 
 test('reservation page keeps booking closed until both public settings are present', () => {
@@ -30,7 +32,7 @@ test('reservation interface copy covers every site locale', () => {
     const locales = ['zh', 'zh-TW', 'ja', 'en', 'ko', 'id', 'vi', 'th', 'bn', 'ar', 'fr', 'hi', 'fi'];
     const requiredKeys = [...new Set([
         ...[...html.matchAll(/data-copy="([^"]+)"/g)].map((match) => match[1]),
-        'pending', 'config_missing', 'invalid', 'reservation_code'
+        'pending', 'config_missing', 'invalid', 'reservation_code', 'student_number_required'
     ])];
     for (const locale of locales) {
         assert.ok(RESERVATION_COPY[locale], `missing locale ${locale}`);

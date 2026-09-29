@@ -34,19 +34,19 @@ const COPY_VALUES = {
 };
 
 const COPY_EXTRAS = {
-    zh: { address: '7号馆二楼，MEDIA STUDIO 房间前的小盒子', invalid: '请检查姓名、课程、邮箱、日期和道具选择。', reservation_code: '申请编号', config_missing: '预约功能尚未连接到 Supabase。', pickup_too_far: '领取日期不能超过未来一年。', loan_too_long: '每次最多可借用14天。' },
-    'zh-TW': { address: '7號館二樓，MEDIA STUDIO 房間前的小盒子', invalid: '請檢查姓名、課程、電子郵件、日期及道具選擇。', reservation_code: '申請編號', config_missing: '預約功能尚未連接到 Supabase。', pickup_too_far: '領取日期不得超過未來一年。', loan_too_long: '每次最多可借用14天。' },
-    ja: { address: '7号館2階、MEDIA STUDIO前のボックス', invalid: '氏名、所属、メールアドレス、日付、用具の選択をご確認ください。', reservation_code: '受付番号', config_missing: 'Supabaseに接続されていないため、予約を受け付けていません。', pickup_too_far: '受取日は1年先まで選択できます。', loan_too_long: '貸出期間は最長14日です。' },
-    en: { address: 'Small box in front of MEDIA STUDIO, Building 7, 2F', invalid: 'Check your name, course, email, dates, and equipment selection.', reservation_code: 'Request number', config_missing: 'Reservations are not connected to Supabase yet.', pickup_too_far: 'Pickup dates can be booked up to one year ahead.', loan_too_long: 'Each loan can last up to 14 days.' },
-    ko: { address: '7호관 2층 MEDIA STUDIO 앞 상자', invalid: '이름, 과정, 이메일, 날짜 및 도구 선택을 확인해 주세요.', reservation_code: '접수 번호', config_missing: 'Supabase에 연결되지 않아 예약을 받을 수 없습니다.', pickup_too_far: '수령일은 1년 이내로 선택해 주세요.', loan_too_long: '대여 기간은 최대 14일입니다.' },
-    id: { address: 'Kotak kecil di depan MEDIA STUDIO, Gedung 7 lantai 2', invalid: 'Periksa nama, program, email, tanggal, dan pilihan alat.', reservation_code: 'Nomor permintaan', config_missing: 'Peminjaman belum terhubung ke Supabase.', pickup_too_far: 'Tanggal pengambilan hanya dapat dipesan hingga satu tahun ke depan.', loan_too_long: 'Masa pinjam maksimal 14 hari.' },
-    vi: { address: 'Hộp nhỏ trước MEDIA STUDIO, Tòa nhà 7, tầng 2', invalid: 'Vui lòng kiểm tra họ tên, chuyên ngành, email, ngày và dụng cụ đã chọn.', reservation_code: 'Mã yêu cầu', config_missing: 'Chức năng mượn chưa kết nối với Supabase.', pickup_too_far: 'Chỉ có thể đặt ngày nhận trong vòng một năm tới.', loan_too_long: 'Thời gian mượn tối đa là 14 ngày.' },
-    th: { address: 'กล่องเล็กหน้า MEDIA STUDIO อาคาร 7 ชั้น 2', invalid: 'โปรดตรวจสอบชื่อ หลักสูตร อีเมล วันที่ และอุปกรณ์ที่เลือก', reservation_code: 'หมายเลขคำขอ', config_missing: 'ยังไม่ได้เชื่อมต่อระบบจองกับ Supabase', pickup_too_far: 'จองวันรับได้ล่วงหน้าไม่เกินหนึ่งปี', loan_too_long: 'ยืมได้ครั้งละไม่เกิน 14 วัน' },
-    bn: { address: 'ভবন ৭, ২য় তলায় MEDIA STUDIO-এর সামনের ছোট বাক্স', invalid: 'নাম, কোর্স, ইমেল, তারিখ এবং সরঞ্জাম নির্বাচন পরীক্ষা করুন।', reservation_code: 'আবেদন নম্বর', config_missing: 'Supabase সংযোগ না থাকায় আবেদন নেওয়া যাচ্ছে না।', pickup_too_far: 'এক বছর পর্যন্ত আগের তারিখ বুক করা যাবে।', loan_too_long: 'সর্বোচ্চ ১৪ দিনের জন্য ধার নেওয়া যাবে।' },
-    ar: { address: 'الصندوق الصغير أمام MEDIA STUDIO، المبنى 7، الطابق الثاني', invalid: 'تحقق من الاسم والمقرر والبريد الإلكتروني والتواريخ والأدوات المختارة.', reservation_code: 'رقم الطلب', config_missing: 'الحجوزات غير متصلة بـ Supabase بعد.', pickup_too_far: 'يمكن حجز تاريخ استلام خلال سنة واحدة فقط.', loan_too_long: 'مدة الإعارة القصوى 14 يومًا.' },
-    fr: { address: 'Petite boîte devant MEDIA STUDIO, bâtiment 7, 2e étage', invalid: 'Vérifiez le nom, la formation, l’e-mail, les dates et le matériel choisi.', reservation_code: 'Numéro de demande', config_missing: 'Les réservations ne sont pas encore reliées à Supabase.', pickup_too_far: 'La réservation est possible jusqu’à un an à l’avance.', loan_too_long: 'La durée du prêt est limitée à 14 jours.' },
-    hi: { address: 'भवन 7, दूसरी मंज़िल पर MEDIA STUDIO के सामने छोटा बॉक्स', invalid: 'नाम, कोर्स, ईमेल, तारीख़ और चुने गए उपकरण जाँचें।', reservation_code: 'अनुरोध संख्या', config_missing: 'आरक्षण अभी Supabase से जुड़ा नहीं है।', pickup_too_far: 'लेने की तारीख़ अधिकतम एक साल आगे तक चुनें।', loan_too_long: 'उधार की अवधि अधिकतम 14 दिन है।' },
-    fi: { address: 'Pieni laatikko MEDIA STUDIOn edessä, rakennus 7, 2. kerros', invalid: 'Tarkista nimi, opintosuunta, sähköposti, päivämäärät ja valitut välineet.', reservation_code: 'Pyyntötunnus', config_missing: 'Varausta ei ole vielä yhdistetty Supabaseen.', pickup_too_far: 'Varaus voidaan tehdä enintään vuodeksi eteenpäin.', loan_too_long: 'Laina-aika on enintään 14 päivää.' }
+    zh: { address: '7号馆二楼，MEDIA STUDIO 房间前的小盒子', invalid: '请检查姓名、学号、课程、邮箱、日期和道具选择。', student_number: '学号', student_number_required: '请填写学号。', reservation_code: '申请编号', config_missing: '预约功能尚未连接到 Supabase。', pickup_too_far: '领取日期不能超过未来一年。', loan_too_long: '每次最多可借用14天。' },
+    'zh-TW': { address: '7號館二樓，MEDIA STUDIO 房間前的小盒子', invalid: '請檢查姓名、學號、課程、電子郵件、日期及道具選擇。', student_number: '學號', student_number_required: '請填寫學號。', reservation_code: '申請編號', config_missing: '預約功能尚未連接到 Supabase。', pickup_too_far: '領取日期不得超過未來一年。', loan_too_long: '每次最多可借用14天。' },
+    ja: { address: '7号館2階、MEDIA STUDIO前のボックス', invalid: '氏名、学籍番号、所属、メールアドレス、日付、用具の選択をご確認ください。', student_number: '学籍番号', student_number_required: '学籍番号を入力してください。', reservation_code: '受付番号', config_missing: 'Supabaseに接続されていないため、予約を受け付けていません。', pickup_too_far: '受取日は1年先まで選択できます。', loan_too_long: '貸出期間は最長14日です。' },
+    en: { address: 'Small box in front of MEDIA STUDIO, Building 7, 2F', invalid: 'Check your name, student number, course, email, dates, and equipment selection.', student_number: 'Student number', student_number_required: 'Enter your student number.', reservation_code: 'Request number', config_missing: 'Reservations are not connected to Supabase yet.', pickup_too_far: 'Pickup dates can be booked up to one year ahead.', loan_too_long: 'Each loan can last up to 14 days.' },
+    ko: { address: '7호관 2층 MEDIA STUDIO 앞 상자', invalid: '이름, 학번, 과정, 이메일, 날짜 및 도구 선택을 확인해 주세요.', student_number: '학번', student_number_required: '학번을 입력해 주세요.', reservation_code: '접수 번호', config_missing: 'Supabase에 연결되지 않아 예약을 받을 수 없습니다.', pickup_too_far: '수령일은 1년 이내로 선택해 주세요.', loan_too_long: '대여 기간은 최대 14일입니다.' },
+    id: { address: 'Kotak kecil di depan MEDIA STUDIO, Gedung 7 lantai 2', invalid: 'Periksa nama, nomor mahasiswa, program, email, tanggal, dan pilihan alat.', student_number: 'Nomor mahasiswa', student_number_required: 'Masukkan nomor mahasiswa.', reservation_code: 'Nomor permintaan', config_missing: 'Peminjaman belum terhubung ke Supabase.', pickup_too_far: 'Tanggal pengambilan hanya dapat dipesan hingga satu tahun ke depan.', loan_too_long: 'Masa pinjam maksimal 14 hari.' },
+    vi: { address: 'Hộp nhỏ trước MEDIA STUDIO, Tòa nhà 7, tầng 2', invalid: 'Vui lòng kiểm tra họ tên, mã số sinh viên, chuyên ngành, email, ngày và dụng cụ đã chọn.', student_number: 'Mã số sinh viên', student_number_required: 'Vui lòng nhập mã số sinh viên.', reservation_code: 'Mã yêu cầu', config_missing: 'Chức năng mượn chưa kết nối với Supabase.', pickup_too_far: 'Chỉ có thể đặt ngày nhận trong vòng một năm tới.', loan_too_long: 'Thời gian mượn tối đa là 14 ngày.' },
+    th: { address: 'กล่องเล็กหน้า MEDIA STUDIO อาคาร 7 ชั้น 2', invalid: 'โปรดตรวจสอบชื่อ รหัสนักศึกษา หลักสูตร อีเมล วันที่ และอุปกรณ์ที่เลือก', student_number: 'รหัสนักศึกษา', student_number_required: 'กรุณากรอกรหัสนักศึกษา', reservation_code: 'หมายเลขคำขอ', config_missing: 'ยังไม่ได้เชื่อมต่อระบบจองกับ Supabase', pickup_too_far: 'จองวันรับได้ล่วงหน้าไม่เกินหนึ่งปี', loan_too_long: 'ยืมได้ครั้งละไม่เกิน 14 วัน' },
+    bn: { address: 'ভবন ৭, ২য় তলায় MEDIA STUDIO-এর সামনের ছোট বাক্স', invalid: 'নাম, শিক্ষার্থী নম্বর, কোর্স, ইমেল, তারিখ এবং সরঞ্জাম নির্বাচন পরীক্ষা করুন।', student_number: 'শিক্ষার্থী নম্বর', student_number_required: 'শিক্ষার্থী নম্বর লিখুন।', reservation_code: 'আবেদন নম্বর', config_missing: 'Supabase সংযোগ না থাকায় আবেদন নেওয়া যাচ্ছে না।', pickup_too_far: 'এক বছর পর্যন্ত আগের তারিখ বুক করা যাবে।', loan_too_long: 'সর্বোচ্চ ১৪ দিনের জন্য ধার নেওয়া যাবে।' },
+    ar: { address: 'الصندوق الصغير أمام MEDIA STUDIO، المبنى 7، الطابق الثاني', invalid: 'تحقق من الاسم والرقم الجامعي والمقرر والبريد الإلكتروني والتواريخ والأدوات المختارة.', student_number: 'الرقم الجامعي', student_number_required: 'يرجى إدخال الرقم الجامعي.', reservation_code: 'رقم الطلب', config_missing: 'الحجوزات غير متصلة بـ Supabase بعد.', pickup_too_far: 'يمكن حجز تاريخ استلام خلال سنة واحدة فقط.', loan_too_long: 'مدة الإعارة القصوى 14 يومًا.' },
+    fr: { address: 'Petite boîte devant MEDIA STUDIO, bâtiment 7, 2e étage', invalid: 'Vérifiez le nom, le numéro étudiant, la formation, l’e-mail, les dates et le matériel choisi.', student_number: 'Numéro étudiant', student_number_required: 'Veuillez saisir votre numéro étudiant.', reservation_code: 'Numéro de demande', config_missing: 'Les réservations ne sont pas encore reliées à Supabase.', pickup_too_far: 'La réservation est possible jusqu’à un an à l’avance.', loan_too_long: 'La durée du prêt est limitée à 14 jours.' },
+    hi: { address: 'भवन 7, दूसरी मंज़िल पर MEDIA STUDIO के सामने छोटा बॉक्स', invalid: 'नाम, विद्यार्थी संख्या, कोर्स, ईमेल, तारीख़ और चुने गए उपकरण जाँचें।', student_number: 'विद्यार्थी संख्या', student_number_required: 'कृपया विद्यार्थी संख्या दर्ज करें।', reservation_code: 'अनुरोध संख्या', config_missing: 'आरक्षण अभी Supabase से जुड़ा नहीं है।', pickup_too_far: 'लेने की तारीख़ अधिकतम एक साल आगे तक चुनें।', loan_too_long: 'उधार की अवधि अधिकतम 14 दिन है।' },
+    fi: { address: 'Pieni laatikko MEDIA STUDIOn edessä, rakennus 7, 2. kerros', invalid: 'Tarkista nimi, opiskelijanumero, opintosuunta, sähköposti, päivämäärät ja valitut välineet.', student_number: 'Opiskelijanumero', student_number_required: 'Anna opiskelijanumerosi.', reservation_code: 'Pyyntötunnus', config_missing: 'Varausta ei ole vielä yhdistetty Supabaseen.', pickup_too_far: 'Varaus voidaan tehdä enintään vuodeksi eteenpäin.', loan_too_long: 'Laina-aika on enintään 14 päivää.' }
 };
 
 export const RESERVATION_COPY = Object.freeze(Object.fromEntries(
@@ -89,6 +89,7 @@ export function validateReservation(form, today) {
     const minimumPickupDate = getMinimumPickupDate(today);
 
     if (!String(form.name || '').trim()) errors.push('name_required');
+    if (!String(form.studentNumber || '').trim() || String(form.studentNumber).trim().length > 40) errors.push('student_number_required');
     if (!String(form.course || '').trim()) errors.push('course_required');
     if (!EMAIL_PATTERN.test(String(form.email || '').trim())) errors.push('email_invalid');
     if (!form.pickupDate || form.pickupDate < minimumPickupDate) errors.push('pickup_too_soon');
@@ -118,6 +119,7 @@ export function buildAvailabilityRequest(form) {
 export function buildReservationRequest(form) {
     return {
         p_name: String(form.name || '').trim(),
+        p_student_number: String(form.studentNumber || '').trim(),
         p_course: String(form.course || '').trim(),
         p_email: String(form.email || '').trim(),
         p_pickup_date: form.pickupDate,
@@ -217,6 +219,7 @@ function initReservationPage() {
         }
         return {
             name: document.getElementById('name').value,
+            studentNumber: document.getElementById('student-number').value,
             course: document.getElementById('course').value,
             email: document.getElementById('email').value,
             pickupDate: pickupInput.value,
@@ -259,7 +262,8 @@ function initReservationPage() {
         if (errors.length) {
             if (showError) {
                 const dateError = errors.find((error) => error === 'pickup_too_far' || error === 'loan_too_long');
-                showStatus(dateError ? copy()[dateError] : copy().invalid, 'error');
+                const studentNumberError = errors.includes('student_number_required');
+                showStatus(dateError || studentNumberError ? copy()[studentNumberError ? 'student_number_required' : dateError] : copy().invalid, 'error');
             }
             return false;
         }

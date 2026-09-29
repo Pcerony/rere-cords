@@ -91,4 +91,6 @@ test('admin page contains an accessible sign-in and reservation list, without pu
     assert.match(page, /value="en">English/);
     assert.match(script, /打开日英通知邮件草稿/);
     assert.match(script, /确认已放置并已通知/);
+    assert.match(script, /participant_name,student_number,course/);
+    assert.match(script, /translate\('student_number'\), reservation\.student_number\s*\|\|/);
 });

@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 
 const migration = readFileSync(new URL('../supabase/migrations/202609290001_safety_tool_reservations.sql', import.meta.url), 'utf8');
 const adminMigration = readFileSync(new URL('../supabase/migrations/202609290002_safety_tool_admin.sql', import.meta.url), 'utf8');
+const studentNumberMigration = readFileSync(new URL('../supabase/migrations/202609290003_student_number.sql', import.meta.url), 'utf8');
 
 test('migration seeds two units for each of the four equipment types', () => {
     for (const equipment of ['cutter', 'goggles', 'mask', 'gloves']) {
@@ -28,6 +29,16 @@ test('migration serializes booking transactions and provides narrow RPCs', () =>
     assert.match(migration, /create_equipment_reservation/);
     assert.match(migration, /get_equipment_availability/);
     assert.match(migration, /SECURITY DEFINER/i);
+});
+
+test('student number migration preserves old reservations and validates new submissions', () => {
+    assert.match(studentNumberMigration, /add column student_number text/i);
+    assert.match(studentNumberMigration, /create function public\.create_equipment_reservation/i);
+    assert.match(studentNumberMigration, /p_student_number text/i);
+    assert.match(studentNumberMigration, /char_length\(btrim\(coalesce\(p_student_number, ''\)\)\) not between 1 and 40/i);
+    assert.match(studentNumberMigration, /update public\.reservations\s+set student_number/is);
+    assert.match(studentNumberMigration, /revoke all on function public\.create_equipment_reservation\(text, text, text, text, date, date, jsonb\)\s+from public, anon, authenticated/i);
+    assert.match(studentNumberMigration, /grant execute on function public\.create_equipment_reservation\(text, text, text, text, date, date, jsonb\)\s+to anon, authenticated/i);
 });
 
 test('anonymous users cannot read personal reservation tables', () => {
@@ -82,4 +93,10 @@ test('Chinese setup guide explains secure administrator setup and the dedicated 
     for (const phrase of ['Authentication → Users', '关闭公开注册', 'reservation_admins', 'Auth 用户 UUID', 'safety-tool-admin.html', '确认已放置并已通知']) {
         assert.ok(guide.includes(phrase), `setup guide must include ${phrase}`);
     }
+});
+
+test('Chinese setup guide explains the student number migration before new bookings', () => {
+    const guide = readFileSync(new URL('../docs/supabase-setup.md', import.meta.url), 'utf8');
+    assert.match(guide, /202609290003_student_number\.sql/);
+    assert.match(guide, /旧预约会保留/);
 });
