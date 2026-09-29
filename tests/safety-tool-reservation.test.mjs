@@ -1,6 +1,22 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { buildAvailabilityRequest, buildReservationRequest, getMinimumPickupDate, isPublicSupabaseKey, submitReservation, validateReservation } from '../safety-tool-reservation.js';
+
+const page = readFileSync(new URL('../safety-tool-reservation.html', import.meta.url), 'utf8');
+const styles = readFileSync(new URL('../safety-tool-reservation.css', import.meta.url), 'utf8');
+const script = readFileSync(new URL('../safety-tool-reservation.js', import.meta.url), 'utf8');
+
+test('reservation page defaults to the main website language and removes redundant copy', () => {
+    assert.match(page, /<html lang="en"/);
+    assert.match(page, /<option value="en" selected>/);
+    assert.match(page, /safety-tool-reservation\.css\?v=2/);
+    assert.match(page, /safety-tool-reservation\.js\?v=2/);
+    assert.doesNotMatch(page, /MEDIA STUDIO<\/span>|请至少提前三天申请|请务必在所选日期前归还|最早领取日期/);
+    assert.match(styles, /\.reservation-intro\s*\{[^}]*padding:\s*0;/s);
+    assert.match(styles, /\.reservation-intro\s*\{[^}]*border:\s*0;/s);
+    assert.match(script, /: 'en';/);
+});
 
 const validForm = {
     name: 'Aki Sato',

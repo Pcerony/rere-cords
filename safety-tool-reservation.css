@@ -45,6 +45,8 @@
 
 .reservation-intro {
     max-width: 690px;
+    border: 0;
+    padding: 0;
 }
 
 .reservation-kicker {

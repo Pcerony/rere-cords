@@ -151,7 +151,7 @@ function getTodayInJapan() {
 
 function getLocale() {
     const saved = localStorage.getItem('rere_cords_lang');
-    return Object.hasOwn(RESERVATION_COPY, saved) ? saved : 'zh';
+    return Object.hasOwn(RESERVATION_COPY, saved) ? saved : 'en';
 }
 
 function replaceTokens(template, values = {}) {
@@ -199,7 +199,6 @@ function initReservationPage() {
         document.title = `${strings.title} | RERE-CORDS`;
         pickupInput.setAttribute('aria-label', strings.pickup);
         returnInput.setAttribute('aria-label', strings.return);
-        document.getElementById('minimum-date-hint').textContent = replaceTokens(strings.minimum, { date: minimumDate });
         pickupInput.max = addCalendarDays(today, MAX_BOOKING_DAYS);
         if (!client) configNotice.textContent = strings.config_missing;
     }
@@ -273,7 +272,7 @@ function initReservationPage() {
     }
 
     function setLanguage(nextLocale) {
-        locale = Object.hasOwn(RESERVATION_COPY, nextLocale) ? nextLocale : 'zh';
+        locale = Object.hasOwn(RESERVATION_COPY, nextLocale) ? nextLocale : 'en';
         localStorage.setItem('rere_cords_lang', locale);
         languageSelect.value = locale;
         applyCopy();
