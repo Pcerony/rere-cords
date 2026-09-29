@@ -333,12 +333,14 @@ test('new information sections use spacing and internal separators instead of de
 
 test('processing safety section links to the multilingual tool reservation page', () => {
     const html = read('index.html');
+    const css = read('styles.css');
     const sectionStart = html.indexOf('id="safety"');
     const sectionEnd = html.indexOf('</section>', sectionStart);
     const section = html.slice(sectionStart, sectionEnd);
     const translations = mergeExtraTranslations(parseTranslations(read('app.js')));
 
     assert.match(section, /href="safety-tool-reservation\.html"[^>]*data-i18n="reservation-entry"/);
+    assert.match(css, /\.safety-reservation-link\s*\{[^}]*background:\s*#ffffff;[^}]*color:\s*var\(--color-text-main\);[^}]*font-size:\s*1rem;[^}]*min-height:\s*3\.25rem;/s);
     for (const language of ['zh', 'zh-TW', 'ja', 'en', 'ko', 'id', 'vi', 'th', 'bn', 'ar', 'fr', 'hi', 'fi']) {
         assert.equal(typeof translations['reservation-entry']?.[language], 'string', `reservation-entry.${language} must exist`);
         assert.notEqual(translations['reservation-entry'][language].trim(), '');

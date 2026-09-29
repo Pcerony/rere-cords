@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildNotificationMailto, filterReservations, formatReservationItems, getStatusActions, setReservationStatus } from '../safety-tool-admin.js';
+import { buildNotificationMailto, filterReservations, formatReservationItems, getAdminCopy, getStatusActions, setReservationStatus } from '../safety-tool-admin.js';
 
 const page = readFileSync(new URL('../safety-tool-admin.html', import.meta.url), 'utf8');
 const styles = readFileSync(new URL('../safety-tool-admin.css', import.meta.url), 'utf8');
@@ -15,6 +15,15 @@ const reservation = {
 
 test('admin page shows translated equipment names and quantities', () => {
     assert.deepEqual(formatReservationItems(reservation.reservation_items), ['小刀 × 1', '安全手套 × 2']);
+    assert.deepEqual(formatReservationItems(reservation.reservation_items, 'en'), ['Cutter × 1', 'Safety gloves × 2']);
+});
+
+test('admin interface provides complete Chinese and English copy', () => {
+    const english = getAdminCopy('en');
+    assert.equal(english.page_title, 'Safety Tool Reservations');
+    assert.equal(english.status_ready, 'Placed and notified');
+    assert.equal(english.notification_draft, 'Open Japanese / English email draft');
+    assert.equal(getAdminCopy('unknown').page_title, '安全道具预约管理');
 });
 
 test('notification draft opens the participant email with Japanese and English reservation details', () => {
@@ -77,7 +86,9 @@ test('admin page contains an accessible sign-in and reservation list, without pu
     const script = readFileSync(new URL('../safety-tool-admin.js', import.meta.url), 'utf8');
     assert.doesNotMatch(`${page}\n${script}`, /service_role|sb_secret_/i);
     assert.match(styles, /@media\s*\(max-width:\s*700px\)/);
-    assert.match(page, /safety-tool-admin\.js\?v=2/);
+    assert.match(page, /safety-tool-admin\.js\?v=3/);
+    assert.match(page, /id="admin-language"/);
+    assert.match(page, /value="en">English/);
     assert.match(script, /打开日英通知邮件草稿/);
     assert.match(script, /确认已放置并已通知/);
 });

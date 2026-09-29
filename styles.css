@@ -1108,19 +1108,21 @@ section {
 
 .safety-reservation-link {
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    color: #ffffff;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: var(--color-text-main);
     display: inline-flex;
-    font-size: 0.92rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-top: 2.25rem;
-    min-height: 2.8rem;
-    padding: 0.55rem 1rem;
+    min-height: 3.25rem;
+    padding: 0.7rem 1.4rem;
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
 .safety-reservation-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #ffffff;
+    background: transparent;
+    color: #ffffff;
 }
 
 .safety-reservation-link:focus-visible {

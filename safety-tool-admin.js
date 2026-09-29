@@ -19,13 +19,6 @@ const EQUIPMENT_NAMES_EN = Object.freeze({
     gloves: 'Safety gloves'
 });
 
-const STATUS_LABELS = Object.freeze({
-    pending: '待处理',
-    ready: '已放置并已通知',
-    cancelled: '已取消',
-    returned: '已归还'
-});
-
 const STATUS_ACTIONS = Object.freeze({
     pending: ['ready', 'cancelled'],
     ready: ['cancelled', 'returned'],
@@ -33,11 +26,42 @@ const STATUS_ACTIONS = Object.freeze({
     returned: []
 });
 
-const ACTION_LABELS = Object.freeze({
-    ready: '确认已放置并已通知',
-    cancelled: '取消预约',
-    returned: '确认已归还'
+const ADMIN_COPY = Object.freeze({
+    zh: Object.freeze({
+        page_title: '安全道具预约管理', internal: '内部管理', page_intro: '先实地放置道具；检查电脑默认邮件应用的发件账户，再打开日英草稿并手动发送。完成后回到这里确认「已放置并已通知」。',
+        language: '语言', login_heading: '管理员登录', email: '邮箱', password: '密码', login: '登录', reservations: '预约记录', status: '状态',
+        all_statuses: '全部状态', status_pending: '待处理', status_ready: '已放置并已通知', status_cancelled: '已取消', status_returned: '已归还',
+        refresh: '刷新', sign_out: '退出登录', back: '返回网站', name: '姓名', course: '课程／专业', pickup_date: '领取日期', return_date: '必须归还日期',
+        items: '预约道具', notification_draft: '打开日英通知邮件草稿', action_ready: '确认已放置并已通知', action_cancelled: '取消预约', action_returned: '确认已归还',
+        empty_filtered: '此状态下没有预约。', empty: '目前没有预约记录。', loading: '正在读取预约…', loaded: '已载入 {{count}} 笔预约。',
+        load_error: '读取失败。请确认已执行管理员数据库迁移，并检查网络后重试。', checking_admin: '正在验证管理员权限…',
+        no_admin: '此账号尚未获得管理员权限，请联系项目管理员。', bad_email: '参与者邮箱格式无效，无法创建邮件草稿。',
+        draft_opened: '已请求默认邮件应用打开预约 {{code}} 的日英草稿。请检查发件账户、收件人和内容并手动发送；发送后再确认「已放置并已通知」。',
+        confirm_ready: '确认 {{code}} 的道具已放入领取盒，且日英通知邮件已发送？', confirm_cancel: '确认取消预约 {{code}}？取消后库存会重新开放。',
+        confirm_returned: '确认预约 {{code}} 的道具已经归还？', updating: '正在更新预约状态…', update_error: '状态更新失败，记录未确认变更。请刷新后重试。',
+        updated: '预约 {{code}} 已更新为「{{status}}」。', not_connected: '管理页面尚未连接 Supabase，请联系网站管理员。', logging_in: '正在登录…',
+        login_error: '登录失败，请检查邮箱和密码。', sign_out_error: '退出登录失败，请重试。', session_error: '无法读取登录状态，请刷新页面后重试。'
+    }),
+    en: Object.freeze({
+        page_title: 'Safety Tool Reservations', internal: 'Admin', page_intro: 'Place the tools in person first. Check the sender account in your default email app, then open and send the Japanese / English draft. Return here afterward to confirm that the tools are placed and the participant has been notified.',
+        language: 'Language', login_heading: 'Administrator sign in', email: 'Email', password: 'Password', login: 'Sign in', reservations: 'Reservations', status: 'Status',
+        all_statuses: 'All statuses', status_pending: 'Pending', status_ready: 'Placed and notified', status_cancelled: 'Cancelled', status_returned: 'Returned',
+        refresh: 'Refresh', sign_out: 'Sign out', back: 'Back to website', name: 'Name', course: 'Course / major', pickup_date: 'Pickup date', return_date: 'Return by',
+        items: 'Reserved equipment', notification_draft: 'Open Japanese / English email draft', action_ready: 'Confirm placed and notified', action_cancelled: 'Cancel reservation', action_returned: 'Confirm returned',
+        empty_filtered: 'No reservations with this status.', empty: 'There are no reservations yet.', loading: 'Loading reservations…', loaded: 'Loaded {{count}} reservation(s).',
+        load_error: 'Could not load reservations. Confirm the admin database migration has been run, then check your connection and try again.', checking_admin: 'Verifying administrator access…',
+        no_admin: 'This account is not an administrator. Contact the project administrator.', bad_email: 'The participant email address is invalid. The draft could not be created.',
+        draft_opened: 'Requested the default email app to open the Japanese / English draft for reservation {{code}}. Check the sender account, recipient, and content, then send it manually. After sending, confirm “Placed and notified” here.',
+        confirm_ready: 'Confirm the tools for {{code}} are in the pickup box and the Japanese / English notification email has been sent?', confirm_cancel: 'Cancel reservation {{code}}? Its inventory will become available again.',
+        confirm_returned: 'Confirm the tools for reservation {{code}} have been returned?', updating: 'Updating reservation status…', update_error: 'Could not update the status. No change was confirmed. Refresh and try again.',
+        updated: 'Reservation {{code}} updated to “{{status}}”.', not_connected: 'Supabase is not connected to this admin page. Contact the website administrator.', logging_in: 'Signing in…',
+        login_error: 'Sign-in failed. Check your email and password.', sign_out_error: 'Could not sign out. Try again.', session_error: 'Could not read the sign-in status. Refresh the page and try again.'
+    })
 });
+
+export function getAdminCopy(locale = 'zh') {
+    return ADMIN_COPY[locale] || ADMIN_COPY.zh;
+}
 
 function safeMailText(value) {
     return String(value ?? '').replace(/[\r\n\t]+/g, ' ').trim();
@@ -88,8 +112,9 @@ export function buildNotificationMailto(reservation) {
     return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-export function formatReservationItems(items = []) {
-    return items.map(({ equipment_id: id, quantity }) => `${EQUIPMENT_NAMES[id] || id} × ${quantity}`);
+export function formatReservationItems(items = [], locale = 'zh') {
+    const names = locale === 'en' ? EQUIPMENT_NAMES_EN : EQUIPMENT_NAMES;
+    return items.map(({ equipment_id: id, quantity }) => `${names[id] || id} × ${quantity}`);
 }
 
 export function filterReservations(reservations, status = 'all') {
@@ -129,13 +154,40 @@ function initializeAdminPage() {
     const loginButton = document.getElementById('admin-login-submit');
     const list = document.getElementById('reservation-list');
     const filter = document.getElementById('reservation-filter');
+    const languageSelect = document.getElementById('admin-language');
+    let locale = localStorage.getItem('rere_cords_admin_lang') || (localStorage.getItem('rere_cords_lang') === 'en' ? 'en' : 'zh');
     let reservations = [];
     let refreshTimer;
 
-    function setMessage(target, message, state = '') {
-        target.textContent = message;
+    function translate(key, values = {}) {
+        return Object.entries(values).reduce((text, [name, value]) => text.replaceAll(`{{${name}}}`, value), getAdminCopy(locale)[key] || key);
+    }
+
+    function setMessage(target, key, state = '', values = {}) {
+        target.dataset.messageKey = key;
+        target.dataset.messageValues = JSON.stringify(values);
+        target.textContent = translate(key, values);
         if (state) target.dataset.state = state;
         else delete target.dataset.state;
+    }
+
+    function applyLanguage() {
+        const copy = getAdminCopy(locale);
+        document.documentElement.lang = locale === 'en' ? 'en' : 'zh-CN';
+        document.title = `${copy.page_title} | RERE-CORDS`;
+        document.querySelectorAll('[data-admin-copy]').forEach((element) => {
+            element.textContent = copy[element.dataset.adminCopy];
+        });
+        document.getElementById('admin-language').setAttribute('aria-label', copy.language);
+        document.getElementById('admin-refresh').setAttribute('aria-label', copy.refresh);
+        for (const option of filter.options) option.textContent = copy[option.dataset.adminCopy];
+        for (const message of [loginMessage, dashboardMessage]) {
+            if (message.dataset.messageKey) {
+                setMessage(message, message.dataset.messageKey, message.dataset.state, JSON.parse(message.dataset.messageValues || '{}'));
+            }
+        }
+        languageSelect.value = locale;
+        renderReservations();
     }
 
     function node(tag, className, text) {
@@ -155,28 +207,28 @@ function initializeAdminPage() {
         const article = node('article', 'admin-reservation');
         const header = node('div', 'admin-reservation-heading');
         header.append(node('h3', '', reservation.reservation_code));
-        header.append(node('span', `admin-status admin-status-${reservation.status}`, STATUS_LABELS[reservation.status] || reservation.status));
+        header.append(node('span', `admin-status admin-status-${reservation.status}`, translate(`status_${reservation.status}`)));
         article.append(header);
 
         const details = node('dl', 'admin-details');
-        appendDetail(details, '姓名', reservation.participant_name);
-        appendDetail(details, '课程／专业', reservation.course);
+        appendDetail(details, translate('name'), reservation.participant_name);
+        appendDetail(details, translate('course'), reservation.course);
         const emailDetail = node('div', 'admin-detail');
-        emailDetail.append(node('dt', '', '邮箱'), node('dd', ''));
+        emailDetail.append(node('dt', '', translate('email')), node('dd', ''));
         const emailValue = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(reservation.email)
             ? node('a', '', reservation.email)
             : document.createTextNode(reservation.email);
         if (emailValue instanceof HTMLAnchorElement) emailValue.href = `mailto:${reservation.email}`;
         emailDetail.querySelector('dd').append(emailValue);
         details.append(emailDetail);
-        appendDetail(details, '领取日期', reservation.pickup_date);
-        appendDetail(details, '必须归还日期', reservation.return_date);
+        appendDetail(details, translate('pickup_date'), reservation.pickup_date);
+        appendDetail(details, translate('return_date'), reservation.return_date);
         article.append(details);
 
         const itemSection = node('div', 'admin-items');
-        itemSection.append(node('h4', '', '预约道具'));
+        itemSection.append(node('h4', '', translate('items')));
         const items = node('ul', '');
-        for (const item of formatReservationItems(reservation.reservation_items)) items.append(node('li', '', item));
+        for (const item of formatReservationItems(reservation.reservation_items, locale)) items.append(node('li', '', item));
         itemSection.append(items);
         article.append(itemSection);
 
@@ -184,21 +236,21 @@ function initializeAdminPage() {
         if (actions.length) {
             const actionBar = node('div', 'admin-actions');
             if (reservation.status === 'pending') {
-                const draftButton = node('button', 'admin-action admin-action-secondary', '打开日英通知邮件草稿');
+                const draftButton = node('button', 'admin-action admin-action-secondary', translate('notification_draft'));
                 draftButton.type = 'button';
                 draftButton.addEventListener('click', () => {
                     const mailto = buildNotificationMailto(reservation);
                     if (!mailto) {
-                        setMessage(dashboardMessage, '参与者邮箱格式无效，无法创建邮件草稿。', 'error');
+                        setMessage(dashboardMessage, 'bad_email', 'error');
                         return;
                     }
-                    setMessage(dashboardMessage, `已请求默认邮件应用打开预约 ${reservation.reservation_code} 的日英草稿。请检查发件账户、收件人和内容并手动发送；发送后再确认「已放置并已通知」。`);
+                    setMessage(dashboardMessage, 'draft_opened', '', { code: reservation.reservation_code });
                     window.location.href = mailto;
                 });
                 actionBar.append(draftButton);
             }
             for (const status of actions) {
-                const button = node('button', status === 'cancelled' ? 'admin-action admin-action-secondary' : 'admin-action', ACTION_LABELS[status]);
+                const button = node('button', status === 'cancelled' ? 'admin-action admin-action-secondary' : 'admin-action', translate(`action_${status}`));
                 button.type = 'button';
                 button.addEventListener('click', () => updateStatus(reservation, status, button));
                 actionBar.append(button);
@@ -212,12 +264,12 @@ function initializeAdminPage() {
         list.replaceChildren();
         const visible = filterReservations(reservations, filter.value);
         for (const reservation of visible) list.append(renderReservation(reservation));
-        if (!visible.length) list.append(node('p', 'admin-empty', reservations.length ? '此状态下没有预约。' : '目前没有预约记录。'));
+        if (!visible.length) list.append(node('p', 'admin-empty', translate(reservations.length ? 'empty_filtered' : 'empty')));
     }
 
     async function loadReservations() {
         if (!client) return;
-        setMessage(dashboardMessage, '正在读取预约…');
+        setMessage(dashboardMessage, 'loading');
         try {
             const { data, error } = await client
                 .from('reservations')
@@ -226,9 +278,9 @@ function initializeAdminPage() {
             if (error) throw error;
             reservations = data || [];
             renderReservations();
-            setMessage(dashboardMessage, `已载入 ${reservations.length} 笔预约。`);
+            setMessage(dashboardMessage, 'loaded', '', { count: reservations.length });
         } catch {
-            setMessage(dashboardMessage, '读取失败。请确认已执行管理员数据库迁移，并检查网络后重试。', 'error');
+            setMessage(dashboardMessage, 'load_error', 'error');
         }
     }
 
@@ -244,14 +296,14 @@ function initializeAdminPage() {
         }
         loginSection.hidden = true;
         dashboard.hidden = false;
-        setMessage(dashboardMessage, '正在验证管理员权限…');
+        setMessage(dashboardMessage, 'checking_admin');
         try {
             const { data: isAdmin, error } = await client.rpc('is_reservation_admin');
             if (error || isAdmin !== true) throw error || new Error('Not an administrator');
         } catch {
             await client.auth.signOut();
             await enterDashboard(null);
-            setMessage(loginMessage, '此账号尚未获得管理员权限，请联系项目管理员。', 'error');
+            setMessage(loginMessage, 'no_admin', 'error');
             return;
         }
         await loadReservations();
@@ -259,26 +311,22 @@ function initializeAdminPage() {
     }
 
     async function updateStatus(reservation, status, button) {
-        const prompt = status === 'ready'
-            ? `确认 ${reservation.reservation_code} 的道具已放入领取盒，且日英通知邮件已发送？`
-            : status === 'cancelled'
-                ? `确认取消预约 ${reservation.reservation_code}？取消后库存会重新开放。`
-                : `确认预约 ${reservation.reservation_code} 的道具已经归还？`;
+        const prompt = translate(status === 'ready' ? 'confirm_ready' : status === 'cancelled' ? 'confirm_cancel' : 'confirm_returned', { code: reservation.reservation_code });
         if (!window.confirm(prompt)) return;
         button.disabled = true;
-        setMessage(dashboardMessage, '正在更新预约状态…');
+        setMessage(dashboardMessage, 'updating');
         const result = await setReservationStatus(client, reservation, status);
         if (!result.ok) {
             button.disabled = false;
-            setMessage(dashboardMessage, '状态更新失败，记录未确认变更。请刷新后重试。', 'error');
+            setMessage(dashboardMessage, 'update_error', 'error');
             return;
         }
-        setMessage(dashboardMessage, `预约 ${reservation.reservation_code} 已更新为「${STATUS_LABELS[status]}」。`, 'success');
+        setMessage(dashboardMessage, 'updated', 'success', { code: reservation.reservation_code, status: translate(`status_${status}`) });
         await loadReservations();
     }
 
     if (!client) {
-        setMessage(loginMessage, '管理页面尚未连接 Supabase，请联系网站管理员。', 'error');
+        setMessage(loginMessage, 'not_connected', 'error');
         loginButton.disabled = true;
     }
 
@@ -290,7 +338,7 @@ function initializeAdminPage() {
         event.preventDefault();
         if (!client) return;
         loginButton.disabled = true;
-        setMessage(loginMessage, '正在登录…');
+        setMessage(loginMessage, 'logging_in');
         const form = new FormData(loginForm);
         try {
             const { data, error } = await client.auth.signInWithPassword({
@@ -300,7 +348,7 @@ function initializeAdminPage() {
             if (error) throw error;
             await enterDashboard(data.session);
         } catch {
-            setMessage(loginMessage, '登录失败，请检查邮箱和密码。', 'error');
+            setMessage(loginMessage, 'login_error', 'error');
         } finally {
             loginButton.disabled = false;
         }
@@ -308,22 +356,29 @@ function initializeAdminPage() {
 
     document.getElementById('admin-sign-out').addEventListener('click', async () => {
         const { error } = await client.auth.signOut();
-        if (error) setMessage(dashboardMessage, '退出登录失败，请重试。', 'error');
+        if (error) setMessage(dashboardMessage, 'sign_out_error', 'error');
         else await enterDashboard(null);
     });
 
     document.getElementById('admin-refresh').addEventListener('click', loadReservations);
     filter.addEventListener('change', renderReservations);
+    languageSelect.addEventListener('change', () => {
+        locale = languageSelect.value === 'en' ? 'en' : 'zh';
+        localStorage.setItem('rere_cords_admin_lang', locale);
+        applyLanguage();
+    });
     window.addEventListener('focus', () => {
         if (!dashboard.hidden) loadReservations();
     });
 
     client?.auth.getSession()
         .then(({ data, error }) => {
-            if (error) setMessage(loginMessage, '无法读取登录状态，请刷新页面后重试。', 'error');
+            if (error) setMessage(loginMessage, 'session_error', 'error');
             else enterDashboard(data.session);
         })
-        .catch(() => setMessage(loginMessage, '无法读取登录状态，请刷新页面后重试。', 'error'));
+        .catch(() => setMessage(loginMessage, 'session_error', 'error'));
+
+    applyLanguage();
 }
 
 if (typeof document !== 'undefined') {
