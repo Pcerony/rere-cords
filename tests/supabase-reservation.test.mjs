@@ -45,6 +45,7 @@ test('Pages deployment injects the public Supabase settings without committing p
     const workflow = readFileSync(new URL('../.github/workflows/deploy-pages.yml', import.meta.url), 'utf8');
     assert.match(workflow, /SUPABASE_URL:\s*\$\{\{\s*vars\.SUPABASE_URL\s*\|\|\s*secrets\.SUPABASE_URL\s*\}\}/);
     assert.match(workflow, /SUPABASE_PUBLISHABLE_KEY:\s*\$\{\{\s*vars\.SUPABASE_PUBLISHABLE_KEY\s*\|\|\s*secrets\.SUPABASE_PUBLISHABLE_KEY\s*\}\}/);
+    assert.match(workflow, /- name: Install dependencies\s+run: npm ci/);
     assert.match(workflow, /safety-tool-reservation-config\.js/);
     assert.match(workflow, /actions\/deploy-pages/);
 });
