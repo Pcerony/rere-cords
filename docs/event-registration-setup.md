@@ -1,8 +1,22 @@
 # 作品报名：部署与管理
 
+## 生产验收记录（2026-10-31）
+
+- 正式报名：`https://rerecords.space/event-registration.html`；管理后台：`https://rerecords.space/event-registration-admin.html`。
+- 原项目已恢复健康；新增 migration `202610310001` 已执行并登记；Edge Function `event-registration` 已部署，生产开关已开启。
+- Turnstile 使用 `rerecords.space` 的 Managed 组件；公开 Site key 由 GitHub Actions 注入，Secret 仅保存在 Supabase。没有迁移 DNS、购买套餐或把 Secret 写入仓库。
+- 已把现有唯一一位安全用具管理员显式加入报名白名单。生产 RLS/权限检查通过；匿名读取报名表、文件元数据和真实私有图片被拒绝，无效 captcha 被拒绝。管理员实际登录应由本人使用原账号完成；验收没有代输密码或伪造登录令牌。
+- 真实浏览器提交成功，回执 `RRC-W-E2290A6EB7B4427BB09F6CA1D321C72A`。虚构作者、`example.org` 邮箱、沙龙意向、视频链接及图片元数据均收到。测试附件使用本站公开 `favicon.png`；从私有存储下载后与源文件逐字节及 SHA-256 一致，1647 bytes。
+- 测试记录明确标为“[上线测试-20261031] 非参展作品”，不算真实报名；是否清理由负责人确认，不擅自永久删除。原安全预约记录仍为4条，库存 RPC 正常。
+- 本地和 GitHub Actions 自动测试通过；本地共105项，Deno 检查通过。无扩展内置浏览器完成真实收件；原 Chrome 扩展环境验证较慢，不能把自动化或特定浏览器的挑战结果当成所有访问者的结果。验证组件失败时页面会显示安全的错误代码，绝不绕过服务端验证。
+
+浏览器可能缓存静态配置10分钟，正式开放时已更新 `event-registration-config.js?v=2`；诊断增强使用 `event-registration.js?v=2`。以后变更公开配置或依赖模块时同样更新引用版本。仅关闭网页开关不能保证立即阻止旧页面的请求；紧急停止收件应同时关闭函数或把服务端截止时间设为当前时间之前。
+
+现有 `202609290001` 至 `202609290003` 的安全预约结构原先通过手工 SQL 部署，远程 migration 历史未登记这些旧版本。这次没有重跑或擅自补记它们；后续不可直接对全部本地 migration 执行 `db push`，应先审计旧 schema 并修复基线历史。
+
 ## 当前交付与边界
 
-本分支提供独立作品报名页 `event-registration.html`、管理页 `event-registration-admin.html`、Edge Function、私有图片存储及 migration。它不修改安全道具预约表、库存、RPC 或管理员白名单。代码完成不代表生产后端已经部署；默认 `enabled: false`，不会把未连接的表单当作提交成功。
+系统提供独立作品报名页 `event-registration.html`、管理页 `event-registration-admin.html`、Edge Function、私有图片存储及 migration。它不修改安全道具预约表、库存、RPC 或原管理员白名单。源码默认 `enabled: false`，生产构建已通过配置开启；其他环境不应把未连接的表单当作提交成功。
 
 报名流程：回收箱旁纸条填写作者名、邮箱，随作品放入箱子；扫描指向报名页的二维码，在线使用相同姓名、邮箱提交作品名和200字以内简介。沙龙意向、专业、学年、出身地、补充说明、图片及视频链接为选填。视频支持任意 HTTP(S) 服务，不下载、抓取或嵌入远程内容。图片最多3张，每张5 MiB，JPEG/PNG/WebP；不接受 SVG、视频文件和其他格式。文件头校验不是完整的病毒扫描或图像解码验证。
 

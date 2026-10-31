@@ -1,6 +1,6 @@
 # RERE-CORDS 提交入口接入说明
 
-> 2026-10-31 更新：本分支已改为“实体作品附姓名/邮箱纸条 + 官网线上报名”，入口配置指向 `event-registration.html`。视频改为不限平台的 HTTP(S) 链接，图片为可选上传。生产上线步骤和权限以 [作品报名部署与管理](event-registration-setup.md) 为准。下面保留的是旧邮件入口及 Apps Script 接入方案的历史记录，不再作为当前实施方案。
+> 2026-10-31 更新：线上已切换为“实体作品附姓名/邮箱纸条 + 官网线上报名”，入口配置指向 `event-registration.html`，已完成 Supabase 真实收件验收。视频改为不限平台的 HTTP(S) 链接，图片为可选上传。生产记录和权限以 [作品报名部署与管理](event-registration-setup.md) 为准。下面保留的是旧邮件入口及 Apps Script 接入方案的历史记录，不再作为当前实施方案。
 
 ## 当前状态
 
