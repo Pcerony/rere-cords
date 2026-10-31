@@ -190,9 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "A safe, stable physical work suitable for transport and display."
         },
         "pathway-physical-submit": {
-            "zh": "实体作品与打印后的纸质参评表必须一起提交；图像、视频等补充资料可选。",
-            "ja": "実物作品と印刷した紙の参加票は必ず一緒に提出してください。画像や動画などの補足資料は任意です。",
-            "en": "The physical work and a printed paper participation form must be submitted together; images, video, and other supporting materials are optional."
+            "zh": "将写有作者名和邮箱的纸条随作品投入回收箱，再扫描二维码完成线上报名。",
+            "ja": "作者名とメールアドレスを記入した用紙を作品に添えて回収箱へ入れ、QRコードからオンライン参加登録をしてください。",
+            "en": "Place a slip with your author name and email alongside your work in the collection box, then scan the QR code to register online."
         },
         "pathway-record-digital-record": {
             "zh": "需要领取活动唱片或自行准备废旧唱片，并记录它在过程中的实际作用。",
@@ -365,9 +365,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submission Materials"
         },
         "req-sub-text": {
-            "zh": "仅接收实体作品。请将实体成品与打印后的纸质参评表一起投入回收箱；图像、视频等补充资料可通过邮件发送。",
-            "ja": "実物作品のみを受け付けます。完成した実物作品と印刷した紙の参加票を一緒に回収ボックスへ入れてください。画像や動画などの補足資料はメールで送信できます。",
-            "en": "Only physical works are accepted. Place the finished physical work and a printed paper participation form together in the collection box; optional images, video, and other supporting materials may be sent by email."
+            "zh": "仅接收实体作品。作品附上写有作者名和邮箱的纸条，投入回收箱后填写线上报名表。图片和视频链接可选填。",
+            "ja": "実物作品のみ受け付けます。作者名とメールアドレスを記入した用紙を作品に添えて回収箱へ入れ、オンライン参加登録をしてください。画像と動画リンクは任意です。",
+            "en": "Physical works only. Attach a slip with your author name and email, deposit the work in the collection box, and register online. Photos and video links are optional."
         },
         "req-notice-text": {
             "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。产生的废料请按照地方自治体规定的处理方式妥善废弃。请于11月10日前投入7号馆2层 MEDIA STUDIO 房间前的回收箱。",
@@ -460,9 +460,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Participation & Submission Period"
         },
         "apply-period-text": {
-            "zh": "<span class='apply-date-highlight'>2026年10月1日（星期四）至11月10日（星期二）</span>。期间接受实体作品与纸质参评表；无需另行报名。",
-            "ja": "<span class='apply-date-highlight'>2026年10月1日（木）〜2026年11月10日（火）</span>。実物作品と紙の参加票を受け付けます。事前の参加申込は不要です。",
-            "en": "<span class='apply-date-highlight'>October 1 (Thu) - November 10 (Tue), 2026</span>. Physical works and printed participation forms are accepted during this period; no separate registration is required."
+            "zh": "<span class='apply-date-highlight'>2026年10月1日（星期四）至11月10日（星期二）</span>。期间请提交实体作品、作者信息纸条，并完成线上报名。",
+            "ja": "<span class='apply-date-highlight'>2026年10月1日（木）〜2026年11月10日（火）</span>。期間中に実物作品と作者情報の用紙を提出し、オンライン参加登録を完了してください。",
+            "en": "<span class='apply-date-highlight'>October 1 (Thu) - November 10 (Tue), 2026</span>. Submit your physical work with an identifying slip and complete online registration during this period."
         },
         "title-submission": {
             "zh": "提交作品",
@@ -470,9 +470,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Submit Your Work"
         },
         "lead-submission": {
-            "zh": "无需提前报名，完成作品提交即视为正式参加。本项目仅接收实体作品，实体作品与纸质参评表必须一起提交。",
-            "ja": "事前申込は不要で、作品の提出完了をもって正式参加となります。実物作品のみを受け付け、実物作品と紙の参加票は必ず一緒に提出してください。",
-            "en": "No advance registration is required; completed submission constitutes formal participation. This project accepts physical works only, and the physical work and printed participation form must be submitted together."
+            "zh": "无需提前报名。将附有作者名和邮箱纸条的作品投入回收箱，再使用相同姓名和邮箱完成线上报名。",
+            "ja": "事前の参加申込は不要です。作者名とメールアドレスを記入した用紙を作品に添えて回収箱へ入れ、同じ名前とメールアドレスでオンライン参加登録をしてください。",
+            "en": "No advance registration is required. Deposit your work with a slip showing your author name and email, then register online using the same details."
         },
         "submission-digital-title": {
             "zh": "唱片参与的数字成果",
@@ -495,14 +495,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Physical Finished Work"
         },
         "submission-physical-text": {
-            "zh": "请将实体作品与打印后的纸质参评表一起投入7号馆2层 MEDIA STUDIO 房间前的作品回收箱。两者必须同时提交。",
-            "ja": "実物作品と印刷した紙の参加票を一緒に、7号館2階MEDIA STUDIO部屋前の作品回収ボックスへ入れてください。両方を同時に提出する必要があります。",
-            "en": "Place the physical work and a printed paper participation form together in the work collection box in front of the MEDIA STUDIO room on 2F of Building 7. Both must be submitted at the same time."
+            "zh": "填写回收箱旁准备好的纸条，写明作者名和邮箱，随作品投入7号馆2层 MEDIA STUDIO 房间前的回收箱。随后扫描二维码填写线上报名表。",
+            "ja": "回収箱に用意された用紙に作者名とメールアドレスを記入し、作品と一緒に7号館2階MEDIA STUDIO部屋前の回収ボックスへ入れてください。その後、QRコードからオンライン参加登録をしてください。",
+            "en": "Write your author name and email on the prepared slip and place it with your work in the box outside MEDIA STUDIO, Building 7, Floor 2. Then scan the QR code to complete the online form."
         },
         "submission-physical-options": {
-            "zh": "<strong>必需：</strong>实体作品与纸质参评表。<strong>可选：</strong>图像、视频及其他补充资料，可作为邮件附件，或以视频网站、日本云存储服务或 Google Drive 链接发送。",
-            "ja": "<strong>必須：</strong>実物作品と紙の参加票。<strong>任意：</strong>画像、動画、その他の補足資料は、メールの添付ファイル、動画サイト、日本国内のクラウドストレージ、または Google Drive のリンクで送信できます。",
-            "en": "<strong>Required:</strong> the physical work and printed participation form. <strong>Optional:</strong> images, video, and other supporting materials may be sent as email attachments or as links to a video platform, a Japanese cloud storage service, or Google Drive."
+            "zh": "<strong>线上必填：</strong>姓名、邮箱、作品名及200字以内的简介。<strong>选填：</strong>沙龙意向、图片、视频链接、专业、学年、出身地及补充说明。视频链接不限平台，请确认可查看。",
+            "ja": "<strong>オンライン必須項目：</strong>名前、メール、作品名、200文字以内の作品紹介。<strong>任意：</strong>サロン参加意向、画像、動画リンク、専攻、学年、出身地、補足説明。動画リンクのサービスは問いません。閲覧権限をご確認ください。",
+            "en": "<strong>Required online:</strong> name, email, work title and description (up to 200 characters). <strong>Optional:</strong> salon attendance, photos, video link, major, year, origin and notes. Video links can use any service; check viewing permissions."
         },
         "submission-digital-native-title": {
             "zh": "纯数字作品",
@@ -520,19 +520,19 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "<strong>Required:</strong> at least one representative image, one short explanatory video, the complete work file or access method, and onsite display, playback, or execution requirements."
         },
         "submission-status-label": {
-            "zh": "参评表",
-            "ja": "参加票",
-            "en": "Participation Form"
+            "zh": "报名方式",
+            "ja": "参加登録",
+            "en": "Registration"
         },
         "submission-status": {
-            "zh": "参评表正在准备中，发布后开放下载",
-            "ja": "参加票は準備中です。公開後にダウンロードできます",
-            "en": "The participation form is being prepared and will be available to download once published"
+            "zh": "线下提交作品后，填写线上报名表",
+            "ja": "実物作品を提出後、オンラインフォームを送信",
+            "en": "Submit your physical work, then complete the online form"
         },
         "submission-cta": {
-            "zh": "10月1日起通过邮件发送补充资料",
-            "ja": "10月1日から補足資料をメールで送信",
-            "en": "Email Supporting Materials from October 1"
+            "zh": "填写作品报名表",
+            "ja": "作品の参加登録へ",
+            "en": "Register Your Work"
         },
         "submission-fallback": {
             "zh": "下载备用参与表",
@@ -907,7 +907,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "pathway-submit-label": "Toimitus",
         "pathway-physical-record": "Nouda projektin levy tai hanki poistolevyt itse. Yhdessä työssä saa käyttää enintään kuutta levyä.",
         "pathway-physical-outcome": "Turvallinen ja vakaa fyysinen työ, joka sopii kuljetukseen ja näyttelyyn.",
-        "pathway-physical-submit": "Fyysinen työ ja tulostettu osallistumislomake on toimitettava yhdessä. Kuvat, videot ja muut lisäaineistot ovat vapaaehtoisia.",
+        "pathway-physical-submit": "Liitä työhön lappu, jossa on tekijän nimi ja sähköposti. Jätä työ keräyslaatikkoon ja ilmoittaudu verkossa QR-koodin kautta.",
         "pathway-record-digital-record": "Nouda tai hanki poistolevy ja dokumentoi sen todellinen rooli prosessissa.",
         "pathway-record-digital-outcome": "Kuvina, videona, äänenä, datana tai interaktiivisina tiedostoina esitetty prosessi ja tulos.",
         "pathway-record-digital-submit": "Toimita työ, prosessidokumentaatio, vähintään yksi kuva ja lyhyt selitysvideo verkossa.",
@@ -941,7 +941,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "req-proc-title": "Työstötavat",
         "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset.",
         "req-sub-title": "Toimitettava aineisto",
-        "req-sub-text": "Vain fyysisiä töitä otetaan vastaan. Toimita valmis työ ja tulostettu osallistumislomake yhdessä keräyslaatikkoon. Valinnaiset kuvat ja videot voi lähettää sähköpostitse.",
+        "req-sub-text": "Vain fyysisiä töitä otetaan vastaan. Liitä työhön nimi ja sähköposti, jätä työ keräyslaatikkoon ja täytä verkkolomake. Kuvat ja videolinkit ovat vapaaehtoisia.",
         "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Hävitä syntyvät jätteet asianmukaisesti paikallisten viranomaismääräysten mukaisesti. Jätä työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon 10. marraskuuta mennessä.",
         "safety-kicker": "Lue ennen työskentelyä",
         "title-safety": "Työstämisen turvallisuus",
@@ -981,21 +981,21 @@ document.addEventListener('DOMContentLoaded', () => {
         "advisor-sarantou-role": "Professori · strateginen muotoilu, sosiaalinen muotoilu",
         "advisor-sarantou-bio": "Hän on erikoistunut sosiaaliseen muotoiluun, transformaatiomuotoiluun ja taidelähtöisiin tutkimusmenetelmiin sekä erityisesti marginalisoitujen yhteisöjen ja erilaisten kulttuuristen ympäristöjen muotoilukäytäntöihin. Hän toimii myös Lapin yliopiston dosenttina ja on tehnyt tutkimusta Namibiassa, Suomessa, Australiassa ja Japanissa.",
         "apply-period-title": "Osallistumis- ja toimitusaika",
-        "apply-period-text": "<span class='apply-date-highlight'>1.10.-10.11.2026</span>. Fyysiset työt ja tulostetut osallistumislomakkeet otetaan vastaan tänä aikana; erillistä ennakkoilmoittautumista ei tarvita.",
+        "apply-period-text": "<span class='apply-date-highlight'>1.10.-10.11.2026</span>. Toimita fyysinen työ ja nimilappu sekä täytä verkkolomake tänä aikana.",
         "title-submission": "Töiden toimittaminen",
-        "lead-submission": "Ennakkoilmoittautumista ei tarvita; valmis toimitus merkitsee virallista osallistumista. Vain fyysisiä töitä hyväksytään, ja työ sekä tulostettu osallistumislomake on toimitettava yhdessä.",
+        "lead-submission": "Ennakkoilmoittautumista ei tarvita. Jätä työ ja nimelläsi sekä sähköpostillasi varustettu lappu keräyslaatikkoon. Ilmoittaudu sitten verkossa samoilla tiedoilla.",
         "submission-digital-title": "Levyä hyödyntävä digitaalinen tulos",
         "submission-digital-text": "Lähetä työn tiedot ja osallistumislomake PDF-muodossa sekä valmis digitaalinen tulos ja näyttö siitä, että levyä käytettiin todella luovassa prosessissa.",
         "submission-digital-requirements": "<strong>Pakolliset:</strong> vähintään yksi kuva työstä, lyhyt selitysvideo, prosessidokumentaatio sekä työn ymmärtämiseen, toistamiseen tai suorittamiseen tarvittavat lisätiedostot.",
         "submission-physical-title": "Valmis fyysinen työ",
-        "submission-physical-text": "Jätä fyysinen työ ja tulostettu osallistumislomake yhdessä rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon.",
-        "submission-physical-options": "<strong>Pakolliset:</strong> fyysinen työ ja tulostettu osallistumislomake. <strong>Valinnaiset:</strong> kuvat, videot ja muut lisäaineistot voi lähettää sähköpostin liitteinä tai videoalustan, japanilaisen pilvipalvelun tai Google Driven linkkeinä.",
+        "submission-physical-text": "Kirjoita nimesi ja sähköpostisi laatikon vieressä olevalle lapulle. Jätä se työn mukana rakennuksen 7 toisen kerroksen MEDIA STUDIO -huoneen edessä olevaan laatikkoon ja täytä verkkolomake QR-koodin kautta.",
+        "submission-physical-options": "<strong>Pakolliset verkossa:</strong> nimi, sähköposti, työn nimi ja enintään 200 merkin kuvaus. <strong>Valinnaiset:</strong> salonki, kuvat, videolinkki, pääaine, vuosikurssi, kotiseutu ja lisätiedot. Videolinkin palvelu on vapaa; tarkista katseluoikeudet.",
         "submission-digital-native-title": "Täysin digitaalinen työ",
         "submission-digital-native-text": "Toimita valmis työ ja osallistumislomake verkossa ja selitä työn suhde poistolevyihin, analogisen median kulttuuriin, materiaalikiertoon tai kestävään muotoiluun.",
         "submission-digital-native-requirements": "<strong>Pakolliset:</strong> vähintään yksi edustava kuva, lyhyt selitysvideo, valmis työtiedosto tai pääsytapa sekä näyttelytilan näyttö-, toisto- tai suoritusvaatimukset.",
-        "submission-status-label": "Osallistumislomake",
-        "submission-status": "Osallistumislomaketta valmistellaan, ja se tulee ladattavaksi julkaisun jälkeen",
-        "submission-cta": "Lähetä lisäaineistot sähköpostilla 1. lokakuuta alkaen",
+        "submission-status-label": "Ilmoittautuminen",
+        "submission-status": "Toimita fyysinen työ ja täytä verkkolomake",
+        "submission-cta": "Ilmoita työsi",
         "submission-fallback": "Lataa varalomake",
         "title-venue": "Näyttelypaikan tiedot",
         "lead-venue": "Näyttely järjestetään 22.-25. marraskuuta 2026 Studio 201:ssä, Moniulotteisen rakennuksen 2. kerroksessa, Kyushun yliopiston Ohashin kampuksella. Näyttely on avoin yleisölle.",

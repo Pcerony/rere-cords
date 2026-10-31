@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><title>作品报名管理 | RERE-CORDS</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="event-registration.css?v=1"></head>
+<body>
+    <header class="registration-header"><a class="brand" href="index.html">RERE-CORDS</a><span>内部管理</span></header>
+    <main class="registration-main admin-main">
+        <header class="page-heading"><p class="eyebrow">RERE-CORDS / REGISTRATIONS</p><h1>作品报名管理</h1><p>核对纸条上的作者名、邮箱与实体作品后，标记为已核对。</p></header>
+        <p id="admin-message" class="message" role="status" aria-live="polite"></p>
+        <form id="registration-admin-login" class="admin-login"><div class="field"><label for="admin-email">管理员邮箱</label><input id="admin-email" name="email" type="email" autocomplete="username" required></div><div class="field"><label for="admin-password">密码</label><input id="admin-password" name="password" type="password" autocomplete="current-password" required></div><div class="admin-toolbar"><button class="admin-button" type="submit">登录</button></div></form>
+        <section id="registration-admin-dashboard" hidden aria-label="报名资料">
+            <div class="admin-toolbar"><label for="registration-filter">实体核对</label><select id="registration-filter"><option value="all">全部</option><option value="pending">待核对</option><option value="received">已核对</option></select><button id="registration-refresh" class="admin-button secondary" type="button">刷新</button><button id="registration-signout" class="admin-button secondary" type="button">退出登录</button></div>
+            <div id="registration-records"></div>
+            <div class="admin-toolbar"><button id="registration-prev" class="admin-button secondary" type="button">上一页</button><span id="registration-page"></span><button id="registration-next" class="admin-button secondary" type="button">下一页</button></div>
+        </section>
+        <a href="index.html">返回活动官网</a>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js" defer></script>
+    <script src="safety-tool-reservation-config.js?v=1" defer></script>
+    <script type="module" src="event-registration-admin.js?v=1"></script>
+</body>
+</html>

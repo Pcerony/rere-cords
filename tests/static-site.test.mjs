@@ -35,14 +35,14 @@ function mergeExtraTranslations(dictionary) {
     return dictionary;
 }
 
-test('submission config opens the official email route on October 1', () => {
+test('submission config opens the official online registration route on October 1', () => {
     const context = { window: {} };
     vm.runInNewContext(read('submission-config.js'), context);
     const app = read('app.js');
 
     const config = context.window.RERE_CORDS_SUBMISSION_CONFIG;
     assert.equal(config.enabled, true);
-    assert.match(config.formUrl, /^mailto:rerecords2026@gmail\.com(?:\?|$)/);
+    assert.equal(config.formUrl, 'https://rerecords.space/event-registration.html');
     assert.equal(config.opensAt, '2026-10-01T00:00:00+09:00');
     assert.equal(config.fallbackDocumentUrl, '');
     assert.match(app, /Date\.now\(\) >= opensAt/);
@@ -58,7 +58,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=3"><\/script>\s*<script src="translations\.js\?v=15"><\/script>\s*<script src="app\.js\?v=36"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=4"><\/script>\s*<script src="translations\.js\?v=16"><\/script>\s*<script src="app\.js\?v=37"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -141,7 +141,7 @@ test('homepage uses the confirmed 2026 collection period, handoff point, and exh
     assert.match(app, /7号館2階MEDIA STUDIO部屋前/);
     assert.match(app, /回収ボックス/);
     assert.match(app, /多次元棟\s*2階\s*スタジオ201/);
-    assert.match(config, /mailto:rerecords2026@gmail\.com/);
+    assert.match(config, /event-registration\.html/);
     assert.doesNotMatch(app, /2026年5月1日|7月30日|2026年8月10日/);
     assert.doesNotMatch(html, /2026年5月1日|7月30日|2026年8月10日/);
 });
@@ -182,17 +182,17 @@ test('timeline keeps schedule dates readable and aligns the optional salon to th
     assert.doesNotMatch(css, /\.timeline-item-last::after/);
 });
 
-test('submission requires a physical work and printed form while supplements use email', () => {
+test('submission requires a physical work, identifying slip and online registration', () => {
     const html = read('index.html');
     const app = read('app.js');
     const submissionStart = html.indexOf('id="submission"');
     const submissionEnd = html.indexOf('</section>', submissionStart);
     const submission = html.slice(submissionStart, submissionEnd);
 
-    assert.match(app, /实体作品与纸质参评表必须一起提交/);
-    assert.match(app, /附件/);
-    assert.match(app, /视频网站、日本云存储服务或 Google Drive/);
-    assert.match(app, /参评表正在准备中/);
+    assert.match(app, /纸条/);
+    assert.match(app, /相同姓名和邮箱/);
+    assert.match(app, /视频链接/);
+    assert.match(app, /填写线上报名表/);
     assert.match(submission, /id="submission-cta"[^>]+aria-disabled="true"/);
     assert.doesNotMatch(submission, /纯数字作品|数字作品提交/);
 });

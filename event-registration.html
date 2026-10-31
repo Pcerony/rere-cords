@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f4f0">
+    <title>作品の参加登録 | RERE-CORDS</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="event-registration.css?v=1">
+</head>
+<body>
+    <header class="registration-header">
+        <a class="brand" href="index.html">RERE-CORDS</a>
+        <label class="language"><span data-copy="language">言語</span><select id="registration-language"><option value="ja">日本語</option><option value="en">English</option><option value="zh">简体中文</option></select></label>
+    </header>
+    <main class="registration-main">
+        <a class="back-link" href="index.html#submission" data-copy="back">イベントサイトへ</a>
+        <header class="page-heading">
+            <p class="eyebrow">RERE-CORDS / 2026</p>
+            <h1 data-copy="pageTitle">作品の参加登録</h1>
+            <p data-copy="intro">作品を回収ボックスに入れたら、こちらで参加登録をお願いします。</p>
+            <p class="period" data-copy="period">受付：2026年10月1日 — 11月10日</p>
+        </header>
+        <div class="registration-layout">
+            <aside class="handoff" aria-labelledby="handoff-title">
+                <img src="素材/illustrations/web/submission-collection-box-v2.png" alt="" width="720" height="540">
+                <h2 id="handoff-title" data-copy="processTitle">作品と登録をつなぐ</h2>
+                <ol><li data-copy="step1">回収箱にある用紙に作者名とメールアドレスを記入。</li><li data-copy="step2">用紙を作品に添えて、7号館2階 MEDIA STUDIO 部屋前の回収箱へ。</li><li data-copy="step3">同じ名前とメールアドレスで、このフォームを送信。</li></ol>
+                <a href="mailto:rerecords2026@gmail.com">rerecords2026@gmail.com</a>
+            </aside>
+            <div class="form-column">
+                <noscript>JavaScript is required for online registration. Contact rerecords2026@gmail.com.</noscript>
+                <p id="registration-message" class="message" role="alert" tabindex="-1"></p>
+                <form id="registration-form">
+                    <fieldset id="registration-fields">
+                        <section class="form-section" aria-labelledby="basics-title">
+                            <h2 id="basics-title"><span class="section-number">01</span><span data-copy="basics">作者・作品について</span><small data-copy="required">必須</small></h2>
+                            <p class="field-hint" data-copy="matchingHint">作品に添えた用紙と同じ作者名・メールアドレスをご記入ください。</p>
+                            <div class="field-row">
+                                <div class="field"><label for="registration-name" data-copy="name">作者名</label><input id="registration-name" name="name" autocomplete="name" maxlength="120" required></div>
+                                <div class="field"><label for="registration-email" data-copy="email">メールアドレス</label><input id="registration-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+                            </div>
+                            <div class="field"><label for="registration-title" data-copy="title">作品名</label><input id="registration-title" name="title" maxlength="200" required></div>
+                            <div class="field"><label for="registration-description" data-copy="description">作品紹介</label><textarea id="registration-description" name="description" rows="5" aria-describedby="description-hint description-count" required></textarea><div class="hint-row"><p id="description-hint" class="field-hint" data-copy="descriptionHint">200文字以内。</p><output id="description-count" for="registration-description">0 / 200</output></div></div>
+                        </section>
+                        <section class="form-section" aria-labelledby="details-title">
+                            <h2 id="details-title"><span class="section-number">02</span><span data-copy="details">追加情報</span><small data-copy="optional">任意</small></h2>
+                            <div class="field"><label for="registration-salon" data-copy="salon">11月25日のサロンへの参加</label><select id="registration-salon" name="salon"><option value="" data-copy="select">選択してください</option><option value="yes" data-copy="yes">参加する</option><option value="no" data-copy="no">参加しない</option><option value="undecided" data-copy="undecided">未定</option></select></div>
+                            <div class="field-row"><div class="field"><label for="registration-major" data-copy="major">専攻・所属</label><input id="registration-major" name="major" maxlength="120"></div><div class="field"><label for="registration-year" data-copy="year">学年</label><input id="registration-year" name="year" maxlength="60"></div></div>
+                            <div class="field"><label for="registration-origin" data-copy="origin">出身地・地域</label><input id="registration-origin" name="origin" maxlength="120"></div>
+                        </section>
+                        <section class="form-section" aria-labelledby="materials-title">
+                            <h2 id="materials-title"><span class="section-number">03</span><span data-copy="materials">作品の補足資料</span><small data-copy="optional">任意</small></h2>
+                            <div class="field"><label for="registration-supplement" data-copy="supplement">補足説明</label><textarea id="registration-supplement" name="supplement" rows="3" maxlength="2000"></textarea></div>
+                            <div class="field"><label for="registration-photos" data-copy="photos">作品画像</label><p id="photos-hint" class="field-hint" data-copy="photosHint">JPEG・PNG・WebP、3枚まで。1枚5 MB以内。</p><input id="registration-photos" name="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple aria-describedby="photos-hint"><div id="photo-previews" class="photo-previews" aria-live="polite"></div></div>
+                            <div class="field"><label for="registration-video" data-copy="videoUrl">動画リンク</label><input id="registration-video" name="videoUrl" type="url" maxlength="2048" placeholder="https://" aria-describedby="video-hint"><p id="video-hint" class="field-hint" data-copy="videoHint">主催者が閲覧できる共有設定をご確認ください。</p></div>
+                        </section>
+                        <section class="privacy-section"><p data-copy="privacy"></p><label class="consent"><input name="privacyAccepted" type="checkbox" required><span data-copy="consent">上記の個人情報の取り扱いを確認しました。</span></label></section>
+                    </fieldset>
+                    <div id="registration-captcha" class="captcha"></div>
+                    <button id="registration-submit" type="submit" disabled data-copy="submit">参加登録を送信</button>
+                </form>
+                <section id="registration-receipt" class="receipt" hidden tabindex="-1" aria-labelledby="receipt-title">
+                    <p class="eyebrow">RERE-CORDS / RECEIVED</p><h2 id="receipt-title" data-copy="success">参加登録を受け付けました</h2><p data-copy="receiptLabel">受付番号</p><strong id="receipt-code"></strong><p data-copy="receiptNote"></p><a href="index.html" data-copy="another">イベントサイトに戻る</a>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="registration-footer">RERE-CORDS · KYUSHU UNIVERSITY · 2026</footer>
+    <script src="safety-tool-reservation-config.js?v=1" defer></script>
+    <script src="event-registration-config.js?v=1" defer></script>
+    <script type="module" src="event-registration.js?v=1"></script>
+</body>
+</html>

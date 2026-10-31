@@ -16,3 +16,10 @@ output/
 # Local Node dependencies and upload prototype receipts
 node_modules/
 prototype-data/
+
+# Local backend state and secrets
+supabase/.temp/
+.supabase/
+.env
+.env.*
+!.env.example

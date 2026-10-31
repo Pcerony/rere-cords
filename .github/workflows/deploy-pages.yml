@@ -18,6 +18,8 @@ jobs:
     env:
       SUPABASE_URL: ${{ vars.SUPABASE_URL || secrets.SUPABASE_URL }}
       SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY || secrets.SUPABASE_PUBLISHABLE_KEY }}
+      REGISTRATION_ENABLED: ${{ vars.REGISTRATION_ENABLED }}
+      TURNSTILE_SITE_KEY: ${{ vars.TURNSTILE_SITE_KEY }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -62,6 +64,8 @@ jobs:
           rsync -a \
             --exclude='.git/' \
             --exclude='.github/' \
+            --exclude='.env*' \
+            --exclude='.supabase/' \
             --exclude='node_modules/' \
             --exclude='prototype-data/' \
             --exclude='prototype-server/' \
@@ -82,6 +86,8 @@ jobs:
             ./ _site/
           config="$(jq -n --arg url "$SUPABASE_URL" --arg key "$SUPABASE_PUBLISHABLE_KEY" '{supabaseUrl: $url, publishableKey: $key}')"
           printf 'window.RERE_CORDS_RESERVATION_CONFIG = %s;\n' "$config" > _site/safety-tool-reservation-config.js
+          registration_config="$(jq -n --arg enabled "$REGISTRATION_ENABLED" --arg siteKey "$TURNSTILE_SITE_KEY" '{enabled: ($enabled == "true" and ($siteKey | length) > 0), turnstileSiteKey: $siteKey}')"
+          printf 'window.RERE_CORDS_REGISTRATION_CONFIG = %s;\n' "$registration_config" > _site/event-registration-config.js
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
