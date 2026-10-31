@@ -54,7 +54,16 @@ test('submission config opens the official online registration route on November
     assert.equal(config.formUrl, 'https://rerecords.space/event-registration.html');
     assert.equal(config.opensAt, '2026-11-01T00:00:00+09:00');
     assert.equal(config.fallbackDocumentUrl, '');
-    assert.match(app, /Date\.now\(\) >= opensAt/);
+    assert.doesNotMatch(app, /Date\.now\(\) >= opensAt/);
+});
+
+test('homepage provides two prominent shortcuts below the hero and a full-size registration entry', () => {
+    const html = read('index.html');
+    const shortcuts = html.split('class="homepage-shortcuts"')[1]?.split('</nav>')[0] || '';
+    assert.match(shortcuts, /href="safety-tool-reservation.html"/);
+    assert.match(shortcuts, /href="event-registration.html"/);
+    assert.match(html, /id="submission-cta" class="submission-cta page-shortcut" href="event-registration.html"/);
+    assert.match(read('styles.css'), /\.page-shortcut\s*\{[^}]*min-height:\s*5rem/s);
 });
 
 test('homepage contains one active submission entry before the venue', () => {
@@ -67,7 +76,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=5"><\/script>\s*<script src="translations\.js\?v=17"><\/script>\s*<script src="app\.js\?v=38"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=5"><\/script>\s*<script src="translations\.js\?v=17"><\/script>\s*<script src="app\.js\?v=39"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -202,7 +211,7 @@ test('submission requires a physical work, identifying slip and online registrat
     assert.match(app, /相同姓名和邮箱/);
     assert.match(app, /视频链接/);
     assert.match(app, /填写线上报名表/);
-    assert.match(submission, /id="submission-cta"[^>]+aria-disabled="true"/);
+    assert.match(submission, /id="submission-cta"[^>]+href="event-registration.html"/);
     assert.doesNotMatch(submission, /纯数字作品|数字作品提交/);
 });
 

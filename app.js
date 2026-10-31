@@ -1280,9 +1280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const fallbackUrl = isValidExternalUrl(config.fallbackDocumentUrl)
             ? config.fallbackDocumentUrl.trim()
             : '';
-        const opensAt = typeof config.opensAt === 'string' ? Date.parse(config.opensAt) : Number.NaN;
-        const hasOpened = Number.isNaN(opensAt) || Date.now() >= opensAt;
-        const enabled = config.enabled === true && formUrl !== '' && hasOpened;
+        const enabled = config.enabled === true && formUrl !== '';
 
         cta.classList.toggle('is-disabled', !enabled);
         cta.setAttribute('aria-disabled', String(!enabled));

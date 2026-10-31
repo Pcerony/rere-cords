@@ -1673,7 +1673,6 @@ section {
     justify-content: flex-end;
 }
 
-.submission-cta,
 .submission-fallback {
     border-bottom: 1px solid currentColor;
     color: var(--color-secondary);
@@ -1683,6 +1682,52 @@ section {
     line-height: 1.4;
     padding-bottom: 0.15rem;
     text-decoration: none;
+}
+
+.homepage-shortcuts {
+    scroll-margin-top: 100px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+    padding: 2rem 0;
+}
+
+.homepage-shortcut-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.page-shortcut {
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.1rem 1.5rem;
+    border: 1px solid var(--color-text-main);
+    background: var(--color-text-main);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+
+.page-shortcut > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.page-shortcut > span[aria-hidden] { flex-shrink: 0; font-size: 1.6rem; }
+.page-shortcut-registration, .submission-cta.page-shortcut { background: var(--color-secondary); border-color: var(--color-secondary); }
+.page-shortcut:hover, .submission-cta.page-shortcut:hover { background: #ffffff; color: var(--color-text-main); }
+.page-shortcut:focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 4px; }
+.submission-links { flex: 1 1 640px; width: 100%; max-width: 640px; }
+.submission-actions { flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+    .homepage-shortcut-grid { grid-template-columns: minmax(0, 1fr); }
+    .page-shortcut { font-size: 1.1rem; padding: 1rem; }
+    .submission-links { flex-basis: 100%; }
 }
 
 .submission-cta.is-disabled {
@@ -1728,6 +1773,9 @@ section {
 
     .submission-links {
         justify-content: flex-start;
+        flex: none;
+        width: 100%;
+        max-width: none;
     }
 }
 

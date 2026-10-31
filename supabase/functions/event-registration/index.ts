@@ -10,9 +10,7 @@ const bucket = 'event-registration-photos';
 
 const handle = createRegistrationHandler({
     config: {
-        origins: secret && client ? origins : [],
-        opensAt: Deno.env.get('REGISTRATION_OPENS_AT') || '',
-        closesAt: Deno.env.get('REGISTRATION_CLOSES_AT') || ''
+        origins: secret && client ? origins : []
     },
     verifyCaptcha: async (token: string) => {
         const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {

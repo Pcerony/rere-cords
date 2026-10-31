@@ -75,7 +75,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=31">
+    <link rel="stylesheet" href="styles.css?v=32">
     <!-- Three.js & OrbitControls for 3D White Model Campus Map -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -172,6 +172,13 @@
                 </div>
             </div>
         </section>
+
+        <nav id="participate-shortcuts" class="homepage-shortcuts" aria-label="参加 / Participate">
+            <div class="section-container homepage-shortcut-grid">
+                <a class="page-shortcut" href="safety-tool-reservation.html"><span data-i18n="reservation-entry">预约安全道具</span><span aria-hidden="true">↗</span></a>
+                <a class="page-shortcut page-shortcut-registration" href="event-registration.html"><span data-i18n="submission-cta">填写作品报名表</span><span aria-hidden="true">↗</span></a>
+            </div>
+        </nav>
 
         <!-- Concept Section -->
         <section id="concept">
@@ -645,7 +652,7 @@
                             <span class="submission-status-value" data-i18n="submission-status">线下提交作品后，填写线上报名表</span>
                         </div>
                         <div class="submission-links">
-                            <a id="submission-cta" class="submission-cta is-disabled" data-i18n="submission-cta" aria-disabled="true" tabindex="-1">填写作品报名表</a>
+                            <a id="submission-cta" class="submission-cta page-shortcut" href="event-registration.html"><span data-i18n="submission-cta">填写作品报名表</span><span aria-hidden="true">↗</span></a>
                             <a id="submission-fallback" class="submission-fallback" data-i18n="submission-fallback" hidden>下载备用参与表</a>
                         </div>
                     </div>
@@ -778,6 +785,6 @@
     <script src="campus-map-data.js?v=7"></script>
     <script src="submission-config.js?v=5"></script>
     <script src="translations.js?v=17"></script>
-    <script src="app.js?v=38"></script>
+    <script src="app.js?v=39"></script>
 </body>
 </html>

@@ -26,18 +26,17 @@ async function boundedForm(request) {
     } catch { throw new RegistrationError('form'); }
 }
 
-export function createRegistrationHandler({ config, now = Date.now, verifyCaptcha, storage, repository }) {
+export function createRegistrationHandler({ config, verifyCaptcha, storage, repository }) {
     return async (request) => {
         const origin = request.headers.get('origin');
         const allowed = config.origins?.includes(origin);
         const headers = { 'content-type': 'application/json', 'cache-control': 'no-store', vary: 'Origin' };
         if (allowed) Object.assign(headers, { 'access-control-allow-origin': origin, 'access-control-allow-methods': 'POST, OPTIONS', 'access-control-allow-headers': 'content-type, apikey, x-client-info' });
         const reply = (status, value) => new Response(JSON.stringify(value), { status, headers });
-        if (!config.origins?.length || !Number.isFinite(Date.parse(config.opensAt)) || !Number.isFinite(Date.parse(config.closesAt))) return reply(503, { code: 'NOT_CONFIGURED' });
+        if (!config.origins?.length) return reply(503, { code: 'NOT_CONFIGURED' });
         if (!allowed) return reply(403, { code: 'FORBIDDEN' });
         if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
         if (request.method !== 'POST') return reply(405, { code: 'METHOD_NOT_ALLOWED' });
-        if (now() < Date.parse(config.opensAt) || now() >= Date.parse(config.closesAt)) return reply(403, { code: 'CLOSED' });
         const uploaded = [];
         let committing = false;
         const cleanup = async () => {

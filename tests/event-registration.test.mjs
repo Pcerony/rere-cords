@@ -66,6 +66,15 @@ function request(payload = valid(), photos = [], options = {}) {
 }
 const png = () => new Blob([new Uint8Array([137,80,78,71,13,10,26,10])], { type: 'image/png' });
 
+test('accepts registrations before and after the advertised dates, including without date configuration', async () => {
+    for (const date of ['2026-10-01', '2027-01-01']) {
+        const { handle } = harness({ now: () => Date.parse(date) });
+        assert.equal((await handle(request())).status, 201);
+    }
+    const { handle } = harness({ config: { origins: config.origins } });
+    assert.equal((await handle(request())).status, 201);
+});
+
 test('commits a real multipart registration without requiring attachments and returns only a receipt', async () => {
     const { handle, calls } = harness();
     const response = await handle(request());
@@ -74,10 +83,9 @@ test('commits a real multipart registration without requiring attachments and re
     assert.equal(calls.commits[0].payload.email, 'artist@example.com');
     assert.equal(calls.uploads.length, 0);
 });
-test('rejects origin, deadline, invalid fields and captcha before storing files', async () => {
+test('rejects origin, invalid fields and captcha before storing files', async () => {
     for (const [overrides, req, status] of [
         [{}, request(valid(), [], { headers: { origin: 'https://attacker.example' } }), 403],
-        [{ now: () => Date.parse('2026-12-01') }, request(), 403],
         [{}, request({ ...valid(), description: 'a'.repeat(201) }), 400],
         [{ verifyCaptcha: async () => false }, request(valid(), [png()]), 403],
         [{ config: { origins: [] } }, request(), 503]
