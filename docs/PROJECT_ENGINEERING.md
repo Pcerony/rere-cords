@@ -6,7 +6,7 @@ RERE-CORDS 是九州大学大桥校区的可持续设计展览与作品募集网
 
 ## 系统边界
 
-2026-10-31 作品报名已发布：`event-registration.html/js` 调用独立的 `event-registration` Edge Function，写入独立报名表和私有图片 bucket；`event-registration-admin.html/js` 使用独立报名管理员白名单。已完成真实浏览器报名及图片下载校验，完整生产记录和运维条件见 [作品报名部署](event-registration-setup.md)。下图保留原安全预约系统范围。
+2026-10-31 作品报名已发布：`event-registration.html/js` 调用独立的 `event-registration` Edge Function，写入独立报名表和私有图片 bucket。后台已统一至 `safety-tool-admin.html`，一个客户端与登录会话管理预约、报名两个标签；`event-registration-admin.js` 复用共享客户端，权限仍由独立报名白名单控制，旧 HTML 自动跳转至统一后台。已完成真实浏览器报名及图片下载校验，完整生产记录和运维条件见 [作品报名部署](event-registration-setup.md)。下图保留原安全预约系统范围。
 
 ```text
 参与者浏览器

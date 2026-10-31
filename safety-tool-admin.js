@@ -1,3 +1,6 @@
+import { createRegistrationAdmin } from './event-registration-admin.js?v=2';
+import { getProjectAdminAccess, resolveAdminTab } from './project-admin-core.js?v=1';
+
 const EQUIPMENT_NAMES = Object.freeze({
     cutter: '小刀',
     goggles: '护目镜',
@@ -28,6 +31,7 @@ const STATUS_ACTIONS = Object.freeze({
 
 const ADMIN_COPY = Object.freeze({
     zh: Object.freeze({
+        workspace_title: '项目后台管理', equipment_tab: '安全用具预约', registrations_tab: '作品报名',
         page_title: '安全道具预约管理', internal: '内部管理', page_intro: '先实地放置道具；检查电脑默认邮件应用的发件账户，再打开日英草稿并手动发送。完成后回到这里确认「已放置并已通知」。',
         language: '语言', login_heading: '管理员登录', email: '邮箱', password: '密码', login: '登录', reservations: '预约记录', status: '状态',
         all_statuses: '全部状态', status_pending: '待处理', status_ready: '已放置并已通知', status_cancelled: '已取消', status_returned: '已归还',
@@ -43,6 +47,7 @@ const ADMIN_COPY = Object.freeze({
         login_error: '登录失败，请检查邮箱和密码。', sign_out_error: '退出登录失败，请重试。', session_error: '无法读取登录状态，请刷新页面后重试。'
     }),
     en: Object.freeze({
+        workspace_title: 'Project Administration', equipment_tab: 'Safety Tool Reservations', registrations_tab: 'Work Registrations',
         page_title: 'Safety Tool Reservations', internal: 'Admin', page_intro: 'Place the tools in person first. Check the sender account in your default email app, then open and send the Japanese / English draft. Return here afterward to confirm that the tools are placed and the participant has been notified.',
         language: 'Language', login_heading: 'Administrator sign in', email: 'Email', password: 'Password', login: 'Sign in', reservations: 'Reservations', status: 'Status',
         all_statuses: 'All statuses', status_pending: 'Pending', status_ready: 'Placed and notified', status_cancelled: 'Cancelled', status_returned: 'Returned',
@@ -155,6 +160,16 @@ function initializeAdminPage() {
     const list = document.getElementById('reservation-list');
     const filter = document.getElementById('reservation-filter');
     const languageSelect = document.getElementById('admin-language');
+    const workspace = document.getElementById('project-admin-dashboard');
+    const workspaceMessage = document.getElementById('project-admin-message');
+    const equipmentTab = document.getElementById('equipment-tab');
+    const registrationsTab = document.getElementById('registrations-tab');
+    const registrationDashboard = document.getElementById('registration-admin-dashboard');
+    const registrationAdmin = createRegistrationAdmin(client);
+    let access = { equipment: false, registrations: false };
+    let generation = 0;
+    let activeTab = null;
+    let currentUserId = null;
     let locale = localStorage.getItem('rere_cords_admin_lang') || (localStorage.getItem('rere_cords_lang') === 'en' ? 'en' : 'zh');
     let reservations = [];
     let refreshTimer;
@@ -174,14 +189,14 @@ function initializeAdminPage() {
     function applyLanguage() {
         const copy = getAdminCopy(locale);
         document.documentElement.lang = locale === 'en' ? 'en' : 'zh-CN';
-        document.title = `${copy.page_title} | RERE-CORDS`;
+        document.title = `${copy.workspace_title} | RERE-CORDS`;
         document.querySelectorAll('[data-admin-copy]').forEach((element) => {
             element.textContent = copy[element.dataset.adminCopy];
         });
         document.getElementById('admin-language').setAttribute('aria-label', copy.language);
         document.getElementById('admin-refresh').setAttribute('aria-label', copy.refresh);
         for (const option of filter.options) option.textContent = copy[option.dataset.adminCopy];
-        for (const message of [loginMessage, dashboardMessage]) {
+        for (const message of [loginMessage, dashboardMessage, workspaceMessage]) {
             if (message.dataset.messageKey) {
                 setMessage(message, message.dataset.messageKey, message.dataset.state, JSON.parse(message.dataset.messageValues || '{}'));
             }
@@ -269,54 +284,101 @@ function initializeAdminPage() {
     }
 
     async function loadReservations() {
-        if (!client) return;
+        if (!client || !access.equipment) return;
+        const current = generation;
         setMessage(dashboardMessage, 'loading');
         try {
             const { data, error } = await client
                 .from('reservations')
                 .select('id,reservation_code,participant_name,student_number,course,email,pickup_date,return_date,status,created_at,reservation_items(equipment_id,quantity)')
                 .order('created_at', { ascending: false });
+            if (current !== generation) return;
             if (error) throw error;
             reservations = data || [];
             renderReservations();
             setMessage(dashboardMessage, 'loaded', '', { count: reservations.length });
         } catch {
+            if (current !== generation) return;
             setMessage(dashboardMessage, 'load_error', 'error');
         }
     }
 
-    async function enterDashboard(session) {
-        if (!session) {
-            loginSection.hidden = false;
-            dashboard.hidden = true;
-            reservations = [];
-            list.replaceChildren();
-            if (refreshTimer) window.clearInterval(refreshTimer);
-            refreshTimer = undefined;
-            return;
+    function selectTab(requested, focus = false) {
+        activeTab = resolveAdminTab(requested, access);
+        dashboard.hidden = activeTab !== 'equipment';
+        registrationDashboard.hidden = activeTab !== 'registrations';
+        for (const [tab, name] of [[equipmentTab, 'equipment'], [registrationsTab, 'registrations']]) {
+            tab.disabled = !access[name];
+            tab.setAttribute('aria-selected', String(activeTab === name));
+            tab.tabIndex = activeTab === name ? 0 : -1;
+            if (focus && activeTab === name) tab.focus();
         }
-        loginSection.hidden = true;
-        dashboard.hidden = false;
-        setMessage(dashboardMessage, 'checking_admin');
-        try {
-            const { data: isAdmin, error } = await client.rpc('is_reservation_admin');
-            if (error || isAdmin !== true) throw error || new Error('Not an administrator');
-        } catch {
-            await client.auth.signOut();
-            await enterDashboard(null);
+        if (activeTab) history.replaceState(null, '', `${location.pathname}${location.search}#${activeTab}`);
+        if (activeTab === 'equipment') loadReservations();
+        if (activeTab === 'registrations') registrationAdmin.load();
+    }
+
+    async function enterDashboard(session) {
+        const current = ++generation;
+        currentUserId = session?.user?.id || null;
+        access = { equipment: false, registrations: false };
+        activeTab = null;
+        workspace.hidden = true;
+        dashboard.hidden = true;
+        registrationAdmin.clear();
+        reservations = [];
+        list.replaceChildren();
+        dashboardMessage.textContent = '';
+        delete dashboardMessage.dataset.messageKey;
+        delete dashboardMessage.dataset.messageValues;
+        delete dashboardMessage.dataset.state;
+        workspaceMessage.textContent = '';
+        delete workspaceMessage.dataset.messageKey;
+        delete workspaceMessage.dataset.messageValues;
+        delete workspaceMessage.dataset.state;
+        if (refreshTimer) window.clearInterval(refreshTimer);
+        refreshTimer = undefined;
+        loginSection.hidden = false;
+        if (!session) return;
+        setMessage(loginMessage, 'checking_admin');
+        const checked = await getProjectAdminAccess(client);
+        if (current !== generation) return;
+        access = checked;
+        if (!access.equipment && !access.registrations) {
             setMessage(loginMessage, 'no_admin', 'error');
             return;
         }
-        await loadReservations();
-        if (!refreshTimer) refreshTimer = window.setInterval(loadReservations, 30000);
+        loginMessage.textContent = '';
+        delete loginMessage.dataset.messageKey;
+        delete loginMessage.dataset.messageValues;
+        delete loginMessage.dataset.state;
+        loginSection.hidden = true;
+        workspace.hidden = false;
+        registrationAdmin.setAuthorized(access.registrations);
+        selectTab(location.hash.slice(1));
+        refreshTimer = window.setInterval(() => {
+            if (activeTab === 'equipment') loadReservations();
+        }, 30000);
     }
 
+    equipmentTab.addEventListener('click', () => selectTab('equipment'));
+    registrationsTab.addEventListener('click', () => selectTab('registrations'));
+    for (const tab of [equipmentTab, registrationsTab]) tab.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const requested = event.key === 'Home' ? 'equipment' : event.key === 'End' ? 'registrations' : activeTab === 'equipment' ? 'registrations' : 'equipment';
+        selectTab(requested, true);
+    });
+
     async function updateStatus(reservation, status, button) {
+        if (!access.equipment) return;
+        const current = generation;
         const prompt = translate(status === 'ready' ? 'confirm_ready' : status === 'cancelled' ? 'confirm_cancel' : 'confirm_returned', { code: reservation.reservation_code });
         if (!window.confirm(prompt)) return;
         button.disabled = true;
         setMessage(dashboardMessage, 'updating');
         const result = await setReservationStatus(client, reservation, status);
+        if (current !== generation) return;
         if (!result.ok) {
             button.disabled = false;
             setMessage(dashboardMessage, 'update_error', 'error');
@@ -331,8 +393,12 @@ function initializeAdminPage() {
         loginButton.disabled = true;
     }
 
-    client?.auth.onAuthStateChange((event) => {
-        if (event === 'SIGNED_OUT') window.setTimeout(() => enterDashboard(null), 0);
+    client?.auth.onAuthStateChange((event, session) => {
+        if (event === 'SIGNED_OUT') enterDashboard(null);
+        if (event === 'SIGNED_IN' && session?.user?.id !== currentUserId) {
+            const current = generation;
+            window.setTimeout(() => { if (current === generation) enterDashboard(session); }, 0);
+        }
     });
 
     loginForm.addEventListener('submit', async (event) => {
@@ -347,6 +413,7 @@ function initializeAdminPage() {
                 password: String(form.get('password') || '')
             });
             if (error) throw error;
+            loginForm.elements.password.value = '';
             await enterDashboard(data.session);
         } catch {
             setMessage(loginMessage, 'login_error', 'error');
@@ -356,9 +423,11 @@ function initializeAdminPage() {
     });
 
     document.getElementById('admin-sign-out').addEventListener('click', async () => {
-        const { error } = await client.auth.signOut();
-        if (error) setMessage(dashboardMessage, 'sign_out_error', 'error');
-        else await enterDashboard(null);
+        try {
+            const { error } = await client.auth.signOut();
+            if (error) throw error;
+            await enterDashboard(null);
+        } catch { setMessage(workspaceMessage, 'sign_out_error', 'error'); }
     });
 
     document.getElementById('admin-refresh').addEventListener('click', loadReservations);
@@ -369,11 +438,13 @@ function initializeAdminPage() {
         applyLanguage();
     });
     window.addEventListener('focus', () => {
-        if (!dashboard.hidden) loadReservations();
+        if (!workspace.hidden && activeTab === 'equipment') loadReservations();
     });
 
+    const initialGeneration = generation;
     client?.auth.getSession()
         .then(({ data, error }) => {
+            if (initialGeneration !== generation) return;
             if (error) setMessage(loginMessage, 'session_error', 'error');
             else enterDashboard(data.session);
         })

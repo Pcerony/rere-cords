@@ -26,11 +26,11 @@ test('public configuration is disabled by default and never includes a secret', 
     assert.doesNotMatch(client, /innerHTML/);
 });
 test('registration admin checks its own role, reads pages and signs private photo URLs', () => {
-    const html = read('event-registration-admin.html');
+    const html = read('safety-tool-admin.html');
     const script = read('event-registration-admin.js');
     assert.match(html, /autocomplete="current-password"/);
     assert.doesNotMatch(html, /signUp|注册/);
-    assert.match(script, /is_event_registration_admin/);
+    assert.match(read('project-admin-core.js'), /is_event_registration_admin/);
     assert.match(script, /\.range\(/);
     assert.match(script, /createSignedUrl\([^\n]*300/);
     assert.match(script, /admin_set_event_physical_received/);

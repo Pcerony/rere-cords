@@ -4,7 +4,7 @@
 
 活动负责人最新确认：报名与实物提交时间 **2026年11月1日至11月20日（日本时间）** 仅作书面提醒，不作为技术限制。首页入口始终可点击，服务端不按开始或截止时间拒绝提交。旧设计/计划中的时间限制以本次变更为准。首页首屏下方提供安全用具预约与作品报名两个快捷大按钮，报名章节保留同等尺寸入口。
 
-- 正式报名：`https://rerecords.space/event-registration.html`；管理后台：`https://rerecords.space/event-registration-admin.html`。
+- 正式报名：`https://rerecords.space/event-registration.html`；统一管理后台：`https://rerecords.space/safety-tool-admin.html`，作品报名标签可直达 `#registrations`。旧 `event-registration-admin.html` 自动转到统一后台。
 - 原项目已恢复健康；新增 migration `202610310001` 已执行并登记；Edge Function `event-registration` 已部署，生产开关已开启。
 - Turnstile 使用 `rerecords.space` 的 Managed 组件；公开 Site key 由 GitHub Actions 注入，Secret 仅保存在 Supabase。没有迁移 DNS、购买套餐或把 Secret 写入仓库。
 - 已把现有唯一一位安全用具管理员显式加入报名白名单。生产 RLS/权限检查通过；匿名读取报名表、文件元数据和真实私有图片被拒绝，无效 captcha 被拒绝。管理员实际登录应由本人使用原账号完成；验收没有代输密码或伪造登录令牌。
@@ -18,7 +18,7 @@
 
 ## 当前交付与边界
 
-系统提供独立作品报名页 `event-registration.html`、管理页 `event-registration-admin.html`、Edge Function、私有图片存储及 migration。它不修改安全道具预约表、库存、RPC 或原管理员白名单。源码默认 `enabled: false`，生产构建已通过配置开启；其他环境不应把未连接的表单当作提交成功。
+系统提供独立作品报名页 `event-registration.html`、统一后台中的报名管理面板 `event-registration-admin.js`、Edge Function、私有图片存储及 migration。统一后台共用一个 Supabase 客户端与登录会话，分别检查两类管理权限，仅启用有权限的标签；不修改安全道具预约表、库存、RPC 或原管理员白名单。源码默认 `enabled: false`，生产构建已通过配置开启；其他环境不应把未连接的表单当作提交成功。
 
 报名流程：回收箱旁纸条填写作者名、邮箱，随作品放入箱子；扫描指向报名页的二维码，在线使用相同姓名、邮箱提交作品名和200字以内简介。沙龙意向、专业、学年、出身地、补充说明、图片及视频链接为选填。视频支持任意 HTTP(S) 服务，不下载、抓取或嵌入远程内容。图片最多3张，每张5 MiB，JPEG/PNG/WebP；不接受 SVG、视频文件和其他格式。文件头校验不是完整的病毒扫描或图像解码验证。
 
@@ -71,7 +71,7 @@ values ('替换为已核对的 Auth 用户 UUID')
 on conflict do nothing;
 ```
 
-登录 `https://rerecords.space/event-registration-admin.html`。页面每页25条，按实体核对状态筛选，查看作品资料、视频链接及5分钟有效的私有图片链接。核对线下纸条与实物后标记“已核对”；误操作可撤销。图片链接属于临时访问凭据，不转发、不截图传播。退出登录会清除页面记录。移除管理员白名单不会撤销已经签发但尚未过期的5分钟链接。
+登录 `https://rerecords.space/safety-tool-admin.html#registrations`，使用原安全用具管理员账号。一次登录后可在有权限的两个标签间切换，统一退出会清除两侧记录，并忽略退出前尚未完成的读取。作品报名每页25条，按实体核对状态筛选，查看作品资料、视频链接及5分钟有效的私有图片链接。核对线下纸条与实物后标记“已核对”；误操作可撤销。图片链接属于临时访问凭据，不转发、不截图传播。移除管理员白名单不会撤销已经签发但尚未过期的5分钟链接。旧独立报名后台的登录会话不迁移，若未登录统一后台需重新登录一次。
 
 ## 5. GitHub Pages
 

@@ -86,7 +86,7 @@ test('admin page contains an accessible sign-in and reservation list, without pu
     const script = readFileSync(new URL('../safety-tool-admin.js', import.meta.url), 'utf8');
     assert.doesNotMatch(`${page}\n${script}`, /service_role|sb_secret_/i);
     assert.match(styles, /@media\s*\(max-width:\s*700px\)/);
-    assert.match(page, /safety-tool-admin\.js\?v=3/);
+    assert.match(page, /safety-tool-admin\.js\?v=4/);
     assert.match(page, /id="admin-language"/);
     assert.match(page, /value="en">English/);
     assert.match(script, /打开日英通知邮件草稿/);

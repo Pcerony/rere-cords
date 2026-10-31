@@ -1,3 +1,24 @@
+.admin-workspace-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 28px; flex-wrap: wrap; }
+.admin-tabs { display: flex; gap: 24px; max-width: 100%; border-bottom: 1px solid var(--color-border-dark); }
+.admin-tabs [role="tab"] { min-width: 0; overflow-wrap: anywhere; border: 0; border-bottom: 2px solid transparent; padding: 12px 0; background: transparent; color: var(--color-text-muted); font: inherit; cursor: pointer; }
+#project-admin-dashboard > section { padding: 0; }
+#project-admin-message:empty { display: none; }
+.admin-tabs [aria-selected="true"] { border-bottom-color: var(--color-secondary); color: var(--color-text-main); font-weight: 600; }
+.admin-tabs button:disabled { opacity: 0.4; cursor: not-allowed; }
+.admin-tabs button:focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 4px; }
+#registration-admin-dashboard h2 { font-size: 1.35rem; }
+#registration-admin-dashboard select { min-height: 40px; padding: 6px 10px; background: #fff; border: 1px solid var(--color-border-dark); font: inherit; }
+.registration-record { padding: 24px 0; border-top: 1px solid var(--color-border); }
+.registration-record h2 { margin: 8px 0; overflow-wrap: anywhere; }
+.registration-record dl { display: grid; grid-template-columns: minmax(100px, 160px) minmax(0, 1fr); gap: 10px 20px; margin: 20px 0; }
+.registration-record dt, .record-code { color: var(--color-text-muted); }
+.registration-record dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.record-code { font: 0.8rem/1.6 monospace; overflow-wrap: anywhere; }
+.record-photos { display: flex; flex-wrap: wrap; gap: 12px; }
+.record-photos a { overflow-wrap: anywhere; }
+.record-status { color: var(--color-secondary); font-size: 0.85rem; }
+.registration-record .admin-button { max-width: 100%; white-space: normal; }
+
 .reservation-admin-page {
     min-height: 100vh;
     background: var(--color-bg-base);

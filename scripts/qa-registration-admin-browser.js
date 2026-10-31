@@ -6,13 +6,13 @@ async (page) => {
         let onAuth;
         window.supabase={createClient:()=>({
             auth:{getSession:async()=>({data:{session:{user:{id:'example'}}}}),onAuthStateChange:(callback)=>{onAuth=callback;},signOut:async()=>{onAuth('SIGNED_OUT');return {}; }},
-            rpc:async(name,args)=>{if(name==='is_event_registration_admin')return {data:true};record.physical_received=args.p_received;return {};},
+            rpc:async(name,args)=>{if(name==='is_event_registration_admin')return {data:true};if(name==='is_reservation_admin')return {data:false};record.physical_received=args.p_received;return {};},
             from:()=>{const query={select:()=>query,order:()=>query,eq:()=>query,range:async()=>({data:[record],count:1})};return query;},
             storage:{from:()=>({createSignedUrl:async()=>({data:{signedUrl:'https://example.org/private-test.png'}})})}
         })};
     ` }));
     await page.setViewportSize({ width: 1280, height: 900 });
-    await page.goto('http://127.0.0.1:4173/event-registration-admin.html');
+    await page.goto('http://127.0.0.1:4173/safety-tool-admin.html#registrations');
     await page.getByRole('heading', { name: 'Record Study' }).waitFor();
     if (await page.evaluate(() => window.untrustedExecuted === true)) throw Error('Untrusted work text executed');
     await page.getByRole('button', { name: '查看图片 1', exact: true }).click();
