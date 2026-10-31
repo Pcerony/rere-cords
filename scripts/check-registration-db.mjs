@@ -55,5 +55,7 @@ try {
     await db.query('select public.admin_set_event_physical_received($1,true)', [id]);
     assert.equal((await db.query('select physical_received from public.event_registrations')).rows[0].physical_received, true);
     await assert.rejects(db.query("update public.event_registrations set email='other@example.org'"), /permission denied/);
+    await db.exec('reset role; create table public.reservations(id uuid);');
+    await db.exec(await readFile(new URL('./verify-registration-production.sql', import.meta.url), 'utf8'));
     console.log('PASS: migration, service-only writes, retry receipt, conflict rejection, atomic rollback, anonymous denial, non-admin RLS, admin reads and controlled update.');
 } finally { await db.close(); }
