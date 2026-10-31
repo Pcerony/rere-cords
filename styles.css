@@ -1686,7 +1686,7 @@ section {
 
 .homepage-shortcuts {
     scroll-margin-top: 100px;
-    background: var(--color-text-main);
+    background: #ffffff;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
@@ -1722,13 +1722,14 @@ section {
 .page-shortcut:hover, .submission-cta.page-shortcut:hover { background: #ffffff; color: var(--color-text-main); }
 .page-shortcut:focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 4px; }
 .homepage-shortcuts .page-shortcut {
-    min-height: 10rem;
+    min-height: 5rem;
     border: 0;
-    padding: 2.5rem max(2rem, calc((100vw - 1200px) / 4));
+    padding: 0.75rem max(2rem, calc((100vw - 1200px) / 4));
     font-size: 1.2rem;
     transition: background-color 180ms ease;
 }
-.homepage-shortcuts .page-shortcut:first-child { background: #000000; }
+.homepage-shortcuts .page-shortcut:first-child { background: rgba(0, 0, 0, 0.88); }
+.homepage-shortcuts .page-shortcut-registration { background: rgba(193, 85, 53, 0.88); }
 .homepage-shortcuts .page-shortcut + .page-shortcut { border-left: 1px solid rgba(255, 255, 255, 0.4); }
 .homepage-shortcuts .page-shortcut:hover { background: #242423; color: #ffffff; }
 .homepage-shortcuts .page-shortcut-registration:hover { background: #a8462b; }
@@ -1738,7 +1739,7 @@ section {
 
 @media (max-width: 700px) {
     .homepage-shortcut-grid { grid-template-columns: minmax(0, 1fr); }
-    .homepage-shortcuts .page-shortcut { min-height: 7rem; padding: 1.5rem; font-size: 1.1rem; }
+    .homepage-shortcuts .page-shortcut { min-height: 3.5rem; padding: 0.5rem 1.5rem; font-size: 1.1rem; }
     .homepage-shortcuts .page-shortcut + .page-shortcut { border-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.4); }
     .page-shortcut { font-size: 1.1rem; padding: 1rem; }
     .submission-links { flex-basis: 100%; }

@@ -72,7 +72,9 @@ test('homepage shortcuts form an edge-to-edge divided band and advisors follow s
     assert.match(html, /class="homepage-shortcut-grid"/);
     assert.doesNotMatch(html, /class="section-container homepage-shortcut-grid"/);
     assert.match(css, /\.homepage-shortcut-grid\s*\{[^}]*gap:\s*0;/s);
-    assert.match(css, /\.homepage-shortcuts \.page-shortcut\s*\{[^}]*min-height:\s*10rem;[^}]*border:\s*0;/s);
+    assert.match(css, /\.homepage-shortcuts \.page-shortcut\s*\{[^}]*min-height:\s*5rem;[^}]*border:\s*0;/s);
+    assert.match(css, /background:\s*rgba\(0, 0, 0, 0\.88\)/);
+    assert.match(css, /background:\s*rgba\(193, 85, 53, 0\.88\)/);
     assert.ok(html.indexOf('id="advisors"') > html.indexOf('id="submission"'));
     assert.ok(html.indexOf('id="advisors"') < html.indexOf('id="venue"'));
 });
