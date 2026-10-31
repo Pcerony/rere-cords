@@ -12,7 +12,7 @@ test('participant form exposes required fields, optional photos/video and an acc
     assert.match(html, /id="registration-message"[^>]*role="alert"/);
     assert.match(html, /id="registration-receipt"[^>]*hidden/);
     assert.match(html, /autocomplete="name"/);
-    assert.match(html, /event-registration-config\.js/);
+    assert.match(html, /event-registration-config\.js\?v=2/);
 });
 test('public configuration is disabled by default and never includes a secret', () => {
     const config = read('event-registration-config.js');
