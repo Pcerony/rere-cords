@@ -66,6 +66,17 @@ test('homepage provides two prominent shortcuts below the hero and a full-size r
     assert.match(read('styles.css'), /\.page-shortcut\s*\{[^}]*min-height:\s*5rem/s);
 });
 
+test('homepage shortcuts form an edge-to-edge divided band and advisors follow submission', () => {
+    const html = read('index.html');
+    const css = read('styles.css');
+    assert.match(html, /class="homepage-shortcut-grid"/);
+    assert.doesNotMatch(html, /class="section-container homepage-shortcut-grid"/);
+    assert.match(css, /\.homepage-shortcut-grid\s*\{[^}]*gap:\s*0;/s);
+    assert.match(css, /\.homepage-shortcuts \.page-shortcut\s*\{[^}]*min-height:\s*10rem;[^}]*border:\s*0;/s);
+    assert.ok(html.indexOf('id="advisors"') > html.indexOf('id="submission"'));
+    assert.ok(html.indexOf('id="advisors"') < html.indexOf('id="venue"'));
+});
+
 test('homepage contains one active submission entry before the venue', () => {
     const html = read('index.html');
     const submissionIndex = html.indexOf('id="submission"');

@@ -75,7 +75,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=32">
+    <link rel="stylesheet" href="styles.css?v=33">
     <!-- Three.js & OrbitControls for 3D White Model Campus Map -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -174,7 +174,7 @@
         </section>
 
         <nav id="participate-shortcuts" class="homepage-shortcuts" aria-label="参加 / Participate">
-            <div class="section-container homepage-shortcut-grid">
+            <div class="homepage-shortcut-grid">
                 <a class="page-shortcut" href="safety-tool-reservation.html"><span data-i18n="reservation-entry">预约安全道具</span><span aria-hidden="true">↗</span></a>
                 <a class="page-shortcut page-shortcut-registration" href="event-registration.html"><span data-i18n="submission-cta">填写作品报名表</span><span aria-hidden="true">↗</span></a>
             </div>
@@ -588,38 +588,6 @@
             </div>
         </section>
 
-        <!-- Faculty Advisors -->
-        <section id="advisors">
-            <div class="section-container advisors-container">
-                <div class="section-header reveal-on-scroll">
-                    <h2 class="section-title" data-i18n="title-advisors">指导教师</h2>
-                    <p class="section-lead" data-i18n="lead-advisors">九州大学大学院艺术工学研究院战略设计部门</p>
-                </div>
-                <div class="advisor-list reveal-on-scroll">
-                    <article class="advisor-profile">
-                        <div class="advisor-portrait">
-                            <img src="./素材/faculty-zhang-yanfang.jpg" alt="ZHANG Yanfang" width="888" height="691" loading="lazy" decoding="async">
-                        </div>
-                        <div class="advisor-details">
-                            <h3><a class="advisor-name-link" href="https://www.sd.design.kyushu-u.ac.jp/faculty/zhang-yanfang/" target="_blank" rel="noopener noreferrer" data-i18n="advisor-zhang-name">張 彦芳</a></h3>
-                            <p class="advisor-role" data-i18n="advisor-zhang-role">准教授 · 通用设计、社会设计</p>
-                            <p class="advisor-bio" data-i18n="advisor-zhang-bio">以通用设计与社会设计为核心，围绕“不让任何人掉队”的理念开展研究与实践。长期通过 Design for SDGs 与 Global Goals Jam 等工作坊，连接政府、大学、企业、NPO 与社区，共同探索社会议题的设计解决方案。</p>
-                        </div>
-                    </article>
-                    <article class="advisor-profile">
-                        <div class="advisor-portrait">
-                            <img src="./素材/faculty-melanie-sarantou.jpg" alt="Melanie Sarantou" width="960" height="821" loading="lazy" decoding="async">
-                        </div>
-                        <div class="advisor-details">
-                            <h3><a class="advisor-name-link" href="https://www.sd.design.kyushu-u.ac.jp/en/faculty/sarantou-melanie/" target="_blank" rel="noopener noreferrer" data-i18n="advisor-sarantou-name">Melanie Sarantou</a></h3>
-                            <p class="advisor-role" data-i18n="advisor-sarantou-role">教授 · 战略设计、社会设计</p>
-                            <p class="advisor-bio" data-i18n="advisor-sarantou-bio">专注社会设计、转型设计与艺术研究方法，特别关注边缘化社区与不同文化语境中的设计实践。她同时担任芬兰拉普兰大学兼职教授，并在纳米比亚、芬兰、澳大利亚和日本开展跨地域研究。</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <!-- Participation and Submission Section -->
         <section id="submission">
             <div class="section-container">
@@ -656,6 +624,38 @@
                             <a id="submission-fallback" class="submission-fallback" data-i18n="submission-fallback" hidden>下载备用参与表</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculty Advisors -->
+        <section id="advisors">
+            <div class="section-container advisors-container">
+                <div class="section-header reveal-on-scroll">
+                    <h2 class="section-title" data-i18n="title-advisors">指导教师</h2>
+                    <p class="section-lead" data-i18n="lead-advisors">九州大学大学院艺术工学研究院战略设计部门</p>
+                </div>
+                <div class="advisor-list reveal-on-scroll">
+                    <article class="advisor-profile">
+                        <div class="advisor-portrait">
+                            <img src="./素材/faculty-zhang-yanfang.jpg" alt="ZHANG Yanfang" width="888" height="691" loading="lazy" decoding="async">
+                        </div>
+                        <div class="advisor-details">
+                            <h3><a class="advisor-name-link" href="https://www.sd.design.kyushu-u.ac.jp/faculty/zhang-yanfang/" target="_blank" rel="noopener noreferrer" data-i18n="advisor-zhang-name">張 彦芳</a></h3>
+                            <p class="advisor-role" data-i18n="advisor-zhang-role">准教授 · 通用设计、社会设计</p>
+                            <p class="advisor-bio" data-i18n="advisor-zhang-bio">以通用设计与社会设计为核心，围绕“不让任何人掉队”的理念开展研究与实践。长期通过 Design for SDGs 与 Global Goals Jam 等工作坊，连接政府、大学、企业、NPO 与社区，共同探索社会议题的设计解决方案。</p>
+                        </div>
+                    </article>
+                    <article class="advisor-profile">
+                        <div class="advisor-portrait">
+                            <img src="./素材/faculty-melanie-sarantou.jpg" alt="Melanie Sarantou" width="960" height="821" loading="lazy" decoding="async">
+                        </div>
+                        <div class="advisor-details">
+                            <h3><a class="advisor-name-link" href="https://www.sd.design.kyushu-u.ac.jp/en/faculty/sarantou-melanie/" target="_blank" rel="noopener noreferrer" data-i18n="advisor-sarantou-name">Melanie Sarantou</a></h3>
+                            <p class="advisor-role" data-i18n="advisor-sarantou-role">教授 · 战略设计、社会设计</p>
+                            <p class="advisor-bio" data-i18n="advisor-sarantou-bio">专注社会设计、转型设计与艺术研究方法，特别关注边缘化社区与不同文化语境中的设计实践。她同时担任芬兰拉普兰大学兼职教授，并在纳米比亚、芬兰、澳大利亚和日本开展跨地域研究。</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
