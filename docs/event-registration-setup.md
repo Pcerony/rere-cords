@@ -59,7 +59,7 @@
 supabase functions deploy event-registration --project-ref mtruobyauroqwuefanlp --no-verify-jwt
 ```
 
-`supabase/config.toml` 仅对这个函数关闭 legacy JWT 验证，因为公众无需登录；它不是管理员 API。函数用 Turnstile、严格 origin、日期、实际请求体字节上限及字段/图片校验保护写入。公开 apikey 不是密码。管理员读写仍由 Auth/RLS/RPC 控制。大规模流量攻击还需平台级限流/预算告警；人机验证不等于绝对防滥用。
+`supabase/config.toml` 仅对这个函数关闭 legacy JWT 验证，因为公众无需登录；它不是管理员 API。函数用 Turnstile、严格 origin、实际请求体字节上限及字段/图片校验保护写入。日期仅作提醒，不是安全控制。公开 apikey 不是密码。管理员读写仍由 Auth/RLS/RPC 控制。大规模流量攻击还需平台级限流/预算告警；人机验证不等于绝对防滥用。
 
 ## 4. 管理员
 
@@ -88,7 +88,7 @@ on conflict do nothing;
 
 - 无附件报名、图片报名、各平台视频链接；成功后 Dashboard 可查到同一编号，图片可下载。
 - 必填项空白、201字符、超大/超量/伪装图片、非 HTTP(S) 链接全部拒绝。
-- 无 captcha、过期 captcha、错误 origin、截止后请求拒绝；缺配置关闭。
+- 无 captcha、过期 captcha、错误 origin 请求拒绝；缺必要安全配置关闭。日期之前和之后均可正常提交，且不依赖日期环境变量。
 - 匿名读表/读附件/调用提交 RPC、普通已登录用户读资料及更新状态全部拒绝。
 - 安全道具管理员若不在报名白名单，无报名访问权；反向隔离同样成立。
 - 两个相同 submission UUID 和相同内容的并发请求只产生一条记录，返回相同编号；不同内容复用 UUID 被拒绝。
