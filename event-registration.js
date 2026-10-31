@@ -1,5 +1,5 @@
 import { validateRegistration, validatePhotos, RegistrationError } from './event-registration-core.js';
-import { REGISTRATION_COPY } from './event-registration-copy.js?v=2';
+import { REGISTRATION_COPY } from './event-registration-copy.js?v=3';
 
 export function captchaFailureMessage(locale, code) {
     const safeCode = /^\d{6}$/.test(String(code)) ? String(code) : 'LOAD_ERROR';

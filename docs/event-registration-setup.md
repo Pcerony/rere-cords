@@ -2,6 +2,8 @@
 
 ## 生产验收记录（2026-10-31）
 
+活动负责人最新确认：报名与实物提交时间统一为 **2026年11月1日至11月20日（日本时间，含20日全天）**。官网各语言及报名页已同步，服务端对应开门时间为11月1日零时、关门时间为11月21日零时。旧设计/计划中的历史日期以本次变更为准。
+
 - 正式报名：`https://rerecords.space/event-registration.html`；管理后台：`https://rerecords.space/event-registration-admin.html`。
 - 原项目已恢复健康；新增 migration `202610310001` 已执行并登记；Edge Function `event-registration` 已部署，生产开关已开启。
 - Turnstile 使用 `rerecords.space` 的 Managed 组件；公开 Site key 由 GitHub Actions 注入，Secret 仅保存在 Supabase。没有迁移 DNS、购买套餐或把 Secret 写入仓库。
@@ -48,8 +50,8 @@
 | --- | --- |
 | `REGISTRATION_ALLOWED_ORIGINS` | `https://rerecords.space`；如另有正式入口，用逗号列出完整 origin，不用 `*` |
 | `TURNSTILE_SECRET_KEY` | Turnstile 服务端 Secret key |
-| `REGISTRATION_OPENS_AT` | `2026-10-01T00:00:00+09:00` |
-| `REGISTRATION_CLOSES_AT` | `2026-11-11T00:00:00+09:00`，此刻起关闭，含11月10日全天 |
+| `REGISTRATION_OPENS_AT` | `2026-11-01T00:00:00+09:00` |
+| `REGISTRATION_CLOSES_AT` | `2026-11-21T00:00:00+09:00`，此刻起关闭，含11月20日全天 |
 
 `SUPABASE_URL` 与 `SUPABASE_SERVICE_ROLE_KEY` 使用 Edge Runtime 提供的服务端环境值。它们不进入前端。若项目未提供兼容的服务角色环境值，先在后端配置好受保护的服务凭据再部署，不要使用 Publishable key 代替服务权限。
 

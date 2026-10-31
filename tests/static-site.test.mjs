@@ -35,7 +35,16 @@ function mergeExtraTranslations(dictionary) {
     return dictionary;
 }
 
-test('submission config opens the official online registration route on October 1', () => {
+test('registration dates agree across the homepage, form and production runbook', () => {
+    for (const file of ['app.js', 'translations.js', 'index.html', 'event-registration-copy.js', 'event-registration.html', 'scripts/update-registration-translations.mjs']) {
+        assert.doesNotMatch(read(file), /10月1日|11月10日|October 1|November 10|10\. marraskuuta|1\. lokakuuta|10월 1일|11월 10일|1 Oktober|10 November|1\/10|10\/11|1er octobre|10 novembre|১ অক্টোবর|১০ নভেম্বর/, file);
+    }
+    assert.match(read('event-registration-copy.js'), /November 1 – November 20, 2026/);
+    assert.match(read('docs/event-registration-setup.md'), /2026-11-01T00:00:00\+09:00/);
+    assert.match(read('docs/event-registration-setup.md'), /2026-11-21T00:00:00\+09:00/);
+});
+
+test('submission config opens the official online registration route on November 1', () => {
     const context = { window: {} };
     vm.runInNewContext(read('submission-config.js'), context);
     const app = read('app.js');
@@ -43,7 +52,7 @@ test('submission config opens the official online registration route on October 
     const config = context.window.RERE_CORDS_SUBMISSION_CONFIG;
     assert.equal(config.enabled, true);
     assert.equal(config.formUrl, 'https://rerecords.space/event-registration.html');
-    assert.equal(config.opensAt, '2026-10-01T00:00:00+09:00');
+    assert.equal(config.opensAt, '2026-11-01T00:00:00+09:00');
     assert.equal(config.fallbackDocumentUrl, '');
     assert.match(app, /Date\.now\(\) >= opensAt/);
 });
@@ -58,7 +67,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=4"><\/script>\s*<script src="translations\.js\?v=16"><\/script>\s*<script src="app\.js\?v=37"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=5"><\/script>\s*<script src="translations\.js\?v=17"><\/script>\s*<script src="app\.js\?v=38"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -137,7 +146,7 @@ test('homepage uses the confirmed 2026 collection period, handoff point, and exh
     const app = read('app.js');
     const config = read('submission-config.js');
 
-    assert.match(app, /2026年10月1日（木）〜2026年11月10日（火）/);
+    assert.match(app, /2026年11月1日（日）〜2026年11月20日（金）/);
     assert.match(app, /7号館2階MEDIA STUDIO部屋前/);
     assert.match(app, /回収ボックス/);
     assert.match(app, /多次元棟\s*2階\s*スタジオ201/);

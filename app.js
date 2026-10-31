@@ -370,9 +370,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Physical works only. Attach a slip with your author name and email, deposit the work in the collection box, and register online. Photos and video links are optional."
         },
         "req-notice-text": {
-            "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。产生的废料请按照地方自治体规定的处理方式妥善废弃。请于11月10日前投入7号馆2层 MEDIA STUDIO 房间前的回收箱。",
-            "ja": "完成した実物作品は大切に保管し、運搬前に鋭利な縁や不安定な部品を安全な状態にしてください。発生した端材やごみは自治体の定めた処分方法にて適切に廃棄してください。11月10日までに7号館2階MEDIA STUDIO部屋前の回収ボックスへ提出してください。",
-            "en": "Store finished physical works safely and secure sharp edges or unstable parts before transport. Please dispose of waste materials properly in accordance with the disposal regulations specified by the local municipality. Place them in the collection box in front of MEDIA STUDIO on 2F of Building 7 by November 10."
+            "zh": "请妥善保管制作完成的实物作品，并在搬运前处理尖锐边缘和不稳定部件。产生的废料请按照地方自治体规定的处理方式妥善废弃。请于11月20日前投入7号馆2层 MEDIA STUDIO 房间前的回收箱。",
+            "ja": "完成した実物作品は大切に保管し、運搬前に鋭利な縁や不安定な部品を安全な状態にしてください。発生した端材やごみは自治体の定めた処分方法にて適切に廃棄してください。11月20日までに7号館2階MEDIA STUDIO部屋前の回収ボックスへ提出してください。",
+            "en": "Store finished physical works safely and secure sharp edges or unstable parts before transport. Please dispose of waste materials properly in accordance with the disposal regulations specified by the local municipality. Place them in the collection box in front of MEDIA STUDIO on 2F of Building 7 by November 20."
         },
         "safety-kicker": {
             "zh": "制作前请阅读",
@@ -460,9 +460,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Participation & Submission Period"
         },
         "apply-period-text": {
-            "zh": "<span class='apply-date-highlight'>2026年10月1日（星期四）至11月10日（星期二）</span>。期间请提交实体作品、作者信息纸条，并完成线上报名。",
-            "ja": "<span class='apply-date-highlight'>2026年10月1日（木）〜2026年11月10日（火）</span>。期間中に実物作品と作者情報の用紙を提出し、オンライン参加登録を完了してください。",
-            "en": "<span class='apply-date-highlight'>October 1 (Thu) - November 10 (Tue), 2026</span>. Submit your physical work with an identifying slip and complete online registration during this period."
+            "zh": "<span class='apply-date-highlight'>2026年11月1日（星期日）至11月20日（星期五）</span>。期间请提交实体作品、作者信息纸条，并完成线上报名。",
+            "ja": "<span class='apply-date-highlight'>2026年11月1日（日）〜2026年11月20日（金）</span>。期間中に実物作品と作者情報の用紙を提出し、オンライン参加登録を完了してください。",
+            "en": "<span class='apply-date-highlight'>November 1 (Sun) - November 20 (Fri), 2026</span>. Submit your physical work with an identifying slip and complete online registration during this period."
         },
         "title-submission": {
             "zh": "提交作品",
@@ -550,14 +550,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "From material pickup, making, and submission to the onsite exhibition. The exchange salon on the exhibition's final day is optional."
         },
         "time-step1-making": {
-            "zh": "制作：2026年8月20日 - 11月10日",
-            "ja": "制作：2026年8月20日〜11月10日",
-            "en": "Making: August 20 - November 10, 2026"
+            "zh": "制作：2026年8月20日 - 11月20日",
+            "ja": "制作：2026年8月20日〜11月20日",
+            "en": "Making: August 20 - November 20, 2026"
         },
         "time-step1-submission": {
-            "zh": "提交：2026年10月1日 - 11月10日",
-            "ja": "提出：2026年10月1日〜11月10日",
-            "en": "Submission: October 1 - November 10, 2026"
+            "zh": "提交：2026年11月1日 - 11月20日",
+            "ja": "提出：2026年11月1日〜11月20日",
+            "en": "Submission: November 1 - November 20, 2026"
         },
         "title-step1": {
             "zh": "领取材料、制作与提交",
@@ -565,9 +565,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Obtain Materials, Make, and Submit"
         },
         "text-step1": {
-            "zh": "领取活动唱片或自行准备废旧唱片并开展制作。实体作品从10月1日起接受提交，最终截止时间为11月10日。",
-            "ja": "配布レコードを受け取るか自分で用意し、制作を行います。実物作品の提出は10月1日から受け付け、最終締切は11月10日です。",
-            "en": "Obtain supplied records or source discarded records yourself to begin making. Physical work submissions open October 1 and close November 10."
+            "zh": "领取活动唱片或自行准备废旧唱片并开展制作。实体作品从11月1日起接受提交，最终截止时间为11月20日。",
+            "ja": "配布レコードを受け取るか自分で用意し、制作を行います。実物作品の提出は11月1日から受け付け、最終締切は11月20日です。",
+            "en": "Obtain supplied records or source discarded records yourself to begin making. Physical work submissions open November 1 and close November 20."
         },
         "timeline-optional-badge": {
             "zh": "可选参加",
@@ -942,7 +942,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "req-proc-text": "Levyjä voi leikata, taivuttaa, liittää tai yhdistää muihin materiaaleihin, mutta alla olevia turvallisuusohjeita on noudatettava. Kuumentaminen, hiominen ja sähkötyökalut ovat sallittuja vain hyväksytyssä tilassa, jossa on asianmukaiset suojaukset.",
         "req-sub-title": "Toimitettava aineisto",
         "req-sub-text": "Vain fyysisiä töitä otetaan vastaan. Liitä työhön nimi ja sähköposti, jätä työ keräyslaatikkoon ja täytä verkkolomake. Kuvat ja videolinkit ovat vapaaehtoisia.",
-        "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Hävitä syntyvät jätteet asianmukaisesti paikallisten viranomaismääräysten mukaisesti. Jätä työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon 10. marraskuuta mennessä.",
+        "req-notice-text": "Säilytä valmis fyysinen työ turvallisesti ja suojaa terävät reunat sekä irtonaiset osat ennen kuljetusta. Hävitä syntyvät jätteet asianmukaisesti paikallisten viranomaismääräysten mukaisesti. Jätä työ rakennuksen 7 toisessa kerroksessa sijaitsevan MEDIA STUDIO -huoneen edessä olevaan keräyslaatikkoon 20. marraskuuta mennessä.",
         "safety-kicker": "Lue ennen työskentelyä",
         "title-safety": "Työstämisen turvallisuus",
         "lead-safety": "Käytöstä poistettujen levyjen päämateriaali on yleensä PVC. Leikkaaminen, kuumentaminen, hiominen, poraaminen ja liimaaminen voivat aiheuttaa vammoja tai haitallista altistumista. Arvioi menetelmän, materiaalin ja työtilan turvallisuus ennen aloittamista.",
@@ -960,10 +960,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "safety-stop-text": "Jos havaitset savua, voimakkaan tai ärsyttävän hajun, silmien, nenän tai kurkun ärsytystä, huimausta tai laitevian, lopeta heti, sammuta laite, poistu tilasta ja ota yhteys tilan vastuuhenkilöön. Hakeudu tarvittaessa hoitoon.",
         "title-timeline": "Projektin aikataulu",
         "lead-timeline": "Aikataulu etenee materiaalien noudosta ja valmistuksesta toimitukseen ja paikan päällä järjestettävään näyttelyyn. Näyttelyn viimeisen päivän keskustelutilaisuus on vapaaehtoinen.",
-        "time-step1-making": "Valmistus: 20.8.-10.11.2026",
-        "time-step1-submission": "Toimitus: 1.10.-10.11.2026",
+        "time-step1-making": "Valmistus: 20.8.-20.11.2026",
+        "time-step1-submission": "Toimitus: 1.11.-20.11.2026",
         "title-step1": "Hanki materiaalit, valmista ja toimita",
-        "text-step1": "Nouda projektin levy tai hanki poistolevy itse ja aloita valmistus. Fyysisten töiden vastaanotto alkaa 1. lokakuuta ja päättyy 10. marraskuuta.",
+        "text-step1": "Nouda projektin levy tai hanki poistolevy itse ja aloita valmistus. Fyysisten töiden vastaanotto alkaa 1. marraskuuta ja päättyy 20. marraskuuta.",
         "timeline-optional-badge": "Vapaaehtoinen",
         "time-salon": "25.11.2026",
         "title-salon": "Keskustelutilaisuus",
@@ -981,7 +981,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "advisor-sarantou-role": "Professori · strateginen muotoilu, sosiaalinen muotoilu",
         "advisor-sarantou-bio": "Hän on erikoistunut sosiaaliseen muotoiluun, transformaatiomuotoiluun ja taidelähtöisiin tutkimusmenetelmiin sekä erityisesti marginalisoitujen yhteisöjen ja erilaisten kulttuuristen ympäristöjen muotoilukäytäntöihin. Hän toimii myös Lapin yliopiston dosenttina ja on tehnyt tutkimusta Namibiassa, Suomessa, Australiassa ja Japanissa.",
         "apply-period-title": "Osallistumis- ja toimitusaika",
-        "apply-period-text": "<span class='apply-date-highlight'>1.10.-10.11.2026</span>. Toimita fyysinen työ ja nimilappu sekä täytä verkkolomake tänä aikana.",
+        "apply-period-text": "<span class='apply-date-highlight'>1.11.-20.11.2026</span>. Toimita fyysinen työ ja nimilappu sekä täytä verkkolomake tänä aikana.",
         "title-submission": "Töiden toimittaminen",
         "lead-submission": "Ennakkoilmoittautumista ei tarvita. Jätä työ ja nimelläsi sekä sähköpostillasi varustettu lappu keräyslaatikkoon. Ilmoittaudu sitten verkossa samoilla tiedoilla.",
         "submission-digital-title": "Levyä hyödyntävä digitaalinen tulos",
@@ -1513,10 +1513,10 @@ document.addEventListener('DOMContentLoaded', () => {
             tagType: "badge-hub",
             title: { zh: "7号馆 2F MEDIA STUDIO 房间前", ja: "7号館 2F MEDIA STUDIO 部屋前", en: "Building 7, 2F (In front of MEDIA STUDIO)", 'zh-TW': "7號館 2F MEDIA STUDIO 房間前", fi: "Rakennus 7, 2. krs (MEDIA STUDIO)" },
             desc: {
-                zh: "【核心服务点】设有官方黑胶唱片集中领取盒（配布BOX），常备充足唱片；同时提供护目镜、防割手套、DS2防尘口罩与安全P钩刀的无偿短期借用；亦为 11 月 10 日前实物作品的最终提交回收箱所在处。",
-                ja: "【メイン拠点】予備レコードを常備する「集中配布ボックス」を設置。保護メガネ・耐切創手袋・DS2防塵マスク・Pカッターの無償レンタル（プランB）を実施。11月10日締切の実物作品回収ボックスもここに設置されます。",
+                zh: "【核心服务点】设有官方黑胶唱片集中领取盒（配布BOX），常备充足唱片；同时提供护目镜、防割手套、DS2防尘口罩与安全P钩刀的无偿短期借用；亦为 11 月 20 日前实物作品的最终提交回收箱所在处。",
+                ja: "【メイン拠点】予備レコードを常備する「集中配布ボックス」を設置。保護メガネ・耐切創手袋・DS2防塵マスク・Pカッターの無償レンタル（プランB）を実施。11月20日締切の実物作品回収ボックスもここに設置されます。",
                 en: "【Main Hub】Features the Central Pickup Box stocked with extra records, free short-term loan of safety tool kits (goggles, cut-resistant gloves, DS2 masks, acrylic cutters), and the physical submission drop box.",
-                'zh-TW': "【核心服務點】設有官方黑膠唱片集中領取盒（配布BOX），常備充足唱片；同時提供護目鏡、防割手套、DS2防塵口罩與安全P鉤刀的無償短期借用；亦為 11 月 10 日前實物作品的最終提交回收箱所在處。",
+                'zh-TW': "【核心服務點】設有官方黑膠唱片集中領取盒（配布BOX），常備充足唱片；同時提供護目鏡、防割手套、DS2防塵口罩與安全P鉤刀的無償短期借用；亦為 11 月 20 日前實物作品的最終提交回收箱所在處。",
                 fi: "【Pääkeskus】Sisältää vinyylien päänoutolaatikon, turvavarusteiden (suojalasit, viiltosuojakäsineet, DS2-maskit, leikkurit) ilmaisen lainauksen ja fyysisten töiden palautuslaatikon."
             },
             floor: { zh: "7号馆 2 楼 (2F) MEDIA STUDIO 房间正前方", ja: "7号館 2階 MEDIA STUDIO 部屋前", en: "Building 7, 2nd Floor, in front of MEDIA STUDIO", 'zh-TW': "7號館 2 樓 (2F) MEDIA STUDIO 房間正前方", fi: "Rakennus 7, 2. krs, MEDIA STUDIOn edessä" },

@@ -2,7 +2,7 @@ export const REGISTRATION_COPY = {
     ja: {
         pageTitle: '作品の参加登録', back: 'イベントサイトへ', language: '言語',
         intro: '作品を回収ボックスに入れたら、こちらで参加登録をお願いします。',
-        period: '受付：2026年10月1日 — 11月10日', processTitle: '作品と登録をつなぐ',
+        period: '受付：2026年11月1日 — 11月20日', processTitle: '作品と登録をつなぐ',
         step1: '回収箱にある用紙に作者名とメールアドレスを記入。', step2: '用紙を作品に添えて、7号館2階 MEDIA STUDIO 部屋前の回収箱へ。', step3: '同じ名前とメールアドレスで、このフォームを送信。',
         required: '必須', optional: '任意', basics: '作者・作品について', name: '作者名', email: 'メールアドレス', title: '作品名', description: '作品紹介', descriptionHint: '200文字以内。作品のアイデアや制作意図を教えてください。',
         matchingHint: '作品に添えた用紙と同じ作者名・メールアドレスをご記入ください。',
@@ -17,7 +17,7 @@ export const REGISTRATION_COPY = {
         success: '参加登録を受け付けました', receiptLabel: '受付番号', receiptNote: 'この番号を控えてください。これはオンライン登録の受付です。実物の作品との照合は主催者が行います。確認メールは自動送信されません。', another: 'イベントサイトに戻る', noPhotos: '画像が選択されていません。'
     },
     zh: {
-        pageTitle: '作品报名', back: '返回活动官网', language: '语言', intro: '将作品放入回收箱后，请在这里完成线上报名。', period: '报名：2026年10月1日 — 11月10日', processTitle: '让作品与报名资料对应',
+        pageTitle: '作品报名', back: '返回活动官网', language: '语言', intro: '将作品放入回收箱后，请在这里完成线上报名。', period: '报名：2026年11月1日 — 11月20日', processTitle: '让作品与报名资料对应',
         step1: '在回收箱旁准备好的纸条上填写作者名和邮箱。', step2: '将纸条随作品一起放入7号馆2层 MEDIA STUDIO 房间前的回收箱。', step3: '使用相同姓名和邮箱填写并提交本表。',
         required: '必填', optional: '选填', basics: '作者与作品', name: '姓名／作者名', email: '邮箱', title: '作品名', description: '作品简介', descriptionHint: '200字以内，介绍作品的想法或创作意图。', matchingHint: '请与作品所附纸条上的作者名、邮箱保持一致。',
         details: '补充个人信息', salon: '是否参加11月25日的沙龙', select: '请选择', yes: '参加', no: '不参加', undecided: '尚未决定', major: '专业／所属', year: '学年', origin: '出身地／地区',
@@ -28,7 +28,7 @@ export const REGISTRATION_COPY = {
         success: '报名资料已收到', receiptLabel: '报名编号', receiptNote: '请记下此编号。这代表线上报名已收到，组织者将另行核对实体作品。系统不会自动发送确认邮件。', another: '返回活动官网', noPhotos: '尚未选择图片。'
     },
     en: {
-        pageTitle: 'Register Your Work', back: 'Back to the event', language: 'Language', intro: 'After placing your work in the collection box, complete your registration here.', period: 'Registration: October 1 – November 10, 2026', processTitle: 'Connect your work and registration',
+        pageTitle: 'Register Your Work', back: 'Back to the event', language: 'Language', intro: 'After placing your work in the collection box, complete your registration here.', period: 'Registration: November 1 – November 20, 2026', processTitle: 'Connect your work and registration',
         step1: 'Write your author name and email on the prepared slip beside the collection box.', step2: 'Place the slip with your work in the box outside MEDIA STUDIO, Building 7, Floor 2.', step3: 'Submit this form using the same name and email.',
         required: 'Required', optional: 'Optional', basics: 'Artist & work', name: 'Name / author name', email: 'Email', title: 'Work title', description: 'Work description', descriptionHint: 'Up to 200 characters. Tell us about the idea or intention behind your work.', matchingHint: 'Use the same author name and email as the slip attached to your work.',
         details: 'Additional information', salon: 'November 25 salon attendance', select: 'Select an option', yes: 'Attending', no: 'Not attending', undecided: 'Undecided', major: 'Major / affiliation', year: 'Academic year', origin: 'Place / region of origin',
