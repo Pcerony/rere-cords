@@ -1,5 +1,10 @@
 import { validateRegistration, validatePhotos, RegistrationError } from './event-registration-core.js';
-import { REGISTRATION_COPY } from './event-registration-copy.js';
+import { REGISTRATION_COPY } from './event-registration-copy.js?v=2';
+
+export function captchaFailureMessage(locale, code) {
+    const safeCode = /^\d{6}$/.test(String(code)) ? String(code) : 'LOAD_ERROR';
+    return (REGISTRATION_COPY[locale] || REGISTRATION_COPY.en).captchaUnavailable.replace('{code}', safeCode);
+}
 
 export async function sendRegistration(endpoint, snapshot, captchaToken, publishableKey, fetcher = fetch) {
     const body = new FormData();
@@ -39,6 +44,7 @@ function initializeRegistration() {
     let pendingSnapshot = null;
     let captchaId;
     let captchaToken = '';
+    let captchaErrorCode = '';
     let busy = false;
     let messageKey = '';
     let imageUrls = [];
@@ -51,7 +57,7 @@ function initializeRegistration() {
     const copy = () => REGISTRATION_COPY[locale];
     function show(key, focus = false) {
         messageKey = key;
-        message.textContent = copy()[key] || '';
+        message.textContent = key === 'captchaUnavailable' ? captchaFailureMessage(locale, captchaErrorCode) : copy()[key] || '';
         if (focus) message.focus();
     }
     function updateButton() {
@@ -167,12 +173,12 @@ function initializeRegistration() {
     script.onload = () => {
         captchaId = window.turnstile.render('#registration-captcha', {
             sitekey: config.turnstileSiteKey, action: 'registration', language: locale === 'zh' ? 'zh-cn' : locale,
-            callback: (token) => { captchaToken = token; if (messageKey === 'captcha') show(''); updateButton(); },
+            callback: (token) => { captchaToken = token; if (['captcha', 'captchaUnavailable'].includes(messageKey)) show(''); updateButton(); },
             'expired-callback': () => { captchaToken = ''; updateButton(); },
-            'error-callback': () => { captchaToken = ''; show('captcha'); updateButton(); }
+            'error-callback': (code) => { captchaToken = ''; captchaErrorCode = code; show('captchaUnavailable'); updateButton(); }
         });
     };
-    script.onerror = () => show('captcha');
+    script.onerror = () => { captchaErrorCode = ''; show('captchaUnavailable'); };
     document.head.append(script);
 }
 

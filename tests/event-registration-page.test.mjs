@@ -49,3 +49,10 @@ test('privacy notice states the confirmed February 28, 2027 retention deadline i
     assert.match(REGISTRATION_COPY.zh.privacy, /2027年2月28日/);
     assert.match(REGISTRATION_COPY.en.privacy, /February 28, 2027/);
 });
+test('verification failures expose only a safe diagnostic code, not arbitrary error text', async () => {
+    const { captchaFailureMessage } = await import('../event-registration.js');
+    assert.match(captchaFailureMessage('zh', '200500'), /200500/);
+    assert.match(captchaFailureMessage('en', '110200'), /110200/);
+    assert.match(captchaFailureMessage('ja', '<script>'), /LOAD_ERROR/);
+    assert.doesNotMatch(captchaFailureMessage('ja', '<script>'), /<script>/);
+});
