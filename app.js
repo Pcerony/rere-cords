@@ -1694,10 +1694,12 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 'b7-2f',
             locationKey: 'bldg-7-hub',
-            src: './素材/地点/b7-2f.JPG',
-            brightness: '1.16',
-            caption: { zh: '7号馆 · 2F', ja: '7号館 · 2F', en: 'Bldg 7 · 2F', 'zh-TW': '7號館 · 2F', fi: 'Rakennus 7 · 2F' },
-            alt: { zh: '7号馆二楼海报与唱片领取点现场照片', ja: '7号館2階ポスター・レコード配布場所の写真', en: 'Photo of the Building 7, 2F poster and record pickup location', 'zh-TW': '7號館二樓海報與唱片領取點現場照片', fi: 'Kuva rakennuksen 7 toisen kerroksen juliste- ja levynoutopisteestä' }
+            src: './素材/地点/collection-box-20261102.jpg',
+            width: 1200,
+            height: 1600,
+            brightness: '1',
+            caption: { zh: '7号馆 · 2F · 作品回收箱', ja: '7号館 · 2F · 作品回収ボックス', en: 'Bldg 7 · 2F · Work Collection', 'zh-TW': '7號館 · 2F · 作品回收箱', fi: 'Rakennus 7 · 2F · Töiden palautus' },
+            alt: { zh: 'MEDIA STUDIO 门前的作品回收箱与报名纸条', ja: 'MEDIA STUDIO前の作品回収ボックスと登録用紙', en: 'Work collection boxes and registration slips outside MEDIA STUDIO', 'zh-TW': 'MEDIA STUDIO 門前的作品回收箱與報名紙條', fi: 'Töiden palautuslaatikot ja ilmoittautumislaput MEDIA STUDIOn edessä' }
         }
     ];
 
@@ -1727,8 +1729,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const image = document.createElement('img');
         image.src = photo.src;
         image.alt = photo.alt[lang] || photo.alt.en || '';
-        image.width = 4032;
-        image.height = 3024;
+        image.width = photo.width || 4032;
+        image.height = photo.height || 3024;
         image.loading = 'lazy';
         image.decoding = 'async';
         image.style.setProperty('--map-photo-brightness', photo.brightness);

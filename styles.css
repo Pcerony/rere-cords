@@ -1619,6 +1619,11 @@ section {
     width: 100%;
 }
 
+.req-illustration.collection-box-photo,
+.submission-illustration.collection-box-photo { aspect-ratio: 3 / 4; }
+.map-photo-item[data-photo-location="bldg-7-hub"] .map-photo-frame { aspect-ratio: 3 / 4; }
+.map-photo-item[data-photo-location="bldg-7-hub"] .map-photo-frame img { object-fit: contain; filter: none; }
+
 .submission-route p {
     color: var(--color-text-muted);
     font-size: 0.95rem;

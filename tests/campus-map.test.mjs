@@ -81,7 +81,7 @@ test('the map shows one selected-location photo as a floating overlay', () => {
     assert.doesNotMatch(html, /class="campus-map-lead"/);
     assert.match(html, /id="map-photo-panel"[^>]*hidden/);
     assert.match(html, /id="map-photo-grid"/);
-    for (const photo of ['b1.JPG', 'b2.JPG', 'b5.JPG', 'b7-1f.JPG', 'b7-2f.JPG']) {
+    for (const photo of ['b1.JPG', 'b2.JPG', 'b5.JPG', 'b7-1f.JPG', 'collection-box-20261102.jpg']) {
         assert.match(app, new RegExp(`素材/地点/${photo.replace('.', '\\.')}`));
     }
     assert.match(app, /id: 'b2',[\s\S]*?locationKey: 'bldg-2',[\s\S]*?src: '\.\/素材\/地点\/b2\.JPG'/);

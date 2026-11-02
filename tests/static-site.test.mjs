@@ -66,6 +66,14 @@ test('homepage provides two prominent shortcuts below the hero and a full-size r
     assert.match(read('styles.css'), /\.page-shortcut\s*\{[^}]*min-height:\s*5rem/s);
 });
 
+test('collection box photo is current on the homepage, location map and registration form', () => {
+    const photo = 'collection-box-20261102.jpg';
+    assert.equal(read('index.html').split(photo).length - 1, 2);
+    assert.ok(read('event-registration.html').includes(photo));
+    assert.ok(read('app.js').includes(photo));
+    assert.doesNotMatch(read('app.js'), /src: '\.\/素材\/地点\/b7-2f\.JPG'/);
+});
+
 test('homepage shortcuts form an edge-to-edge divided band and advisors follow submission', () => {
     const html = read('index.html');
     const css = read('styles.css');
@@ -89,7 +97,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=5"><\/script>\s*<script src="translations\.js\?v=17"><\/script>\s*<script src="app\.js\?v=39"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=5"><\/script>\s*<script src="translations\.js\?v=17"><\/script>\s*<script src="app\.js\?v=40"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
