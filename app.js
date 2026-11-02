@@ -495,9 +495,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "en": "Physical Finished Work"
         },
         "submission-physical-text": {
-            "zh": "填写回收箱旁准备好的纸条，写明作者名和邮箱，随作品投入7号馆2层 MEDIA STUDIO 房间前的回收箱。随后扫描二维码填写线上报名表。",
-            "ja": "回収箱に用意された用紙に作者名とメールアドレスを記入し、作品と一緒に7号館2階MEDIA STUDIO部屋前の回収ボックスへ入れてください。その後、QRコードからオンライン参加登録をしてください。",
-            "en": "Write your author name and email on the prepared slip and place it with your work in the box outside MEDIA STUDIO, Building 7, Floor 2. Then scan the QR code to complete the online form."
+            "zh": "在纸条上填写姓名和邮箱，随作品投入7号馆2楼 MEDIA STUDIO 前的回收箱，再完成线上报名。",
+            "ja": "用紙に名前とメールアドレスを記入し、作品と一緒に7号館2階MEDIA STUDIO前の回収ボックスへ。その後、オンライン登録をしてください。",
+            "en": "Put your work and a slip with your name and email in the collection box outside MEDIA STUDIO, Building 7, 2F. Then register online."
         },
         "submission-physical-options": {
             "zh": "<strong>线上必填：</strong>姓名、邮箱、作品名及200字以内的简介。<strong>选填：</strong>沙龙意向、图片、视频链接、专业、学年、出身地及补充说明。视频链接不限平台，请确认可查看。",

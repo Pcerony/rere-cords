@@ -68,7 +68,9 @@ test('homepage provides two prominent shortcuts below the hero and a full-size r
 
 test('collection box photo is current on the homepage, location map and registration form', () => {
     const photo = 'collection-box-20261102.jpg';
-    assert.equal(read('index.html').split(photo).length - 1, 2);
+    assert.equal(read('index.html').split(photo).length - 1, 1);
+    assert.match(read('index.html'), /illustrations\/web\/submission-collection-box-v2\.png/);
+    assert.doesNotMatch(read('index.html'), /data-i18n="submission-physical-options"/);
     assert.ok(read('event-registration.html').includes(photo));
     assert.ok(read('app.js').includes(photo));
     assert.doesNotMatch(read('app.js'), /src: '\.\/素材\/地点\/b7-2f\.JPG'/);
@@ -97,7 +99,7 @@ test('homepage contains one active submission entry before the venue', () => {
     assert.match(html, /id="submission-cta"/);
     assert.match(html, /id="submission-fallback"/);
     assert.match(html, /styles\.css\?v=\d+/);
-    assert.match(html, /submission-config\.js\?v=5"><\/script>\s*<script src="translations\.js\?v=17"><\/script>\s*<script src="app\.js\?v=40"><\/script>/);
+    assert.match(html, /submission-config\.js\?v=5"><\/script>\s*<script src="translations\.js\?v=17"><\/script>\s*<script src="app\.js\?v=41"><\/script>/);
     assert.doesNotMatch(html, /unpkg\.com\/lucide|lucide\.createIcons/);
     assert.match(html, /logo-dark\.png" alt="SoDesLab"/);
     assert.match(html, /logo1\.png" alt="SoDesLab"/);
@@ -333,7 +335,7 @@ test('homepage contains safety, advisor, and physical submission guidance', () =
     assert.doesNotMatch(html, /advisor-index|class="advisor-link"|data-i18n="advisor-profile-link"/);
     assert.ok(statSync(resolve(root, '素材/faculty-zhang-yanfang.jpg')).size > 0);
     assert.ok(statSync(resolve(root, '素材/faculty-melanie-sarantou.jpg')).size > 0);
-    assert.match(html, /data-i18n="submission-physical-options"/);
+    assert.match(html, /data-i18n="submission-physical-text"/);
 });
 
 test('language, submission, and motion foundations are present', () => {
